@@ -1,4 +1,6 @@
 # SD RESOURCE GOLDMINE
+Rentry version: https://rentry.org/sdupdates/
+
 !!! danger PSAs: 
 
 	1. Ckpts/hypernetworks/embeddings are ==not== interently safe as of right now. They can be pickled/contain malicious code. Use your common sense and protect yourself as you would with any random download link you would see on the internet.
@@ -9,7 +11,7 @@
 
 !!! Links are dying. If you happen to have a file listed in https://rentry.org/sdupdates#deadmissing or that's not on this list, please get it to me.
 
-!!! note Changelog: added links, embeds, hypernets, etc.
+!!! note Changelog: added links, embeds, hypernets, etc., created https://github.com/questianon/sdupdates/ 
 	
 	Prominent updates: Korean Megacollection of hypernets/embeds with images added, Mogudan Mega updated
 
@@ -43,9 +45,13 @@ Quicklinks:
 * Fed Bait Information: https://rentry.org/sdupdates#fed-bait-information
 * Hall of Fame: https://rentry.org/sdupdates#hall-of-fame
 * Miscellaneous: https://rentry.org/sdupdates#misc
+* Github: https://github.com/questianon/sdupdates/
 
 ## NEWSFEED
 >10/26
+* Created https://github.com/questianon/sdupdates
+	* Rentry backup for now
+	* Features people might like
 * New generative models, supposedly faster than diffusers
 	* https://github.com/Newbeeer/Poisson_flow
 	* More info: https://www.assemblyai.com/blog/an-introduction-to-poisson-flow-generative-models/
@@ -2146,4 +2152,4 @@ Where am I tracker: busy, will update in a few hours
 
 Prompt Cheat Sheet Rentry: WIP
 
-author: questianon !!YbTGdICxQOw (malt#6065, u/questianon), ping or tag if I need to change anything or if you have questions
+author: questianon !!YbTGdICxQOw (malt#6065, u/questianon, https://github.com/questianon), ping or tag if I need to change anything or if you have questions
