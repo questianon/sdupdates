@@ -87,7 +87,7 @@
 * New generative models, supposedly faster than diffusers
 	* https://github.com/Newbeeer/Poisson_flow
 	* More info: https://www.assemblyai.com/blog/an-introduction-to-poisson-flow-generative-models/
-	* Physics inspired
+	* electrodynamics inspired (the current diffusion model is thermodynamics/statistical physics inspired)
 	* 10-20x faster
 	* https://colab.research.google.com/drive/1neY6OovzZELul9t2OTdThUitptNVnuHR?usp=sharing
 * Automatic1111's webui supports subfolders and symlinks
