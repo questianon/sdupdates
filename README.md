@@ -1,6 +1,4 @@
 # SD RESOURCE GOLDMINE
-Rentry version: https://rentry.org/sdupdates/
-
 !!! danger PSAs: 
 
 	1. Ckpts/hypernetworks/embeddings are ==not== interently safe as of right now. They can be pickled/contain malicious code. Use your common sense and protect yourself as you would with any random download link you would see on the internet.
@@ -11,9 +9,7 @@ Rentry version: https://rentry.org/sdupdates/
 
 !!! Links are dying. If you happen to have a file listed in https://rentry.org/sdupdates#deadmissing or that's not on this list, please get it to me.
 
-!!! note Changelog: added links, embeds, hypernets, etc., created https://github.com/questianon/sdupdates/ 
-	
-	Prominent updates: Korean Megacollection of hypernets/embeds with images added, Mogudan Mega updated
+!!! note Changelog: added all hdg and sdg links
 
 !!! info Given the large scope of this rentry, I'm looking for volunteers who can:
 	* Read Korean to easily put info into the KR sections
@@ -25,10 +21,7 @@ Rentry version: https://rentry.org/sdupdates/
 	
 	This is to help aggregate all available resources into one place before the links die. I will still be editing the rentry as I've always done. This just ensures that all missed links/info is added. Contact me at malt#6065 if you're interested
 
-	I'm also looking for the author of https://arca.live/b/hypernetworks/60940948?p=1, please contact me at malt#6065 if you're interested.
-	Translated: 의 작가를 찾으려고 해요 https://arca.live/b/hypernetworks/60940948?p=1, 당신이 흥미있는 경우에 저에게 연락하십시오 (malt#6065)
-
-Quicklinks: 
+### Quicklinks: 
 * News: https://rentry.org/sdupdates#newsfeed
 * Prompting: https://rentry.org/sdupdates#prompting
 * Models, Embeddings, and Hypernetworks: https://rentry.org/sdupdates#models-embeddings-and-hypernetworks
@@ -48,10 +41,31 @@ Quicklinks:
 * Github: https://github.com/questianon/sdupdates/
 
 ## NEWSFEED
+!!! note Don't forget to git pull to get a lot of new optimizations + updates, if SD breaks go backward in commits until it starts working again
+	Instructions:
+	* If on Windows:
+		1. go to the webui directory
+		2. ```source ./venv/bin/activate```
+		3. ```git pull```
+		4. ```pip -r install requirements.txt```
+	* If on Linux: 
+		1. go to the webui directory
+		2. ```source ./venv/bin/activate```
+			a. if this doesn't work, run ```python -m venv venv``` beforehand
+		3. ```git pull```
+		4. ```pip -r install requirements.txt```
+
+>10/27
+* hypernetwork training is currently broken (unsure if fixed now)
+	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670#discussioncomment-3973187
+
 >10/26
 * Created https://github.com/questianon/sdupdates
 	* Rentry backup for now
-	* Features people might like
+	* Features people might like:
+		* Commit history so you know what's new
+		* Watch so you can get notifications
+		* The formatting might be nicer
 * New generative models, supposedly faster than diffusers
 	* https://github.com/Newbeeer/Poisson_flow
 	* More info: https://www.assemblyai.com/blog/an-introduction-to-poisson-flow-generative-models/
@@ -65,7 +79,7 @@ Quicklinks:
 	* https://internationaltd.github.io/defuser/
 	* https://github.com/internationalTD/defuser
 
->10/21 - 10/25 (big news bolded)
+>10/21 - 10/25 (big news bolded, big thanks to asuka-test-imgur-anon-who-also-made-the-speedrun-tutorial for some info)
 * Latest git pull can break SD (windows)
 	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/3688
 	* update with "git pull origin master" instead of "git pull" until the branch is deleted on the github side
@@ -160,9 +174,6 @@ Quicklinks:
 	* https://medium.com/mlearning-ai/3d-diffusion-models-22fd4ccc41a2
 * Pose Estimation
 	* https://viso.ai/deep-learning/pose-estimation-ultimate-overview/
-* **Don't forget to git pull to get a lot of new optimizations + updates, if SD breaks go backward in commits until it starts working again**
-	* update: git pull
-	* download requirements: pip -r install requirements.txt 
 
 >10/20
 * SD v1.5 released by RunwayML
@@ -431,6 +442,10 @@ UMI AI:
 Random Prompts: https://rentry.org/randomprompts
 Python script of the random prompts: https://rentry.org/nsfw-random-prompt-gen
 Prompt randomizer: https://github.com/adieyal/sd-dynamic-prompting 
+Prompt generator: https://github.com/h-a-te/prompt_generator
+* apparently UMI uses these?
+
+Ideas for when you have none: https://pentoprint.org/first-line-generator/
 
 Script collection: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts
 Prompt matrix tutorial: https://gigazine.net/gsc_news/en/20220909-automatic1111-stable-diffusion-webui-prompt-matrix/
@@ -571,9 +586,16 @@ Biggest tip: just write what you want. the AI will generally understand and crea
 **Posing**
 * https://app.posemy.art/ 
 * https://figurosity.com/figure-drawing-poses
+* https://terawell.net/index.php
+* https://manikin.app/
+* https://app.justsketch.me/
+* https://webapp.magicposer.com/
 
 **Locations**
 * https://danbooru.donmai.us/wiki_pages/tag_group:locations
+
+**Clothes**
+* https://danbooru.donmai.us/wiki_pages/tag_group%3Aattire
 
 **VAE:**
 * SD 1.4 Anime styled: https://huggingface.co/hakurei/waifu-diffusion-v1-4/blob/main/vae/kl-f8-anime.ckpt
@@ -623,6 +645,7 @@ https://litter.catbox.moe/las83s.txt
 	* views https://rentry.org/pv72o
 	* Clothing: https://pastebin.com/EyghiB2F
 * Another dump: https://github.com/jtkelm2/stable-diffusion-webui-1/tree/master/scripts/wildcards
+	* info by creator: https://github.com/jtkelm2/stable-diffusion-webui-1/blob/main/scripts/wildcards.py
 * Big NAI Wildcard List: https://rentry.org/NAIwildcards
 * 316 colors list: https://pastebin.com/s4tqKB8r
 * 82 colors list: https://pastebin.com/kiSEViGA
@@ -657,6 +680,7 @@ https://litter.catbox.moe/las83s.txt
 * Settings + Minerals: https://pastebin.com/9iznuYvQ
 * Hairstyles: https://pastebin.com/X39Kzxh7
 * Hairstyles 2: https://pastebin.com/bRWu1Xvv
+* C
 
 **Some artists (may or may not work with NAI):**
 * SD 1.5 artists (might lag your pc): https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#
@@ -974,6 +998,15 @@ Rentry: https://rentry.org/berrymix
 
 * Might be malicious: https://mega.nz/folder/8HUikarD#epAOm3l2hltC_s_oiSC9dg
 
+* Dump of ckpt merges, might be pickled, uploader anon says to download at your own risk, could also be a fed bait or something: https://droptext.cc/bfxwb
+
+* NAI + Tri + Tri: 
+``` python 
+magnet:?xt=urn:btih:976D8785EA6C067951E3AE5B9A7FD3A0ED9D3DBE&dn=animefull-final-pruned_0.8-trinart2_step115000_0.2-Weighted_Sum-merged_0.9-trinart_characters_it4_v1_0.1-Weighted_sum-merged.ckpt&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a80%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce
+```
+
+* Mixing guide: https://rentry.org/lftbl
+
 ### **Dreambooth Models:**
 Links:
 * https://huggingface.co/waifu-research-department
@@ -982,6 +1015,7 @@ Links:
 		* https://www.reddit.com/user/jinofcool/
 		* https://www.patreon.com/Rahmel
 * https://huggingface.co/nitrosocke
+* Toolkit anon: https://huggingface.co/demibit/
 * https://rentry.org/sdmodels
 * Big collection: https://publicprompts.art/
 * Big collection of sex models (Might be a large pickle, so be careful): https://rentry.org/kwai
@@ -1013,6 +1047,8 @@ Links:
 * Cyberware: https://huggingface.co/Eppinette/Cyberware/tree/main
 * taffy (keyword: champi): https://drive.google.com/file/d/1ZKBf63fV1Zm5_-a0bZzYsvwhnO16N6j6/view?usp=sharing
 	* https://arca.live/b/hypernetworks/60931350?category=%EA%B3%B5%EC%9C%A0&p=2
+* Kiwi (by toolkit anon): https://huggingface.co/demibit/kiwi
+* Disney: https://huggingface.co/nitrosocke/modern-disney-diffusion/
 
 ### **Embeddings**
 * Text Tutorial: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion
@@ -1185,6 +1221,10 @@ Found on 4chan:
 * Power (60k): https://files.catbox.moe/72dfvc.pt
 * Sakimichan (DEAD LINK): https://mega.nz/file/eE8QDKrI#y7kdyWgPUjI4ZkY8PSq89F28eU_Vz_0EgTbG6yAowH8
 * Takeda, Mogudan Fourchanbal (?, from KR site): https://files.catbox.moe/430rus.pt
+* Mikan (30 tokens, 36 images (before flipping/splitting), 5700steps, 5e-02:2000, 5e-03:4000): https://files.catbox.moe/xwdohx.pt
+	* creator: I've been getting best results with these tags: (orange hair and (hair tubes:1.2), (dog ears and dog tail and (huge ahoge:1.2):1.2)), green eyes
+* Furry styled embed? (6000, 5.5k most): https://files.catbox.moe/s19ub3.7z
+* Mutsuki (Blue Archive) embedding (10k step,150 image, no clip skip [set the "stop at last layers of clip model" option at 1 to get good results], 0.02:300, 0.01:1000, 0.005:2000, 0.002:3000, 0.0005:4000, 0.0005, vae disabled by renaming): https://files.catbox.moe/6yklfl.pt
 
 Found on Discord:
 * Nahida v2: https://cdn.discordapp.com/attachments/1019446913268973689/1031321278713446540/nahida_v2.zip
@@ -1344,7 +1384,10 @@ Found on 4chan:
 	* 93k, less overtrained: https://files.catbox.moe/fluegz.pt
 * Large collection of stuff from korean megacollection: https://mega.nz/folder/sSACBAgC#kNiPVzRwnuzs8JClovS1Tw
 * Crunchy: https://files.catbox.moe/tv1zf4.pt
-
+* Obui styled hypernetwork (125k steps): https://files.catbox.moe/6huecu.pt
+* KurosugatariAI (2 hypernets, 1 embed, embedding is light at 17 token weight. at 24 or higher creator anon thinks the effect would be better): https://mega.nz/folder/TAggRTYT#fbxf3Ru8PkXz_edIkD2Ttg
+* Amagami (Layer structure 1, 1.5 1.5 1; mish; xaviernormal; No layer normalization; Dropout O (appling only at 2nd layer due to bug); LR 8e-06 fixed; 20k done): https://files.catbox.moe/ucziks.7z
+* 
 
 Found on Korean Site of Wisdom (WIP):
 * Terada Tera: https://drive.google.com/file/d/1APwInBROTUdyeoW92yHFn_zBh7rY7b7I/view?usp=sharing
@@ -1497,6 +1540,7 @@ Datasets:
 * Dreambooth: https://rentry.org/dreambooth-shitguide
 * Dreambooth: https://rentry.org/simple-db-elinas
 * Dreambooth (Reddit): https://www.reddit.com/r/StableDiffusion/comments/ybxv7h/good_dreambooth_formula/
+* Hypernetworks: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670
 
 * Embed vector, clip skip, and vae comparison: https://desuarchive.org/g/thread/89392239#89392432
 
@@ -1615,6 +1659,14 @@ Check out one of these:
 * Free, GPU-less, powered by Stable Horde: https://dbzer0.itch.io/lucid-creations
 * Free crowdsourced distributed cluster for Stable Diffusion: https://stablehorde.net/
 * https://creator.nightcafe.studio/
+* Service of free image generation: Artificy.com
+	* Free for personal use
+	* We use all most fresh, models for example
+	* Different aspect ratios, predefined styles
+	* Fast and simple interface
+	* Social network features: make & share!
+	* Work in progress every day
+
 
 **What is difference merging/why is there a way to merge three models?**
 >The first two models are merged using standard interpolation. The third model is for a difference merge. 
@@ -2025,6 +2077,17 @@ Facebook thing: https://github.com/facebookincubator/AITemplate
 Info for quick links: you can put CLIP_stop_at_last_layers in the quick settings list to make it more easily accessible.
 (you can do this for any option by going into inspect element and finding the ID, ignoring the setting_ part: https://files.catbox.moe/2lcolb.PNG )
 
+some colab: https://rentry.org/sd-colab-automatic
+
+alt: https://github.com/n00mkrad/text2image-gui
+1 click: https://github.com/cmdr2/stable-diffusion-ui
+
+3d gens: https://colab.research.google.com/drive/1706ToQrkIZshRSJSHvZ1RuCiM__YX3Bz#scrollTo=i5-MWEjfBjYx
+https://colab.research.google.com/drive/1706ToQrkIZshRSJSHvZ1RuCiM__YX3Bz?authuser=2#scrollTo=i5-MWEjfBjYx
+	It's a bit more effort to set up, make sure you replace line 29 of main.py with
+
+	config = yaml.full_load(open(args.config, 'r'))
+
 ## Confirmed Drama
 
 10/20 News
@@ -2141,6 +2204,7 @@ Model anon: writing up https://rentry.org/sdmodels + helping out
 Glowie'd anon: first public fed bait
 Ixy anon: Good guide
 mogubro: A lot of hypernets. also cool name
+tbsw: legendary korean disciple
 
 
 ## Misc
