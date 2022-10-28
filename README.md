@@ -9,9 +9,9 @@
 
 !!! Links are dying. If you happen to have a file listed in https://rentry.org/sdupdates#deadmissing or that's not on this list, please get it to me.
 
-!!! note Changelog: added all hdg and sdg links
+!!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates
 
-!!! info Given the large scope of this rentry, I'm looking for volunteers who can:
+	Given the large scope of this rentry, I'm looking for volunteers who can:
 	* Read Korean to easily put info into the KR sections
 	* Read Chinese to easily put info into the CN sections
 	* Read [language] to put info into the [language] sections
@@ -20,6 +20,8 @@
 	* Help format this rentry so it's easier to browse
 	
 	This is to help aggregate all available resources into one place before the links die. I will still be editing the rentry as I've always done. This just ensures that all missed links/info is added. Contact me at malt#6065 if you're interested
+
+!!! note Changelog: added all hdg and sdg and vt links
 
 ### Quicklinks: 
 * News: https://rentry.org/sdupdates#newsfeed
@@ -1064,6 +1066,8 @@ Links:
 	* https://arca.live/b/hypernetworks?category=%EA%B3%B5%EC%9C%A0
 	* (includes mega compilation of artists): https://arca.live/b/hypernetworks/60940948?category=%EA%B3%B5%EC%9C%A0&p=1
 	* Large collection of stuff from korean megacollection: https://mega.nz/folder/sSACBAgC#kNiPVzRwnuzs8JClovS1Tw
+* Large Vtuber collection dump (not sure if pickled, even linker anon said to be bareful): https://rentry.org/EmbedList
+* Waifu Diffusion collection: https://gitlab.com/cattoroboto/waifu-diffusion-embeds
 
 Found on 4chan:
 * Embeddings + Artists: https://rentry.org/anime_and_titties (https://mega.nz/folder/7k0R2arB#5_u6PYfdn-ZS7sRdoecD2A)
@@ -1225,6 +1229,7 @@ Found on 4chan:
 	* creator: I've been getting best results with these tags: (orange hair and (hair tubes:1.2), (dog ears and dog tail and (huge ahoge:1.2):1.2)), green eyes
 * Furry styled embed? (6000, 5.5k most): https://files.catbox.moe/s19ub3.7z
 * Mutsuki (Blue Archive) embedding (10k step,150 image, no clip skip [set the "stop at last layers of clip model" option at 1 to get good results], 0.02:300, 0.01:1000, 0.005:2000, 0.002:3000, 0.0005:4000, 0.0005, vae disabled by renaming): https://files.catbox.moe/6yklfl.pt
+* Reine: https://files.catbox.moe/tv1zf4.pt
 
 Found on Discord:
 * Nahida v2: https://cdn.discordapp.com/attachments/1019446913268973689/1031321278713446540/nahida_v2.zip
@@ -1387,7 +1392,7 @@ Found on 4chan:
 * Obui styled hypernetwork (125k steps): https://files.catbox.moe/6huecu.pt
 * KurosugatariAI (2 hypernets, 1 embed, embedding is light at 17 token weight. at 24 or higher creator anon thinks the effect would be better): https://mega.nz/folder/TAggRTYT#fbxf3Ru8PkXz_edIkD2Ttg
 * Amagami (Layer structure 1, 1.5 1.5 1; mish; xaviernormal; No layer normalization; Dropout O (appling only at 2nd layer due to bug); LR 8e-06 fixed; 20k done): https://files.catbox.moe/ucziks.7z
-* 
+* Reine (from VTuber dump, might be pickled): https://files.catbox.moe/uf09mp.pt
 
 Found on Korean Site of Wisdom (WIP):
 * Terada Tera: https://drive.google.com/file/d/1APwInBROTUdyeoW92yHFn_zBh7rY7b7I/view?usp=sharing
@@ -2082,11 +2087,15 @@ some colab: https://rentry.org/sd-colab-automatic
 alt: https://github.com/n00mkrad/text2image-gui
 1 click: https://github.com/cmdr2/stable-diffusion-ui
 
+3d: https://github.com/ashawkey/stable-dreamfusion
+https://dreamfusion3d.github.io/
 3d gens: https://colab.research.google.com/drive/1706ToQrkIZshRSJSHvZ1RuCiM__YX3Bz#scrollTo=i5-MWEjfBjYx
 https://colab.research.google.com/drive/1706ToQrkIZshRSJSHvZ1RuCiM__YX3Bz?authuser=2#scrollTo=i5-MWEjfBjYx
 	It's a bit more effort to set up, make sure you replace line 29 of main.py with
 
 	config = yaml.full_load(open(args.config, 'r'))
+
+https://sketchfab.com/3d-models/low-poly-beretta-m9-c79ea90735b248e588d5be49809d7b34
 
 ## Confirmed Drama
 
