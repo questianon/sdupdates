@@ -1,5 +1,6 @@
 # SD RESOURCE GOLDMINE
-!!! danger PSAs: 
+
+!!! danger Warnings: 
 
 	1. Ckpts/hypernetworks/embeddings are ==not== interently safe as of right now. They can be pickled/contain malicious code. Use your common sense and protect yourself as you would with any random download link you would see on the internet.
 
@@ -56,6 +57,21 @@
 			a. if this doesn't work, run ```python -m venv venv``` beforehand
 		3. ```git pull```
 		4. ```pip -r install requirements.txt```
+
+>10/28
+* Parseq released
+	* parameter sequencer
+	* "Generate videos with tight control and flexible interpolation over many Stable Diffusion parameters (such as seed, scale, prompt weights, denoising strength...), as well as input processing parameter (such as zoom, pan, 3D rotation...)"
+	* https://github.com/rewbs/sd-parseq
+* Img2tiles script released
+	* https://github.com/arcanite24/img2tiles
+* Stable Diffusion Prompt Book released
+	* Organized by openart.ai in collab with PublicPrompts (https://publicprompts.art/)
+	* https://bit.ly/PromptBook
+	* https://openart.ai/promptbook
+	* https://www.reddit.com/r/StableDiffusion/comments/yfm8go/im_glad_to_announce_the_release_of_the_stable/
+* AI Pictionary released
+	* https://pictionairy.com/
 
 >10/27
 * hypernetwork training is currently broken (unsure if fixed now)
@@ -399,6 +415,7 @@ Korean wiki 2: https://arca.live/b/aiart/60466181
 
 Tip Dump: https://rentry.org/robs-novel-ai-tips
 Tips: https://github.com/TravelingRobot/NAI_Community_Research/wiki/NAI-Diffusion:-Various-Tips-&-Tricks
+Info dump of tips: https://rentry.org/Learnings
 
 Embedding tester: https://huggingface.co/spaces/sd-concepts-library/stable-diffusion-conceptualizer
 
@@ -447,7 +464,25 @@ Prompt randomizer: https://github.com/adieyal/sd-dynamic-prompting
 Prompt generator: https://github.com/h-a-te/prompt_generator
 * apparently UMI uses these?
 
+http://dalle2-prompt-generator.s3-website-us-west-2.amazonaws.com/
+https://randomwordgenerator.com/
+
 Ideas for when you have none: https://pentoprint.org/first-line-generator/
+
+I didn't check the safety of these plugins, but they're open source, so you can check them yourself
+Photoshop/Krita plugin (free): https://internationaltd.github.io/defuser/ (kinda new and currently only 2 stars on github)
+Photoshop plugin (paid, not open source): https://www.flyingdog.de/sd/
+Krita plugins (free): 
+* https://github.com/sddebz/stable-diffusion-krita-plugin (listed in the OP, outdated? dead?)
+* https://github.com/Interpause/auto-sd-krita (a fork from above, more improvement)
+* https://www.flyingdog.de/sd/en/ (https://github.com/imperator-maximus/stable-diffusion-krita)
+
+GIMP:
+https://github.com/blueturtleai/gimp-stable-diffusion
+
+Blender:
+https://github.com/carson-katri/dream-textures
+https://github.com/benrugg/AI-Render
 
 Script collection: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts
 Prompt matrix tutorial: https://gigazine.net/gsc_news/en/20220909-automatic1111-stable-diffusion-webui-prompt-matrix/
@@ -465,6 +500,8 @@ Prompt changing scripts:
 
 Interpolation script (img2img + txt2img mix): https://github.com/DiceOwl/StableDiffusionStuff
 * https://www.reddit.com/r/StableDiffusion/comments/ycgfgo/interpolate_script/
+
+* img2tiles script: https://github.com/arcanite24/img2tiles
 
 Giffusion tutorial:
 ``` python 
@@ -1049,8 +1086,17 @@ Links:
 * Cyberware: https://huggingface.co/Eppinette/Cyberware/tree/main
 * taffy (keyword: champi): https://drive.google.com/file/d/1ZKBf63fV1Zm5_-a0bZzYsvwhnO16N6j6/view?usp=sharing
 	* https://arca.live/b/hypernetworks/60931350?category=%EA%B3%B5%EC%9C%A0&p=2
-* Kiwi (by toolkit anon): https://huggingface.co/demibit/kiwi
 * Disney: https://huggingface.co/nitrosocke/modern-disney-diffusion/
+* El Risitas (KEK guy): https://huggingface.co/Fictiverse/ElRisitas
+* Cyberpunk Anime Diffusion: https://huggingface.co/DGSpitzer/Cyberpunk-Anime-Diffusion
+* Kurzgesagt (called with "kurzgesagt! style"): https://drive.google.com/file/d/1-LRNSU-msR7W1HgjWf8g1UhgD_NfQjJ4/view?usp=sharing
+	* SHA-256: d47168677d75045ae1a3efb8ba911f87cfcde4fba38d5c601ef9e008ccc6086a
+* Robodiffusion (good outputs for "meh" prompting): https://huggingface.co/nousr/robo-diffusion
+* 2D Illustration style: https://huggingface.co/ogkalu/hollie-mengert-artstyle
+	* https://www.reddit.com/r/StableDiffusion/comments/yaquby/2d_illustration_styles_are_scarce_on_stable/
+* Rebecca (edgerunners, by booru anon, info is in link): https://huggingface.co/demibit/rebecca
+* Kiwi (by booru anon): https://huggingface.co/demibit/kiwi
+* Ranni (Elden Ring): https://huggingface.co/bitspirit3/SD-Ranni-dreambooth-finetune
 
 ### **Embeddings**
 * Text Tutorial: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion
@@ -1062,11 +1108,11 @@ Links:
 * Collection: https://huggingface.co/sd-concepts-library
 * Collection 2: https://mega.nz/folder/fVhXRLCK#4vRO9xVuME0FGg3N56joMA
 * Collection 3: https://cyberes.github.io/stable-diffusion-textual-inversion-models/
-**Korean megacollection:**
+* **Korean megacollection:**
 	* https://arca.live/b/hypernetworks?category=%EA%B3%B5%EC%9C%A0
 	* (includes mega compilation of artists): https://arca.live/b/hypernetworks/60940948?category=%EA%B3%B5%EC%9C%A0&p=1
 	* Large collection of stuff from korean megacollection: https://mega.nz/folder/sSACBAgC#kNiPVzRwnuzs8JClovS1Tw
-* Large Vtuber collection dump (not sure if pickled, even linker anon said to be bareful): https://rentry.org/EmbedList
+* Large Vtuber collection dump (not sure if pickled, even linker anon said to be careful, but a big list anyway): https://rentry.org/EmbedList
 * Waifu Diffusion collection: https://gitlab.com/cattoroboto/waifu-diffusion-embeds
 
 Found on 4chan:
@@ -1230,6 +1276,17 @@ Found on 4chan:
 * Furry styled embed? (6000, 5.5k most): https://files.catbox.moe/s19ub3.7z
 * Mutsuki (Blue Archive) embedding (10k step,150 image, no clip skip [set the "stop at last layers of clip model" option at 1 to get good results], 0.02:300, 0.01:1000, 0.005:2000, 0.002:3000, 0.0005:4000, 0.0005, vae disabled by renaming): https://files.catbox.moe/6yklfl.pt
 * Reine: https://files.catbox.moe/tv1zf4.pt
+* as109 (trained with 1000+ dataset, 0.003 learning rate, 0.12 loss rate trend, 25k step snapshot): https://litter.catbox.moe/5iwbi5.pt
+* sasamori tomoe (0.92 loss trend, 60k+ steps, 0.003 learning rate. 500+ dataset, pruned pre 2015 images. biased to doujin, weak to certain positions (mostly side)): https://litter.catbox.moe/mybrvu.pt
+* egami(500+ dataset, 0.03 learning rate, 0.13 loss trend, 40k steps): https://litter.catbox.moe/dpqp1k.pt
+* pink doragon (20k+ steps, 0.0031 learning rate, 0.113 loss trend, 800+ dataset): https://litter.catbox.moe/mml9b9.pt
+	* kind of failure: fancy recent artworks are ignored due to dataset bias - will train with 2018+ data.
+	* leaning to BIG ASS and BIG TIDDIES.
+* Kiwi (by booru anon): https://huggingface.co/demibit/kiwi
+
+
+
+
 
 Found on Discord:
 * Nahida v2: https://cdn.discordapp.com/attachments/1019446913268973689/1031321278713446540/nahida_v2.zip
@@ -2218,6 +2275,8 @@ tbsw: legendary korean disciple
 
 ## Misc
 
+-> (WIP) Precursor to https://rentry.org/sdwiki / https://github.com/questianon/SDwiki <-
+
 !!! info todo (dump):
 	Prune all discords and reddit for hypernets/embeds/dreambooths, possibly setup a clean wiki, models, cio statement, finish adding stuff from https://boards.4channel.org/mlp/thread/39164860/ai-art-general, discord (hypernets, models, TI in order of importance + ease)
 
@@ -2225,4 +2284,4 @@ Where am I tracker: busy, will update in a few hours
 
 Prompt Cheat Sheet Rentry: WIP
 
-author: questianon !!YbTGdICxQOw (malt#6065, u/questianon, https://github.com/questianon), ping or tag if I need to change anything or if you have questions
+author socials: questianon !!YbTGdICxQOw (malt#6065, u/questianon, https://github.com/questianon, https://twitter.com/questianon), ping or tag if I need to change anything or if you have questions
