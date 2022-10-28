@@ -59,6 +59,13 @@
 		4. ```pip -r install requirements.txt```
 
 >10/28
+* Largest Korean hypernetwork/embedding sharing forum post with a ton of hypernetworks/embeddings + images (highly recommended)
+	* https://arca.live/b/hypernetworks/60940948
+	* has an English explanation of some stuff at the top
+		* koreanon requests for good embeddings to be posted in the comments with artist name
+* ~~Rumor on /g/ that AUTOMATIC1111 was conscripted into the russian army~~ False rumor, AUTOMATIC1111 said that he's fine and is just resting from Stable Diffusion and will probably:
+	* work on PRs soon
+	* "make a tab for extensions for list and easy install from URL"
 * Parseq released
 	* parameter sequencer
 	* "Generate videos with tight control and flexible interpolation over many Stable Diffusion parameters (such as seed, scale, prompt weights, denoising strength...), as well as input processing parameter (such as zoom, pan, 3D rotation...)"
@@ -72,6 +79,9 @@
 	* https://www.reddit.com/r/StableDiffusion/comments/yfm8go/im_glad_to_announce_the_release_of_the_stable/
 * AI Pictionary released
 	* https://pictionairy.com/
+* CIO statement from a few days ago
+	* https://www.reddit.com/r/StableDiffusion/comments/y9ga5s/stability_ais_take_on_stable_diffusion_15_and_the/
+	* https://danieljeffries.substack.com/p/why-the-future-of-open-source-ai
 
 >10/27
 * hypernetwork training is currently broken (unsure if fixed now)
@@ -2154,6 +2164,8 @@ https://colab.research.google.com/drive/1706ToQrkIZshRSJSHvZ1RuCiM__YX3Bz?authus
 
 https://sketchfab.com/3d-models/low-poly-beretta-m9-c79ea90735b248e588d5be49809d7b34
 
+installer, not sure if safe: https://github.com/EmpireMediaScience/A1111-Web-UI-Installer
+
 ## Confirmed Drama
 
 10/20 News
@@ -2270,7 +2282,7 @@ Model anon: writing up https://rentry.org/sdmodels + helping out
 Glowie'd anon: first public fed bait
 Ixy anon: Good guide
 mogubro: A lot of hypernets. also cool name
-tbsw: legendary korean disciple
+koreanon: legendary korean disciple
 
 
 ## Misc
