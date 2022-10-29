@@ -22,7 +22,7 @@
 	
 	This is to help aggregate all available resources into one place before the links die. I will still be editing the rentry as I've always done. This just ensures that all missed links/info is added. Contact me at malt#6065 if you're interested
 
-!!! note Changelog: added all hdg and sdg and vt links
+!!! note Changelog: added all hdg and sdg and vt and discord hypenet section links
 
 ### Quicklinks: 
 * News: https://rentry.org/sdupdates#newsfeed
@@ -66,6 +66,12 @@
 * ~~Rumor on /g/ that AUTOMATIC1111 was conscripted into the russian army~~ False rumor, AUTOMATIC1111 said that he's fine and is just resting from Stable Diffusion and will probably:
 	* work on PRs soon
 	* "make a tab for extensions for list and easy install from URL"
+* 
+* Custom poseable doll released
+	* Original video: https://youtu.be/iPsX7z5imVY
+	* Tutorial: https://youtu.be/MClbPwu-75o
+	* Download: https://www.artstation.com/marketplace/p/VOAyv/stable-diffusion-3d-posable-manekin-doll?utm_source=artstation&utm_medium=referral&utm_campaign=homepage&utm_term=marketplace
+* Note for training: You can set a learning rate of "0.1:500, 0.01:1000, 0.001:10000" in textual inversion and it will follow the schedule
 * Parseq released
 	* parameter sequencer
 	* "Generate videos with tight control and flexible interpolation over many Stable Diffusion parameters (such as seed, scale, prompt weights, denoising strength...), as well as input processing parameter (such as zoom, pan, 3D rotation...)"
@@ -469,7 +475,7 @@ UMI AI:
 * Code: https://github.com/Klokinator/UnivAICharGen/
 
 Random Prompts: https://rentry.org/randomprompts
-Python script of the random prompts: https://rentry.org/nsfw-random-prompt-gen
+Python script of generating random NSFW prompts: https://rentry.org/nsfw-random-prompt-gen
 Prompt randomizer: https://github.com/adieyal/sd-dynamic-prompting 
 Prompt generator: https://github.com/h-a-te/prompt_generator
 * apparently UMI uses these?
@@ -603,6 +609,7 @@ Biggest tip: just write what you want. the AI will generally understand and crea
 * "Anime screencap" creates scenes from an anime
 * from anon: to use character (franchise/series/show/etc.), you have to format it as character \\(franchise\\) 
 * the tokenizer struggles to parse underscores, ymmv
+* img2img -> prompt gets you more consistency
 
 **Negative:**
 * NAI's default (remove "nsfw" if you want nsfw outputs): nsfw, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
@@ -639,6 +646,8 @@ Biggest tip: just write what you want. the AI will generally understand and crea
 * https://manikin.app/
 * https://app.justsketch.me/
 * https://webapp.magicposer.com/
+* Daz3d
+* https://www.artstation.com/marketplace/p/VOAyv/stable-diffusion-3d-posable-manekin-doll?utm_source=artstation&utm_medium=referral&utm_campaign=homepage&utm_term=marketplace
 
 **Locations**
 * https://danbooru.donmai.us/wiki_pages/tag_group:locations
@@ -729,7 +738,9 @@ https://litter.catbox.moe/las83s.txt
 * Settings + Minerals: https://pastebin.com/9iznuYvQ
 * Hairstyles: https://pastebin.com/X39Kzxh7
 * Hairstyles 2: https://pastebin.com/bRWu1Xvv
-* C
+* subject filewords: https://pastebin.com/XRFhwXj8
+* subject filewords but less emphasis on filewords: https://pastebin.com/LxZGkzj1
+* subject filewords v3: https://pastebin.com/hL4nzEDW
 
 **Some artists (may or may not work with NAI):**
 * SD 1.5 artists (might lag your pc): https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#
@@ -752,6 +763,8 @@ https://litter.catbox.moe/las83s.txt
 	* individual images: https://mega.nz/file/YPsT1TDJ#XAayj1jYmRSIyzJ-A1pKB8HyxeDib4a4xuo2lxMx7oA
 
 * Huge tested list: https://proximacentaurib.notion.site/e28a4f8d97724f14a784a538b8589e7d?v=42948fd8f45c4d47a0edfc4b78937474
+* artists and themes: https://dict.latentspace.observer/
+* SD 1.5 artist study: https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/edit#gid=2005893444
 
 Anon's list of comparisons:
 * Stable Diffusion v1.5, Waifu Diffusion v1.3, Trinart it4
@@ -1054,7 +1067,11 @@ Rentry: https://rentry.org/berrymix
 magnet:?xt=urn:btih:976D8785EA6C067951E3AE5B9A7FD3A0ED9D3DBE&dn=animefull-final-pruned_0.8-trinart2_step115000_0.2-Weighted_Sum-merged_0.9-trinart_characters_it4_v1_0.1-Weighted_sum-merged.ckpt&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a80%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce
 ```
 
-* Mixing guide: https://rentry.org/lftbl
+* Scarlett's Mix: https://rentry.org/scarlett_mix
+
+* Mega mixing guide: https://rentry.org/lftbl
+
+
 
 ### **Dreambooth Models:**
 Links:
@@ -1107,6 +1124,11 @@ Links:
 * Rebecca (edgerunners, by booru anon, info is in link): https://huggingface.co/demibit/rebecca
 * Kiwi (by booru anon): https://huggingface.co/demibit/kiwi
 * Ranni (Elden Ring): https://huggingface.co/bitspirit3/SD-Ranni-dreambooth-finetune
+* Cloud: https://huggingface.co/jinofcoolnes/cloud/tree/main
+	* https://twitter.com/Rahmeljackson/status/1586037466548551681?s=20&t=F9mU9uOFEDGKYTVl00DzUg
+	* https://www.patreon.com/posts/73899634?pr=true
+* Comics: https://huggingface.co/ogkalu/Comic-Diffusion
+* Modern Disney style (modi, mo-di): https://huggingface.co/nitrosocke/mo-di-diffusion
 
 ### **Embeddings**
 * Text Tutorial: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion
@@ -1190,9 +1212,10 @@ Found on 4chan:
 * 100k steps tenako (mugu77): https://www.mediafire.com/file/1afk5fm4f33uqoa/tenako-mugu77-100000.pt/file
 * erere-26k (fuckass(?)): https://litter.catbox.moe/cxmll4.pt
 * Great Mosu (44k): https://files.catbox.moe/6hca0u.pt
-* no idea what this embedding is: https://files.catbox.moe/2733ce.pt
+* no idea what this embedding is, apparently it's an artist?: https://files.catbox.moe/2733ce.pt
 * Dohna Dohna, Rance remakes (305 images (all VN-style full-body standing character CGs). 12000 steps): https://files.catbox.moe/gv9col.pt
-* Gyokai / Onono Imoko / shunin ("gyokai-zen" v1.0 + dataset): https://mega.nz/file/67AUDQ4K#8n4bzcxGGUgaAVy7wLXvVib0jhVjt2wPS-jsoCxcCus
+	* trained only on dohna dohna's VN sprites
+	* Onono imoko
 * Raita: https://files.catbox.moe/mhrvmk.pt
 * Senri Gan: https://files.catbox.moe/8sqmeh.rar
 	* 2 hypernetworks and 5 TI
@@ -1283,6 +1306,7 @@ Found on 4chan:
 * Takeda, Mogudan Fourchanbal (?, from KR site): https://files.catbox.moe/430rus.pt
 * Mikan (30 tokens, 36 images (before flipping/splitting), 5700steps, 5e-02:2000, 5e-03:4000): https://files.catbox.moe/xwdohx.pt
 	* creator: I've been getting best results with these tags: (orange hair and (hair tubes:1.2), (dog ears and dog tail and (huge ahoge:1.2):1.2)), green eyes
+	* apparently it's not very effective. a hypernetwork is WIP
 * Furry styled embed? (6000, 5.5k most): https://files.catbox.moe/s19ub3.7z
 * Mutsuki (Blue Archive) embedding (10k step,150 image, no clip skip [set the "stop at last layers of clip model" option at 1 to get good results], 0.02:300, 0.01:1000, 0.005:2000, 0.002:3000, 0.0005:4000, 0.0005, vae disabled by renaming): https://files.catbox.moe/6yklfl.pt
 * Reine: https://files.catbox.moe/tv1zf4.pt
@@ -1293,7 +1317,7 @@ Found on 4chan:
 	* kind of failure: fancy recent artworks are ignored due to dataset bias - will train with 2018+ data.
 	* leaning to BIG ASS and BIG TIDDIES.
 * Kiwi (by booru anon): https://huggingface.co/demibit/kiwi
-
+* Labiata (8 vectors/token): https://files.catbox.moe/0kri2d.pt
 
 
 
@@ -1353,7 +1377,7 @@ Found on 4chan:
 	* Training info + hypernetwork: https://files.catbox.moe/4do43z.zip 
 * Test Hypernetwork (350 imgs where half are flipped, danooru tags, 0.00001 learning rate for 3000 steps, 0.000004 until step 7500): https://files.catbox.moe/coux0u.pt
 * Kyokucho (40k steps, good at 10-15k, NAI:WD1.2): https://workupload.com/file/TFRuGpdGZZn
-* Final Ixy: https://mega.nz/folder/yspgEBhQ#GLo7mBc1EH7RK7tQbtC68A
+* Final Ixy (more detail in discord section): https://mega.nz/folder/yspgEBhQ#GLo7mBc1EH7RK7tQbtC68A
 	* Old Ixy (more data, more increments): https://mega.nz/file/z8AyDYSS#zbZFo9YLeJHd8tWcvWiRlYwLz2n4QXTKk04-cKMmlrg
 	* Old Ixy (less increments, no training data): https://mega.nz/file/ixxzkR5T#cxxSNxPF1KmszJDqiP4K4Ou8tbl1SFKL6DdQC58k6zE
 * Grandblue Fantasy character art (836 images, 5e-5:100, 5e-6:1500, 5e-7:10000, 5e-8:20000 learn rate, 20000 steps, 1024x1024): https://files.catbox.moe/2uiyd4.pt
@@ -1366,6 +1390,7 @@ Found on 4chan:
 * mda starou: https://a.pomf.cat/xcygvk.pt
 * Mogudan (12 vectors per token, 221 image dataset, preprocessing: split oversize, flipped mirrors, deepdanbooru auto-tag, 0.00005 learning rate, 62,500 steps): https://mega.nz/file/UtAz1CZK#Y5OSHPkD38untOPSEkNttAVi2tdRLBFEsKVkYCFFaHo
 * Onono Imoko: https://files.catbox.moe/amfy2x.pt
+	* Dataset: https://files.catbox.moe/dkn85w.zip 
 * Etrian Odyssey (training rate 5e-5:100, 5e-6:1500, 5e-7:10000, 5e-8:20000,20k steps, 512 x 512 pics): https://files.catbox.moe/94qm83.7z
 * Jesterwii: https://files.catbox.moe/hlylo4.zip
 * jtveemo (v1): https://mega.nz/folder/ctUXmYzR#_Kscs6m8ccIzYzgbCSupWA
@@ -1460,6 +1485,8 @@ Found on 4chan:
 * KurosugatariAI (2 hypernets, 1 embed, embedding is light at 17 token weight. at 24 or higher creator anon thinks the effect would be better): https://mega.nz/folder/TAggRTYT#fbxf3Ru8PkXz_edIkD2Ttg
 * Amagami (Layer structure 1, 1.5 1.5 1; mish; xaviernormal; No layer normalization; Dropout O (appling only at 2nd layer due to bug); LR 8e-06 fixed; 20k done): https://files.catbox.moe/ucziks.7z
 * Reine (from VTuber dump, might be pickled): https://files.catbox.moe/uf09mp.pt
+* Onono imoko: https://mega.nz/file/67AUDQ4K#8n4bzcxGGUgaAVy7wLXvVib0jhVjt2wPS-jsoCxcCus
+	* Info moved to discord section
 
 Found on Korean Site of Wisdom (WIP):
 * Terada Tera: https://drive.google.com/file/d/1APwInBROTUdyeoW92yHFn_zBh7rY7b7I/view?usp=sharing
@@ -1563,7 +1590,126 @@ Found on Discord:
 	>15k steps trained on nai
 	>use "character name genshin impact" or "genshin impact)" for best results
 	* LINK: https://files.catbox.moe/t4ooj6.pt 
+* Gyokai-ZEN (aliases: Gyokai / Onono Imoko / shunin)  [NSFW / SFW] (For NAI) 
 
+	>Includes training images
+	>Training set: 329 Input images, Various steps included. Main model is 21,000 steps.
+	>Training model: NAI-Full-Pruned.
+	>Recommend Hypernetwork Strength rate: 0.6 to 1.0. Lower strength is good for the overtrained model.
+	>Emphasise the hypernet by using the prompt words "gyokai" or "art by gyokai".
+	>
+	>Note: the prompt words "color halftone" or "halftone" can be good at adding the little patterns in the shading often seen in onono imoko's style.
+	>HOWEVER: This often results in a noise/grain which often can be fixed if you render at a resolution higher than 768x768 (with hi-res fix)
+	>Omit these options from your prompt if the noise is too much in the image. Your outputs will be sharper and cleaner, but unfortunately less in the style.
+	>
+	>gyokai-zen-1.0 is 16k steps at 0.000005, then up to 21k steps at 0.0000005
+	>gyokai-zen-1.0-16000 is a bit less trained (16k steps) and sometimes outputs cleaner at full strength.
+	>gyokai-zen-1.0-overtrain is at 22k steps all at 0.000005. It can sometimes be a bit baked in.
+	* Link: https://mega.nz/file/67AUDQ4K#8n4bzcxGGUgaAVy7wLXvVib0jhVjt2wPS-jsoCxcCus
+* yapo (ヤポ) Art Style [NSFW / SFW] (Work on WD / NAI)
+
+	>Training set: 51 Input images, 8000 Steps, 0.0000005 Learning rate.
+	>Training model: NAI-Full-Prunced 
+	>Start with in style of yapo / yapo to get a good result. 
+	>Recommend Hypernetwork Strength rate: 0.4 to 0.8 
+	>
+	* Preview Link: https://imgur.com/a/r2sOV41
+	* Download Link: https://anonfiles.com/N6B4d4D7y9/yapo_pt 
+* Lycoris recoil chisato
+
+	>Training set: 100 Input images, 21500 Steps, 0.000005 Learning rate.
+	>Training model: NAI-Full-Prunced 
+	>Start with "cr-chisato"
+	>Recommend Hypernetwork Strength rate: 0.4 to 0.8. clip skip : 1 Euler
+	* Link: https://mega.nz/file/wlchDJpB#9nh5rIYtzRIhfLGvYeMrj6AOG-PcEx9JscTp4wXi-_E
+* Liang Xing styled
+
+	>Artstation: https://www.artstation.com/liangxing
+	>20,000 steps at varying learning rates down to 0.000005, 449 training images.  Novel AI base.
+	>Requires that you mention Liang Xing in some form as that was what I used in the training document.  "in the style of Liang Xing" as an example.
+	* Examples: https://cdn.discordapp.com/attachments/1029640494915006504/1031785112246952007/Liang_Zing_D.Va_Outputs.zip
+	* Link: https://cdn.discordapp.com/attachments/1029640494915006504/1031688311804276826/liangxingstyle-20000.pt
+* アーニャ(anya)(SPY×FAMILY) [NSFW / SFW] (Work on WD / NAI)
+
+	>Training set: 46 Input images, 20500 Steps, 0.00000005 Learning rate.
+	>Training model: NAI-Full-Prunced 
+	>Start with Anya to get a good result. 
+	>Recommend Hypernetwork Strength rate: 0.6 to 0.9 
+	>
+	* Preview Link: https://imgur.com/a/ZbmIVRe
+	* Download Link: https://anonfiles.com/ZdKej8D5ya/Anya_pt
+* cp-lucy
+
+	>Training set: 67 Input images, 21500 Steps, 0.000005 Learning rate.
+	>Training model: NAI-Full-Prunced 
+	>Start with "cp-lucy" / clip skip : 1 
+	>Recommend Hypernetwork Strength rate: 0.6 to 0.9
+	* Link: https://mega.nz/file/lltzwaDI#_ZoJktJmCdBQZtYFNuuYnbnySIh5cxlOf9rYT73O2ig
+
+* バッチ (azur bache) (アズールレーン) [NSFW / SFW] (Work on WD / NAI)
+
+	>Training set: 55 Input images, 20050 Steps, 0.00000005 Learning rate.
+	>Training model: NAI-Full-Prunced 
+	>Start with azur-bache to get a good result. 
+	>Recommend Hypernetwork Strength rate: 0.6 to 1.0 
+	* Link: https://anonfiles.com/Q84dw4D1y4/azur-bache_pt
+
+* Ixy (by ixyanon):
+
+	>Hypernetwork trained on ixy's style from 100 handpicked images from them, using split oversized images.
+	>Trained in Nai-full-pruned
+	>recommend using white pupils in the prompt, ixy for a greater effect of their style
+	>Uses: will generally make your output more flat in shading, very good at frilly stuff, and white pupils of course
+	>Grid examples located in the folder.
+	* https://mega.nz/folder/yspgEBhQ#GLo7mBc1EH7RK7tQbtC68A 
+
+* Blue Archives Azusa
+
+	>Training set: 28 Input images, 20000 Steps, 5e-6:12000, 5e-7:30000 Learning rate.
+	>Training model: NAI-Full-Prunced 
+	>Start with ba-azusa to get a good result. 
+	>Recommend Hypernetwork Strength rate: 0.6 to 1.0 clip skip : 1
+	* Link: https://cdn.discordapp.com/attachments/1032726084149583965/1033200762085453874/makotoshinkaiv2.pt
+	* Aesthetic Gradient: https://discord.com/channels/1015751613840883732/1033147620966801609/1033196208124088450
+
+* Makoto Shinkai HN
+
+	>trained on a roughly ~150 images, 1,2,2,1 for 30,000 steps on NAI model, use "art by makotoshinkaiv2" to trigger it (experimental, it might not be that much different from base model but I have noticed that it improved composition when paired with the aesthetic gradient)
+	* Dataset (for the aesthetic gradient and for general hypernetwork training/finetuning of a model if anyone else wants to attempt to get this style down.):
+		* 1: https://cdn.discordapp.com/attachments/1022209206146838599/1033198526714363954/5_Centimeters_Per_Second.7z.001
+		* 2: https://cdn.discordapp.com/attachments/1022209206146838599/1033198659321475184/5_Centimeters_Per_Second.7z.002
+		* 3: https://cdn.discordapp.com/attachments/1022209206146838599/1033198735657803806/5_Centimeters_Per_Second.7z.003
+	* Link: https://cdn.discordapp.com/attachments/1032726084149583965/1033200762085453874/makotoshinkaiv2.pt
+
+* Hypernetwork based on the following prompts:
+	* cervix, urethra, puffy pussy, fat_mons, spread_pussy, gaping_anus, prolapse, gape, gaping
+
+	>This hypernetwork was made by me (IWillRemember) (IWillRemember#1912 on discord) if you have any questions you can find me here on discord!
+	>
+	>This hyper network was trained for 2000 steps at different learning rates on different batches of images (usually 25 images each batch)
+	>
+	>I suggest using an HYPERNETWORK STRENGTH OF 0,5 or maybe up to 0,8 since it's really strong ; it is compatible with almost all anime like models and it performs great even with semi realistic ones.
+	>
+
+	>The examples are made using the Nai model , but it works with ally , and any other anime based model if strength is adjusted acccordingly , also it COULD work with f111 and other models with the right prompts , to get really fat labia majora/minora , and/or gaping
+	>
+	* Link: https://mega.nz/file/pSN3mYoS#Q7e8tJWPSYGxdsyJMwhhtE5Jj8-A5e-sYZHhzbi3QAg
+	* Examples: https://cdn.discordapp.com/attachments/1018623945739616346/1033541564603039845/unknown.png, https://cdn.discordapp.com/attachments/1018623945739616346/1033542053444988938/unknown.png, https://cdn.discordapp.com/attachments/1018623945739616346/1033544232310411284/unknown.png, https://cdn.discordapp.com/attachments/1018623945739616346/1033550933151469688/unknown.png
+
+* (reupload from the 4chan section) Hypernetwork trained on spacezin's art, 13 handpicked images flipped and used oversized crop, data is the rar in the link
+	>by ixyanon
+	>Trained in Nai-full-pruned, using swish activation method with dropout, 5e-6 training rate
+	>recommend using spacezin in the prompt, lesser steps are included for testing and usage if 20k is too much
+	>Uses: booba with covered nipples, sharp eyes and all that stuff you'd expect from him.
+	>Aesthetic gradient embedding included, helps a lot to use, nails the style significantly further if you can find good settings...
+	* Link: https://mega.nz/folder/Os5iBQDY#42xOYeZq08ZG0j8ds4uL2Q
+* Hypernetwork trained on mikozin's art (reupload from 4chan section)
+	>Trained in Nai-full-pruned, using swish activation method with dropout, 5e-6 training rate
+	>placing mikozin in the prompt will make it have a stronger effect
+	>has a number of effects, but mostly gives a very soft, painted style to the output image
+	>Aesthetic gradient embedding included, not necessary but could be neat!
+	>Data it was trained on included in the mega link, if you want something specific from the data it was trained on it'll help looking at the fileword txts
+	* https://mega.nz/folder/a0wxgQrR#OnJ0dK_F6_7WZiWscfb5hg
 
 ### **Polar Resources**
 * Scat (??): https://files.catbox.moe/8hklc5.pt
@@ -1585,7 +1731,7 @@ Datasets:
 * expanded ie_(raarami) dataset: https://litter.catbox.moe/j4mpde.zip
 * Toplessness: https://litter.catbox.moe/mttar5.zip
 * https://gofile.io/d/R74OtT
-
+* Onono imoko (NSFW + SFW, 300 cropped images): https://files.catbox.moe/dkn85w.zip
 
 ## Training
 * Training guide for textual inversion/embedding and hypernetworks: https://pastebin.com/dqHZBpyA
@@ -1642,6 +1788,8 @@ Datasets:
 * Aesthetic Gradients: https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients
 
 * 1 img TI: https://huggingface.co/lambdalabs/sd-image-variations-diffusers
+
+* You can set a learning rate of "0.1:500, 0.01:1000, 0.001:10000" in textual inversion and it will follow the schedule
 
 * Anon's Guide: 
 1. Having good text tags on the images is rather important. This means laboriously going through and adding tags to the BLIP tags and editing the BLIP tags as well, and often manually describing the image. Fortunately my dataset had only like...30 images total, so I was able to knock it out pretty quick, but I can imagine it being completely obnoxious for a 500 image gallery. Although I guess you could argue that strict prompt accuracy becomes less important as you have more training examples. Again, if they would just add an automatic deepdanbooru option alongside the BLIP for preprocessing that would take away 99% of the work.
@@ -2002,6 +2150,7 @@ Current Issues: https://rentry.org/sd-issues
 	* Spreadsheet: https://docs.google.com/spreadsheets/d/1Zlv4UFiciSgmJZncCujuXKHwc4BcxbjbSBg71-SdeNk/edit#gid=0
 	* Basic guide: https://docs.google.com/document/u/0/d/1lF9_5MIhALo7xCxKpQCZNL_jrJdUHYgJ3prET5yC1rI/mobilebasic
 * CSP SD: https://github.com/mika-f/nekodraw
+* Link collection: https://github.com/pomee4/SD-LinkList
 
 **Boorus:**
 * Danbooru: danbooru.donmai.us/
@@ -2062,6 +2211,7 @@ AMD Ubundo 20.04
 * https://gist.github.com/geerlingguy/ff3c3cbcf4416be2c0c1e0f836a8183d
 
 Mac: try using invoke ai https://github.com/invoke-ai
+CPU (might be outdated): https://rentry.org/cputard
 
 Danbooru dump: https://www.gwern.net/Danbooru2021
 
@@ -2165,6 +2315,11 @@ https://colab.research.google.com/drive/1706ToQrkIZshRSJSHvZ1RuCiM__YX3Bz?authus
 https://sketchfab.com/3d-models/low-poly-beretta-m9-c79ea90735b248e588d5be49809d7b34
 
 installer, not sure if safe: https://github.com/EmpireMediaScience/A1111-Web-UI-Installer
+
+AI youtubers/guides:
+* https://www.youtube.com/c/RoyalSkiesLLC
+	* https://www.youtube.com/playlist?list=PLZpDYt0cyiusIUae2YnPZ26HTjC6yuhNU
+* https://www.youtube.com/c/NerdyRodent
 
 ## Confirmed Drama
 
