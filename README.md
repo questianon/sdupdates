@@ -30,7 +30,8 @@
 * Models, Embeddings, and Hypernetworks: https://rentry.org/sdupdates#models-embeddings-and-hypernetworks
 	* Embeddings: https://rentry.org/sdupdates#embeddings
 	* Hypernetworks: https://rentry.org/sdupdates#hypernetworks
-	* Models, embeds, and hypernetworks not from reddit, discord, hdg, or sdg: https://rentry.org/sdupdates#polar-resources
+	* Aesthetic Gradients: https://rentry.org/sdupdates#aesthetic-gradients
+	* Models, embeds, and hypernetworks that might be sus: https://rentry.org/sdupdates#polar-resources
 	* DEAD/MISSING: https://rentry.org/sdupdates#deadmissing
 * Training: https://rentry.org/sdupdates#training
 	* Datasets: https://rentry.org/sdupdates#datasets
@@ -58,6 +59,9 @@
 		3. ```git pull```
 		4. ```pip -r install requirements.txt```
 
+>10/29
+* Hires broken on the latest commit
+
 >10/28
 * Largest Korean hypernetwork/embedding sharing forum post with a ton of hypernetworks/embeddings + images (highly recommended)
 	* https://arca.live/b/hypernetworks/60940948
@@ -66,7 +70,6 @@
 * ~~Rumor on /g/ that AUTOMATIC1111 was conscripted into the russian army~~ False rumor, AUTOMATIC1111 said that he's fine and is just resting from Stable Diffusion and will probably:
 	* work on PRs soon
 	* "make a tab for extensions for list and easy install from URL"
-* 
 * Custom poseable doll released
 	* Original video: https://youtu.be/iPsX7z5imVY
 	* Tutorial: https://youtu.be/MClbPwu-75o
@@ -88,6 +91,16 @@
 * CIO statement from a few days ago
 	* https://www.reddit.com/r/StableDiffusion/comments/y9ga5s/stability_ais_take_on_stable_diffusion_15_and_the/
 	* https://danieljeffries.substack.com/p/why-the-future-of-open-source-ai
+* (old news) Imagic running with Stable Diffusion
+	* twitter: https://twitter.com/Buntworthy/status/1582307817884889088
+	* github: https://github.com/justinpinkney/stable-diffusion
+	* notebook: https://github.com/justinpinkney/stable-diffusion/blob/main/notebooks/imagic.ipynb
+* (old news) government letter to Stability AI: https://eshoo.house.gov/sites/eshoo.house.gov/files/9.20.22LettertoNSCandOSTPonStabilityAI.pdf
+* (old news) Deviant Art CEO supports ai (?)
+	* https://www.deviantart.com/wannabby, check their posts about AI
+* (old news) imagic: img2img but better
+	* paper: https://arxiv.org/pdf/2210.09276.pdf
+	* implementation: https://github.com/justinpinkney/stable-diffusion/blob/main/notebooks/imagic.ipynb
 
 >10/27
 * hypernetwork training is currently broken (unsure if fixed now)
@@ -112,6 +125,7 @@
 * Stable Diffusion plugin for Krita and Photoshop (not much info, so not sure if safe)
 	* https://internationaltd.github.io/defuser/
 	* https://github.com/internationalTD/defuser
+	* old version: https://github.com/internationalTD/sd_frontend
 
 >10/21 - 10/25 (big news bolded, big thanks to asuka-test-imgur-anon-who-also-made-the-speedrun-tutorial for some info)
 * Latest git pull can break SD (windows)
@@ -407,8 +421,10 @@
 Google Docs with a prompt list/ranking/general info for waifu creation: 
 https://docs.google.com/document/d/1Vw-OCUKNJHKZi7chUtjpDEIus112XBVSYHIATKi1q7s/edit?usp=sharing
 Anon's prompt collection: https://mega.nz/folder/VHwF1Yga#sJhxeTuPKODgpN5h1ALTQg
+Prompt collection: https://pastebin.com/GurXf9a4
 GREAT CHINESE TOME OF PROMPTING KNOWLEDGE AND WISDOM 101 GUIDE: https://docs.qq.com/doc/DWHl3am5Zb05QbGVs
 * Backup: https://www105.zippyshare.com/v/lUYn1pXB/file.html
+* translated + download: https://mega.nz/folder/MssgiRoT#enJklumlGk1KDEY_2o-ViA
 
 GREAT CHINESE SCROLLS OF PROMPTING ON 1.5: HEIGHTENED LEVELS OF KNOWLEDGE AND WISDOM 101: https://docs.qq.com/doc/DWGh4QnZBVlJYRkly
 GREAT JAPANESE TOME OF MASTERMINDING ANIME PROMPTS AND IMAGINATIVE AI MACHINATIONS 101 GUIDE https://p1atdev.notion.site/021f27001f37435aacf3c84f2bc093b5?p=f9d8c61c4ed8471a9ca0d701d80f9e28
@@ -434,6 +450,8 @@ Tips: https://github.com/TravelingRobot/NAI_Community_Research/wiki/NAI-Diffusio
 Info dump of tips: https://rentry.org/Learnings
 
 Embedding tester: https://huggingface.co/spaces/sd-concepts-library/stable-diffusion-conceptualizer
+
+Collection of Aesthetic Gradients: https://github.com/vicgalle/stable-diffusion-aesthetic-gradients/tree/main/aesthetic_embeddings
 
 Script for tagging (like in NAI) in AUTOMATIC's webui: https://github.com/DominikDoom/a1111-sd-webui-tagcomplete
 Danbooru Tag Exporter: https://sleazyfork.org/en/scripts/452976-danbooru-tags-select-to-export
@@ -513,6 +531,7 @@ Prompt changing scripts:
 * https://github.com/yownas/seed_travel
 * https://github.com/feffy380/prompt-morph
 * https://github.com/EugeoSynthesisThirtyTwo/prompt-interpolation-script-for-sd-webui
+* https://github.com/some9000/StylePile
 
 Interpolation script (img2img + txt2img mix): https://github.com/DiceOwl/StableDiffusionStuff
 * https://www.reddit.com/r/StableDiffusion/comments/ycgfgo/interpolate_script/
@@ -557,6 +576,7 @@ History: https://github.com/yfszzx/stable-diffusion-webui-images-browser
 Collection + Info: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Extensions
 Deforum (video animation): https://github.com/deforum-art/deforum-for-automatic1111-webui
 Aesthetic Gradients: https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients
+Aesthetic Scorer: https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer
 
 Clip interrogator: https://colab.research.google.com/github/pharmapsychotic/clip-interrogator/blob/main/clip_interrogator.ipynb
 2: https://github.com/pharmapsychotic/clip-interrogator
@@ -741,6 +761,7 @@ https://litter.catbox.moe/las83s.txt
 * subject filewords: https://pastebin.com/XRFhwXj8
 * subject filewords but less emphasis on filewords: https://pastebin.com/LxZGkzj1
 * subject filewords v3: https://pastebin.com/hL4nzEDW
+* Danbooru Poses: https://pastebin.com/RgerA8Ry
 
 **Some artists (may or may not work with NAI):**
 * SD 1.5 artists (might lag your pc): https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#
@@ -1186,7 +1207,7 @@ Found on 4chan:
 * Repo for some: https://git.evulid.cc/wasted-raincoat/Textual-Inversion-Embeds/src/branch/master/simonstalenhag
 * automatic's secret embedding list: https://gitlab.com/16777216c/stable-diffusion-embeddings
 * Niro: https://take-me-to.space/WKRY9IE.pt
-* Kaneko Kazuma: https://litter.catbox.moe/6glsh1.pt
+* Kaneko Kazuma (Kazuma Kaneko): https://litter.catbox.moe/6glsh1.pt
 * Senran Kagura (850 CGs, deepdanbooru tags, 0.005 learning rate, 768x768, 3000 iterations): https://files.catbox.moe/jwiy8u.zip
 * Abmono (14.7k): https://www.mediafire.com/file/id2uh4gkzvavsbc/abmono-14700.pt/file
 * DEAD LINK Deadflow (190k, "bitchass"(?)): https://litter.catbox.moe/03lqr6.pt
@@ -1223,7 +1244,7 @@ Found on 4chan:
 * om_(n2007): https://files.catbox.moe/gntkmf.zip
 	* https://files.catbox.moe/x0aueo.pt
 * Kenkou Cross: https://mega.nz/folder/ZYAx3ITR#pxjhWOEw0IF-hZjNA8SWoQ
-* Rui Komatsuzaki: https://files.catbox.moe/3qh6jb.pt
+* Rui Komatsuzaki (link needs to be updated): 
 * Baffu (~47500 steps): https://files.catbox.moe/l8hrip.pt
 	* Biased toward brown-haired OC girl (Hitoyo)
 * Danganronpa: https://files.catbox.moe/3qh6jb.pt
@@ -1264,7 +1285,6 @@ Found on 4chan:
 	* manually cropped about 150 images, making sure that all of them have a full body shot, a shot from torso and up, and if applicable a closeup on the face
 	* Images not from Danbooru
 	* Best results around 4000 steps
-* kunaboto aesthetic gradient embed (complements the similarly named hypernetwork): https://files.catbox.moe/qrka4m.pt
 * Reine: https://litter.catbox.moe/saav38.zip
 * Embed of a girl anon liked (2500 steps, keyword "jma"): https://files.catbox.moe/1qlhjf.pt 
 * Carpet Crawler: https://anonfiles.com/i3a2o0E5y0/carpetcrawlerv2-12500_pt
@@ -1318,9 +1338,17 @@ Found on 4chan:
 	* leaning to BIG ASS and BIG TIDDIES.
 * Kiwi (by booru anon): https://huggingface.co/demibit/kiwi
 * Labiata (8 vectors/token): https://files.catbox.moe/0kri2d.pt
-
-
-
+* Akari (another, one I missed): https://files.catbox.moe/dghjhh.pt
+* Arona from Blue Archive (I'm pretty sure): https://files.catbox.moe/4cp6rl.pt
+* Emma (arcane, 50 vector embedding trained on ~250 pics for ~13500 steps): https://files.catbox.moe/2cd7s3.pt
+* blade4649 embedding (10k steps, 352 images,16 vectors,learning rate at 0.005): https://files.catbox.moe/5evrpn.pt
+* fechtbuch of Mair: https://files.catbox.moe/vcisig.pt
+* Longsword (mainly for img2img): https://files.catbox.moe/r442ma.pt 
+* Le Malin (listless Lapin skin, 10k steps with 712 inputs): https://files.catbox.moe/3rhbvq.pt
+* minakata hizuru (summertime girl): https://files.catbox.moe/9igh8t.pt
+* Roon (Azur Lane) (NAI model, 10k steps but with 83 different inputs): https://files.catbox.moe/9b77mp.pt
+* arcane-32500: https://files.catbox.moe/nxe9qr.pt
+* mashu003 (https://mashu003.tumblr.com/) (all danbooru images used as dataset): https://files.catbox.moe/kk7v9w.pt
 
 Found on Discord:
 * Nahida v2: https://cdn.discordapp.com/attachments/1019446913268973689/1031321278713446540/nahida_v2.zip
@@ -1445,6 +1473,7 @@ Found on 4chan:
 	* https://files.catbox.moe/dytn06.pt - gozaru
 	* https://files.catbox.moe/69t1im.pt - Sunahara Wataru
 * kunaboto (new swish activation function + dropout using a learning rate of 5e-6:12000, 5e-7:30000): https://files.catbox.moe/lynmxm.pt
+	* aesthetic: https://files.catbox.moe/qrka4m.pt
 * Reine: https://litter.catbox.moe/1yjgjg.pt
 * Om (nk2007): 
 	* 250 images (augmented to 380), learning rate: 5e-5:380,5e-6:10000,5e-7:20000, template: [filewords] 
@@ -1487,6 +1516,14 @@ Found on 4chan:
 * Reine (from VTuber dump, might be pickled): https://files.catbox.moe/uf09mp.pt
 * Onono imoko: https://mega.nz/file/67AUDQ4K#8n4bzcxGGUgaAVy7wLXvVib0jhVjt2wPS-jsoCxcCus
 	* Info moved to discord section
+* Sironora: 
+	* 30k: https://files.catbox.moe/oej0si.pt
+	* 17k: https://files.catbox.moe/kodsvu.pt
+* minakata hizuru (summertime girl): https://files.catbox.moe/gmbnnr.pt
+* a1 (4.5k): https://files.catbox.moe/x6zt6u.pt
+* 焦茶 / cogecha hypernetwork, trained against NAI (DEAD LINK): https://mega.nz/folder/BLtkVIjC#RO6zQaAYCOIii8GnfT92dw
+* 山北東 / northeast_mountain hypernetwork, trained against NAI (DEAD LINK): https://mega.nz/folder/RflGBS7R#88znRpu7YC1J1JYa9N-6_A
+* emoting mokou (cursed): https://mega.nz/folder/oPUTQaoR#yAmxD_yqeGqyIGfOYCR4PQ
 
 Found on Korean Site of Wisdom (WIP):
 * Terada Tera: https://drive.google.com/file/d/1APwInBROTUdyeoW92yHFn_zBh7rY7b7I/view?usp=sharing
@@ -1711,6 +1748,9 @@ Found on Discord:
 	>Data it was trained on included in the mega link, if you want something specific from the data it was trained on it'll help looking at the fileword txts
 	* https://mega.nz/folder/a0wxgQrR#OnJ0dK_F6_7WZiWscfb5hg
 
+### **Aesthetic Gradients**
+Collection of Aesthetic Gradients: https://github.com/vicgalle/stable-diffusion-aesthetic-gradients/tree/main/aesthetic_embeddings
+
 ### **Polar Resources**
 * Scat (??): https://files.catbox.moe/8hklc5.pt
 * Horse (?): https://files.catbox.moe/idm0vf.pt
@@ -1724,8 +1764,10 @@ Embed:
 
 Hypernetworks:
 * HiRyS: https://litter.catbox.moe/rx8uv0.pt
-* Huge collection from KR site: https://mega.nz/folder/wKVAybab#oh42CNeYpnqr2s8IsUFtuQ
+* Huge training from KR site: https://mega.nz/folder/wKVAybab#oh42CNeYpnqr2s8IsUFtuQ
 	* https://arca.live/b/aiart/60758880
+* 焦茶 / cogecha hypernetwork, trained against NAI: https://mega.nz/folder/BLtkVIjC#RO6zQaAYCOIii8GnfT92dw
+* 山北東 / northeast_mountain hypernetwork, trained against NAI: https://mega.nz/folder/RflGBS7R#88znRpu7YC1J1JYa9N-6_A
 
 Datasets:
 * expanded ie_(raarami) dataset: https://litter.catbox.moe/j4mpde.zip
@@ -1865,7 +1907,7 @@ what is a vae?
 
 **I want to run this, but my computer is too bad. Is there any other way?**
 Check out one of these:
-* Free browser SD: https://huggingface.co/spaces/stabilityai/stable-diffusion
+* Free online browser SD: https://huggingface.co/spaces/stabilityai/stable-diffusion
 * https://promptart.labml.ai/playground
 * https://novelai.manana.kr/
 * https://boards.4channel.org/g/thread/89199040
@@ -1886,7 +1928,8 @@ Check out one of these:
 	* Fast and simple interface
 	* Social network features: make & share!
 	* Work in progress every day
-
+* https://www.craiyon.com/
+	* DALL·E mini
 
 **What is difference merging/why is there a way to merge three models?**
 >The first two models are merged using standard interpolation. The third model is for a difference merge. 
@@ -2161,12 +2204,14 @@ Current Issues: https://rentry.org/sd-issues
 * AI art here: https://e-hentai.org/g/2343153/b4ce2a4b0b
 * Easy to setup booru/image gallery by anon, highly recommended: https://github.com/demibit/stable-toolkit
 * Simple: https://www.irfanview.com
+* SFW: https://nastyprompts.com/
 
 **Upscalers:**
 * Big list: https://upscale.wiki/wiki/Model_Database
 * anon recommended this: https://arc.tencent.com/en/ai-demos/imgRestore
 * Anime: https://github.com/bloc97/Anime4K
 * https://github.com/nihui/waifu2x-ncnn-vulkan
+* Some: https://mega.nz/folder/3Jo2AAAa#4CGEwUM0dKu3kkaJa-qUIA
 
 **Batch resize:**
 * https://sourceforge.net/projects/easyimagesizer/
@@ -2216,6 +2261,7 @@ CPU (might be outdated): https://rentry.org/cputard
 Danbooru dump: https://www.gwern.net/Danbooru2021
 
 Outdated training: https://rentry.org/informal-training-guide
+even more outdated: https://rentry.org/dq6vm
 
 Free browser SD: https://huggingface.co/spaces/stabilityai/stable-diffusion
 https://promptart.labml.ai/playground
@@ -2316,10 +2362,14 @@ https://sketchfab.com/3d-models/low-poly-beretta-m9-c79ea90735b248e588d5be49809d
 
 installer, not sure if safe: https://github.com/EmpireMediaScience/A1111-Web-UI-Installer
 
+clip stuff: https://laion-aesthetic.datasette.io/laion-aesthetic-6pls/
+
 AI youtubers/guides:
 * https://www.youtube.com/c/RoyalSkiesLLC
 	* https://www.youtube.com/playlist?list=PLZpDYt0cyiusIUae2YnPZ26HTjC6yuhNU
 * https://www.youtube.com/c/NerdyRodent
+
+Slerp info: https://en.wikipedia.org/wiki/Slerp#Geometric_Slerp
 
 ## Confirmed Drama
 
