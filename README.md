@@ -22,7 +22,7 @@
 	
 	This is to help aggregate all available resources into one place before the links die. I will still be editing the rentry as I've always done. This just ensures that all missed links/info is added. Contact me at malt#6065 if you're interested
 
-!!! note Changelog: added all hdg and sdg and vt and discord hypenet section links
+!!! note Changelog: i think i added all the HNs and embeds i missed
 
 ### Quicklinks: 
 * News: https://rentry.org/sdupdates#newsfeed
@@ -61,6 +61,7 @@
 
 >10/29
 * Hires broken on the latest commit
+* (old news) new hypernetwork training added
 
 >10/28
 * Largest Korean hypernetwork/embedding sharing forum post with a ton of hypernetworks/embeddings + images (highly recommended)
@@ -422,9 +423,12 @@ Google Docs with a prompt list/ranking/general info for waifu creation:
 https://docs.google.com/document/d/1Vw-OCUKNJHKZi7chUtjpDEIus112XBVSYHIATKi1q7s/edit?usp=sharing
 Anon's prompt collection: https://mega.nz/folder/VHwF1Yga#sJhxeTuPKODgpN5h1ALTQg
 Prompt collection: https://pastebin.com/GurXf9a4
+Japanese prompt collection: http://yaraon-blog.com/archives/225884
 GREAT CHINESE TOME OF PROMPTING KNOWLEDGE AND WISDOM 101 GUIDE: https://docs.qq.com/doc/DWHl3am5Zb05QbGVs
+* Site: https://aiguidebook.top/
 * Backup: https://www105.zippyshare.com/v/lUYn1pXB/file.html
 * translated + download: https://mega.nz/folder/MssgiRoT#enJklumlGk1KDEY_2o-ViA
+* another backup? https://note.com/sa1p/n/ne71c846326ac
 
 GREAT CHINESE SCROLLS OF PROMPTING ON 1.5: HEIGHTENED LEVELS OF KNOWLEDGE AND WISDOM 101: https://docs.qq.com/doc/DWGh4QnZBVlJYRkly
 GREAT JAPANESE TOME OF MASTERMINDING ANIME PROMPTS AND IMAGINATIVE AI MACHINATIONS 101 GUIDE https://p1atdev.notion.site/021f27001f37435aacf3c84f2bc093b5?p=f9d8c61c4ed8471a9ca0d701d80f9e28
@@ -436,6 +440,7 @@ Database of prompts: https://publicprompts.art/
 Krea AI prompt database: https://github.com/krea-ai/open-prompts
 Prompt search: https://www.ptsearch.info/home/
 Another search: http://novelai.io/
+4chan prompt search: https://desuarchive.org/g/search/text/masterpiece%20high%20quality/
 
 Japanese prompt generator: https://magic-generator.herokuapp.com/
 Build your prompt (chinese): https://tags.novelai.dev/
@@ -448,10 +453,24 @@ Korean wiki 2: https://arca.live/b/aiart/60466181
 Tip Dump: https://rentry.org/robs-novel-ai-tips
 Tips: https://github.com/TravelingRobot/NAI_Community_Research/wiki/NAI-Diffusion:-Various-Tips-&-Tricks
 Info dump of tips: https://rentry.org/Learnings
+Outdated guide: https://rentry.co/8vaaa
+
+SD 1.4 vs 1.5: https://postimg.cc/gallery/mhvWsnx
+
+Deep Danbooru: https://github.com/KichangKim/DeepDanbooru
+Demo: https://huggingface.co/spaces/hysts/DeepDanbooru
 
 Embedding tester: https://huggingface.co/spaces/sd-concepts-library/stable-diffusion-conceptualizer
 
 Collection of Aesthetic Gradients: https://github.com/vicgalle/stable-diffusion-aesthetic-gradients/tree/main/aesthetic_embeddings
+
+Seed hunting: 
+* By nai speedrun asuka imgur anon:
+	>made something that might help the highres seed/prompt hunters out there. this mimics the "0x0" firstpass calculation and suggests lowres dimensions based on target higheres size. it also shows data about firstpass cropping as well. it's a single file so you can download and use offline. picrel.
+	>https://preyx.github.io/sd-scale-calc/
+	>view code and download from
+	>https://files.catbox.moe/8ml5et.html
+	>for example you can run "firstpass" lowres batches for seed/prompt hunting, then use them in firstpass size to preserve composition when making highres. 
 
 Script for tagging (like in NAI) in AUTOMATIC's webui: https://github.com/DominikDoom/a1111-sd-webui-tagcomplete
 Danbooru Tag Exporter: https://sleazyfork.org/en/scripts/452976-danbooru-tags-select-to-export
@@ -500,6 +519,7 @@ Prompt generator: https://github.com/h-a-te/prompt_generator
 
 http://dalle2-prompt-generator.s3-website-us-west-2.amazonaws.com/
 https://randomwordgenerator.com/
+funny prompt gen that surprisingly works: https://www.grc.com/passwords.htm
 
 Ideas for when you have none: https://pentoprint.org/first-line-generator/
 
@@ -517,6 +537,7 @@ https://github.com/blueturtleai/gimp-stable-diffusion
 Blender:
 https://github.com/carson-katri/dream-textures
 https://github.com/benrugg/AI-Render
+
 
 Script collection: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts
 Prompt matrix tutorial: https://gigazine.net/gsc_news/en/20220909-automatic1111-stable-diffusion-webui-prompt-matrix/
@@ -1150,6 +1171,12 @@ Links:
 	* https://www.patreon.com/posts/73899634?pr=true
 * Comics: https://huggingface.co/ogkalu/Comic-Diffusion
 * Modern Disney style (modi, mo-di): https://huggingface.co/nitrosocke/mo-di-diffusion
+* Silco: https://huggingface.co/jinofcoolnes/silcomodel/tree/main
+	* https://www.patreon.com/posts/silco-model-73477832?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator
+	* https://twitter.com/Rahmeljackson/status/1582515393381662720?s=20&t=K1tuYmsK4Xo9RBLcqooD-A
+* Lara: https://huggingface.co/jinofcoolnes/Oglaramodel/tree/main
+	* https://twitter.com/Rahmeljackson/status/1583297706457329664?s=20&t=91YzDUX-fE1dOXehK5Oe-g
+	* https://www.patreon.com/posts/73578982
 
 ### **Embeddings**
 * Text Tutorial: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion
@@ -1244,7 +1271,6 @@ Found on 4chan:
 * om_(n2007): https://files.catbox.moe/gntkmf.zip
 	* https://files.catbox.moe/x0aueo.pt
 * Kenkou Cross: https://mega.nz/folder/ZYAx3ITR#pxjhWOEw0IF-hZjNA8SWoQ
-* Rui Komatsuzaki (link needs to be updated): 
 * Baffu (~47500 steps): https://files.catbox.moe/l8hrip.pt
 	* Biased toward brown-haired OC girl (Hitoyo)
 * Danganronpa: https://files.catbox.moe/3qh6jb.pt
@@ -1349,6 +1375,7 @@ Found on 4chan:
 * Roon (Azur Lane) (NAI model, 10k steps but with 83 different inputs): https://files.catbox.moe/9b77mp.pt
 * arcane-32500: https://files.catbox.moe/nxe9qr.pt
 * mashu003 (https://mashu003.tumblr.com/) (all danbooru images used as dataset): https://files.catbox.moe/kk7v9w.pt
+* Takimoto Hifumi (18500 steps, prompt tag is takimoto_hifumi. Trained on NAI + Trinart2 80/20, but works fine using just NAI): https://files.catbox.moe/wiucep.png
 
 Found on Discord:
 * Nahida v2: https://cdn.discordapp.com/attachments/1019446913268973689/1031321278713446540/nahida_v2.zip
@@ -1371,6 +1398,7 @@ Collection: https://mega.nz/folder/fVhXRLCK#4vRO9xVuME0FGg3N56joMA
 **Korean megacollection:**
 * https://arca.live/b/hypernetworks?category=%EA%B3%B5%EC%9C%A0
 * (includes mega compilation of artists): https://arca.live/b/hypernetworks/60940948?category=%EA%B3%B5%EC%9C%A0&p=1
+* Chinese telegram (dead link): https://t.me/+H4EGgSS-WH8wYzBl
 
  Big collection: https://drive.google.com/drive/folders/1-itk7b_UTrxVdWJcp6D0h4ak6kFDKsce?usp=sharing
 * https://drive.google.com/drive/folders/1-itk7b_UTrxVdWJcp6D0h4ak6kFDKsce?usp=sharing
@@ -1524,6 +1552,12 @@ Found on 4chan:
 * 焦茶 / cogecha hypernetwork, trained against NAI (DEAD LINK): https://mega.nz/folder/BLtkVIjC#RO6zQaAYCOIii8GnfT92dw
 * 山北東 / northeast_mountain hypernetwork, trained against NAI (DEAD LINK): https://mega.nz/folder/RflGBS7R#88znRpu7YC1J1JYa9N-6_A
 * emoting mokou (cursed): https://mega.nz/folder/oPUTQaoR#yAmxD_yqeGqyIGfOYCR4PQ
+* Nanachi and Puuzaki Puuna: https://mega.nz/folder/PfhRUbST#6oXUaNjk_B6nhJzjc_M0UA
+* Cutesexyrobutts and gram: https://files.catbox.moe/silh2p.7z
+* Scott: https://files.catbox.moe/qgqbs7.7z
+* zunart (NAI, steps from 20000 to 50000): https://mega.nz/file/T9RmlbCQ#_JPkZqY5f0aaNxVc8MnU3WQHW4bv_yCWzJqOwL8Uz1U
+* HBRv3D aka Heaven Burns Red (yuugen) retrained on new dataset of 142 mixed images: https://files.catbox.moe/urjkbm.7z
+	* Setting was 1,2,1 relu ,Learning rate: 5e-6:12000, 5e-7:30000
 
 Found on Korean Site of Wisdom (WIP):
 * Terada Tera: https://drive.google.com/file/d/1APwInBROTUdyeoW92yHFn_zBh7rY7b7I/view?usp=sharing
@@ -1754,6 +1788,7 @@ Collection of Aesthetic Gradients: https://github.com/vicgalle/stable-diffusion-
 ### **Polar Resources**
 * Scat (??): https://files.catbox.moe/8hklc5.pt
 * Horse (?): https://files.catbox.moe/idm0vf.pt
+* MLP nsfw f16 f32 (might be pickled): https://drive.google.com/drive/folders/14JyQE36wYABH-0TSV_HBEsBJ3r8ZITrS?usp=sharing
 
 ### DEAD/MISSING
 If you have one of these, please get it to me
@@ -1763,6 +1798,7 @@ Embed:
 * Sakimichan: https://mega.nz/file/eE8QDKrI#y7kdyWgPUjI4ZkY8PSq89F28eU_Vz_0EgTbG6yAowH8
 
 Hypernetworks:
+* Chinese telegram (dead link): https://t.me/+H4EGgSS-WH8wYzBl
 * HiRyS: https://litter.catbox.moe/rx8uv0.pt
 * Huge training from KR site: https://mega.nz/folder/wKVAybab#oh42CNeYpnqr2s8IsUFtuQ
 	* https://arca.live/b/aiart/60758880
@@ -1801,6 +1837,7 @@ Datasets:
 * Dreambooth: https://rentry.org/simple-db-elinas
 * Dreambooth (Reddit): https://www.reddit.com/r/StableDiffusion/comments/ybxv7h/good_dreambooth_formula/
 * Hypernetworks: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670
+* Runpod guide: https://rentry.org/runpod4dumdums
 
 * Embed vector, clip skip, and vae comparison: https://desuarchive.org/g/thread/89392239#89392432
 
@@ -1930,6 +1967,8 @@ Check out one of these:
 	* Work in progress every day
 * https://www.craiyon.com/
 	* DALL·E mini
+* http://aiart.house
+* HF demo list: https://pastebin.com/9X1BPf8S
 
 **What is difference merging/why is there a way to merge three models?**
 >The first two models are merged using standard interpolation. The third model is for a difference merge. 
@@ -2194,6 +2233,7 @@ Current Issues: https://rentry.org/sd-issues
 	* Basic guide: https://docs.google.com/document/u/0/d/1lF9_5MIhALo7xCxKpQCZNL_jrJdUHYgJ3prET5yC1rI/mobilebasic
 * CSP SD: https://github.com/mika-f/nekodraw
 * Link collection: https://github.com/pomee4/SD-LinkList
+* debug guide: https://rentry.org/pf98i
 
 **Boorus:**
 * Danbooru: danbooru.donmai.us/
@@ -2205,6 +2245,8 @@ Current Issues: https://rentry.org/sd-issues
 * Easy to setup booru/image gallery by anon, highly recommended: https://github.com/demibit/stable-toolkit
 * Simple: https://www.irfanview.com
 * SFW: https://nastyprompts.com/
+* Infinibooru: https://infinibooru.moe/posts
+* Betabooru: https://betabooru.donmai.us
 
 **Upscalers:**
 * Big list: https://upscale.wiki/wiki/Model_Database
@@ -2212,6 +2254,10 @@ Current Issues: https://rentry.org/sd-issues
 * Anime: https://github.com/bloc97/Anime4K
 * https://github.com/nihui/waifu2x-ncnn-vulkan
 * Some: https://mega.nz/folder/3Jo2AAAa#4CGEwUM0dKu3kkaJa-qUIA
+* online: https://replicate.com/xinntao/realesrgan
+* anime: https://files.catbox.moe/c6ogfl.pth
+* ultrasharp: https://mega.nz/folder/qZRBmaIY#nIG8KyWFcGNTuMX_XNbJ_g
+	* https://drive.google.com/file/d/1lELx_WiA25_S8rYINm_DyMNpFOhfZAzt/view
 
 **Batch resize:**
 * https://sourceforge.net/projects/easyimagesizer/
@@ -2301,7 +2347,7 @@ Celebs: https://docs.google.com/spreadsheets/u/0/d/1IqXkYDXux97aU8Y5kqqBrBvCn3CL
 Multi GPU: https://hastebin.com/raw/labumiyiqo
 
 Barebones SD: https://github.com/AmericanPresidentJimmyCarter/stable-diffusion
-Deep Danbooru: https://github.com/KichangKim/DeepDanbooru
+
 
 Explorer thing: http://cybernetnews.com/find-replace-multiple-files
 Messy room: https://twitter.com/8co28/status/1583434494354210817
@@ -2323,8 +2369,6 @@ https://www.neural-reader.com/tts/start
 https://webmshare.com/play/O95LA
 
 Image manipulation and stuff: https://imagemagick.org/index.php
-
-Can't load this, apparently its where the great chinese tome was moved to?: https://aiguidebook.top/
 
 Cool "is my image ai?" detection test: https://ai.azunyan1111.com/
 
@@ -2370,6 +2414,37 @@ AI youtubers/guides:
 * https://www.youtube.com/c/NerdyRodent
 
 Slerp info: https://en.wikipedia.org/wiki/Slerp#Geometric_Slerp
+
+AI Music: https://github.com/openai/jukebox/
+
+booru thing: https://github.com/VivaLaPanda/infinibooru
+
+KR thing: https://novelai.manana.kr/
+
+some hosting thing: https://zguide.zeromq.org/
+old thing: https://www.thispersondoesnotexist.com/
+
+
+
+Clipart Studio plugin for lighting: https://nyatabe.booth.pm/items/4196349
+
+AI showcase: AI 3D animation
+https://twitter.com/TREE_Industries/status/1578071996033863681
+https://www.youtube.com/watch?v=-TS2iLhYP28
+https://www.youtube.com/watch?v=8oIQy6fxfCA
+AI 3D models
+https://www.youtube.com/watch?v=5j8I7V6blqM
+https://www.youtube.com/watch?v=uM5NPodZZ1U
+AI voice acting
+https://www.youtube.com/watch?v=oQx4SyM_iH4
+https://www.youtube.com/watch?v=ria6qt7UUN4
+AI music
+https://www.youtube.com/watch?v=QN0DDD7B3oU
+AI coding
+https://www.youtube.com/watch?v=pdSfgRYy8Ao&t=878s
+https://www.youtube.com/watch?v=_9aN1-0T8hg
+AI video
+https://www.youtube.com/watch?v=PHRg241NjJA
 
 ## Confirmed Drama
 
