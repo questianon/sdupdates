@@ -10,7 +10,7 @@
 
 !!! note Changelog: added a lot of stuff, made a proof of concept embedding search thing: https://github.com/questianon/sdupdates/wiki (tell me if that's a style people like/what should be changed, backup thing: https://gitlab.com/questianon/sdupdates/-/wikis/Embeddings), added general info, added the GREAT CHINESE ENCYCLOPEDIA OF PROMPTING ON GENERAL KNOWLEDGE: SPOOKY EDITION, https://mega.nz/folder/sSACBAgC#kNiPVzRwnuzs8JClovS1Tw was updated
 
-!!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates
+!!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates. There is also a WIP embedding directory here: https://github.com/questianon/sdupdates/wiki
 
 !!! note If you know how to do stuff in markdown and html/can make a webpage easily/want to contribute, contact me 
 
@@ -50,6 +50,9 @@
 		4. ```pip -r install requirements.txt```
 
 >10/30
+* Stable diffusion "deepfake" (good with few keyframes)
+	* https://twitter.com/NicolaiNightVi1/status/1586434671663013889
+	* https://github.com/nicolai256/Few-Shot-Patch-Based-Training
 * Git pull for some updates
 	* Hypernetwork training fixed (continuing training off old checkpoints for HNs and embeds is still broken)
 		* https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3771
@@ -60,8 +63,8 @@
 * New Windows based Dreambooth solution with Adam8bit support (should run on 8gb and 12gb cards): https://github.com/bmaltais/kohya_ss
 	* instructions: https://note.com/kohya_ss/n/n61c581aca19b
 	* new, so not sure if pickled
-* Img2music: https://huggingface.co/spaces/fffiloni/img-to-music
-* GUI helper for manual tagging and cropping released: https://github.com/arenatemp/sd-tagging-helper
+* Img2music (fun): https://huggingface.co/spaces/fffiloni/img-to-music
+* **GUI helper for manual tagging and cropping released: https://github.com/arenatemp/sd-tagging-helper**
 * Dreambooth PR: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3995
 * Video diffusion models: https://video-diffusion.github.io/
 * Dataset shuffling should be fixed now so that it actually shuffles.
@@ -631,7 +634,7 @@ Aesthetic Gradients: https://github.com/AUTOMATIC1111/stable-diffusion-webui-aes
 Aesthetic Scorer: https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer
 Autocomplete Tags: https://github.com/DominikDoom/a1111-sd-webui-tagcomplete
 Prompt Randomizer: https://github.com/adieyal/sd-dynamic-prompting
-
+Wildcards: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wildcards/
 
 Clip interrogator: https://colab.research.google.com/github/pharmapsychotic/clip-interrogator/blob/main/clip_interrogator.ipynb
 2: https://github.com/pharmapsychotic/clip-interrogator
@@ -723,6 +726,16 @@ Biggest tip: just write what you want. the AI will generally understand and crea
 * https://webapp.magicposer.com/
 * Daz3d
 * https://www.artstation.com/marketplace/p/VOAyv/stable-diffusion-3d-posable-manekin-doll?utm_source=artstation&utm_medium=referral&utm_campaign=homepage&utm_term=marketplace
+* faces and heads: http://www.relativitybook.com/CoolStuff/facebank.html
+
+	>download FaceGen Modeller demo (or """purchase"" full version >/ptg/. the demo is still full featured with a shoopably manageable watermark):
+	>
+	>https://facegen.com/modeller_demo.htm
+	>
+	>install it, load the .fg files from the first link into the app, or make your own, the app does this easily with 1 or 2 photos.
+	>fuck around with the expression/camera angle/lighthing.
+	>printscreen or use the app's built-in render if you want custom resolution (File > Image > Custom > Save).
+	>use it as a base for img2img outpaint/inpaint.
 
 **Locations**
 * https://danbooru.donmai.us/wiki_pages/tag_group:locations
@@ -818,6 +831,9 @@ https://litter.catbox.moe/las83s.txt
 * subject filewords v3: https://pastebin.com/hL4nzEDW
 * Danbooru Poses: https://pastebin.com/RgerA8Ry
 * Character training text template: https://files.catbox.moe/wbat5x.txt
+* Outfits: https://pastebin.com/Z9aHVpEy
+
+Wildcard extension: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wildcards/
 
 **Some artists (may or may not work with NAI):**
 * SD 1.5 artists (might lag your pc): https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#
@@ -883,6 +899,12 @@ https://www.reddit.com/r/StableDiffusion/comments/yaziws/how_to_get_more_variety
 
 **Photoshop Workflow Example**
 https://www.reddit.com/r/StableDiffusion/comments/wyduk1/show_rstablediffusion_integrating_sd_in_photoshop/
+
+**Tips to find a good img**
+>anon: like i mentioned before, if using a non-ancestral sampler such as euler that trends to converge on the same image after a bunch of steps, you can roll seeds with 20 or less steps and very small resolution, then stop when you find a good seed and generate again with higher quality. saves scads of time when trying to make some really complicated 125 token prompt
+>
+>so get a good image first with 512 rerolls
+>use the same seed but now with highres enabled
 
 **Anon's workflow:**
 Artist list: https://rentry.org/anime_and_titties
@@ -1191,6 +1213,13 @@ magnet:?xt=urn:btih:976D8785EA6C067951E3AE5B9A7FD3A0ED9D3DBE&dn=animefull-final-
 * Older files you need uploaded by anon (which means it might be pickled): https://codeload.github.com/AUTOMATIC1111/stable-diffusion-webui/zip/f7c787eb7c295c27439f4fbdf78c26b8389560be
 
 
+* NAI + hypernetworks (uploaded by UMI AI dev, I didn't audit the files myself for changes/pickles): 
+	* DL 1: https://anonfiles.com/U5Acl7F0y2/Novel_AI_Hypernetworks_zip
+	* DL 2: https://pixeldrain.com/u/FMJ4TQbM
+	* https://cdn.discordapp.com/attachments/1034551880220672181/1036386279597822082/unknown.png
+	* https://cdn.discordapp.com/attachments/1034551880220672181/1036386279207731262/unknown.png
+	* https://cdn.discordapp.com/attachments/1034551880220672181/1036386278813474857/unknown.png
+
 * Scarlett's Mix (good at cute witches): https://rentry.org/scarlett_mix
 
 * Mega mixing guide (has a different berry mix): https://rentry.org/lftbl
@@ -1270,6 +1299,7 @@ Links:
 	* Trained on 3498 images and around 250K steps
 		* porn, sex acts of all sorts: anal sex, anilingus, ass, ass fingering, ball sucking, blowjob, cumshot, cunnilingus, dick, dildo, double penetration, exposed pussy, female masturbation, fingering, full nelson, handjob, large ass, large tits, lesbian kissing, massive ass, massive tits, o-face, sixty-nine, spread pussy, tentacle sex (try also oral/anal tentacle sex and tentacle dp), tit fucking, tit sucking, underboob, vaginal sex, long tongue, tits
 	* Example grid from training (single shot batch): https://cdn.discordapp.com/attachments/1010982959525929010/1035236689850941440/samples_gs-995960_e-000046_b000000.png
+* disney 2d animation style: https://huggingface.co/nitrosocke/classic-anim-diffusion
 
 ### **Embeddings**
 !!! info If an embedding is >80mb, I mislabeled it and it's a hypernetwork
@@ -1650,7 +1680,6 @@ Found on 4chan:
 * 焦茶 / cogecha hypernetwork, trained against NAI (DEAD LINK): https://mega.nz/folder/BLtkVIjC#RO6zQaAYCOIii8GnfT92dw
 * 山北東 / northeast_mountain hypernetwork, trained against NAI (DEAD LINK): https://mega.nz/folder/RflGBS7R#88znRpu7YC1J1JYa9N-6_A
 * emoting mokou (cursed): https://mega.nz/folder/oPUTQaoR#yAmxD_yqeGqyIGfOYCR4PQ
-* Nanachi and Puuzaki Puuna: https://mega.nz/folder/PfhRUbST#6oXUaNjk_B6nhJzjc_M0UA
 * Cutesexyrobutts and gram: https://files.catbox.moe/silh2p.7z
 * Scott: https://files.catbox.moe/qgqbs7.7z
 * zunart (NAI, steps from 20000 to 50000): https://mega.nz/file/T9RmlbCQ#_JPkZqY5f0aaNxVc8MnU3WQHW4bv_yCWzJqOwL8Uz1U
@@ -1663,6 +1692,8 @@ Found on 4chan:
 	* Alkemanubis: Alkemanubis is with elu activation function and normalisation, Alkemanubis4 is with swish and dropout, Alkemanubis5 is with linear and dropout. All have 1, 2, 4, 2, 1 layer structure.
 	* dataset and more fullres preview grid are inside too.
 * HKSW (wrong eye color because of dataset): https://files.catbox.moe/dykyab.pt
+* Nanachi (retrained, 4700 steps, sketches are good, VAE turned off): https://mega.nz/folder/PfhRUbST#6oXUaNjk_B6nhJzjc_M0UA
+	* Nanachi and Puuzaki Puuna (VAE was turned on during training): https://mega.nz/folder/PfhRUbST#6oXUaNjk_B6nhJzjc_M0UA
 
 Found on Korean Site of Wisdom (WIP):
 * Terada Tera: https://drive.google.com/file/d/1APwInBROTUdyeoW92yHFn_zBh7rY7b7I/view?usp=sharing
@@ -1965,7 +1996,7 @@ Datasets:
 * Colab 3: https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
 * Colab 4 (fast): https://github.com/TheLastBen/fast-stable-diffusion
 
-* GUI helper for manual tagging and cropping: https://github.com/arenatemp/sd-tagging-helper
+* **GUI helper for manual tagging and cropping: https://github.com/arenatemp/sd-tagging-helper**
 
 * Embed vector, clip skip, and vae comparison: https://desuarchive.org/g/thread/89392239#89392432
 
@@ -2116,6 +2147,9 @@ Check out one of these:
 	* DALL·E mini
 * http://aiart.house
 * HF demo list: https://pastebin.com/9X1BPf8S
+
+**How do I get more of a strong effect on my embedding?**
+>(might be outdated info) Embeddings take your image and find tokens from the current model that match the image, and when you use the embedding, it called on those specific tokens. So, it really depends on what embedding you're trying to create (how close it is to the default model, how pronounced the imgs are, etc). Plus, you can always add more emphasis for more of an effect
 
 **How does the increasing prompt token limit work?**
 >With the token counter for each word, let's say you have the prompt:
@@ -2669,6 +2703,10 @@ something: http://blog.dlprimitives.org/
 
 some unpickle info: https://www.reddit.com/r/sdforall/comments/y5axt7/with_lots_of_models_appearing_due_merging_and/
 
+colab; https://colab.research.google.com/drive/1jUwJ0owjigpG-9m6AI_wEStwimisUE17?pli=1#scrollTo=Ucr5_i21xSjv
+
+webm from imgs: https://ffmpeg.party/webm-from-image-sequence/
+
 ## Confirmed Drama
 
 10/20 News
@@ -2784,7 +2822,7 @@ Asuka Test Imgur anon: easy to follow guides, helping out the rentry
 Model anon: writing up https://rentry.org/sdmodels + helping out
 Glowie'd anon: first public fed bait
 Ixy anon: Good guide
-mogubro: A lot of hypernets. also cool name
+mogubro: A lot of hypernets. also cool name, very nice 
 koreanon: legendary korean disciple
 
 
