@@ -6,25 +6,13 @@
 
 	2. Monitor your GPU temps and increase cooling and/or undervolt them if you need to. There have been claims of GPU issues due to high temps.
 
-	3. Be careful using --share in webui's if you have not updated. Bad actors can have access to your system.
-
 !!! Links are dying. If you happen to have a file listed in https://rentry.org/sdupdates#deadmissing or that's not on this list, please get it to me.
+
+!!! note Changelog: added a lot of stuff, made a proof of concept embedding search thing: https://github.com/questianon/sdupdates/wiki
 
 !!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates
 
-	Given the large scope of this rentry, I'm looking for volunteers who can:
-	* Read Korean to easily put info into the KR sections
-	* Read Chinese to easily put info into the CN sections
-	* Read [language] to put info into the [language] sections
-	* Help parse 4chan/reddit/discord for general info
-	* Help find embeds/models/hypernets on discord/4chan/reddit/wherever else
-	* Help format this rentry so it's easier to browse
-	
-	This is to help aggregate all available resources into one place before the links die. I will still be editing the rentry as I've always done. This just ensures that all missed links/info is added. Contact me at malt#6065 if you're interested
-
-!!! note Changelog: added a lot of stuff
-
-If I'm missing anything, please get it to me
+!!! note If you know how to do stuff in markdown and html/can make a webpage easily/want to contribute, contact me 
 
 ### Quicklinks: 
 * News: https://rentry.org/sdupdates#newsfeed
@@ -1211,6 +1199,8 @@ Links:
 	* hand captioning 782 screencap, 44,000 steps, training set for the regularization images
 
 ### **Embeddings**
+!!! info If an embedding is >80mb, I mislabeled it and it's a hypernetwork
+
 * Text Tutorial: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion
 	* Make sure to use pictures of your subject in varied areas, it gives more for the AI to work with
 * Tutorial 2: https://rentry.org/textard
@@ -1418,6 +1408,8 @@ Found on Reddit:
 * look at the 2nd and 3rd images: https://www.reddit.com/gallery/y4tmzo
 
 ### **Hypernetworks:**
+!!! info If a hypernetwork is <80mb, I mislabeled it and it's an embedding
+
 * anon: "Requires extremely low learning rate, 0.000005 or 0.0000005"
 **Good Rentry: https://rentry.co/naihypernetworks**
 Hypernetwork Dump: https://gitgud.io/necoma/sd-database
