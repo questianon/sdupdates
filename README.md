@@ -54,6 +54,15 @@
 	* Hypernetwork training fixed (continuing training off old checkpoints for HNs and embeds is still broken)
 		* https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3771
 		* https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670#discussioncomment-3980624
+* shrink the size of ckpts and grow them back to their original size: https://github.com/bmaltais/dehydrate
+	* not sure if safe, but it seems to work
+* Blender camera animations to deforum released: https://github.com/micwalk/blender-export-diffusion
+* New Windows based Dreambooth solution with Adam8bit support (should run on 8gb and 12gb cards): https://github.com/bmaltais/kohya_ss
+	* instructions: https://note.com/kohya_ss/n/n61c581aca19b
+	* new, so not sure if pickled
+* Img2music: https://huggingface.co/spaces/fffiloni/img-to-music
+* GUI helper for manual tagging and cropping released: https://github.com/arenatemp/sd-tagging-helper
+* Dreambooth PR: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3995
 * Video diffusion models: https://video-diffusion.github.io/
 * Dataset shuffling should be fixed now so that it actually shuffles.
 	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3803
@@ -616,6 +625,7 @@ Deforum (video animation): https://github.com/deforum-art/deforum-for-automatic1
 * Math: https://docs.google.com/document/d/1pfW1PwbDIuW0cv-dnuyYj1UzPqe23BlSLTJsqazffXM/edit
 	* https://www.desmos.com/calculator/njw3uckjlo
 	* https://www.desmos.com/calculator/5nizby2zbn
+* Blender camera animations to deforum: https://github.com/micwalk/blender-export-diffusion
 
 Aesthetic Gradients: https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients
 Aesthetic Scorer: https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer
@@ -1254,6 +1264,12 @@ Links:
 * DCAU (Batman_the_animated_series): https://huggingface.co/IShallRiseAgain/DCAU/blob/main/DCAUV1.ckpt
 	* https://www.reddit.com/r/StableDiffusion/comments/yf2qz0/initial_version_of_dcau_model_im_making/
 	* hand captioning 782 screencap, 44,000 steps, training set for the regularization images
+* NSFW: https://megaupload.nz/N7m7S4E7yf/Magnum_Opus_alpha_22500_steps_mini_version_ckpt
+	* Dataset: https://megaupload.nz/wep7S7E0y3/magnum_opus_training_data_set_zip
+* Hardcore: https://pixeldrain.com/u/Stk98vyH
+	* Trained on 3498 images and around 250K steps
+		* porn, sex acts of all sorts: anal sex, anilingus, ass, ass fingering, ball sucking, blowjob, cumshot, cunnilingus, dick, dildo, double penetration, exposed pussy, female masturbation, fingering, full nelson, handjob, large ass, large tits, lesbian kissing, massive ass, massive tits, o-face, sixty-nine, spread pussy, tentacle sex (try also oral/anal tentacle sex and tentacle dp), tit fucking, tit sucking, underboob, vaginal sex, long tongue, tits
+	* Example grid from training (single shot batch): https://cdn.discordapp.com/attachments/1010982959525929010/1035236689850941440/samples_gs-995960_e-000046_b000000.png
 
 ### **Embeddings**
 !!! info If an embedding is >80mb, I mislabeled it and it's a hypernetwork
@@ -1870,7 +1886,17 @@ Found on Discord:
 	>has a number of effects, but mostly gives a very soft, painted style to the output image
 	>Aesthetic gradient embedding included, not necessary but could be neat!
 	>Data it was trained on included in the mega link, if you want something specific from the data it was trained on it'll help looking at the fileword txts
-	* https://mega.nz/folder/a0wxgQrR#OnJ0dK_F6_7WZiWscfb5hg
+	* Download: https://mega.nz/folder/a0wxgQrR#OnJ0dK_F6_7WZiWscfb5hg
+
+* yabuki_kentarou(1,1_relu_5e-5)-8750
+	>Source image count: 75 (white-bg, hi-res, and hi-qual)
+	>Dataset image count: 154 (split, 512x512)
+	>Dataset stress test: excellent (LR 0.0005, 2000 steps)
+	>Model: NAI [925997e9]
+	>Layer: 1, 1
+	>Learning rate: 0.00005
+	>Steps: 8750
+	* Download: https://anonfiles.com/H7RajcFby6/yabuki_kentarou_1_1_relu_5e-5_-8750_pt 
 
 ### **Aesthetic Gradients**
 Collection of Aesthetic Gradients: https://github.com/vicgalle/stable-diffusion-aesthetic-gradients/tree/main/aesthetic_embeddings
@@ -1931,10 +1957,15 @@ Datasets:
 * Small guide written on hypernetwork activation functions.: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670#discussioncomment-3999660
 * Dataset tag manager that can also load loss.: https://github.com/starik222/BooruDatasetTagManager
 * Tips on hypernetwork layer structure: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670#discussioncomment-4010316
+* Prompt template + info: https://github.com/victorchall/EveryDream-trainer
 
 * Site where you can train (I think): https://www.astria.ai/
 * Colab: https://colab.research.google.com/github/huggingface/notebooks/blob/main/diffusers/sd_textual_inversion_training.ipynb
 * Colab 2: https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb
+* Colab 3: https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
+* Colab 4 (fast): https://github.com/TheLastBen/fast-stable-diffusion
+
+* GUI helper for manual tagging and cropping: https://github.com/arenatemp/sd-tagging-helper
 
 * Embed vector, clip skip, and vae comparison: https://desuarchive.org/g/thread/89392239#89392432
 
@@ -1966,6 +1997,20 @@ Datasets:
 * 1 img TI: https://huggingface.co/lambdalabs/sd-image-variations-diffusers
 
 * You can set a learning rate of "0.1:500, 0.01:1000, 0.001:10000" in textual inversion and it will follow the schedule
+
+* Tip: combining natural language sentences and tags can create a better training
+
+* Anon's best: 
+>Creation:
+>1,2,1
+>Normalized Layers
+>Dropout Enabled
+>Swish
+>XavierNormal (Not sure yet on this one. Normal or XavierUniform might be better)
+
+Training:
+>Rate: 5e-5:1000, 5e-6:5000, 5e-7:20000, 5e-8:100000
+>Max Steps: 100,000
 
 * Anon's Guide: 
 1. Having good text tags on the images is rather important. This means laboriously going through and adding tags to the BLIP tags and editing the BLIP tags as well, and often manually describing the image. Fortunately my dataset had only like...30 images total, so I was able to knock it out pretty quick, but I can imagine it being completely obnoxious for a 500 image gallery. Although I guess you could argue that strict prompt accuracy becomes less important as you have more training examples. Again, if they would just add an automatic deepdanbooru option alongside the BLIP for preprocessing that would take away 99% of the work.
@@ -2621,6 +2666,8 @@ https://www.lesswrong.com/posts/vJFdjigzmcXMhNTsx/simulators
 https://arxiv.org/abs/2110.13746
 
 something: http://blog.dlprimitives.org/
+
+some unpickle info: https://www.reddit.com/r/sdforall/comments/y5axt7/with_lots_of_models_appearing_due_merging_and/
 
 ## Confirmed Drama
 
