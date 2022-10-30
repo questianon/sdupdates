@@ -8,7 +8,7 @@
 
 !!! Links are dying. If you happen to have a file listed in https://rentry.org/sdupdates#deadmissing or that's not on this list, please get it to me.
 
-!!! note Changelog: added a lot of stuff, made a proof of concept embedding search thing: https://github.com/questianon/sdupdates/wiki
+!!! note Changelog: added a lot of stuff, made a proof of concept embedding search thing: https://github.com/questianon/sdupdates/wiki (tell me if that's a style people like/what should be changed, backup thing: https://gitlab.com/questianon/sdupdates/-/wikis/Embeddings), added general info, added the GREAT CHINESE ENCYCLOPEDIA OF PROMPTING ON GENERAL KNOWLEDGE: SPOOKY EDITION, https://mega.nz/folder/sSACBAgC#kNiPVzRwnuzs8JClovS1Tw was updated
 
 !!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates
 
@@ -48,6 +48,16 @@
 			a. if this doesn't work, run ```python -m venv venv``` beforehand
 		3. ```git pull```
 		4. ```pip -r install requirements.txt```
+
+>10/30
+* Git pull for some updates
+	* Hypernetwork training fixed (continuing training off old checkpoints for HNs and embeds is still broken)
+		* https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3771
+		* https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670#discussioncomment-3980624
+* Video diffusion models: https://video-diffusion.github.io/
+* Dataset shuffling should be fixed now so that it actually shuffles.
+	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3803
+
 
 >10/29
 * SD multiplayer: https://huggingface.co/spaces/huggingface-projects/stable-diffusion-multiplayer
@@ -428,6 +438,7 @@ GREAT CHINESE TOME OF PROMPTING KNOWLEDGE AND WISDOM 101 GUIDE: https://docs.qq.
 * another backup? https://note.com/sa1p/n/ne71c846326ac
 
 GREAT CHINESE SCROLLS OF PROMPTING ON 1.5: HEIGHTENED LEVELS OF KNOWLEDGE AND WISDOM 101: https://docs.qq.com/doc/DWGh4QnZBVlJYRkly
+GREAT CHINESE ENCYCLOPEDIA OF PROMPTING ON GENERAL KNOWLEDGE: SPOOKY EDITION: https://docs.qq.com/doc/DWEpNdERNbnBRZWNL
 GREAT JAPANESE TOME OF MASTERMINDING ANIME PROMPTS AND IMAGINATIVE AI MACHINATIONS 101 GUIDE https://p1atdev.notion.site/021f27001f37435aacf3c84f2bc093b5?p=f9d8c61c4ed8471a9ca0d701d80f9e28
 * author: https://twitter.com/p1atdev_art/
 Japenese wiki: https://seesaawiki.jp/nai_ch/d/
@@ -608,6 +619,9 @@ Deforum (video animation): https://github.com/deforum-art/deforum-for-automatic1
 
 Aesthetic Gradients: https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients
 Aesthetic Scorer: https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer
+Autocomplete Tags: https://github.com/DominikDoom/a1111-sd-webui-tagcomplete
+Prompt Randomizer: https://github.com/adieyal/sd-dynamic-prompting
+
 
 Clip interrogator: https://colab.research.google.com/github/pharmapsychotic/clip-interrogator/blob/main/clip_interrogator.ipynb
 2: https://github.com/pharmapsychotic/clip-interrogator
@@ -1116,6 +1130,10 @@ Rentry: https://rentry.org/berrymix
 >At the top left of the web page click the "Stable Diffusion Checkpoint" drop down and select the Berry's Mix.ckpt (or whatever you named it) it should have the hash "[c7d3154b]"
 
 * Berry + Novelai VAE (Might be malicious): https://mega.nz/folder/8HUikarD#epAOm3l2hltC_s_oiSC9dg
+* Another berry + vae: https://anonfiles.com/Rdq7j7F0ye/Berry_zip
+	* https://pastebin.com/h4gY7tGB
+
+* 
 
 * Dump of ckpt merges, might be pickled, uploader anon says to download at your own risk, could also be a fed bait or something: https://droptext.cc/bfxwb
 
@@ -1123,6 +1141,45 @@ Rentry: https://rentry.org/berrymix
 ``` python 
 magnet:?xt=urn:btih:976D8785EA6C067951E3AE5B9A7FD3A0ED9D3DBE&dn=animefull-final-pruned_0.8-trinart2_step115000_0.2-Weighted_Sum-merged_0.9-trinart_characters_it4_v1_0.1-Weighted_sum-merged.ckpt&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a80%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce
 ```
+
+**Fruit Salad Mix (might not be worth it to make)**
+>Fruit Salad Guide
+>
+>Recipe for the "Fruit Salad" checkpoint:
+>Make sure you have all the models needed, Novel Ai, Stable Diffusion 1.5, Trinart-11500, Zeipher F111, r34_e4, Gape_60 and Yiffy.
+>Open the Checkpoint Merger tab in the web ui
+>Set the Primary Model (A) to Novel Ai
+>Set the Secondary Model (B) to Yiffy e18
+>Set the Tertiary Model (C) to Stable Diffusion 1.4
+>Enter in a name that you will recognize
+>Set the Multiplier (M) slider to the left, at "0.1698765"
+>Select "Add Difference"
+>Click "Run" and wait for the process to complete
+>Now set the Primary Model (A) to the new checkpoint you just made (Close the cmd and restart the webui, then refresh the web page if you have issues with the new checkpoint not being an option in the drop down)
+>Set the Secondary Model (B) to r34_e4
+>Set the Tertiary Model (C) to Zeipher F111 (I've tested it, it changes EVERYTHING)
+>Set Multiplier (M) to "0.56565656"
+>Select "Weighted Sum"
+>Click "Run" and wait for the process to complete
+>Restart the Web Ui and reload the page just to be safe
+>Now download a previous version of WebUI, which still contains the "Inverse Sigmoid" option for checkpoint merger.
+>Now set the Primary Model (A) to the new checkpoint you just made
+>Set the Secondary Model (B) to Trinart-11500
+>Set Multiplier (M) to "0.768932"
+>Select "Inverse Sigmoid"(this is kind of like Sigmoid but inverted)
+>Click "Run" and wait for the process to complete
+>Restart the Web Ui and reload the page just to be safe
+>Now set the Primary Model (A) to the new checkpoint you just made.
+>Set the Secondary Model (B) to SD 1.5
+>Set the Tertiary Model (C) to Gape_60
+>Set the name of the final mix to something you will remember, like "Fruit's Salad" ;)
+>Set Multiplier (M) to "1"
+>Select "Weighted Sum"
+>Click "Run" and wait for the process to complete
+>Restart the Web Ui and reload the page just to be safe
+>At the top left of the web page click the "Stable Diffusion Checkpoint" drop down and select the Fruit's Salad.ckpt (or whatever you named it) 
+* Older files you need uploaded by anon (which means it might be pickled): https://codeload.github.com/AUTOMATIC1111/stable-diffusion-webui/zip/f7c787eb7c295c27439f4fbdf78c26b8389560be
+
 
 * Scarlett's Mix (good at cute witches): https://rentry.org/scarlett_mix
 
@@ -1872,8 +1929,11 @@ Datasets:
 * Runpod guide: https://rentry.org/runpod4dumdums
 * Small guide written on hypernetwork activation functions.: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670#discussioncomment-3999660
 * Dataset tag manager that can also load loss.: https://github.com/starik222/BooruDatasetTagManager
+* Tips on hypernetwork layer structure: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670#discussioncomment-4010316
 
 * Site where you can train (I think): https://www.astria.ai/
+* Colab: https://colab.research.google.com/github/huggingface/notebooks/blob/main/diffusers/sd_textual_inversion_training.ipynb
+* Colab 2: https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb
 
 * Embed vector, clip skip, and vae comparison: https://desuarchive.org/g/thread/89392239#89392432
 
@@ -1941,6 +2001,7 @@ You want the ai to find things that are consistent thematics in your image. If y
 * Reine: https://files.catbox.moe/zv6n6q.zip
 * Power: https://files.catbox.moe/wcpcbu.7z
 * Baffu: https://files.catbox.moe/ejh5sg.7z
+* tatsuki fujimoto: https://litter.catbox.moe/k09588.zip
 
 ## Common questions (CTRL/CMD + F):
 
@@ -1964,6 +2025,7 @@ what is a vae?
 >Refer to https://rentry.org/nai-speedrun (has the "Asuka test")
 >Easy guide: https://rentry.org/3okso
 >Standard guide: https://rentry.org/voldy
+>Paperspace: https://rentry.org/865dy
 
 >AMD Guide: https://rentry.org/sdamd
 >* After setting stuff up using this guide, refer back to https://rentry.org/nai-speedrun for settings
@@ -2008,6 +2070,19 @@ Check out one of these:
 	* DALL·E mini
 * http://aiart.house
 * HF demo list: https://pastebin.com/9X1BPf8S
+
+**How does the increasing prompt token limit work?**
+>With the token counter for each word, let's say you have the prompt:
+>
+>girl (1), blue (2),..., apple (74), banana (75), orange (76), kiwi (77)
+>
+>The prompt would split after banana because banana consists of 1 token and the weights would reset to start from strong again. So it's basically like
+>
+>girl (1), blue (2),..., apple (74), banana (75) AND orange (1), kiwi (2)
+
+**What is a vae?**
+>Check out https://en.wikipedia.org/wiki/Variational_autoencoder
+>TLDR: a filter that changes output
 
 **What is dreambooth?**
 * Read this for info: https://dreambooth.github.io/
@@ -2289,6 +2364,7 @@ Current Issues: https://rentry.org/sd-issues
 * SFW: https://nastyprompts.com/
 * Infinibooru: https://infinibooru.moe/posts
 * Betabooru: https://betabooru.donmai.us
+* Japanese pixiv for ai art: https://www.chichi-pui.com/
 
 **Upscalers:**
 * Big list: https://upscale.wiki/wiki/Model_Database
@@ -2300,6 +2376,9 @@ Current Issues: https://rentry.org/sd-issues
 * anime: https://files.catbox.moe/c6ogfl.pth
 * ultrasharp: https://mega.nz/folder/qZRBmaIY#nIG8KyWFcGNTuMX_XNbJ_g
 	* https://drive.google.com/file/d/1lELx_WiA25_S8rYINm_DyMNpFOhfZAzt/view
+
+**Face restoration**
+* GFPGAN: https://github.com/TencentARC/GFPGAN
 
 **Batch resize:**
 * https://sourceforge.net/projects/easyimagesizer/
@@ -2492,6 +2571,55 @@ Dance diffusion:
 https://github.com/pollinations/dance-diffusion
 
 fun way to find out if you were used for training: https://haveibeentrained.com/
+
+Cool showcase by anons:
+This one is simple but very pretty, shows you how incredibly simple but powerful this technology is.
+https://twitter.com/tori29umai/status/1586367798988587014 
+
+This one is a fuller demonstration, converting an older music video into a hand-drawn style, just compare the facial expressions of the old and new versions, especially starting from 2:50
+https://www.bilibili.com/video/BV14D4y1r7NJ/
+
+This one is a test of style-transfer, using the famous artist Kurehito Misaki's textual inversion (illustrator of Saekano)
+https://www.bilibili.com/video/BV1D14y1j7KL/
+
+This one fuses Genshin and K-ON together
+https://www.bilibili.com/video/BV1JR4y1Q73a/
+
+The is the latest tech demo, rendering multi characters, and complex actions
+https://www.bilibili.com/video/BV1B14y1575G
+
+twitter anons:
+https://twitter.com/PorchedArt
+https://twitter.com/FEDERALOFFICER
+https://twitter.com/Elf_Anon
+https://twitter.com/ElfBreasts
+https://twitter.com/BluMeino
+https://twitter.com/Lisandra_brave
+https://twitter.com/nadanainone
+https://twitter.com/Rahmeljackson
+https://twitter.com/dproompter
+https://twitter.com/Kw0337
+https://twitter.com/AICoomer
+https://twitter.com/mommyartfactory
+https://twitter.com/ai_sneed
+https://twitter.com/YoucefN30829772
+https://twitter.com/KLaknatullah
+https://twitter.com/spee321
+https://twitter.com/EyeAI_
+https://twitter.com/S37030315
+https://twitter.com/ElfieAi
+https://twitter.com/Headstacker
+https://twitter.com/RaincoatWasted
+https://twitter.com/RatmanScott
+https://twitter.com/Merkurial_Mika
+https://twitter.com/epitaphtoadog
+https://twitter.com/lillyaiart
+
+collection of papers to learn about this research from its inception: https://github.com/prodramp/DeepWorks/tree/main/12-Research-Papers
+https://www.lesswrong.com/posts/vJFdjigzmcXMhNTsx/simulators
+https://arxiv.org/abs/2110.13746
+
+something: http://blog.dlprimitives.org/
 
 ## Confirmed Drama
 
