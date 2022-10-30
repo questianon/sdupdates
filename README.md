@@ -22,7 +22,9 @@
 	
 	This is to help aggregate all available resources into one place before the links die. I will still be editing the rentry as I've always done. This just ensures that all missed links/info is added. Contact me at malt#6065 if you're interested
 
-!!! note Changelog: i think i added all the HNs and embeds i missed
+!!! note Changelog: added a lot of stuff
+
+If I'm missing anything, please get it to me
 
 ### Quicklinks: 
 * News: https://rentry.org/sdupdates#newsfeed
@@ -60,7 +62,14 @@
 		4. ```pip -r install requirements.txt```
 
 >10/29
+* SD multiplayer: https://huggingface.co/spaces/huggingface-projects/stable-diffusion-multiplayer
+	* kind of like r/place
+* Big inpainting updated released (composition stays the same but style changes)
+	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3669
+* Unreal engine 5 plugin released
+	* https://github.com/albertotrunk/ue-stable-diffusion
 * Hires broken on the latest commit
+	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/3888
 * (old news) new hypernetwork training added
 
 >10/28
@@ -422,7 +431,7 @@
 Google Docs with a prompt list/ranking/general info for waifu creation: 
 https://docs.google.com/document/d/1Vw-OCUKNJHKZi7chUtjpDEIus112XBVSYHIATKi1q7s/edit?usp=sharing
 Anon's prompt collection: https://mega.nz/folder/VHwF1Yga#sJhxeTuPKODgpN5h1ALTQg
-Prompt collection: https://pastebin.com/GurXf9a4
+Tag effects on img: https://pastebin.com/GurXf9a4
 Japanese prompt collection: http://yaraon-blog.com/archives/225884
 GREAT CHINESE TOME OF PROMPTING KNOWLEDGE AND WISDOM 101 GUIDE: https://docs.qq.com/doc/DWHl3am5Zb05QbGVs
 * Site: https://aiguidebook.top/
@@ -433,6 +442,7 @@ GREAT CHINESE TOME OF PROMPTING KNOWLEDGE AND WISDOM 101 GUIDE: https://docs.qq.
 GREAT CHINESE SCROLLS OF PROMPTING ON 1.5: HEIGHTENED LEVELS OF KNOWLEDGE AND WISDOM 101: https://docs.qq.com/doc/DWGh4QnZBVlJYRkly
 GREAT JAPANESE TOME OF MASTERMINDING ANIME PROMPTS AND IMAGINATIVE AI MACHINATIONS 101 GUIDE https://p1atdev.notion.site/021f27001f37435aacf3c84f2bc093b5?p=f9d8c61c4ed8471a9ca0d701d80f9e28
 * author: https://twitter.com/p1atdev_art/
+Japenese wiki: https://seesaawiki.jp/nai_ch/d/
 
 Database of prompts: https://publicprompts.art/
 * Discord: https://discord.com/invite/jvQJFFFx26
@@ -450,12 +460,15 @@ Japanese wiki: https://seesaawiki.jp/nai_ch/
 Korean wiki: https://arca.live/b/aiart/60392904
 Korean wiki 2: https://arca.live/b/aiart/60466181
 
+NAI to webui translator (not 100% accurate): https://seesaawiki.jp/nai_ch/d/%a5%d7%a5%ed%a5%f3%a5%d7%a5%c8%ca%d1%b4%b9
+
 Tip Dump: https://rentry.org/robs-novel-ai-tips
 Tips: https://github.com/TravelingRobot/NAI_Community_Research/wiki/NAI-Diffusion:-Various-Tips-&-Tricks
 Info dump of tips: https://rentry.org/Learnings
 Outdated guide: https://rentry.co/8vaaa
 
 SD 1.4 vs 1.5: https://postimg.cc/gallery/mhvWsnx
+Model merge comparisons: https://files.catbox.moe/rcxqsi.png
 
 Deep Danbooru: https://github.com/KichangKim/DeepDanbooru
 Demo: https://huggingface.co/spaces/hysts/DeepDanbooru
@@ -525,6 +538,9 @@ Ideas for when you have none: https://pentoprint.org/first-line-generator/
 
 I didn't check the safety of these plugins, but they're open source, so you can check them yourself
 Photoshop/Krita plugin (free): https://internationaltd.github.io/defuser/ (kinda new and currently only 2 stars on github)
+* https://github.com/internationalTD/defuser
+
+Photoshop: https://github.com/Invary/IvyPhotoshopDiffusion
 Photoshop plugin (paid, not open source): https://www.flyingdog.de/sd/
 Krita plugins (free): 
 * https://github.com/sddebz/stable-diffusion-krita-plugin (listed in the OP, outdated? dead?)
@@ -558,6 +574,8 @@ Interpolation script (img2img + txt2img mix): https://github.com/DiceOwl/StableD
 * https://www.reddit.com/r/StableDiffusion/comments/ycgfgo/interpolate_script/
 
 * img2tiles script: https://github.com/arcanite24/img2tiles
+
+Script for outpainting: https://github.com/TKoestlerx/sdexperiments
 
 Giffusion tutorial:
 ``` python 
@@ -596,6 +614,10 @@ Artist inspiration: https://github.com/yfszzx/stable-diffusion-webui-inspiration
 History: https://github.com/yfszzx/stable-diffusion-webui-images-browser 
 Collection + Info: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Extensions
 Deforum (video animation): https://github.com/deforum-art/deforum-for-automatic1111-webui
+* Math: https://docs.google.com/document/d/1pfW1PwbDIuW0cv-dnuyYj1UzPqe23BlSLTJsqazffXM/edit
+	* https://www.desmos.com/calculator/njw3uckjlo
+	* https://www.desmos.com/calculator/5nizby2zbn
+
 Aesthetic Gradients: https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients
 Aesthetic Scorer: https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer
 
@@ -783,6 +805,7 @@ https://litter.catbox.moe/las83s.txt
 * subject filewords but less emphasis on filewords: https://pastebin.com/LxZGkzj1
 * subject filewords v3: https://pastebin.com/hL4nzEDW
 * Danbooru Poses: https://pastebin.com/RgerA8Ry
+* Character training text template: https://files.catbox.moe/wbat5x.txt
 
 **Some artists (may or may not work with NAI):**
 * SD 1.5 artists (might lag your pc): https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#
@@ -807,6 +830,8 @@ https://litter.catbox.moe/las83s.txt
 * Huge tested list: https://proximacentaurib.notion.site/e28a4f8d97724f14a784a538b8589e7d?v=42948fd8f45c4d47a0edfc4b78937474
 * artists and themes: https://dict.latentspace.observer/
 * SD 1.5 artist study: https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/edit#gid=2005893444
+* Artist comparisons for NAI: https://www.reddit.com/r/NovelAi/comments/y879x1/i_made_an_experiment_with_different_artists_here/
+	* https://preview.redd.it/llok0ydfhsu91.jpg?width=640&crop=smart&auto=webp&s=e0ae2e38f9b97d10604a5c72e8c111cb184068e6
 
 Anon's list of comparisons:
 * Stable Diffusion v1.5, Waifu Diffusion v1.3, Trinart it4
@@ -884,6 +909,8 @@ the picture's setting
 ### **Models (WIP)**
 **Organized list: https://rentry.org/sdmodels**
 **RISKY (MAJOR PICKLE WARNING) BUT A LOT OF MODELS HERE: https://bt4g.org/search/.ckpt/1**
+**Collection: https://docs.google.com/spreadsheets/d/1fzsjGDlmbbPEnJWY9V2q5a99ySrK1Rj37sk7YJz8fCc/edit#gid=0**
+**Organized list: https://cyberes.github.io/stable-diffusion-models/**
 
 **Groups (add more later):**
 * Waifu Diffusion (https://huggingface.co/hakurei/waifu-diffusion-v1-4)
@@ -1100,7 +1127,7 @@ Rentry: https://rentry.org/berrymix
 >Restart the Web Ui and reload the page just to be safe
 >At the top left of the web page click the "Stable Diffusion Checkpoint" drop down and select the Berry's Mix.ckpt (or whatever you named it) it should have the hash "[c7d3154b]"
 
-* Might be malicious: https://mega.nz/folder/8HUikarD#epAOm3l2hltC_s_oiSC9dg
+* Berry + Novelai VAE (Might be malicious): https://mega.nz/folder/8HUikarD#epAOm3l2hltC_s_oiSC9dg
 
 * Dump of ckpt merges, might be pickled, uploader anon says to download at your own risk, could also be a fed bait or something: https://droptext.cc/bfxwb
 
@@ -1109,9 +1136,9 @@ Rentry: https://rentry.org/berrymix
 magnet:?xt=urn:btih:976D8785EA6C067951E3AE5B9A7FD3A0ED9D3DBE&dn=animefull-final-pruned_0.8-trinart2_step115000_0.2-Weighted_Sum-merged_0.9-trinart_characters_it4_v1_0.1-Weighted_sum-merged.ckpt&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a80%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce
 ```
 
-* Scarlett's Mix: https://rentry.org/scarlett_mix
+* Scarlett's Mix (good at cute witches): https://rentry.org/scarlett_mix
 
-* Mega mixing guide: https://rentry.org/lftbl
+* Mega mixing guide (has a different berry mix): https://rentry.org/lftbl
 
 
 
@@ -1127,6 +1154,7 @@ Links:
 * https://rentry.org/sdmodels
 * Big collection: https://publicprompts.art/
 * Big collection of sex models (Might be a large pickle, so be careful): https://rentry.org/kwai
+* Collection: https://cyberes.github.io/stable-diffusion-dreambooth-library/
 
 * Nami: https://mega.nz/file/VlQk0IzC#8MEhKER_IjoS8zj8POFDm3ZVLHddNG5woOcGdz4bNLc
 * https://huggingface.co/IShallRiseAgain/StudioGhibli/tree/main
@@ -1155,7 +1183,7 @@ Links:
 * Cyberware: https://huggingface.co/Eppinette/Cyberware/tree/main
 * taffy (keyword: champi): https://drive.google.com/file/d/1ZKBf63fV1Zm5_-a0bZzYsvwhnO16N6j6/view?usp=sharing
 	* https://arca.live/b/hypernetworks/60931350?category=%EA%B3%B5%EC%9C%A0&p=2
-* Disney: https://huggingface.co/nitrosocke/modern-disney-diffusion/
+* Disney (3d?): https://huggingface.co/nitrosocke/modern-disney-diffusion/
 * El Risitas (KEK guy): https://huggingface.co/Fictiverse/ElRisitas
 * Cyberpunk Anime Diffusion: https://huggingface.co/DGSpitzer/Cyberpunk-Anime-Diffusion
 * Kurzgesagt (called with "kurzgesagt! style"): https://drive.google.com/file/d/1-LRNSU-msR7W1HgjWf8g1UhgD_NfQjJ4/view?usp=sharing
@@ -1177,6 +1205,10 @@ Links:
 * Lara: https://huggingface.co/jinofcoolnes/Oglaramodel/tree/main
 	* https://twitter.com/Rahmeljackson/status/1583297706457329664?s=20&t=91YzDUX-fE1dOXehK5Oe-g
 	* https://www.patreon.com/posts/73578982
+* theofficialpit bimbo (26 pics for 2600 steps, Use "thepit bimbo" in prompt for more effect): https://mega.nz/file/wSdigRxJ#WrF8cw85SDebO8EK35gIjYIl7HYAz6WqOxcA-pWJ_X8
+* DCAU (Batman_the_animated_series): https://huggingface.co/IShallRiseAgain/DCAU/blob/main/DCAUV1.ckpt
+	* https://www.reddit.com/r/StableDiffusion/comments/yf2qz0/initial_version_of_dcau_model_im_making/
+	* hand captioning 782 screencap, 44,000 steps, training set for the regularization images
 
 ### **Embeddings**
 * Text Tutorial: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion
@@ -1190,8 +1222,9 @@ Links:
 * Collection 3: https://cyberes.github.io/stable-diffusion-textual-inversion-models/
 * **Korean megacollection:**
 	* https://arca.live/b/hypernetworks?category=%EA%B3%B5%EC%9C%A0
-	* (includes mega compilation of artists): https://arca.live/b/hypernetworks/60940948?category=%EA%B3%B5%EC%9C%A0&p=1
-	* Large collection of stuff from korean megacollection: https://mega.nz/folder/sSACBAgC#kNiPVzRwnuzs8JClovS1Tw
+	* (includes mega compilation of artists): https://arca.live/b/hypernetworks/60940948
+	* Original: https://arca.live/b/hypernetworks/60930993
+	* **Large collection of stuff from korean megacollection: https://mega.nz/folder/sSACBAgC#kNiPVzRwnuzs8JClovS1Tw**
 * Large Vtuber collection dump (not sure if pickled, even linker anon said to be careful, but a big list anyway): https://rentry.org/EmbedList
 * Waifu Diffusion collection: https://gitlab.com/cattoroboto/waifu-diffusion-embeds
 
@@ -1293,9 +1326,6 @@ Found on 4chan:
 	* 70k (last training): https://litter.catbox.moe/gndvee.pt
 	* 20k (last stable loss trend): https://litter.catbox.moe/i7nh3x.pt
 	* 60k (lowest loss rate state in trending graph): https://litter.catbox.moe/8wot9a.pt
-* TATATA: https://mega.nz/folder/zYph3LgT#oP3QYKmwqurwc9ievrl9dQ
-	* Contains dataset, hypernetworks for steps 10000-19000 with a 1000 steps step, as well as full res sfw and nsfw comparisons.
-	* It was created before layer structure option, so it parameters are 1, 2, 1 layer structure, linear activation function.
 * Kunaboto (195 images. 16 vectors per token, default learning rate of 0.005): https://files.catbox.moe/uk964z.pt
 * Erika (Shadowverse): https://files.catbox.moe/y9cgr0.pt
 * Luna (Shadowverse): https://files.catbox.moe/zwq5jz.pt
@@ -1376,6 +1406,9 @@ Found on 4chan:
 * arcane-32500: https://files.catbox.moe/nxe9qr.pt
 * mashu003 (https://mashu003.tumblr.com/) (all danbooru images used as dataset): https://files.catbox.moe/kk7v9w.pt
 * Takimoto Hifumi (18500 steps, prompt tag is takimoto_hifumi. Trained on NAI + Trinart2 80/20, but works fine using just NAI): https://files.catbox.moe/wiucep.png
+* momosuzu nene: https://mega.nz/folder/s8UXSJoZ#2Beh1O4aroLaRbjx2YuAPg
+* Harada Takehito (disgaea artist) (78k steps with 150 images): https://files.catbox.moe/e2iatm.pt
+* Mda (1700 images and trained for 20k): https://files.catbox.moe/tz37dj.pt
 
 Found on Discord:
 * Nahida v2: https://cdn.discordapp.com/attachments/1019446913268973689/1031321278713446540/nahida_v2.zip
@@ -1558,6 +1591,13 @@ Found on 4chan:
 * zunart (NAI, steps from 20000 to 50000): https://mega.nz/file/T9RmlbCQ#_JPkZqY5f0aaNxVc8MnU3WQHW4bv_yCWzJqOwL8Uz1U
 * HBRv3D aka Heaven Burns Red (yuugen) retrained on new dataset of 142 mixed images: https://files.catbox.moe/urjkbm.7z
 	* Setting was 1,2,1 relu ,Learning rate: 5e-6:12000, 5e-7:30000
+* momosuzu nene: https://mega.nz/folder/s8UXSJoZ#2Beh1O4aroLaRbjx2YuAPg
+* TATATA and Alkemanubis: https://mega.nz/folder/zYph3LgT#oP3QYKmwqurwc9ievrl9dQ
+	* Tatata: Contains dataset, hypernetworks for steps 10000-19000 with a 1000 steps step, as well as full res sfw and nsfw comparisons.
+	* It was created before layer structure option, so it parameters are 1, 2, 1 layer structure, linear activation function.
+	* Alkemanubis: Alkemanubis is with elu activation function and normalisation, Alkemanubis4 is with swish and dropout, Alkemanubis5 is with linear and dropout. All have 1, 2, 4, 2, 1 layer structure.
+	* dataset and more fullres preview grid are inside too.
+* HKSW (wrong eye color because of dataset): https://files.catbox.moe/dykyab.pt
 
 Found on Korean Site of Wisdom (WIP):
 * Terada Tera: https://drive.google.com/file/d/1APwInBROTUdyeoW92yHFn_zBh7rY7b7I/view?usp=sharing
@@ -1838,6 +1878,10 @@ Datasets:
 * Dreambooth (Reddit): https://www.reddit.com/r/StableDiffusion/comments/ybxv7h/good_dreambooth_formula/
 * Hypernetworks: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670
 * Runpod guide: https://rentry.org/runpod4dumdums
+* Small guide written on hypernetwork activation functions.: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670#discussioncomment-3999660
+* Dataset tag manager that can also load loss.: https://github.com/starik222/BooruDatasetTagManager
+
+* Site where you can train (I think): https://www.astria.ai/
 
 * Embed vector, clip skip, and vae comparison: https://desuarchive.org/g/thread/89392239#89392432
 
@@ -1904,6 +1948,7 @@ You want the ai to find things that are consistent thematics in your image. If y
 * Toplessness: https://litter.catbox.moe/mttar5.zip
 * Reine: https://files.catbox.moe/zv6n6q.zip
 * Power: https://files.catbox.moe/wcpcbu.7z
+* Baffu: https://files.catbox.moe/ejh5sg.7z
 
 ## Common questions (CTRL/CMD + F):
 
@@ -1925,6 +1970,8 @@ what is a vae?
 
 **How do I set this up?**
 >Refer to https://rentry.org/nai-speedrun (has the "Asuka test")
+>Easy guide: https://rentry.org/3okso
+>Standard guide: https://rentry.org/voldy
 
 >AMD Guide: https://rentry.org/sdamd
 >* After setting stuff up using this guide, refer back to https://rentry.org/nai-speedrun for settings
@@ -1969,6 +2016,9 @@ Check out one of these:
 	* DALL·E mini
 * http://aiart.house
 * HF demo list: https://pastebin.com/9X1BPf8S
+
+**What is dreambooth?**
+* Read this for info: https://dreambooth.github.io/
 
 **What is difference merging/why is there a way to merge three models?**
 >The first two models are merged using standard interpolation. The third model is for a difference merge. 
@@ -2445,6 +2495,11 @@ https://www.youtube.com/watch?v=pdSfgRYy8Ao&t=878s
 https://www.youtube.com/watch?v=_9aN1-0T8hg
 AI video
 https://www.youtube.com/watch?v=PHRg241NjJA
+
+Dance diffusion: 
+https://github.com/pollinations/dance-diffusion
+
+fun way to find out if you were used for training: https://haveibeentrained.com/
 
 ## Confirmed Drama
 
