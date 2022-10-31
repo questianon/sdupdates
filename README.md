@@ -49,7 +49,33 @@
 		3. ```git pull```
 		4. ```pip -r install requirements.txt```
 
+>10/31
+* AI video showcase: https://imagen.research.google/video/
+* (Info by anon) A look into better trainings: https://arxiv.org/pdf/2210.15257.pdf
+>train multiple denoisers, use one for the starting few steps to form rough shapes, use one for the last few steps to finalize detail
+>while training, use a image classifier to mark regions corresponding to subjects in the text descriptor. If text descriptor doesn't exist, add it to the prompt
+>modify attention function to increase the attention weight between subjects found by the classifier
+>modify loss function to give regions marked by the classifier more weight
+* PaintHua.com - New GUI focusing on Inpainting and Outpainting
+	* https://www.reddit.com/r/StableDiffusion/comments/ygp0iv/painthuacom_new_gui_focusing_on_inpainting_and/
+* Training a TI on 6gb: https://pastebin.com/iFwvy5Gy
+	* Have xformers enabled.
+	> This diff does 2 things.
+	> 1. enables cross attention optimizations during TI training. Voldy disabled the optimizations during training because he said it gave him bad results. However, if you use the InvokeAI optimization or xformers after the xformers fix it does not give you bad results anymore.
+	>This saves around 1.5GB vram with xformers
+>
+	>2. unloads vae from VRAM during training. This is done in hypernetworks, and idk why it wasn't in the code for TI. It doesn't break anything and doesn't make anything worse.
+	>This saves around .2 GB VRAM
+	>
+	>After you apply this, turn on Move VAE and CLIP to RAM and Use cross attention optimizations while training
+* Google AI demonstration: https://youtu.be/YxmAQiiHOkA
+* Deconvolution and Checkerboard Artifacts: https://distill.pub/2016/deconv-checkerboard/
+
 >10/30
+* (oldish news) Mubert, text to music released: https://github.com/MubertAI/Mubert-Text-to-Music
+	* app to listen: https://apps.apple.com/app/apple-store/id1154429580
+	* search for music: https://mubert.com/render
+	* Huggingface demo: https://huggingface.co/spaces/Mubert/Text-to-Music
 * Stable diffusion "deepfake" (good with few keyframes)
 	* https://twitter.com/NicolaiNightVi1/status/1586434671663013889
 	* https://github.com/nicolai256/Few-Shot-Patch-Based-Training
@@ -165,6 +191,7 @@
 * Infinite outpainting: https://github.com/lkwq007/stablediffusion-infinity
 * Safer pickleless (unpickleable) format, still needs to be implemented
 	* https://github.com/huggingface/safetensors
+	* "This repository implements a new simple format for storing tensors safely (as opposed to pickle) and that is still fast (zero-copy)."
 * Temp folder storing generations, space issues (might be fixed now)
 	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/3278 
 * Dreambooth training (now with gui https://github.com/smy20011/dreambooth-gui ), referenced via prompt (?)
@@ -547,6 +574,9 @@ funny prompt gen that surprisingly works: https://www.grc.com/passwords.htm
 
 Ideas for when you have none: https://pentoprint.org/first-line-generator/
 
+PaintHua.com - New GUI focusing on Inpainting and Outpainting
+* https://www.reddit.com/r/StableDiffusion/comments/ygp0iv/painthuacom_new_gui_focusing_on_inpainting_and/
+
 I didn't check the safety of these plugins, but they're open source, so you can check them yourself
 Photoshop/Krita plugin (free): https://internationaltd.github.io/defuser/ (kinda new and currently only 2 stars on github)
 * https://github.com/internationalTD/defuser
@@ -832,6 +862,9 @@ https://litter.catbox.moe/las83s.txt
 * Danbooru Poses: https://pastebin.com/RgerA8Ry
 * Character training text template: https://files.catbox.moe/wbat5x.txt
 * Outfits: https://pastebin.com/Z9aHVpEy
+* Danbooru tag group wildcard dump organized into folders: https://files.catbox.moe/hz5mom.zip
+	* by uploader anon: "I recommend using Dynamic Prompting rather than the normal Wildcards extension. It does everything the Wildcards extension does and then some, * being a thing is especially great and so is |"
+* Poses: https://rentry.org/m9dz6
 
 Wildcard extension: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wildcards/
 
@@ -860,6 +893,8 @@ Wildcard extension: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wild
 * SD 1.5 artist study: https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/edit#gid=2005893444
 * Artist comparisons for NAI: https://www.reddit.com/r/NovelAi/comments/y879x1/i_made_an_experiment_with_different_artists_here/
 	* https://preview.redd.it/llok0ydfhsu91.jpg?width=640&crop=smart&auto=webp&s=e0ae2e38f9b97d10604a5c72e8c111cb184068e6
+
+* Artist rankings: https://www.urania.ai/top-sd-artists
 
 Anon's list of comparisons:
 * Stable Diffusion v1.5, Waifu Diffusion v1.3, Trinart it4
@@ -1300,9 +1335,13 @@ Links:
 		* porn, sex acts of all sorts: anal sex, anilingus, ass, ass fingering, ball sucking, blowjob, cumshot, cunnilingus, dick, dildo, double penetration, exposed pussy, female masturbation, fingering, full nelson, handjob, large ass, large tits, lesbian kissing, massive ass, massive tits, o-face, sixty-nine, spread pussy, tentacle sex (try also oral/anal tentacle sex and tentacle dp), tit fucking, tit sucking, underboob, vaginal sex, long tongue, tits
 	* Example grid from training (single shot batch): https://cdn.discordapp.com/attachments/1010982959525929010/1035236689850941440/samples_gs-995960_e-000046_b000000.png
 * disney 2d animation style: https://huggingface.co/nitrosocke/classic-anim-diffusion
+* Kim Jung Gi: https://drive.google.com/drive/folders/1uL-oUUhuHL-g97ydqpDpHRC1m3HVcqBt
+	* https://twitter.com/bg_5you/status/1578146498768175105
 
 ### **Embeddings**
 !!! info If an embedding is >80mb, I mislabeled it and it's a hypernetwork
+
+!!! info Use a download manager to download these. It saves a lot of time + good download managers will tell you if you have already downloaded one
 
 * Text Tutorial: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion
 	* Make sure to use pictures of your subject in varied areas, it gives more for the AI to work with
@@ -1328,7 +1367,7 @@ Found on 4chan:
 * Anon's collection of embeddings: https://mega.nz/folder/7k0R2arB#5_u6PYfdn-ZS7sRdoecD2A
 * Collection: https://gitgud.io/ZeroMun/stable-diffusion-tis/-/tree/master/embedding
 * Collection: https://gitgud.io/sn33d/stable-diffusion-embeddings
-* Collection from "friend" (might be malicious): https://files.catbox.moe/ilej0r.7z
+* Collection from anon's "friend" (might be malicious): https://files.catbox.moe/ilej0r.7z
 * Collection from anon: https://files.catbox.moe/22rncc.7z
 * Collection: https://gitlab.com/rakurettocorp/stable-diffusion-embeddings/-/tree/main/
 * Collection: https://gitlab.com/mwlp/sd 
@@ -1337,13 +1376,13 @@ Found on 4chan:
 
 * Henreader embedding, all 311 imgs on gelbooru, trained on NAI: https://files.catbox.moe/gr3hu7.pt
 	* https://mega.nz/folder/7k0R2arB#5_u6PYfdn-ZS7sRdoecD2A/folder/Go9CRRoC
-* Kantoku (NAI): https://files.catbox.moe/j4acm4.pt
+* Kantoku (NAI, 12 vectors, WD 1.3): https://files.catbox.moe/j4acm4.pt
 * Asanagi (NAI): https://files.catbox.moe/xks8j7.pt
 	* Asanagi trained on 135 images augmented to 502 for 150296 steps on NAI Anime Full Pruned with 16 vectors per token with init word as voluptuous
 	* training imgs: https://litter.catbox.moe/2flguc.7z
 * DEAD LINK Asanagi (another one): https://litter.catbox.moe/g9nbpx.pt
 * Imp midna (NAI, 80k steps): mega.nz/folder/QV9lERIY#Z9FXQIbtXXFX5SjGf1Ba1Q
-* imp midna 2: mega.nz/file/1UkgWRrD#2-DMrwM0Ph3Ebg-M8Ceoam_YUWhlQWsyo1rcBtuKTcU
+* imp midna 2 (NAI_80K): mega.nz/file/1UkgWRrD#2-DMrwM0Ph3Ebg-M8Ceoam_YUWhlQWsyo1rcBtuKTcU
 * inverted nipples: https://anonfiles.com/300areCby8/invertedNipples-13000_zip (reupload)
 	* Dead link: https://litter.catbox.moe/wh0tkl.pt
 * Takeda Hiromitsu Embedding 130k steps: https://litter.catbox.moe/a2cpai.pt
@@ -1502,6 +1541,8 @@ Found on 4chan:
 * momosuzu nene: https://mega.nz/folder/s8UXSJoZ#2Beh1O4aroLaRbjx2YuAPg
 * Harada Takehito (disgaea artist) (78k steps with 150 images): https://files.catbox.moe/e2iatm.pt
 * Mda (1700 images and trained for 20k): https://files.catbox.moe/tz37dj.pt
+* Polka (NAI, 16 vectors, 5500 steps): https://files.catbox.moe/pmzyhi.png
+* Asutora style embedding (mainly reflected in coloring and shading, since his faces are very inconsistent): https://mega.nz/folder/nZoECZyI#vkuZJoQyBZN8p66n4DP62A 
 
 Found on Discord:
 * Nahida v2: https://cdn.discordapp.com/attachments/1019446913268973689/1031321278713446540/nahida_v2.zip
@@ -1512,6 +1553,8 @@ Found on Reddit:
 
 ### **Hypernetworks:**
 !!! info If a hypernetwork is <80mb, I mislabeled it and it's an embedding
+
+!!! info Use a download manager to download these. It saves a lot of time + good download managers will tell you if you have already downloaded one
 
 * anon: "Requires extremely low learning rate, 0.000005 or 0.0000005"
 **Good Rentry: https://rentry.co/naihypernetworks**
@@ -1526,7 +1569,8 @@ Collection: https://mega.nz/folder/fVhXRLCK#4vRO9xVuME0FGg3N56joMA
 **Korean megacollection:**
 * https://arca.live/b/hypernetworks?category=%EA%B3%B5%EC%9C%A0
 * (includes mega compilation of artists): https://arca.live/b/hypernetworks/60940948?category=%EA%B3%B5%EC%9C%A0&p=1
-* Chinese telegram (dead link): https://t.me/+H4EGgSS-WH8wYzBl
+
+Chinese telegram (dead link): https://t.me/+H4EGgSS-WH8wYzBl
 
  Big collection: https://drive.google.com/drive/folders/1-itk7b_UTrxVdWJcp6D0h4ak6kFDKsce?usp=sharing
 * https://drive.google.com/drive/folders/1-itk7b_UTrxVdWJcp6D0h4ak6kFDKsce?usp=sharing
@@ -1654,7 +1698,6 @@ Found on 4chan:
 	* check the training data rar to read the filewords to see if you want to call anything it was specifically trained on
 	* Found on Discord (copied from SD Training Labs discord, so grammar mistakes may be present):
 * Pippa (trained on NAI 70%full-30%sfw): https://files.catbox.moe/uw1y8g.pt
-* DEAD LINK HiRyS: https://litter.catbox.moe/rx8uv0.pt
 * reine (WIP): https://files.catbox.moe/od4609.pt
 * WiseSpeak/RubbishFox (updated): https://files.catbox.moe/pzix7f.pt
 	* Info: Uses 176 Fanbox images that were preprocessed with splitting, flipping and mild touchup to remove text in Paint on about 1/4th of the images. I removed images from the Preprocess folder that did not have discernable character traits. Most images are of Tamamo since that is his waifu. Total images after split, flip, and corrections was 636. Took 13 hours at 0.000005 Rate at 512x512. Seems maybe a bit more touchy than the 61.5K file, but I believe that when body horror isn't present you can match the RubbishFox's style better.
@@ -1693,7 +1736,9 @@ Found on 4chan:
 	* dataset and more fullres preview grid are inside too.
 * HKSW (wrong eye color because of dataset): https://files.catbox.moe/dykyab.pt
 * Nanachi (retrained, 4700 steps, sketches are good, VAE turned off): https://mega.nz/folder/PfhRUbST#6oXUaNjk_B6nhJzjc_M0UA
-	* Nanachi and Puuzaki Puuna (VAE was turned on during training): https://mega.nz/folder/PfhRUbST#6oXUaNjk_B6nhJzjc_M0UA
+	* Included is: Nanachi and Puuzaki Puuna (VAE was turned on during training)
+* HiRyS: https://mega.nz/file/Mk8jTZ4I#TdlF5Bxwz_gAuQeR0PWa_YUZotcQkA34d6m49I6eUMc
+	* Dead link, I think this is the same hypernetwork: https://litter.catbox.moe/rx8uv0.pt
 
 Found on Korean Site of Wisdom (WIP):
 * Terada Tera: https://drive.google.com/file/d/1APwInBROTUdyeoW92yHFn_zBh7rY7b7I/view?usp=sharing
@@ -1989,6 +2034,8 @@ Datasets:
 * Dataset tag manager that can also load loss.: https://github.com/starik222/BooruDatasetTagManager
 * Tips on hypernetwork layer structure: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670#discussioncomment-4010316
 * Prompt template + info: https://github.com/victorchall/EveryDream-trainer
+* github + some documentation: https://github.com/cafeai/stable-textual-inversion-cafe
+* Documentation: https://www.reddit.com/r/StableDiffusion/comments/wvzr7s/tutorial_fine_tuning_stable_diffusion_using_only/
 
 * Site where you can train (I think): https://www.astria.ai/
 * Colab: https://colab.research.google.com/github/huggingface/notebooks/blob/main/diffusers/sd_textual_inversion_training.ipynb
@@ -2030,6 +2077,24 @@ Datasets:
 * You can set a learning rate of "0.1:500, 0.01:1000, 0.001:10000" in textual inversion and it will follow the schedule
 
 * Tip: combining natural language sentences and tags can create a better training
+
+* Training a TI on 6gb: https://pastebin.com/iFwvy5Gy
+	* Have xformers enabled.
+	> This diff does 2 things.
+	> 1. enables cross attention optimizations during TI training. Voldy disabled the optimizations during training because he said it gave him bad results. However, if you use the InvokeAI optimization or xformers after the xformers fix it does not give you bad results anymore.
+	>This saves around 1.5GB vram with xformers
+>
+	>2. unloads vae from VRAM during training. This is done in hypernetworks, and idk why it wasn't in the code for TI. It doesn't break anything and doesn't make anything worse.
+	>This saves around .2 GB VRAM
+	>
+	>After you apply this, turn on Move VAE and CLIP to RAM and Use cross attention optimizations while training
+
+* By anon: 
+>No idea if someone else will have a use for this but I needed to make it for myself since I can't get a hypernetwork trained regardless of what I do.
+>
+>https://mega.nz/file/LDwi1bab#xrGkqJ9m-IsqsTQNixVkeWrGw2HvmAr_fx9FxNhrrbY
+>
+>That link above is a spreadsheet where you paste the hypernetwork_loss.csv data into A1 cell (A2 is where numbers should start). Then you can use M1 to set how many epochs of the most recent data you want to use for the red trendline (green is the same length but starting before red). Outlayer % is if you want to filter out extreme points 100% means all points are considered for trendline 95% filters out top and bottom 5 etc. Basically you can use this to see where the training started fucking up. 
 
 * Anon's best: 
 >Creation:
@@ -2147,6 +2212,9 @@ Check out one of these:
 	* DALL·E mini
 * http://aiart.house
 * HF demo list: https://pastebin.com/9X1BPf8S
+
+**Is there an invisible watermark?**
+>If you're using AUTOMATIC1111's webui and referring to this: https://github.com/ShieldMnt/invisible-watermark#attack-performance, then no. The setting in the settings is never read.
 
 **How do I get more of a strong effect on my embedding?**
 >(might be outdated info) Embeddings take your image and find tokens from the current model that match the image, and when you use the embedding, it called on those specific tokens. So, it really depends on what embedding you're trying to create (how close it is to the default model, how pronounced the imgs are, etc). Plus, you can always add more emphasis for more of an effect
@@ -2445,6 +2513,9 @@ Current Issues: https://rentry.org/sd-issues
 * Infinibooru: https://infinibooru.moe/posts
 * Betabooru: https://betabooru.donmai.us
 * Japanese pixiv for ai art: https://www.chichi-pui.com/
+* discord anon (allows for generation?, runs NovelAI model): https://pixai.art/
+* nsfw: https://pornpen.ai/
+* /vt/ collection, updated: https://mega.nz/folder/j2AgSB6Y#3Kcq-xms0fWU4na-aaTFhA/folder/unw2EIBI
 
 **Upscalers:**
 * Big list: https://upscale.wiki/wiki/Model_Database
@@ -2456,6 +2527,7 @@ Current Issues: https://rentry.org/sd-issues
 * anime: https://files.catbox.moe/c6ogfl.pth
 * ultrasharp: https://mega.nz/folder/qZRBmaIY#nIG8KyWFcGNTuMX_XNbJ_g
 	* https://drive.google.com/file/d/1lELx_WiA25_S8rYINm_DyMNpFOhfZAzt/view
+* Waifu2x: https://github.com/nagadomi/waifu2x
 
 **Face restoration**
 * GFPGAN: https://github.com/TencentARC/GFPGAN
@@ -2554,7 +2626,7 @@ Explorer thing: http://cybernetnews.com/find-replace-multiple-files
 Messy room: https://twitter.com/8co28/status/1583434494354210817
 
 Video FPS interpolator: https://github.com/megvii-research/ECCV2022-RIFE
-Another Video interpolator: https://nmkd.itch.io/flowframes
+Another Video interpolator (Flowframes): https://nmkd.itch.io/flowframes
 
 Alternatives: https://github.com/brycedrennan/imaginAIry
 https://www.stablecabal.org/
@@ -2706,6 +2778,13 @@ some unpickle info: https://www.reddit.com/r/sdforall/comments/y5axt7/with_lots_
 colab; https://colab.research.google.com/drive/1jUwJ0owjigpG-9m6AI_wEStwimisUE17?pli=1#scrollTo=Ucr5_i21xSjv
 
 webm from imgs: https://ffmpeg.party/webm-from-image-sequence/
+
+Music AIs: https://soundraw.io/
+https://boomy.com/
+https://www.aiva.ai/
+https://huggingface.co/spaces/fffiloni/img-to-music
+
+vocal ai: https://twitter.com/fifteenai
 
 ## Confirmed Drama
 
