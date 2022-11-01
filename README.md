@@ -1,5 +1,7 @@
 # SD RESOURCE GOLDMINE
 
+## character limit hit, move here for the next version, this will no longer be updated: https://rentry.org/sdupdates2
+
 !!! danger Warnings: 
 
 	1. Ckpts/hypernetworks/embeddings are ==not== interently safe as of right now. They can be pickled/contain malicious code. Use your common sense and protect yourself as you would with any random download link you would see on the internet.
@@ -8,11 +10,9 @@
 
 !!! Links are dying. If you happen to have a file listed in https://rentry.org/sdupdates#deadmissing or that's not on this list, please get it to me.
 
-!!! note Changelog: added stuff, **chinese telegram channel uploaded by telegram anon**
-
 !!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates. There is also a WIP embedding directory here: https://github.com/questianon/sdupdates/wiki
 
-!!! note If you know how to do stuff in markdown and html/can make a webpage easily/want to contribute, contact me 
+!!! note If you know how to do stuff in markdown and html/can make a webpage easily/want to contribute in any way, contact me 
 
 ### Quicklinks: 
 * News: https://rentry.org/sdupdates#newsfeed
@@ -40,7 +40,6 @@
 	* If on Windows:
 		1. go to the webui directory
 		2. ```git pull```
-			a. You can try creating a virtual environment before step 2 if you want, though I've heard it doesn't work
 		3. ```pip -r install requirements.txt```
 	* If on Linux: 
 		1. go to the webui directory
@@ -50,6 +49,9 @@
 		4. ```pip -r install requirements.txt```
 
 >10/31
+* You might be able to get more performance on windows by disabling hardware scheduling
+	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3889
+* New inpainting options added
 * Extensions manager added for AUTOMATIC1111's webui
 * Pixiv adding AI art filter: https://www.pixiv.net/info.php?id=8729
 	* https://www.pixiv.net/en/artworks/102382801
@@ -486,6 +488,8 @@ Google Docs with a prompt list/ranking/general info for waifu creation:
 https://docs.google.com/document/d/1Vw-OCUKNJHKZi7chUtjpDEIus112XBVSYHIATKi1q7s/edit?usp=sharing
 Anon's prompt collection: https://mega.nz/folder/VHwF1Yga#sJhxeTuPKODgpN5h1ALTQg
 Tag effects on img: https://pastebin.com/GurXf9a4
+* Anon says that "8k, 4k, (highres:1.1), best quality, (masterpiece:1.3)" leads to nice details
+
 Japanese prompt collection: http://yaraon-blog.com/archives/225884
 GREAT CHINESE TOME OF PROMPTING KNOWLEDGE AND WISDOM 101 GUIDE: https://docs.qq.com/doc/DWHl3am5Zb05QbGVs
 * Site: https://aiguidebook.top/
@@ -552,7 +556,7 @@ Another: https://sleazyfork.org/en/scripts/453380-danbooru-tags-select-to-export
 Tags (latest vers): https://sleazyfork.org/en/scripts/453304-get-booru-tags-edited
 Basic gelbooru scraper: https://pastebin.com/0yB9s338
 UMI AI:
-* FREE
+* free
 * SFW and NSFW
 * Goal: ultimate char-gen 
 * Tutorial: https://www.patreon.com/posts/umi-ai-official-73544634
@@ -594,6 +598,12 @@ Prompt generator: https://github.com/h-a-te/prompt_generator
 http://dalle2-prompt-generator.s3-website-us-west-2.amazonaws.com/
 https://randomwordgenerator.com/
 funny prompt gen that surprisingly works: https://www.grc.com/passwords.htm
+Unprompted extension released: https://github.com/ThereforeGames/unprompted
+* Wildcards on steroids
+* Powerful scripting language 
+* Can create templates out of booru tags
+* Can make shortcodes
+* "You can pull text from files, set up your own variables, process text through conditional functions, and so much more "
 
 Ideas for when you have none: https://pentoprint.org/first-line-generator/
 
@@ -637,9 +647,10 @@ Prompt changing scripts:
 Interpolation script (img2img + txt2img mix): https://github.com/DiceOwl/StableDiffusionStuff
 * https://www.reddit.com/r/StableDiffusion/comments/ycgfgo/interpolate_script/
 
-* img2tiles script: https://github.com/arcanite24/img2tiles
-
+img2tiles script: https://github.com/arcanite24/img2tiles
 Script for outpainting: https://github.com/TKoestlerx/sdexperiments
+Img2img animation script: https://github.com/Animator-Anon/Animator/blob/main/animation_v6.py
+* Can use in txt2img mode and combine with https://film-net.github.io/ for content aware interpolation
 
 Giffusion tutorial:
 ``` python 
@@ -2058,6 +2069,7 @@ Datasets:
 * Toplessness: https://litter.catbox.moe/mttar5.zip
 * https://gofile.io/d/R74OtT
 * Onono imoko (NSFW + SFW, 300 cropped images): https://files.catbox.moe/dkn85w.zip
+* thanukiart (colored): https://www.dropbox.com/sh/mtf094lb5o61uvu/AABb2A83y4ws4-Rlc0lbbyHSa?dl=0
 
 ## Training
 * Training guide for textual inversion/embedding and hypernetworks: https://pastebin.com/dqHZBpyA
@@ -2239,6 +2251,7 @@ what is a vae?
 
 **What is pickling/getting pickled?**
 >ckpt files and python files can execute code. Getting pickled is when these files execute malicious code that infect your computer with malware. It's a memey/funny way of saying you got hacked.
+* Automatic1111's webui should unpickle the files for you: https://github.com/AUTOMATIC1111/stable-diffusion-webui/search?q=pickle&type=commits
 * https://docs.python.org/3/library/pickle.html
 
 **I want to run this, but my computer is too bad. Is there any other way?**
@@ -2626,6 +2639,7 @@ Guide to setting up local NAI by chinese NAI:
 ``` python
 https://telegra.ph/NovelAI-%E5%8E%9F%E7%89%88%E7%BD%91%E9%A1%B5UI%E5%90%8E%E7%AB%AF%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B-10-10
 ```
+
 Rebasin (alternative merging models): https://github.com/samuela/git-re-basin 
 WD 1.3 Torrents: https://rentry.org/WDtorrents
 
@@ -2692,6 +2706,7 @@ Messy room: https://twitter.com/8co28/status/1583434494354210817
 
 Video FPS interpolator: https://github.com/megvii-research/ECCV2022-RIFE
 Another Video interpolator (Flowframes): https://nmkd.itch.io/flowframes
+Another: https://film-net.github.io/
 
 Alternatives: https://github.com/brycedrennan/imaginAIry
 https://www.stablecabal.org/
@@ -2750,6 +2765,7 @@ AI youtubers/guides:
 * https://www.youtube.com/c/RoyalSkiesLLC
 	* https://www.youtube.com/playlist?list=PLZpDYt0cyiusIUae2YnPZ26HTjC6yuhNU
 * https://www.youtube.com/c/NerdyRodent
+* Making art: https://www.youtube.com/user/pjgalbraith
 
 Slerp info: https://en.wikipedia.org/wiki/Slerp#Geometric_Slerp
 
@@ -2831,6 +2847,7 @@ https://twitter.com/RatmanScott
 https://twitter.com/Merkurial_Mika
 https://twitter.com/epitaphtoadog
 https://twitter.com/lillyaiart
+(good stuff) https://twitter.com/LeftGRGR
 
 collection of papers to learn about this research from its inception: https://github.com/prodramp/DeepWorks/tree/main/12-Research-Papers
 https://www.lesswrong.com/posts/vJFdjigzmcXMhNTsx/simulators
@@ -2982,12 +2999,5 @@ koreanon: legendary korean disciple
 ## Misc
 
 -> (WIP) Precursor to https://rentry.org/sdwiki / https://github.com/questianon/SDwiki <-
-
-!!! info todo (dump):
-	Prune all discords and reddit for hypernets/embeds/dreambooths, possibly setup a clean wiki, models, cio statement, finish adding stuff from https://boards.4channel.org/mlp/thread/39164860/ai-art-general, discord (hypernets, models, TI in order of importance + ease)
-
-Where am I tracker: busy, will update in a few hours
-
-Prompt Cheat Sheet Rentry: WIP
 
 author socials: questianon !!YbTGdICxQOw (malt#6065, u/questianon, https://github.com/questianon, https://twitter.com/questianon), ping or tag if I need to change anything or if you have questions
