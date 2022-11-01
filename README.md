@@ -8,7 +8,7 @@
 
 !!! Links are dying. If you happen to have a file listed in https://rentry.org/sdupdates#deadmissing or that's not on this list, please get it to me.
 
-!!! note Changelog: added a lot of stuff, made a proof of concept embedding search thing: https://github.com/questianon/sdupdates/wiki (tell me if that's a style people like/what should be changed, backup thing: https://gitlab.com/questianon/sdupdates/-/wikis/Embeddings), added general info, added the GREAT CHINESE ENCYCLOPEDIA OF PROMPTING ON GENERAL KNOWLEDGE: SPOOKY EDITION, https://mega.nz/folder/sSACBAgC#kNiPVzRwnuzs8JClovS1Tw was updated
+!!! note Changelog: added stuff, **chinese telegram channel uploaded by telegram anon**
 
 !!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates. There is also a WIP embedding directory here: https://github.com/questianon/sdupdates/wiki
 
@@ -39,9 +39,9 @@
 	Instructions:
 	* If on Windows:
 		1. go to the webui directory
-		2. ```source ./venv/bin/activate```
-		3. ```git pull```
-		4. ```pip -r install requirements.txt```
+		2. ```git pull```
+			a. You can try creating a virtual environment before step 2 if you want, though I've heard it doesn't work
+		3. ```pip -r install requirements.txt```
 	* If on Linux: 
 		1. go to the webui directory
 		2. ```source ./venv/bin/activate```
@@ -50,7 +50,24 @@
 		4. ```pip -r install requirements.txt```
 
 >10/31
-* AI video showcase: https://imagen.research.google/video/
+* Extensions manager added for AUTOMATIC1111's webui
+* Pixiv adding AI art filter: https://www.pixiv.net/info.php?id=8729
+	* https://www.pixiv.net/en/artworks/102382801
+* VAE selector PR: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3986
+* Open sourced, AI-powered creator released
+	* https://github.com/carefree0910/carefree-creator#webui--local-deployment
+	* Can run local and through their servers
+	* Copied from their github: 
+		* An infinite draw board for you to save, review and edit all your creations.
+		* Almost EVERY feature about Stable Diffusion (txt2img, img2img, sketch2img, variations, outpainting, circular/tiling textures, sharing, ...).
+		* Many useful image editing methods (super resolution, inpainting, ...).
+		* Integrations of different Stable Diffusion versions (waifu diffusion, ...).
+		* GPU RAM optimizations, which makes it possible to enjoy these features with an NVIDIA GeForce GTX 1080 Ti  
+* ERNIE-ViLG 2.0 (new open source text to image generator developed by Baidu): https://arxiv.org/abs/2210.15257
+	* https://github.com/PaddlePaddle/ERNIE
+	* Supposedly has benefits over SD?
+* (old news) Google AI video showcase: https://imagen.research.google/video/
+* (old news) Facebook Img2video: https://makeavideo.studio/
 * (Info by anon) A look into better trainings: https://arxiv.org/pdf/2210.15257.pdf
 >train multiple denoisers, use one for the starting few steps to form rough shapes, use one for the last few steps to finalize detail
 >while training, use a image classifier to mark regions corresponding to subjects in the text descriptor. If text descriptor doesn't exist, add it to the prompt
@@ -182,7 +199,7 @@
 	* https://dic.nicovideo.jp/a/ゲーミングチンポ華道部
 	* https://twitter.com/search?q=ゲーミングちんぽ華道部&src=typed_query&f=image
 * Deforum (video animation) extension released
-	* https://github.com/deforum-art/deforum-for-automatic1111-webui
+	* https://github.com/deforum-art/deforum-for-automatic1111-webui/
 	* https://www.reddit.com/r/StableDiffusion/comments/ychq1x/the_official_deforum_script_for_2d3d_stable/
 * Many new VAE's (finetunes) released
 	* Check https://rentry.org/sdmodels for most of them
@@ -333,7 +350,7 @@
 	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1576
 	* https://www.reddit.com/r/StableDiffusion/comments/y56qb9/security_warning_do_not_use_share_in/
 * Deforum script released for AUTOMATIC1111's webui
-	* https://github.com/deforum-art/deforum-for-automatic1111-webui
+	* https://github.com/deforum-art/deforum-for-automatic1111-webui/
 * Google open sourced their prompt-to-prompt method
 	* https://github.com/google/prompt-to-prompt
 	* Uses cross attention control
@@ -504,6 +521,8 @@ Tip Dump: https://rentry.org/robs-novel-ai-tips
 Tips: https://github.com/TravelingRobot/NAI_Community_Research/wiki/NAI-Diffusion:-Various-Tips-&-Tricks
 Info dump of tips: https://rentry.org/Learnings
 Outdated guide: https://rentry.co/8vaaa
+Tip for more photorealism: https://www.reddit.com/r/StableDiffusion/comments/yhn6xx/comment/iuf1uxl/
+* TLDR: add noise to your img before img2img
 
 SD 1.4 vs 1.5: https://postimg.cc/gallery/mhvWsnx
 Model merge comparisons: https://files.catbox.moe/rcxqsi.png
@@ -514,6 +533,10 @@ Demo: https://huggingface.co/spaces/hysts/DeepDanbooru
 Embedding tester: https://huggingface.co/spaces/sd-concepts-library/stable-diffusion-conceptualizer
 
 Collection of Aesthetic Gradients: https://github.com/vicgalle/stable-diffusion-aesthetic-gradients/tree/main/aesthetic_embeddings
+
+Euler vs. Euler A: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-4021588
+* Euler: https://cdn.discordapp.com/attachments/1036718343140409354/1036719238607540296/euler.gif
+* Euler A: https://cdn.discordapp.com/attachments/1036718343140409354/1036719239018590249/euler_a.gif
 
 Seed hunting: 
 * By nai speedrun asuka imgur anon:
@@ -659,6 +682,7 @@ Deforum (video animation): https://github.com/deforum-art/deforum-for-automatic1
 	* https://www.desmos.com/calculator/njw3uckjlo
 	* https://www.desmos.com/calculator/5nizby2zbn
 * Blender camera animations to deforum: https://github.com/micwalk/blender-export-diffusion
+* Tutorial: https://www.youtube.com/watch?v=lztn6qLc9UE
 
 Aesthetic Gradients: https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients
 Aesthetic Scorer: https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer
@@ -940,6 +964,28 @@ https://www.reddit.com/r/StableDiffusion/comments/wyduk1/show_rstablediffusion_i
 >
 >so get a good image first with 512 rerolls
 >use the same seed but now with highres enabled
+
+**Anon's best output settings**
+[txt2img]
+
+Positive: none
+Negative: lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts,signature, watermark, username, blurry, artist name, 3 legs, 3 arms
+Sampling Steps - 47/51
+Euler a
+Width -  512 normal/768 2 characters or better landscapes
+Height - 512 normal/768 full body
+CFG Scale: 12/12,5/18
+
+[img2img]
+
+Positive: complete image/none
+Negative: lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts,signature, watermark, username, blurry, artist name, 3 legs, weird
+Sampling Steps - 51
+Euler a
+Width -  512 normal/768 2 characters or better landscapes
+Height - 512 normal/768 full body
+CFG Scale: 18
+Denoising strength: 0,5/0,68
 
 **Anon's workflow:**
 Artist list: https://rentry.org/anime_and_titties
@@ -1337,6 +1383,11 @@ Links:
 * disney 2d animation style: https://huggingface.co/nitrosocke/classic-anim-diffusion
 * Kim Jung Gi: https://drive.google.com/drive/folders/1uL-oUUhuHL-g97ydqpDpHRC1m3HVcqBt
 	* https://twitter.com/bg_5you/status/1578146498768175105
+* Pyro's Blowjob Model: https://rentry.org/pyros-sd-model
+	* https://anonfiles.com/6123m6F6y9/pyros-bj-v1-0_ckpt
+	* https://mega.nz/file/lLtjCLwb#KgXPDzbTotcb0_quzzBMm6DaDCuSFIaF8CXxw1WsEs8
+	* Examples: https://www.reddit.com/gallery/yhuymu
+	* Examples: https://old.reddit.com/r/sdnsfw/comments/yhuymu/ill_never_need_any_porn_site_ever_again/
 
 ### **Embeddings**
 !!! info If an embedding is >80mb, I mislabeled it and it's a hypernetwork
@@ -1570,7 +1621,12 @@ Collection: https://mega.nz/folder/fVhXRLCK#4vRO9xVuME0FGg3N56joMA
 * https://arca.live/b/hypernetworks?category=%EA%B3%B5%EC%9C%A0
 * (includes mega compilation of artists): https://arca.live/b/hypernetworks/60940948?category=%EA%B3%B5%EC%9C%A0&p=1
 
-Chinese telegram (dead link): https://t.me/+H4EGgSS-WH8wYzBl
+**Chinese telegram (uploaded by telegram anon): magnet:?xt=urn:btih:8cea1f404acfa11b5996d1f1a4af9e3ef2946be0&dn=ChatExport%5F2022-10-30&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce**
+>I've made a full export of the Chinese Telegram channel.
+>
+>It's 37 GB (~160 hypernetworks and a bunch of full models).
+>If you don't want all that, I would recommend downloading everything but the 'files' folder first (like 26 MB), then opening the html file to decide what you want.
+* Dead link: https://t.me/+H4EGgSS-WH8wYzBl
 
  Big collection: https://drive.google.com/drive/folders/1-itk7b_UTrxVdWJcp6D0h4ak6kFDKsce?usp=sharing
 * https://drive.google.com/drive/folders/1-itk7b_UTrxVdWJcp6D0h4ak6kFDKsce?usp=sharing
@@ -2078,7 +2134,7 @@ Datasets:
 
 * Tip: combining natural language sentences and tags can create a better training
 
-* Training a TI on 6gb: https://pastebin.com/iFwvy5Gy
+* Training a TI on 6gb (not sure if safe or even works, instructions by uploader anon): https://pastebin.com/iFwvy5Gy
 	* Have xformers enabled.
 	> This diff does 2 things.
 	> 1. enables cross attention optimizations during TI training. Voldy disabled the optimizations during training because he said it gave him bad results. However, if you use the InvokeAI optimization or xformers after the xformers fix it does not give you bad results anymore.
@@ -2213,8 +2269,16 @@ Check out one of these:
 * http://aiart.house
 * HF demo list: https://pastebin.com/9X1BPf8S
 
+**Are there any alternatives to gradio for sharing my stuff online?**
+>Try ngrok (https://ngrok.com/, recommended by anon)
+* free
+* custom links
+* connection limit of ~60 users
+* anon thinks it gives more control for the host over Gradio
+
 **Is there an invisible watermark?**
 >If you're using AUTOMATIC1111's webui and referring to this: https://github.com/ShieldMnt/invisible-watermark#attack-performance, then no. The setting in the settings is never read.
+* code not used in the commit that added the setting in the settings: https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/f98338faa84ecce503e68d8ba13d5f7bbae52730
 
 **How do I get more of a strong effect on my embedding?**
 >(might be outdated info) Embeddings take your image and find tokens from the current model that match the image, and when you use the embedding, it called on those specific tokens. So, it really depends on what embedding you're trying to create (how close it is to the default model, how pronounced the imgs are, etc). Plus, you can always add more emphasis for more of an effect
@@ -2528,6 +2592,7 @@ Current Issues: https://rentry.org/sd-issues
 * ultrasharp: https://mega.nz/folder/qZRBmaIY#nIG8KyWFcGNTuMX_XNbJ_g
 	* https://drive.google.com/file/d/1lELx_WiA25_S8rYINm_DyMNpFOhfZAzt/view
 * Waifu2x: https://github.com/nagadomi/waifu2x
+* Gigapixel AI: https://www.topazlabs.com/gigapixel-ai
 
 **Face restoration**
 * GFPGAN: https://github.com/TencentARC/GFPGAN
@@ -2786,7 +2851,16 @@ https://huggingface.co/spaces/fffiloni/img-to-music
 
 vocal ai: https://twitter.com/fifteenai
 
+text to speech ai (deepfake): https://fakeyou.com/
+
+Gradio alternative: ngrok (https://ngrok.com/)
+* free
+* custom links
+* connection limit of ~60 users
+* anon thinks it gives more control
+
 ## Confirmed Drama
+
 
 10/20 News
 
