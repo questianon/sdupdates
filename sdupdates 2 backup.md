@@ -1,6 +1,6 @@
-# SD RESOURCE GOLDMINE
+# SD RESOURCE GOLDMINE 2
 
-Transfer of important info like embeds, hypernets, good links, etc from https://rentry.org/sdupdates wip
+Currently transferring important info like embeds, hypernets, good links, etc from https://rentry.org/sdupdates
 
 !!! danger Warnings: 
 
@@ -12,7 +12,7 @@ Transfer of important info like embeds, hypernets, good links, etc from https://
 
 !!! note Changelog: made a new rentry, added 1 embed, added news
 
-!!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates. There is also a WIP embedding directory here: https://github.com/questianon/sdupdates/wiki
+!!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates. There is also a WIP embedding directory here: https://github.com/questianon/sdupdates/blob/main/Embeddings.md
 
 !!! note If you know how to do stuff in markdown and html/can make a webpage easily/want to contribute in any way, contact me 
 
@@ -48,6 +48,11 @@ Transfer of important info like embeds, hypernets, good links, etc from https://
 			a. if this doesn't work, run ```python -m venv venv``` beforehand
 		3. ```git pull```
 		4. ```pip -r install requirements.txt```
+
+>11/1
+* AI art theft is now appearing (reuploads of AI art)
+* Lots of localization updates + improvements + extra goodies added if you update AUTOMATIC1111's webui
+* Wildcard script + collection of wildcards released: https://app.radicle.xyz/seeds/pine.radicle.garden/rad:git:hnrkcfpnw9hd5jb45b6qsqbr97eqcffjm7sby
 
 >10/31
 * Unprompted extension released: https://github.com/ThereforeGames/unprompted
@@ -133,6 +138,9 @@ Japanese wiki: https://seesaawiki.jp/nai_ch/
 Korean wiki: https://arca.live/b/aiart/60392904
 Korean wiki 2: https://arca.live/b/aiart/60466181
 
+Multilingual info by anon: 
+>CLIP can't really understand Chinese (or anything other than english). (maybe some of the characters are bond to certain concept for the reason I don't know)
+>But some of emoji and Chinese/Japanese character is meaningful for CLIP. Like イカ, which means squid in Japanese. You will get something like squid if you put these character in prompt. 
 NAI to webui translator (not 100% accurate): https://seesaawiki.jp/nai_ch/d/%a5%d7%a5%ed%a5%f3%a5%d7%a5%c8%ca%d1%b4%b9
 
 Tip Dump: https://rentry.org/robs-novel-ai-tips
@@ -287,13 +295,11 @@ and it created the mp4 you see (i converted it into webm with this command)
 Example: https://i.4cdn.org/h/1666414810239191.webm
 ```
 
-
 Img2img megalist + implementations: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2940
 
 Runway inpaint model: https://huggingface.co/runwayml/stable-diffusion-inpainting
 Inpainting Tips: https://www.pixiv.net/en/artworks/102083584
 Rentry version: https://rentry.org/inpainting-guide-SD
-
 
 Extensions:
 Artist inspiration: https://github.com/yfszzx/stable-diffusion-webui-inspiration
@@ -314,9 +320,18 @@ Aesthetic Scorer: https://github.com/tsngo/stable-diffusion-webui-aesthetic-imag
 Autocomplete Tags: https://github.com/DominikDoom/a1111-sd-webui-tagcomplete
 Prompt Randomizer: https://github.com/adieyal/sd-dynamic-prompting
 Wildcards: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wildcards/
+Wildcard script + collection of wildcards: https://app.radicle.xyz/seeds/pine.radicle.garden/rad:git:hnrkcfpnw9hd5jb45b6qsqbr97eqcffjm7sby
 
 Clip interrogator: https://colab.research.google.com/github/pharmapsychotic/clip-interrogator/blob/main/clip_interrogator.ipynb
 2: https://github.com/pharmapsychotic/clip-interrogator
+
+**VAEs**
+
+Tutorial + how to use on ALL models (applies for the NAI vae too): https://www.reddit.com/r/StableDiffusion/comments/yaknek/you_can_use_the_new_vae_on_old_models_as_well_for/
+
+* SD 1.4 Anime styled: https://huggingface.co/hakurei/waifu-diffusion-v1-4/blob/main/vae/kl-f8-anime.ckpt
+	* https://twitter.com/haruu1367/status/1579286947519864833
+* Stability AI: https://huggingface.co/stabilityai
 
 **Booru tag scraping:**
 * https://sleazyfork.org/en/scripts/451098-get-booru-tags 
@@ -338,6 +353,7 @@ Clip interrogator: https://colab.research.google.com/github/pharmapsychotic/clip
 * Github for scraper: https://github.com/onusai/grab-booru-tags 
 
 Wildcards: 
+* Huge collection that works: https://danbooru.donmai.us/wiki_pages/tag_groups
 * https://desuarchive.org/g/thread/89006003#89007479
 * https://rentry.org/sdWildcardLists
 * Guide (ish): https://is2.4chan.org/h/1665343016289442.png 
@@ -611,6 +627,9 @@ Links:
 	* https://mega.nz/file/lLtjCLwb#KgXPDzbTotcb0_quzzBMm6DaDCuSFIaF8CXxw1WsEs8
 	* Examples: https://www.reddit.com/gallery/yhuymu
 	* Examples: https://old.reddit.com/r/sdnsfw/comments/yhuymu/ill_never_need_any_porn_site_ever_again/
+* Pixel Art Sprite Sheet: https://huggingface.co/Onodofthenorth/SD_PixelArt_SpriteSheet_Generator
+	* 4 different angles
+	* Examples + Reddit post: https://www.reddit.com/r/StableDiffusion/comments/yj1kbi/ive_trained_a_new_model_to_output_pixel_art/
 
 ### **Embeddings**
 !!! info If an embedding is >80mb, I mislabeled it and it's a hypernetwork
