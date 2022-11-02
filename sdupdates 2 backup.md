@@ -1,6 +1,6 @@
 # SD RESOURCE GOLDMINE 2
 
-Currently transferring important info like embeds, hypernets, good links, etc from https://rentry.org/sdupdates
+->Version 2 of https://www.rentry.org/sdupdates. If something you want isn't here, it's probably in the other rentry<-
 
 !!! danger Warnings: 
 
@@ -10,7 +10,7 @@ Currently transferring important info like embeds, hypernets, good links, etc fr
 
 !!! Links are dying. If you happen to have a file listed in https://rentry.org/sdupdates#deadmissing or that's not on this list, please get it to me.
 
-!!! note Changelog: made a new rentry, added 1 embed, added news
+!!! note Changelog: added news and embeds+hypernets
 
 !!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates. There is also a WIP embedding directory here: https://github.com/questianon/sdupdates/blob/main/Embeddings.md
 
@@ -34,6 +34,7 @@ Currently transferring important info like embeds, hypernets, good links, etc fr
 * Hall of Fame: https://rentry.org/sdupdates2#hall-of-fame
 * Miscellaneous: https://rentry.org/sdupdates2#misc
 * Github: https://github.com/questianon/sdupdates/
+* Contact: https://rentry.org/sdupdates2#contact
 
 ## NEWSFEED
 !!! note Don't forget to git pull to get a lot of new optimizations + updates, if SD breaks go backward in commits until it starts working again
@@ -50,6 +51,26 @@ Currently transferring important info like embeds, hypernets, good links, etc fr
 		4. ```pip -r install requirements.txt```
 
 >11/1
+* SD Upscale broken on latest git pull: https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/4104
+	* Seems to affect some other parts of webui too
+* PR for hypernetwork resume fix: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3975
+* Dreambooth will probably not be integrated into AUTOMATIC1111's webui normally. It's likely to be turned into an extension: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3995#issuecomment-1298741868
+* MMD + NAI showcase (not sure what UC 3d is): https://twitter.com/8co28/status/1587238661090791424?t=KJmJhfkG6GPcxS5P6fADgw&s=19 
+* Dehydrate ("compress" down to 1gb) and rehydrate models: https://github.com/bmaltais/dehydrate
+	1. Use the ckpt_subtract.py script to subtract the original model from the DB model, leaving behind only the difference between the two.
+    2. Compress the resulting model using tar, gzip, etc to roughly 1GB or less
+    3. To rehydrate the model simply reverse the process. Add the diff back on top of the original sd15 model (or actually any other models of your choice, can be a different one) with ckpt_add.py.
+* 6gb textual inversion training when xformers is available merged: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4056
+* From the Chinese community (some news is old, info provided by Chinese anon):
+	* Someone made a fork of diffusers, added support of wandb, and reduced the size of ckpt to about 2G by changing the precision to fp16
+		* Supposedly makes it easier to prune the ckpt
+		* Repo: https://github.com/CCRcmcpe/diffusers
+	* It's believed that the size can possibly be further reduced by removing the vae
+	* WIP of using the training difference to distribute the ckpt
+		* Original reddit post about it: https://www.reddit.com/r/StableDiffusion/comments/ygl75c/not_really_working_poorly_coded_sparse_tensor/ 
+		* Modified version that Chinese anons are testing: https://gist.github.com/AmericanPresidentJimmyCarter/1947162f371e601ce183070443f41dc2
+		* If I recall correctly, this is how ML Research Lab plans to do distributed model training
+	* Huggingface for ERNIE-ViLG: https://huggingface.co/spaces/PaddlePaddle/ERNIE-ViLG
 * AI art theft is now appearing (reuploads of AI art)
 * Lots of localization updates + improvements + extra goodies added if you update AUTOMATIC1111's webui
 * Wildcard script + collection of wildcards released: https://app.radicle.xyz/seeds/pine.radicle.garden/rad:git:hnrkcfpnw9hd5jb45b6qsqbr97eqcffjm7sby
@@ -63,9 +84,10 @@ Currently transferring important info like embeds, hypernets, good links, etc fr
 	* "You can pull text from files, set up your own variables, process text through conditional functions, and so much more "
 * You might be able to get more performance on windows by disabling hardware scheduling
 	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3889
-* New inpainting options added
+* (semi old news) New inpainting options added
 * Extensions manager added for AUTOMATIC1111's webui
 * Pixiv adding AI art filter: https://www.pixiv.net/info.php?id=8729
+	* https://www.pixiv.net/info.php?id=8711
 	* https://www.pixiv.net/en/artworks/102382801
 * VAE selector PR: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3986
 * Open sourced, AI-powered creator released
@@ -141,6 +163,9 @@ Korean wiki 2: https://arca.live/b/aiart/60466181
 Multilingual info by anon: 
 >CLIP can't really understand Chinese (or anything other than english). (maybe some of the characters are bond to certain concept for the reason I don't know)
 >But some of emoji and Chinese/Japanese character is meaningful for CLIP. Like イカ, which means squid in Japanese. You will get something like squid if you put these character in prompt. 
+>anon2: yeah，because the CLIP can not understand Chinese , so here the “natural language” I should translate some depiction to English.
+Multilingual study: https://jalonso.notion.site/Stable-Diffusion-Language-Comprehension-5209abc77a4f4f999ec6c9b4a48a9ca2
+
 NAI to webui translator (not 100% accurate): https://seesaawiki.jp/nai_ch/d/%a5%d7%a5%ed%a5%f3%a5%d7%a5%c8%ca%d1%b4%b9
 
 Tip Dump: https://rentry.org/robs-novel-ai-tips
@@ -152,6 +177,7 @@ Tip for more photorealism: https://www.reddit.com/r/StableDiffusion/comments/yhn
 
 SD 1.4 vs 1.5: https://postimg.cc/gallery/mhvWsnx
 Model merge comparisons: https://files.catbox.moe/rcxqsi.png
+Some sampler comparisons: https://www.reddit.com/r/StableDiffusion/comments/xmwcrx/a_comparison_between_8_samplers_for_5_different/
 
 Deep Danbooru: https://github.com/KichangKim/DeepDanbooru
 Demo: https://huggingface.co/spaces/hysts/DeepDanbooru
@@ -298,6 +324,8 @@ Example: https://i.4cdn.org/h/1666414810239191.webm
 Img2img megalist + implementations: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2940
 
 Runway inpaint model: https://huggingface.co/runwayml/stable-diffusion-inpainting
+* Tutorial from their github: https://github.com/runwayml/stable-diffusion#inpainting-with-stable-diffusion
+
 Inpainting Tips: https://www.pixiv.net/en/artworks/102083584
 Rentry version: https://rentry.org/inpainting-guide-SD
 
@@ -422,7 +450,7 @@ Wildcards:
 
 Wildcard extension: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wildcards/
 
-**Some artists (may or may not work with NAI):**
+**Artist Comparisons (may or may not work with NAI):**
 * SD 1.5 artists (might lag your pc): https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#
 * pre-modern art: https://www.artrenewal.org/Museum/Search#/
 * SD 1.4 artists: https://rentry.org/artists_sd-v1-4
@@ -449,6 +477,10 @@ Wildcard extension: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wild
 	* https://preview.redd.it/llok0ydfhsu91.jpg?width=640&crop=smart&auto=webp&s=e0ae2e38f9b97d10604a5c72e8c111cb184068e6
 
 * Artist rankings: https://www.urania.ai/top-sd-artists
+* Some comparisons:
+	* https://imgur.com/a/ADPHh9q
+	* https://imgur.com/a/zzXqLPc
+	* https://imgur.com/a/TDGBAlc
 
 Anon's list of comparisons:
 * Stable Diffusion v1.5, Waifu Diffusion v1.3, Trinart it4
@@ -619,7 +651,8 @@ Links:
 	* Trained on 3498 images and around 250K steps
 		* porn, sex acts of all sorts: anal sex, anilingus, ass, ass fingering, ball sucking, blowjob, cumshot, cunnilingus, dick, dildo, double penetration, exposed pussy, female masturbation, fingering, full nelson, handjob, large ass, large tits, lesbian kissing, massive ass, massive tits, o-face, sixty-nine, spread pussy, tentacle sex (try also oral/anal tentacle sex and tentacle dp), tit fucking, tit sucking, underboob, vaginal sex, long tongue, tits
 	* Example grid from training (single shot batch): https://cdn.discordapp.com/attachments/1010982959525929010/1035236689850941440/samples_gs-995960_e-000046_b000000.png
-* disney 2d animation style: https://huggingface.co/nitrosocke/classic-anim-diffusion
+* disney 2d (classic) animation style: https://huggingface.co/nitrosocke/classic-anim-diffusion
+	* https://www.reddit.com/r/StableDiffusion/comments/yhikn3/new_dreambooth_model_classic_animation_styles/
 * Kim Jung Gi: https://drive.google.com/drive/folders/1uL-oUUhuHL-g97ydqpDpHRC1m3HVcqBt
 	* https://twitter.com/bg_5you/status/1578146498768175105
 * Pyro's Blowjob Model: https://rentry.org/pyros-sd-model
@@ -808,7 +841,7 @@ Found on 4chan:
 * Mikan (30 tokens, 36 images (before flipping/splitting), 5700steps, 5e-02:2000, 5e-03:4000): https://files.catbox.moe/xwdohx.pt
 	* creator: I've been getting best results with these tags: (orange hair and (hair tubes:1.2), (dog ears and dog tail and (huge ahoge:1.2):1.2)), green eyes
 	* apparently it's not very effective. a hypernetwork is WIP
-* Furry styled embed? (6000, 5.5k most): https://files.catbox.moe/s19ub3.7z
+* Fuurin Rei (6000, 5.5k most): https://files.catbox.moe/s19ub3.7z
 * Mutsuki (Blue Archive) embedding (10k step,150 image, no clip skip [set the "stop at last layers of clip model" option at 1 to get good results], 0.02:300, 0.01:1000, 0.005:2000, 0.002:3000, 0.0005:4000, 0.0005, vae disabled by renaming): https://files.catbox.moe/6yklfl.pt
 * Reine: https://files.catbox.moe/tv1zf4.pt
 * as109 (trained with 1000+ dataset, 0.003 learning rate, 0.12 loss rate trend, 25k step snapshot): https://litter.catbox.moe/5iwbi5.pt
@@ -837,6 +870,27 @@ Found on 4chan:
 * Polka (NAI, 16 vectors, 5500 steps): https://files.catbox.moe/pmzyhi.png
 * Asutora style embedding (mainly reflected in coloring and shading, since his faces are very inconsistent): https://mega.nz/folder/nZoECZyI#vkuZJoQyBZN8p66n4DP62A 
 * Enna: https://files.catbox.moe/7edtp0.pt
+* Ghislaine Dedoldia ("dark-skinned female" init word, 12 vectors per token, 0.02:200, 0.01:1000, 0.005:2000, 0.002:3000, 0.0005:4000, 0.00005 LR, 10k steps 75 image crop data set) https://mega.nz/folder/JPVSVLbQ#SqGZb7OVKe_UNRvI0R8U8A
+	* Notes by uploader: Here is a terrible Ghislaine Dedoldia embedding I made while testing sd-tagging-helper and the new webui dataset tag editor extension. She has no tail because the crops were shit and I only trained on crops made using the helper. Sometimes the eye patch is on the wrong side because of two images where it was on the wrong eye. Stomach scar is sometimes there sort of but probably needed more time in the oven. She doesn't have dark skin because the AI is racist and probably because it was only tagged on half the images.
+	* Uploader: Use "dark-skinned female" in your prompt or she will be pale
+* Mizuryu-Kei (Mizuryu Kei): https://files.catbox.moe/bcy7vx.pt
+* kidmo: https://litter.catbox.moe/44e28e.pt
+	* dataset:kidmo
+	* dataset:no filter
+	* 10 tokens
+	* 26k steps
+	* 0.129 loss trend
+	* 90-ish dataset
+	* 0.0028 learning rate
+	* issue: generic as shit, irradiated with kpop, potato gaming (you'll know when you try to use this shit with i2i)
+* asanugget-16: https://litter.catbox.moe/9r0ixj.pt
+	* dataset: asanagi
+	* dataset: no pre-2010 artworks
+	* 16 tokens
+	* 22k steps
+	* 0.114 loss trend
+	* 500+ dataset (w/ auto focalpoint)
+	* 0.0028 learning rate
 
 Found on Discord:
 * Nahida v2: https://cdn.discordapp.com/attachments/1019446913268973689/1031321278713446540/nahida_v2.zip
@@ -1038,6 +1092,19 @@ Found on 4chan:
 	* Included is: Nanachi and Puuzaki Puuna (VAE was turned on during training)
 * HiRyS: https://mega.nz/file/Mk8jTZ4I#TdlF5Bxwz_gAuQeR0PWa_YUZotcQkA34d6m49I6eUMc
 	* Dead link, I think this is the same hypernetwork: https://litter.catbox.moe/rx8uv0.pt
+* 4k, 3d, highres images: 4k, 3d, highres images: https://mega.nz/file/UAEHkbhK#R-zdpiIz6Ig2-laa-M9_Hmtq6xgLNJZ0ZwVOiXt3OSc
+	* It has a preference for 3d design, large breasts and curves. It also has a preference for applying backgrounds,if none suggested. usually parks, beaches, indoors or cityscapes
+	* Comparison: https://i.4cdn.org/h/1667278030582788.png
+* Okegom (Funamusea / Deep Sea Prisoner): https://mega.nz/file/XYQF3YoZ#BAvBQduEx-tnUKvyJQ3mH-zOa_cKUKxpc58YpO8h2jc
+	* Crashed after 5.3k steps, continued training after when hypernetwork training resuming is broken. Apprently it got better
+	* Uploader: Alright, it's done. Maybe it's the small training data or the mediocre tagging but sometimes you get stuff that doesn't resemble their art style. Still releasing the three models I liked though, they work nicely with img2img.
+* Funamusea/Okegom/Mogeko (12500 steps): https://mega.nz/file/SBg0zBIa#BU1KkBY1vMvLXpfkDci1RZYi5f8P0yN5oyQzGYXF8q0
+	* Notes by uploader:
+	>Most results (at least with img2img) will have a chibi style regardless of your prompt.
+	>30 steps recommended.
+	>Does very well with white skin/pale characters, this is because the hypernetwork is trained mainly on white characters. Not because I wanted to but because it's what she tends to draw the most.
+	>Hypernetwork has most of her NSFW art in its data including a fanart which looks like it was drawn by her, just so the AI has a reference. So, yes, it can generate nudity and porn in her style, although I'm not sure about penetration stuff because I haven't tried.
+	>"outline" tag is recommended in prompt to have the same thick outlines she often uses in her artwork.
 
 Found on Korean Site of Wisdom (WIP):
 * Terada Tera: https://drive.google.com/file/d/1APwInBROTUdyeoW92yHFn_zBh7rY7b7I/view?usp=sharing
@@ -1066,7 +1133,9 @@ Found on Korean Site of Wisdom (WIP):
 	* https://arca.live/b/hypernetworks/60952481?category=%EA%B3%B5%EC%9C%A0&p=2#comment
 * Migonon: 
 	* https://mega.nz/folder/Ee8WCAoa#NpV9mpfkpnHscCu66L0vWw
-
+* Eula Lawrence (95000): https://mega.nz/file/l9tAHJBD#xdXMf7vulY4GJBigxegFVLSOULONnk4o86qKHYoBZmc
+	* (Training info) https://arca.live/b/hypernetworks/61954545?category=%EA%B3%B5%EC%9C%A0&p=1
+	* Model loaded at training time full-model-latest
 
 Found on Discord:
 * Art style of Rumiko Takahashi 
@@ -1284,6 +1353,10 @@ Collection of Aesthetic Gradients: https://github.com/vicgalle/stable-diffusion-
 ### DEAD/MISSING
 If you have one of these, please get it to me
 
+Dreambooth:
+Anya Taylor-Joy: https://drive.google.com/drive/mobile/folders/1f0FI2Vtr0dNfxyCzsNkNau20JT9Kmgn-
+* https://www.reddit.com/r/StableDiffusion/comments/xx8p1p/anya_taylorjoy_model_link_in_comments/
+
 Embed:
 * Omaru-polka: https://litter.catbox.moe/qfchu1.pt
 * Sakimichan: https://mega.nz/file/eE8QDKrI#y7kdyWgPUjI4ZkY8PSq89F28eU_Vz_0EgTbG6yAowH8
@@ -1296,12 +1369,17 @@ Hypernetworks:
 * 焦茶 / cogecha hypernetwork, trained against NAI: https://mega.nz/folder/BLtkVIjC#RO6zQaAYCOIii8GnfT92dw
 * 山北東 / northeast_mountain hypernetwork, trained against NAI: https://mega.nz/folder/RflGBS7R#88znRpu7YC1J1JYa9N-6_A
 
+* not sure if this is a hypernet: https://mega.nz/file/l9tAHJBD#xdXMf7vulY4GBigxegFVLSOULONnk4o86qKHYoBZmc
+	* probably a mis copy paste of Eula Lawrence: https://mega.nz/file/l9tAHJBD#xdXMf7vulY4GJBigxegFVLSOULONnk4o86qKHYoBZmc
+
 Datasets:
 * expanded ie_(raarami) dataset: https://litter.catbox.moe/j4mpde.zip
 * Toplessness: https://litter.catbox.moe/mttar5.zip
 * https://gofile.io/d/R74OtT
 * Onono imoko (NSFW + SFW, 300 cropped images): https://files.catbox.moe/dkn85w.zip
 * thanukiart (colored): https://www.dropbox.com/sh/mtf094lb5o61uvu/AABb2A83y4ws4-Rlc0lbbyHSa?dl=0
+
+
 
 ## Training
 * Training guide for textual inversion/embedding and hypernetworks: https://pastebin.com/dqHZBpyA
@@ -1343,7 +1421,10 @@ Datasets:
 * Colab 3: https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
 * Colab 4 (fast): https://github.com/TheLastBen/fast-stable-diffusion
 
-* **GUI helper for manual tagging and cropping: https://github.com/arenatemp/sd-tagging-helper**
+* Dreambooth gui: https://github.com/smy20011/dreambooth-gui
+	* the app automatically chooses the best settings for your current VRAM
+
+* **GUI helper for manual tagging and cropping: https://github.com/arenatemp/sd-tagging-helper/**
 
 * Embed vector, clip skip, and vae comparison: https://desuarchive.org/g/thread/89392239#89392432
 
@@ -1447,9 +1528,155 @@ You want the ai to find things that are consistent thematics in your image. If y
 
 ## FAQ
 
-Check out https://rentry.org/sdupdates for now
+Check out https://rentry.org/sdupdates for other questions
+
+**What's all the new stuff?**
+>Check here to see if your question is answered: 
+* https://scribe.froth.zone/m/global-identity?redirectUrl=https%3A%2F%2Fblog.novelai.net%2Fnovelai-improvements-on-stable-diffusion-e10d38db82ac
+* https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac
+* https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki
+
+**How do I set this up?**
+>Refer to https://rentry.org/nai-speedrun (has the "Asuka test")
+>Easy guide: https://rentry.org/3okso
+>Standard guide: https://rentry.org/voldy
+>Detailed guide: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017
+>Paperspace: https://rentry.org/865dy
+
+>AMD Guide: https://rentry.org/sdamd
+>* After setting stuff up using this guide, refer back to https://rentry.org/nai-speedrun for settings
+
+**What's the "Hello Asuka" test?**
+>It's a basic test to see if you're able to get a 1:1 recreation with NAI and have everything set up properly. Coined after asuka anon and his efforts to recreate 1:1 NAI before all the updates.
+
+>Refer to
+>* https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017
+>* Very easy Asuka 1:1 Euler A: https://boards.4chan.org/h/thread/6893903#p6894236
+>	 * Asuka Euler guide: https://imgur.com/a/DCYJCSX
+>	* Asuka Euler a guide: https://imgur.com/a/s3llTE5
+
+**What is pickling/getting pickled?**
+>ckpt files and python files can execute code. Getting pickled is when these files execute malicious code that infect your computer with malware. It's a memey/funny way of saying you got hacked.
+* Automatic1111's webui should unpickle the files for you: https://github.com/AUTOMATIC1111/stable-diffusion-webui/search?q=pickle&type=commits
+* https://docs.python.org/3/library/pickle.html
+
+**I want to run this, but my computer is too bad. Is there any other way?**
+Check out one of these:
+* Free online browser SD: https://huggingface.co/spaces/stabilityai/stable-diffusion
+* https://promptart.labml.ai/playground
+* https://novelai.manana.kr/
+* https://boards.4channel.org/g/thread/89199040
+* https://www.mage.space/
+* https://github.com/TheLastBen/fast-stable-diffusion
+* https://github.com/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb
+* visualise.ai
+	* Account required
+	* Free unlimited 512x512/64 step runs
+* img2img with stable horde: https://tinybots.net/artbot
+* Free, GPU-less, powered by Stable Horde: https://dbzer0.itch.io/lucid-creations
+* Free crowdsourced distributed cluster for Stable Diffusion: https://stablehorde.net/
+* https://creator.nightcafe.studio/
+* Service of free image generation: Artificy.com
+	* Free for personal use
+	* We use all most fresh, models for example
+	* Different aspect ratios, predefined styles
+	* Fast and simple interface
+	* Social network features: make & share!
+	* Work in progress every day
+* https://www.craiyon.com/
+	* DALL·E mini
+* http://aiart.house
+* HF demo list: https://pastebin.com/9X1BPf8S
+
+**How do I run NSFW models in colab?**
+Info by anon, I'm not sure if it works:
+
+>!gdown https://huggingface.co/Daswer123/asdasdadsa/resolve/main/novelai_full.ckpt -O /content/stable-diffusion-webui/models/Stable-diffusion/nai.ckpt
+>!gdown https://huggingface.co/Daswer123/asdasdadsa/resolve/main/animevae.pt -O /content/stable-diffusion-webui/models/Stable-diffusion/nai.vae.pt
+>!gdown https://huggingface.co/Daswer123/asdasdadsa/raw/main/nai.yaml -O /content/stable-diffusion-webui/models/Stable-diffusion/nai.yaml
+>!gdown https://huggingface.co/Daswer123/asdasdadsa/resolve/main/v2.pt -O /content/stable-diffusion-webui/v2.pt
+>!gdown https://huggingface.co/Daswer123/asdasdadsa/raw/main/v2enable.py -O /content/stable-diffusion-webui/scripts/v2enable.py
+>
+>!wget https://pastebin.com/raw/ukEFznTb (embed) -O /content/stable-diffusion-webui/ui-config.json
+>
+>now paste that above in a codeblock and excute it or use this colab https://colab.research.google.com/drive/1zN99ZouzlYObQaPfzwbgwJr6ZqcpYK5-?usp=sharing#scrollTo=SSP9suJcjlWs and select nai in the model dropdown
 
 ## Link Dump will sort
+
+**Info:**
+* Detailed 1:1 setup NAI + current news: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017
+* Very easy Asuka 1:1 Euler A: https://boards.4chan.org/h/thread/6893903#p6894236
+	* Asuka Euler guide: https://imgur.com/a/DCYJCSX
+	* Asuka Euler a guide: https://imgur.com/a/s3llTE5
+* Beginner's Guide: https://rentry.org/nai-speedrun
+* SD NAI FAQ: https://rentry.org/sdg_FAQ
+* general wiki: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki
+* general wiki 2: https://wiki.installgentoo.com/wiki/Stable_Diffusion
+* general wiki 3: https://github.com/Maks-s/sd-akashic
+* general wiki 4: https://github.com/awesome-stable-diffusion/awesome-stable-diffusion
+* setup guide: https://rentry.org/voldy
+* Easy to setup Standard Diffusion: https://nmkd.itch.io/t2i-gui
+* Another easy to setup SD: https://github.com/cmdr2/stable-diffusion-ui
+* Models: https://rentry.org/sdmodels
+* Japanese 4chan: https://may.2chan.net/b/
+* Japanese 4chan 2: https://find.5ch.net/search?q=JNVA%E9%83%A8
+* Japanese 4chan 3: http://nozomi.2ch.sc/test/read.cgi/liveuranus/1666357371/355-
+* General info: https://rentry.org/sd-nativeisekaitoo
+* Guide: https://github.com/Engineer-of-Stuff/stable-diffusion-paperspace/blob/main/docs/archives/VOLDEMORT'S%20GUI%20GUIDE%20FOR%20THE%20MENTALLY%20DEFICIENT.pdf
+* NAI info: https://pastebin.com/cExyWkgy
+* GPU buying guide: https://rentry.org/stablediffgpubuy
+	* Spreadsheet: https://docs.google.com/spreadsheets/d/1Zlv4UFiciSgmJZncCujuXKHwc4BcxbjbSBg71-SdeNk/edit#gid=0
+	* Basic guide: https://docs.google.com/document/u/0/d/1lF9_5MIhALo7xCxKpQCZNL_jrJdUHYgJ3prET5yC1rI/mobilebasic
+* CSP SD: https://github.com/mika-f/nekodraw
+* Link collection: https://github.com/pomee4/SD-LinkList
+* debug guide: https://rentry.org/pf98i
+
+**Boorus:**
+* Danbooru: danbooru.donmai.us/
+* Gelbooru: https://gelbooru.com/
+* AIBooru: https://aibooru.online/
+* Booru Site: https://infinibooru.moe/
+* Local (classic): hydrusnetwork.github.io/
+* AI art here: https://e-hentai.org/g/2343153/b4ce2a4b0b
+* Easy to setup booru/image gallery by anon, highly recommended: https://github.com/demibit/stable-toolkit
+* Simple: https://www.irfanview.com
+* SFW: https://nastyprompts.com/
+* Infinibooru: https://infinibooru.moe/posts
+* Betabooru: https://betabooru.donmai.us
+* Japanese pixiv for ai art: https://www.chichi-pui.com/
+* discord anon (allows for generation?, runs NovelAI model): https://pixai.art/
+* nsfw: https://pornpen.ai/
+* /vt/ collection, updated: https://mega.nz/folder/j2AgSB6Y#3Kcq-xms0fWU4na-aaTFhA/folder/unw2EIBI
+
+**Upscalers:**
+* Big list: https://upscale.wiki/wiki/Model_Database
+* anon recommended this: https://arc.tencent.com/en/ai-demos/imgRestore
+* Anime: https://github.com/bloc97/Anime4K
+* https://github.com/nihui/waifu2x-ncnn-vulkan
+* Some: https://mega.nz/folder/3Jo2AAAa#4CGEwUM0dKu3kkaJa-qUIA
+* online: https://replicate.com/xinntao/realesrgan
+* anime: https://files.catbox.moe/c6ogfl.pth
+* ultrasharp: https://mega.nz/folder/qZRBmaIY#nIG8KyWFcGNTuMX_XNbJ_g
+	* https://drive.google.com/file/d/1lELx_WiA25_S8rYINm_DyMNpFOhfZAzt/view
+* Waifu2x: https://github.com/nagadomi/waifu2x
+* Gigapixel AI: https://www.topazlabs.com/gigapixel-ai
+
+RunwayML: https://github.com/runwayml/stable-diffusion
+
+GPU comparison: https://docs.google.com/spreadsheets/d/1Zlv4UFiciSgmJZncCujuXKHwc4BcxbjbSBg71-SdeNk/edit#gid=0
+
+Undervolt guide: https://www.reddit.com/r/nvidia/comments/tw8j6r/there_are_two_methods_people_follow_when/
+
+frames to video: https://github.com/jamriska/ebsynth
+
+Paperspace guide: https://rentry.org/865dy
+
+More twitter anons: 
+https://twitter.com/knshtyk/media
+
+Sigmoid math: https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2658
+
+maybe you can edit this to allow 8gb DB training: https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb
 
 ## Hall of Fame
 automatic1111
@@ -1487,4 +1714,13 @@ If you get an error about "--skip-torch-cuda-test", add it as well (making the l
 After you started the .bat and got the WebUI loaded, go to Settings and scroll to Stable Diffusion. Set the checkpoint to final-pruned and the hypernetwork of your choice.
 ```
 
-author socials: questianon !!YbTGdICxQOw (malt#6065, u/questianon, https://github.com/questianon, https://twitter.com/questianon), ping or tag if I need to change anything or if you have questions
+## Contact
+
+If you have information/files (e.g. embed) not on this list or you have questions, please contact me with details. 
+
+Socials: 
+Trip: questianon !!YbTGdICxQOw 
+Discord: malt#6065
+Reddit: u/questianon
+Github: https://github.com/questianon
+Twitter: https://twitter.com/questianon)
