@@ -12,13 +12,14 @@ View the old stuff here: https://github.com/questianon/sdupdates/blob/main/sdupd
 
 !!! Links are dying. If you happen to have a file listed in https://rentry.org/sdupdates#deadmissing or that's not on this list, please get it to me.
 
+!!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates
+
 !!! note Changelog: added news and embeds+hypernets
 
-!!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates. There is also a WIP embedding directory here: https://github.com/questianon/sdupdates/blob/main/Embeddings.md
-
-!!! note If you know to how to javascript/want to contribute in any way, contact me 
+!!! note Request: Looking for javascript + react coders (someone who knows how to make a form -> xlsx, doesn't need to be in js + react)
 
 ### Quicklinks: 
+* Contact: https://rentry.org/sdupdates2#contact
 * News: https://rentry.org/sdupdates2#newsfeed
 * Prompting: https://rentry.org/sdupdates2#prompting
 * Models, Embeddings, and Hypernetworks: https://rentry.org/sdupdates2#models-embeddings-and-hypernetworks
@@ -36,13 +37,26 @@ View the old stuff here: https://github.com/questianon/sdupdates/blob/main/sdupd
 * Hall of Fame: https://rentry.org/sdupdates2#hall-of-fame
 * Miscellaneous: https://rentry.org/sdupdates2#misc
 * Github: https://github.com/questianon/sdupdates/
-* Contact: https://rentry.org/sdupdates2#contact
+
+## Contact
+
+If you have information/files (e.g. embed) not on this list, have questions, or want to help, please contact me with details
+
+Socials: 
+Trip: questianon !!YbTGdICxQOw 
+Discord: malt#6065
+Reddit: u/questianon
+Github: https://github.com/questianon
+Twitter: https://twitter.com/questianon)
 
 ## NEWSFEED
 !!! note Don't forget to git pull to get a lot of new optimizations + updates, if SD breaks go backward in commits until it starts working again
 	Instructions:
 	* If on Windows:
-		1. go to the webui directory
+		1. navigate to the webui directory through command prompt or git bash
+			a. Git bash: right click > git bash here
+			b. Command prompt: click the spot in the "url" between the folder and the down arrow and type "command prompt". 
+			c. If you don't know how to do this, open command prompt, type "cd [path to stable-diffusion-webui]" (you can get this by right clicking the folder in the "url" or holding shift + right clicking the stable-diffusion-webui folder)
 		2. ```git pull```
 		3. ```pip -r install requirements.txt```
 	* If on Linux: 
@@ -53,10 +67,17 @@ View the old stuff here: https://github.com/questianon/sdupdates/blob/main/sdupd
 		4. ```pip -r install requirements.txt```
 
 >11/2
+* f222 model release date on Friday from Zeipher AI
+	* Discord: https://discord.gg/hqbrprK6
 * Multiple people are working on a centralized location to upload embeddings/hypernetworks
 	* AIBooru devs
 	* Independent dev irythros
 	* Questianon (me)
+* Correction from sdupdates1
+	* New Windows based Dreambooth solution with Adam8bit support might support 8gb cards (anon reported 11 MBs of extra vram needed, so if you lower your vram usage to its absolute minimum, it might work)
+		* https://github.com/bmaltais/kohya_ss
+		* instructions: https://note.com/kohya_ss/n/n61c581aca19b
+		* new + low number of stars, so not sure if pickled
 * Chinese documentation with machine translation for English: https://draw.dianas.cyou/en/
 * Auto-SD-Krita is getting turned into an extension: https://github.com/Interpause/auto-sd-paint-ext
 	* Original auto-sd-krita will be archived
@@ -318,6 +339,8 @@ Script for outpainting: https://github.com/TKoestlerx/sdexperiments
 Img2img animation script: https://github.com/Animator-Anon/Animator/blob/main/animation_v6.py
 * Can use in txt2img mode and combine with https://film-net.github.io/ for content aware interpolation
 
+Animation Guide: https://rentry.org/AnimAnon#introduction
+
 Giffusion tutorial:
 ``` python 
 >git clone https://github.com/megvii-research/ECCV2022-RIFE
@@ -521,6 +544,8 @@ Anon's list of comparisons:
 * https://rentry.org/animedoesnotexist
 
 ##  Models, Embeddings, and Hypernetworks
+
+!!! Downloads listed as "sus" or "might be pickled" generally mean there were 0 replies and not enough "information" (like training info). or, the replies indicated they were suspicious. I don't think any of the embeds/hypernets have had their code checked so they could all be malicious, but as far as I know no one has gotten pickled yet 
 
 ### **Models***
 
@@ -1741,14 +1766,3 @@ If you get an error about "--skip-torch-cuda-test", add it as well (making the l
 
 After you started the .bat and got the WebUI loaded, go to Settings and scroll to Stable Diffusion. Set the checkpoint to final-pruned and the hypernetwork of your choice.
 ```
-
-## Contact
-
-If you have information/files (e.g. embed) not on this list or you have questions, please contact me with details. 
-
-Socials: 
-Trip: questianon !!YbTGdICxQOw 
-Discord: malt#6065
-Reddit: u/questianon
-Github: https://github.com/questianon
-Twitter: https://twitter.com/questianon)
