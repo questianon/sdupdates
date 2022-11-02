@@ -1,4 +1,8 @@
-# SD RESOURCE GOLDMINE
+View the old stuff here: https://github.com/questianon/sdupdates/blob/main/sdupdates%20backup.md or https://www.rentry.org/sdupdates
+
+# SD RESOURCE GOLDMINE 2
+
+->Version 2 of https://www.rentry.org/sdupdates. If something you want isn't here, it's probably in the other rentry<-
 
 !!! danger Warnings: 
 
@@ -8,29 +12,31 @@
 
 !!! Links are dying. If you happen to have a file listed in https://rentry.org/sdupdates#deadmissing or that's not on this list, please get it to me.
 
-!!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates. There is also a WIP embedding directory here: https://github.com/questianon/sdupdates/wiki
+!!! note Changelog: added news and embeds+hypernets
+
+!!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates. There is also a WIP embedding directory here: https://github.com/questianon/sdupdates/blob/main/Embeddings.md
 
 !!! note If you know how to do stuff in markdown and html/can make a webpage easily/want to contribute in any way, contact me 
 
 ### Quicklinks: 
-* News: https://rentry.org/sdupdates#newsfeed
-* Prompting: https://rentry.org/sdupdates#prompting
-* Models, Embeddings, and Hypernetworks: https://rentry.org/sdupdates#models-embeddings-and-hypernetworks
-	* Embeddings: https://rentry.org/sdupdates#embeddings
-	* Hypernetworks: https://rentry.org/sdupdates#hypernetworks
-	* Aesthetic Gradients: https://rentry.org/sdupdates#aesthetic-gradients
-	* Models, embeds, and hypernetworks that might be sus: https://rentry.org/sdupdates#polar-resources
-	* DEAD/MISSING: https://rentry.org/sdupdates#deadmissing
-* Training: https://rentry.org/sdupdates#training
-	* Datasets: https://rentry.org/sdupdates#datasets
-* FAQ: https://rentry.org/sdupdates#common-questions-ctrlcmd-f
-* Link Dump: https://rentry.org/sdupdates#rentrys-link-dump-will-sort
-* Confirmed Drama: https://rentry.org/sdupdates#confirmed-drama
-* Unconfirmed Drama: https://rentry.org/sdupdates#unconfirmed-drama
-* Fed Bait Information: https://rentry.org/sdupdates#fed-bait-information
-* Hall of Fame: https://rentry.org/sdupdates#hall-of-fame
-* Miscellaneous: https://rentry.org/sdupdates#misc
+* News: https://rentry.org/sdupdates2#newsfeed
+* Prompting: https://rentry.org/sdupdates2#prompting
+* Models, Embeddings, and Hypernetworks: https://rentry.org/sdupdates2#models-embeddings-and-hypernetworks
+	* Models: https://rentry.org/sdupdates2#models
+	* Dreambooth Models: https://rentry.org/sdupdates2#dreambooth-models
+	* Embeddings: https://rentry.org/sdupdates2#embeddings
+	* Hypernetworks: https://rentry.org/sdupdates2#hypernetworks
+	* Aesthetic Gradients: https://rentry.org/sdupdates2#aesthetic-gradients
+	* Models, embeds, and hypernetworks that might be sus: https://rentry.org/sdupdates2#polar-resources
+	* DEAD/MISSING: https://rentry.org/sdupdates2#deadmissing
+* Training: https://rentry.org/sdupdates2#training
+	* Datasets: https://rentry.org/sdupdates2#datasets
+* FAQ: https://rentry.org/sdupdates2#common-questions-ctrlcmd-f
+* Link Dump: https://rentry.org/sdupdates2#rentrys-link-dump-will-sort
+* Hall of Fame: https://rentry.org/sdupdates2#hall-of-fame
+* Miscellaneous: https://rentry.org/sdupdates2#misc
 * Github: https://github.com/questianon/sdupdates/
+* Contact: https://rentry.org/sdupdates2#contact
 
 ## NEWSFEED
 !!! note Don't forget to git pull to get a lot of new optimizations + updates, if SD breaks go backward in commits until it starts working again
@@ -46,12 +52,44 @@
 		3. ```git pull```
 		4. ```pip -r install requirements.txt```
 
+>11/1
+* SD Upscale broken on latest git pull: https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/4104
+	* Seems to affect some other parts of webui too
+* PR for hypernetwork resume fix: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3975
+* Dreambooth will probably not be integrated into AUTOMATIC1111's webui normally. It's likely to be turned into an extension: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3995#issuecomment-1298741868
+* MMD + NAI showcase (not sure what UC 3d is): https://twitter.com/8co28/status/1587238661090791424?t=KJmJhfkG6GPcxS5P6fADgw&s=19 
+* Dehydrate ("compress" down to 1gb) and rehydrate models: https://github.com/bmaltais/dehydrate
+	1. Use the ckpt_subtract.py script to subtract the original model from the DB model, leaving behind only the difference between the two.
+    2. Compress the resulting model using tar, gzip, etc to roughly 1GB or less
+    3. To rehydrate the model simply reverse the process. Add the diff back on top of the original sd15 model (or actually any other models of your choice, can be a different one) with ckpt_add.py.
+* 6gb textual inversion training when xformers is available merged: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4056
+* From the Chinese community (some news is old, info provided by Chinese anon):
+	* Someone made a fork of diffusers, added support of wandb, and reduced the size of ckpt to about 2G by changing the precision to fp16
+		* Supposedly makes it easier to prune the ckpt
+		* Repo: https://github.com/CCRcmcpe/diffusers
+	* It's believed that the size can possibly be further reduced by removing the vae
+	* WIP of using the training difference to distribute the ckpt
+		* Original reddit post about it: https://www.reddit.com/r/StableDiffusion/comments/ygl75c/not_really_working_poorly_coded_sparse_tensor/ 
+		* Modified version that Chinese anons are testing: https://gist.github.com/AmericanPresidentJimmyCarter/1947162f371e601ce183070443f41dc2
+		* If I recall correctly, this is how ML Research Lab plans to do distributed model training
+	* Huggingface for ERNIE-ViLG: https://huggingface.co/spaces/PaddlePaddle/ERNIE-ViLG
+* AI art theft is now appearing (reuploads of AI art)
+* Lots of localization updates + improvements + extra goodies added if you update AUTOMATIC1111's webui
+* Wildcard script + collection of wildcards released: https://app.radicle.xyz/seeds/pine.radicle.garden/rad:git:hnrkcfpnw9hd5jb45b6qsqbr97eqcffjm7sby
+
 >10/31
+* Unprompted extension released: https://github.com/ThereforeGames/unprompted
+	* Wildcards on steroids
+	* Powerful scripting language 
+	* Can create templates out of booru tags
+	* Can make shortcodes
+	* "You can pull text from files, set up your own variables, process text through conditional functions, and so much more "
 * You might be able to get more performance on windows by disabling hardware scheduling
 	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3889
-* New inpainting options added
+* (semi old news) New inpainting options added
 * Extensions manager added for AUTOMATIC1111's webui
 * Pixiv adding AI art filter: https://www.pixiv.net/info.php?id=8729
+	* https://www.pixiv.net/info.php?id=8711
 	* https://www.pixiv.net/en/artworks/102382801
 * VAE selector PR: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3986
 * Open sourced, AI-powered creator released
@@ -87,399 +125,6 @@
 	>After you apply this, turn on Move VAE and CLIP to RAM and Use cross attention optimizations while training
 * Google AI demonstration: https://youtu.be/YxmAQiiHOkA
 * Deconvolution and Checkerboard Artifacts: https://distill.pub/2016/deconv-checkerboard/
-
->10/30
-* (oldish news) Mubert, text to music released: https://github.com/MubertAI/Mubert-Text-to-Music
-	* app to listen: https://apps.apple.com/app/apple-store/id1154429580
-	* search for music: https://mubert.com/render
-	* Huggingface demo: https://huggingface.co/spaces/Mubert/Text-to-Music
-* Stable diffusion "deepfake" (good with few keyframes)
-	* https://twitter.com/NicolaiNightVi1/status/1586434671663013889
-	* https://github.com/nicolai256/Few-Shot-Patch-Based-Training
-* Git pull for some updates
-	* Hypernetwork training fixed (continuing training off old checkpoints for HNs and embeds is still broken)
-		* https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3771
-		* https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670#discussioncomment-3980624
-* shrink the size of ckpts and grow them back to their original size: https://github.com/bmaltais/dehydrate
-	* not sure if safe, but it seems to work
-* Blender camera animations to deforum released: https://github.com/micwalk/blender-export-diffusion
-* New Windows based Dreambooth solution with Adam8bit support (should run on 8gb and 12gb cards): https://github.com/bmaltais/kohya_ss
-	* instructions: https://note.com/kohya_ss/n/n61c581aca19b
-	* new, so not sure if pickled
-* Img2music (fun): https://huggingface.co/spaces/fffiloni/img-to-music
-* **GUI helper for manual tagging and cropping released: https://github.com/arenatemp/sd-tagging-helper**
-* Dreambooth PR: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3995
-* Video diffusion models: https://video-diffusion.github.io/
-* Dataset shuffling should be fixed now so that it actually shuffles.
-	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3803
-
-
->10/29
-* SD multiplayer: https://huggingface.co/spaces/huggingface-projects/stable-diffusion-multiplayer
-	* kind of like r/place
-* Big inpainting updated released (composition stays the same but style changes)
-	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3669
-* Unreal engine 5 plugin released
-	* https://github.com/albertotrunk/ue-stable-diffusion
-* Hires broken on the latest commit
-	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/3888
-* (old news) new hypernetwork training added
-
->10/28
-* Largest Korean hypernetwork/embedding sharing forum post with a ton of hypernetworks/embeddings + images (highly recommended)
-	* https://arca.live/b/hypernetworks/60940948
-	* has an English explanation of some stuff at the top
-		* koreanon requests for good embeddings to be posted in the comments with artist name
-* ~~Rumor on /g/ that AUTOMATIC1111 was conscripted into the russian army~~ False rumor, AUTOMATIC1111 said that he's fine and is just resting from Stable Diffusion and will probably:
-	* work on PRs soon
-	* "make a tab for extensions for list and easy install from URL"
-* Custom poseable doll released
-	* Original video: https://youtu.be/iPsX7z5imVY
-	* Tutorial: https://youtu.be/MClbPwu-75o
-	* Download: https://www.artstation.com/marketplace/p/VOAyv/stable-diffusion-3d-posable-manekin-doll?utm_source=artstation&utm_medium=referral&utm_campaign=homepage&utm_term=marketplace
-* Note for training: You can set a learning rate of "0.1:500, 0.01:1000, 0.001:10000" in textual inversion and it will follow the schedule
-* Parseq released
-	* parameter sequencer
-	* "Generate videos with tight control and flexible interpolation over many Stable Diffusion parameters (such as seed, scale, prompt weights, denoising strength...), as well as input processing parameter (such as zoom, pan, 3D rotation...)"
-	* https://github.com/rewbs/sd-parseq
-* Img2tiles script released
-	* https://github.com/arcanite24/img2tiles
-* Stable Diffusion Prompt Book released
-	* Organized by openart.ai in collab with PublicPrompts (https://publicprompts.art/)
-	* https://bit.ly/PromptBook
-	* https://openart.ai/promptbook
-	* https://www.reddit.com/r/StableDiffusion/comments/yfm8go/im_glad_to_announce_the_release_of_the_stable/
-* AI Pictionary released
-	* https://pictionairy.com/
-* CIO statement from a few days ago
-	* https://www.reddit.com/r/StableDiffusion/comments/y9ga5s/stability_ais_take_on_stable_diffusion_15_and_the/
-	* https://danieljeffries.substack.com/p/why-the-future-of-open-source-ai
-* (old news) Imagic running with Stable Diffusion
-	* twitter: https://twitter.com/Buntworthy/status/1582307817884889088
-	* github: https://github.com/justinpinkney/stable-diffusion
-	* notebook: https://github.com/justinpinkney/stable-diffusion/blob/main/notebooks/imagic.ipynb
-* (old news) government letter to Stability AI: https://eshoo.house.gov/sites/eshoo.house.gov/files/9.20.22LettertoNSCandOSTPonStabilityAI.pdf
-* (old news) Deviant Art CEO supports ai (?)
-	* https://www.deviantart.com/wannabby, check their posts about AI
-* (old news) imagic: img2img but better
-	* paper: https://arxiv.org/pdf/2210.09276.pdf
-	* implementation: https://github.com/justinpinkney/stable-diffusion/blob/main/notebooks/imagic.ipynb
-
->10/27
-* hypernetwork training is currently broken (unsure if fixed now)
-	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670#discussioncomment-3973187
-
->10/26
-* Created https://github.com/questianon/sdupdates
-	* Rentry backup for now
-	* Features people might like:
-		* Commit history so you know what's new
-		* Watch so you can get notifications
-		* The formatting might be nicer
-* New generative models, supposedly faster than diffusers
-	* https://github.com/Newbeeer/Poisson_flow
-	* More info: https://www.assemblyai.com/blog/an-introduction-to-poisson-flow-generative-models/
-	* electrodynamics inspired (the current diffusion model is thermodynamics/statistical physics inspired)
-	* 10-20x faster
-	* https://colab.research.google.com/drive/1neY6OovzZELul9t2OTdThUitptNVnuHR?usp=sharing
-* Automatic1111's webui supports subfolders and symlinks
-	* saves space + allows for organization
-	* https://www.reddit.com/r/StableDiffusion/comments/ye2fwh/tip_automatic1111_supports_model_subfolders/
-* Stable Diffusion plugin for Krita and Photoshop (not much info, so not sure if safe)
-	* https://internationaltd.github.io/defuser/
-	* https://github.com/internationalTD/defuser
-	* old version: https://github.com/internationalTD/sd_frontend
-
->10/21 - 10/25 (big news bolded, big thanks to asuka-test-imgur-anon-who-also-made-the-speedrun-tutorial for some info)
-* Latest git pull can break SD (windows)
-	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/3688
-	* update with "git pull origin master" instead of "git pull" until the branch is deleted on the github side
-* gaming cock flower arrangement club (Japanese lore)
-	* https://twitter.com/ankomelt/status/1584058799865806854
-	* https://dic.nicovideo.jp/a/ゲーミングチンポ華道部
-	* https://twitter.com/search?q=ゲーミングちんぽ華道部&src=typed_query&f=image
-* Deforum (video animation) extension released
-	* https://github.com/deforum-art/deforum-for-automatic1111-webui/
-	* https://www.reddit.com/r/StableDiffusion/comments/ychq1x/the_official_deforum_script_for_2d3d_stable/
-* Many new VAE's (finetunes) released
-	* Check https://rentry.org/sdmodels for most of them
-* **NovelAI explanation of all their implemations**
-	* https://scribe.froth.zone/m/global-identity?redirectUrl=https%3A%2F%2Fblog.novelai.net%2Fnovelai-improvements-on-stable-diffusion-e10d38db82ac
-* Infinite outpainting: https://github.com/lkwq007/stablediffusion-infinity
-* Safer pickleless (unpickleable) format, still needs to be implemented
-	* https://github.com/huggingface/safetensors
-	* "This repository implements a new simple format for storing tensors safely (as opposed to pickle) and that is still fast (zero-copy)."
-* Temp folder storing generations, space issues (might be fixed now)
-	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/3278 
-* Dreambooth training (now with gui https://github.com/smy20011/dreambooth-gui ), referenced via prompt (?)
-* Guided inpainting (video inpainting with keyframes)
-	* https://github.com/runwayml/guided-inpainting
-* If you build Hydrus from source, someone made a fork to import the tags and other metadata automatically. 
-	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2087#discussioncomment-3928256
-* AUTOMATIC1111's history tab now an extension:
-	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Extensions#image-browser
-* Imagic Stable Diffusion training in 11 GB VRAM
-	* https://github.com/ShivamShrirao/diffusers/tree/main/examples/imagic
-* Interpolate script for AUTOMATIC1111's webui
-	* https://github.com/DiceOwl/StableDiffusionStuff
-* Text2LIVE: Text-Driven Layered Image and Video Editing
-	* https://github.com/omerbt/Text2LIVE
-	* https://www.reddit.com/r/StableDiffusion/comments/y89gz0/text2live_textdriven_layered_image_and_video/
-	* demo site: https://text2live.github.io
-	* arxiv: https://arxiv.org/abs/2204.02491
-* AUTOMATIC1111's webui has an api
-	* https://sphuff.dev/automatic-now-has-an-api
-	* https://www.reddit.com/r/StableDiffusion/comments/ybhqe8/automatic_now_has_an_api/
-* **StabilityAI released a new VAE**
-	* Improves eyes, hands, colors, and img2img
-	* https://huggingface.co/stabilityai
-	* **Tutorial + how to use on ALL models (applies for the NAI vae too): https://www.reddit.com/r/StableDiffusion/comments/yaknek/you_can_use_the_new_vae_on_old_models_as_well_for/**
-* **Aesthetic Gradients released**
-	* voldy's announcement https://desuarchive.org/g/thread/89343235/#89345163
-	* breakdown of new interface https://desuarchive.org/g/thread/89343235/#89345258
-	* more explanation https://desuarchive.org/g/thread/89343235/#89345322
-	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Extensions
-	* https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients
-* Lama Cleaner released with v1.5 support
-	* https://github.com/Sanster/lama-cleaner
-	* Good at watermark removal
-	* https://www.reddit.com/r/StableDiffusion/comments/y90hzz/lama_cleaner_add_runwaysd15inpainting_support_the
-		* Mini tutorial in the comments
-* Dance Diffusion (AI Music) released by HarmonAI
-	* Discord: https://discord.gg/MunJTXwk
-* AI Music by Google
-	* https://www.technologyreview.com/2022/10/07/1060897/ai-audio-generation/
-* 8-10gb Dreambooth for AUTOMATIC1111's webui WIP
-	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2002
-* **hlky’s/sd-webui rebranded as Sygil.dev**
-	* Working on Project Nataili, a common Standard Diffusion backend 
-	* Goal is to centralize all resources
-	* https://www.reddit.com/r/StableDiffusion/comments/yd5p5s/hlkyssdwebui_announcing_sygildev_project_nataili/
-* visualise.ai
-	* Account required
-	* Free unlimited 512x512/64 step runs
-* **Optimized dreambooth**
-	* train under 10 minutes without class images on multiple subjects, retrainable-ish model
-	* Tutorial: https://www.reddit.com/r/StableDiffusion/comments/yd9oks/new_simple_dreambooth_method_is_out_train_under/
-	* Github: https://github.com/TheLastBen/fast-stable-diffusion
-* Many sites banned AI art
-* **Hypernetwork structures added**
-	* more numbers = more vram needed = deeper hypernetwork = better results (?)
-	* Deep hypernetworks are suited for training with large datasets
-* **Waifu Diffusion 1.4 roadmap:**
-	* https://gist.github.com/harubaru/313eec09026bb4090f4939d01f79a7e7
-	* Release date: December 1
-	* Discord: https://discord.gg/SqrKhArt
-* **Extensions added to AUTOMATIC1111's webui**
-	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Extensions
-* Test embeddings before you download them
-	* https://huggingface.co/spaces/sd-concepts-library/stable-diffusion-conceptualizer
-* UMI AI, a wildcard engine, released
-	* Free
-	* Tutorial: https://www.patreon.com/posts/umi-ai-official-73544634
-	* Discord (SFW and NSFW): https://discord.gg/9K7j7DTfG2
-	* More info in https://rentry.org/sdupdates#prompting 
-* 3D AI stuff
-	* https://www.youtube.com/watch?v=19gzG-AsBNU
-	* https://dreamfusion3d.github.io/
-	* https://3d-diffusion.github.io/
-	* https://medium.com/mlearning-ai/3d-diffusion-models-22fd4ccc41a2
-* Pose Estimation
-	* https://viso.ai/deep-learning/pose-estimation-ultimate-overview/
-
->10/20
-* SD v1.5 released by RunwayML
-	* Uncensored, legitimate 1.5
-	* Huggingface: https://huggingface.co/runwayml/stable-diffusion-v1-5
-	* Tweet: https://twitter.com/runwayml/status/1583109275643105280
-	* https://nitter.it/runwayml/status/1583109275643105280#m
-	* https://rentry.org/sdmodels
-	* Reddit thread: https://www.reddit.com/r/StableDiffusion/comments/y91pp7/stable_diffusion_v15/
-	* Drama recap: https://www.reddit.com/r/StableDiffusion/comments/y99yb1/a_summary_of_the_most_recent_shortlived_so_far/
-		* https://rentry.org/sdupdates#confirmed-drama for recap + links
-
-
->10/19
-* Git pull for a lot of new stuff
-	* theme argument: https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/665beebc0825a6fad410c8252f27f6f6f0bd900b
-	* A lot of optimizations
-	* Layered hypernetworks
-	* Time left estimation (if jobs take more than 60 sec)
-	* Minor UI changes
-* Runway released new SD inpainting/outpainting model
-	* https://github.com/runwayml/stable-diffusion#inpainting-with-stable-diffusion
-* Stability AI event recap
-	* https://www.reddit.com/r/StableDiffusion/comments/y6v0v9/stability_event_happening_now_news_so_far/
-	* Animation API next week
-	* DreamStudio Pro in progress (automatic gen of video from music + latent space exploration)
-	* will fund 100 PHDs this year
-	* Their cluster is 4000 A100s on AWS and plans to grow 5x-10x next year
-	* will reduce price of Dreamstudio by half
-	* Game universes created with AI: https://twitter.com/Plinz/status/1582202096983498754
-* Dreambooth GUI: https://github.com/smy20011/dreambooth-gui
-* NAI possibly tinkering with their backend based on tests by touhou anons
-	* better hands
-* Unreal Engine 5 SD plugin: https://github.com/albertotrunk/UE5-Dream
-* Underreported: You can highlight a part of your prompt and ctrl + up/down to change weights
-
->10/18
-* Clarification on censoring SD's next model by the question asker
-	* https://rentry.org/sdupdates#confirmed-drama
-	* TLDR: SD will probably release a censored model before releasing their 1.5 model because of legal issues (like with CP)
-
->10/17
-* $101 million in funding from Stability AI for opensource and free AI
-	* https://www.prnewswire.com/news-releases/stability-ai-announces-101-million-in-funding-for-open-source-artificial-intelligence-301650932.html
-* xformers degrading quality
-	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2967
-	* It's a bug that causes the variance with --xformers
-* New trinart model
-	* https://huggingface.co/naclbit/trinart_characters_19.2m_stable_diffusion_v1
-	* basically SFW
-* Discovered hi-res generations are affected by the video card used
-	* https://desuarchive.org/g/thread/89259005/#89260871
-	* TLDR: 3000s series are similar, 2000s and 1000s will vary
-
->10/16
-* **Remote code execution exploit discovered 2 days ago**
-	* AUTOMATIC pushed an update to deal with this. Use the hide_ui_dir_config if you plan on using --share after updating. Set a password.
-
-	* Gradio fix in progress: https://github.com/gradio-app/gradio/issues/2470
-	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2571
-	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/920
-	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/1576
-	* https://www.reddit.com/r/StableDiffusion/comments/y56qb9/security_warning_do_not_use_share_in/
-* Deforum script released for AUTOMATIC1111's webui
-	* https://github.com/deforum-art/deforum-for-automatic1111-webui/
-* Google open sourced their prompt-to-prompt method
-	* https://github.com/google/prompt-to-prompt
-	* Uses cross attention control
-		* https://github.com/bloc97/CrossAttentionControl
-		* https://github.com/sunwoo76/CrossAttentionControl-stablediffusion
-
->10/15
-* **Embeddings now shareable via images**
-	* No need to download .pt files anymore
-	* To use, finish training an embedding, download the image of the embedding (the one with the circles at the edges), and place it in your embeddings folder. The name at the top of the image is the name you use to call the embedding.
-	* https://www.reddit.com/r/StableDiffusion/comments/y4tmzo/auto1111_new_shareable_embeddings_as_images/
-		* Example (2nd and 3rd image): https://www.reddit.com/gallery/y4tmzo
-* Stability AI update pipeline (https://www.reddit.com/r/StableDiffusion/comments/y2x51n/the_stability_ai_pipeline_summarized_including/)
-	* This week: 
-		* Updates to CLIP (not sure about the specifics, I assume the output will be closer to the prompt)
-		* Clip-guidance comes out open source (supposedly)
-	* Next week:
-    	* DNA Diffusion (applying generative diffusion models to genetics)
-			* https://github.com/pinellolab/DNA-Diffusion
-    	* A diffusion based upscaler ("quite snazzy")
-    	* A new decoding architecture for better human faces ("and other elements")
-    	* Dreamstudio credit pricing adjustment (cheaper, that is more options with credits)
-    	* Discord bot open sourcing
-	* Before the end of the year:
-		* Text to Video ("better" than Meta's recent work)
-    	* LibreFold (most advanced protein folding prediction in the world, better than Alphafold, with Havard and UCL teams)
-    	* "A ton" of partnerships to be announced for "converting closed source AI companies into open source AI companies"
-    	* (Potentially) CodeCARP, Code generation model from Stability umbrella team Carper AI (currently training)
-    	* (Potentially) Gyarados (Refined user preference prediction for generated content by Carper AI, currently training)
-    	* (Potentially) CHEESE (some sort of platform for user preference prediction for generated content)
-    	* (Potentially) Dance Diffusion, generative audio architecture from Stability umbrella project HarmonAI (there is already a colab for it and some training going on i think)
-* Animation Stable Diffusion:
-	* https://github.com/HelixNGC7293/DeforumStableDiffusionLocal
-* Stable Diffusion in Blender
-	* https://airender.gumroad.com/l/ai-render
-	* Uses Dreamstudio for now
-* DreamStudio will now use CLIP guidance
-* Stable Diffusion running on iPhone
-	* https://github.com/madebyollin/maple-diffusion
-* Cycle Diffusion: https://github.com/ChenWu98/cycle-diffusion
-	* txt2img > img2img editors, look at github to see examples
-* Information about difference merging added to FAQ
-* Distributed model training planned
-	* SD Training Labs server
-* Gradio updated
-	* Optimized, increased speeds
-	* Git pulling should be safe
-
->10/14
-* Fed bait claims
-* You can generate forever by right clicking on the generate button
-* Can now load checkpoint, clip skip, and hypernet from infotext for AUTO's webui
-* Advanced Prompt Tuning, minimizes prompt typing and optimzes output quality
-	* https://github.com/7eu7d7/APT-stable-diffusion-auto-prompt
-	* planned to be PR on AUTO's repo once updated
-* 3D photo inpainting
-	* https://github.com/vt-vl-lab/3d-photo-inpainting
-* Beginner's guide released:
-	* https://rentry.org/nai-speedrun
-* New method for merging models on AUTOMATIC1111's UI
-	* Double model merging + difference merging using a third model
-
->10/13
-* Emad QnA Summary
-	* https://github.com/brycedrennan/imaginAIry/blob/master/docs/emad-qa-2020-10-10.md#summarized-version
-* Image animation 
-	* https://github.com/yoyo-nb/Thin-Plate-Spline-Motion-Model
-* Motion Diffusion available (text to a video of human motion)
-	* https://github.com/GuyTevet/motion-diffusion-model
-* Text to video available for everyone
-	* https://github.com/lucidrains/imagen-pytorch#text-to-video-ongoing-research
-* VR SD in the works
-	* https://twitter.com/ScottieFoxTTV/status/1579903471943569410
-* Emad's statement on censoring SAI's next model: https://desuarchive.org/g/thread/89182040#89182584
-	* NSFW model is hard to train right now, meaning the next release will have:
-		* No more nudity
-		* Violence allowed
-		* Opt-out tool coming for artists who do not want their art to be trained
-* New method for training styles that doesn't require as many computing resources
-	* https://metaphysic.ai/custom-styles-in-stable-diffusion-without-retraining-or-high-computing-resources/
-	* https://github.com/vicgalle/stable-diffusion-aesthetic-gradients
-* Method for faster and low step count generations
-	* https://arxiv.org/abs/2210.03142
-
->10/12
-* StabilityAI is only releasing SFW models from now on
-	* https://www.reddit.com/r/StableDiffusion/comments/y2dink/qa_with_emad_mostaque_formatted_transcript_with/is32y1d/
-
->10/11
-* Training embeddings and hypernetworks are possible on --medvram now
-* Easy to setup local booru by booru anon, might be pickled (NOW OPEN SOURCE, HIGHLY RECOMMENDED): https://github.com/demibit/stable-toolkit
-	* Planned to be open source in about a week
-* Can now train hypernetworks, git pull and find it in the textual inversion tab
-	* Sample (bigrbear): https://files.catbox.moe/wbt30i.pt
-* Anon (might be wrong): xformers now works on a lot of cards natively, try a clean install with --xformers
-* Early Anime Video Generation, trained by dep
-	* Colab: https://colab.research.google.com/drive/14xl37LceSXhdc5u7v5uL0bk09BpAL7CJ?usp=sharing
-	* Models: https://huggingface.co/chavinlo/anime-video-diffusion
-	* Code: https://github.com/chavinlo/video-diffusion-pytorch
-
->10/10
-* New unpickler for new ckpts: https://rentry.org/safeunpickle2
-* ~~HENTAI DIFFUSION MIGHT HAVE A VIRUS~~ confirmed to be safe by some kind people 
-	* github taken down because of nude preview images, hf files taken down because of complaints, windows defender false positive, some kind anons scanned the files with a pickle scanner and and it came back safe
-	* automatic's repo has security checks for pickles
-	* anon scanned with a "straced-container", safe
-* NAI's euler A is now implemented in AUTOMATIC1111's build
-	* git pull to access
-* New open-source (?) generation method revealed making good images in 4 steps
-	* Supposedly only 64x64, might be wrong
-* Discovered that hypernetworks were meant to create anime using the default SD model
-
->10/9
-* Full NAI frontend + backend implementation: https://desuarchive.org/g/thread/89095460#89097704 (PICKLE??, careful might actually be pickled)
-	* 1:1 recreation, is NAI ran locally (offline NAI)
-	* 8GB VRAM required
-	* has danbooru tag suggestions, past generation history, and mobile support (from anon)
-* Unlimited prompt tokens
-* NAI 1:1 Recreation for Euler (ASUKA, https://desuarchive.org/g/thread/89097837#89098634 https://boards.4chan.org/h/thread/6887840#p6888020)
-	* detailed setup guide: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017
-* xformers working for 30s series and up, anything below needs tinkering (https://rentry.org/25i6yn) 
-	* Use --xformers to enable for 30s series, --force-enable-xformers for others
-* Deepdanbooru integrated: Use --deepdanbooru as an argument to webui-user.bat and find the interrogation change in img2img
-* CLIP layer thing integrated, check settings after update
-* v2.pt working
-* VAE working
-* Full models working
-
-
 
 ## Prompting
 Google Docs with a prompt list/ranking/general info for waifu creation: 
@@ -517,6 +162,12 @@ Japanese wiki: https://seesaawiki.jp/nai_ch/
 Korean wiki: https://arca.live/b/aiart/60392904
 Korean wiki 2: https://arca.live/b/aiart/60466181
 
+Multilingual info by anon: 
+>CLIP can't really understand Chinese (or anything other than english). (maybe some of the characters are bond to certain concept for the reason I don't know)
+>But some of emoji and Chinese/Japanese character is meaningful for CLIP. Like イカ, which means squid in Japanese. You will get something like squid if you put these character in prompt. 
+>anon2: yeah，because the CLIP can not understand Chinese , so here the “natural language” I should translate some depiction to English.
+Multilingual study: https://jalonso.notion.site/Stable-Diffusion-Language-Comprehension-5209abc77a4f4f999ec6c9b4a48a9ca2
+
 NAI to webui translator (not 100% accurate): https://seesaawiki.jp/nai_ch/d/%a5%d7%a5%ed%a5%f3%a5%d7%a5%c8%ca%d1%b4%b9
 
 Tip Dump: https://rentry.org/robs-novel-ai-tips
@@ -528,6 +179,7 @@ Tip for more photorealism: https://www.reddit.com/r/StableDiffusion/comments/yhn
 
 SD 1.4 vs 1.5: https://postimg.cc/gallery/mhvWsnx
 Model merge comparisons: https://files.catbox.moe/rcxqsi.png
+Some sampler comparisons: https://www.reddit.com/r/StableDiffusion/comments/xmwcrx/a_comparison_between_8_samplers_for_5_different/
 
 Deep Danbooru: https://github.com/KichangKim/DeepDanbooru
 Demo: https://huggingface.co/spaces/hysts/DeepDanbooru
@@ -671,13 +323,13 @@ and it created the mp4 you see (i converted it into webm with this command)
 Example: https://i.4cdn.org/h/1666414810239191.webm
 ```
 
-
 Img2img megalist + implementations: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2940
 
 Runway inpaint model: https://huggingface.co/runwayml/stable-diffusion-inpainting
+* Tutorial from their github: https://github.com/runwayml/stable-diffusion#inpainting-with-stable-diffusion
+
 Inpainting Tips: https://www.pixiv.net/en/artworks/102083584
 Rentry version: https://rentry.org/inpainting-guide-SD
-
 
 Extensions:
 Artist inspiration: https://github.com/yfszzx/stable-diffusion-webui-inspiration
@@ -698,120 +350,18 @@ Aesthetic Scorer: https://github.com/tsngo/stable-diffusion-webui-aesthetic-imag
 Autocomplete Tags: https://github.com/DominikDoom/a1111-sd-webui-tagcomplete
 Prompt Randomizer: https://github.com/adieyal/sd-dynamic-prompting
 Wildcards: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wildcards/
+Wildcard script + collection of wildcards: https://app.radicle.xyz/seeds/pine.radicle.garden/rad:git:hnrkcfpnw9hd5jb45b6qsqbr97eqcffjm7sby
 
 Clip interrogator: https://colab.research.google.com/github/pharmapsychotic/clip-interrogator/blob/main/clip_interrogator.ipynb
 2: https://github.com/pharmapsychotic/clip-interrogator
 
-Inpaint guide: https://archived.moe/h/thread/6930399/#6930453
->Anon: 
->By request, a very quick inpainting guide:
->
->The key to good inpainting is understanding how "Inpaint at full resolution" actually works. The linked guides are obsolete and old at this. So I will tell you.
->
->Inpaint at full resolution first determines the minimum rectangular box that fits all your mask. Then, it resizes the base image within that box into whatever your setting is for resolution. Note that when inpainting at full resolution, the resolution sliders determine THIS INPAINTING SPACE. In other words, you can inpaint for a 2048 by 2048 pixel image while having your sliders set for 256 by 256 pixels. There are some bugs with inpainting at full resolution with height > width https://pythontechworld.com/issue/automatic1111/stable-diffusion-webui/2524 so my recommendation is to just set it to 512 by 512 always.
->
->Next, whatever is in your base image that would fit into the bounding box is rescaled and put into the inpainting space whose size is determined by your height and width sliders.
->
->The padding for full resolution inpainting option ADDS ADDITIONAL PIXELS FROM THE BASE IMAGE TO YOUR BOUNDING BOX. It is extremely important to set this correctly. Essentially, it adds surrounding context from BEYOND your bounding box to the inpainting space. It MUST be set to a nonzero value if you want to match anything not interior to your mask. Set it very high if you want high context. The total input to the inpainting space is your window.
->
->Next, what happens is essentially an img2img transformation on your window: which is the scaled image taken from the mask + original image bounding box. Set your prompts accordingly! Close-up is a very valuable tag to use in inpainting. Don't include prompts that are only relevant outside your window. DO include prompts that can determine composition within your window EVEN IF THEY AREN'T IN YOUR INPAINTING MASK. 
+**VAEs**
 
-Krita guide by anon:
+Tutorial + how to use on ALL models (applies for the NAI vae too): https://www.reddit.com/r/StableDiffusion/comments/yaknek/you_can_use_the_new_vae_on_old_models_as_well_for/
 
->
-1. Get 
-	https://krita.org/en/
-	https://github.com/Interpause/auto-sd-krita/wiki/Quick-Switch-Using-Existing-AUTOMATIC1111-Install
-	https://github.com/Interpause/auto-sd-krita/wiki/Install-Guide#plugin-installation
-2. then you can run prompts in th app or pull one in then to inpaint like a boss, you add a new layer
-	https://files.catbox.moe/xy6z32.png
-3. then use a white brush to brush the bits you want to change
-	https://files.catbox.moe/esdqk7.png
-4. Turn off the layer off by hitting the eye icon but leave it selected
-	https://files.catbox.moe/wzaiw9.png
-5. if you set everythign up right you have this section
-	https://files.catbox.moe/n43yrh.png
-6. type what your after hit inpaint
-
-**Positive:**
-Biggest tip: just write what you want. the AI will generally understand and create it
-
-* NAI's default (generally good) positive prompts to add at the beginning of all prompts: masterpiece, best quality
-	* can swap best for highest, high, etc.
-* Group the things that you want that are similar together (e.g. things relating to body type, things relating to clothing, etc.), and put these groups in order of most important to least important
-	* Anon's order: 
-	>the picture's quality
-	>the picture's subject
-	>their physical appearance
-	>their emotion
-	>their clothing
-	>their pose
-	>the picture's setting
-* "Anime screencap" creates scenes from an anime
-* from anon: to use character (franchise/series/show/etc.), you have to format it as character \\(franchise\\) 
-* the tokenizer struggles to parse underscores, ymmv
-* img2img -> prompt gets you more consistency
-
-**Negative:**
-* NAI's default (remove "nsfw" if you want nsfw outputs): nsfw, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
-
-**Tags: https://danbooru.donmai.us/tags**
-**Tag Groups: https://danbooru.donmai.us/wiki_pages/tag_groups**
-**Most Popular Tags: https://danbooru.donmai.us/tags?commit=Search&search%5Bhide_empty%5D=yes&search%5Border%5D=count**
-
-**Faces and heads:**
-* https://rentry.org/faces-faces-faces
-
-**Expressions:**
-* https://danbooru.donmai.us/wiki_pages/tag_group%3Aface_tags
-
-**Camera Angles:**
-* https://danbooru.donmai.us/wiki_pages/tag_group:image_composition
-
-**Hair Styles:**
-* https://danbooru.donmai.us/wiki_pages/tag_group%3Ahair_styles
-
-**Hands**
-* Hands: writing "in the style of Serpieri" increased hand quality in SD v1.4
-
-**Colors:**
-* https://color.adobe.com/create/color-wheel
-
-**Posture**
-* https://danbooru.donmai.us/wiki_pages/tag_group%3Aposture
-
-**Posing**
-* https://app.posemy.art/ 
-* https://figurosity.com/figure-drawing-poses
-* https://terawell.net/index.php
-* https://manikin.app/
-* https://app.justsketch.me/
-* https://webapp.magicposer.com/
-* Daz3d
-* https://www.artstation.com/marketplace/p/VOAyv/stable-diffusion-3d-posable-manekin-doll?utm_source=artstation&utm_medium=referral&utm_campaign=homepage&utm_term=marketplace
-* faces and heads: http://www.relativitybook.com/CoolStuff/facebank.html
-
-	>download FaceGen Modeller demo (or """purchase"" full version >/ptg/. the demo is still full featured with a shoopably manageable watermark):
-	>
-	>https://facegen.com/modeller_demo.htm
-	>
-	>install it, load the .fg files from the first link into the app, or make your own, the app does this easily with 1 or 2 photos.
-	>fuck around with the expression/camera angle/lighthing.
-	>printscreen or use the app's built-in render if you want custom resolution (File > Image > Custom > Save).
-	>use it as a base for img2img outpaint/inpaint.
-
-**Locations**
-* https://danbooru.donmai.us/wiki_pages/tag_group:locations
-
-**Clothes**
-* https://danbooru.donmai.us/wiki_pages/tag_group%3Aattire
-
-**VAE:**
 * SD 1.4 Anime styled: https://huggingface.co/hakurei/waifu-diffusion-v1-4/blob/main/vae/kl-f8-anime.ckpt
 	* https://twitter.com/haruu1367/status/1579286947519864833
-
-**Sex pose**
-https://litter.catbox.moe/las83s.txt
+* Stability AI: https://huggingface.co/stabilityai
 
 **Booru tag scraping:**
 * https://sleazyfork.org/en/scripts/451098-get-booru-tags 
@@ -832,7 +382,8 @@ https://litter.catbox.moe/las83s.txt
 * Another: https://pastecode.io/s/t7qg2z67
 * Github for scraper: https://github.com/onusai/grab-booru-tags 
 
-**Wildcards:**
+Wildcards: 
+* Huge collection that works: https://danbooru.donmai.us/wiki_pages/tag_groups
 * https://desuarchive.org/g/thread/89006003#89007479
 * https://rentry.org/sdWildcardLists
 * Guide (ish): https://is2.4chan.org/h/1665343016289442.png 
@@ -846,7 +397,7 @@ https://litter.catbox.moe/las83s.txt
 * Script: https://gist.github.com/h-a-te/30f4a51afff2564b0cfbdf1e490e9187
 * UMI AI: https://www.patreon.com/posts/umi-ai-official-73544634
 
-* Wildcard dump: 
+* Dump: 
 	* faces https://rentry.org/pu8z5
 	* focus https://rentry.org/rc3dp
 	* poses https://rentry.org/hkuuk
@@ -901,7 +452,7 @@ https://litter.catbox.moe/las83s.txt
 
 Wildcard extension: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wildcards/
 
-**Some artists (may or may not work with NAI):**
+**Artist Comparisons (may or may not work with NAI):**
 * SD 1.5 artists (might lag your pc): https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#
 * pre-modern art: https://www.artrenewal.org/Museum/Search#/
 * SD 1.4 artists: https://rentry.org/artists_sd-v1-4
@@ -928,6 +479,10 @@ Wildcard extension: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wild
 	* https://preview.redd.it/llok0ydfhsu91.jpg?width=640&crop=smart&auto=webp&s=e0ae2e38f9b97d10604a5c72e8c111cb184068e6
 
 * Artist rankings: https://www.urania.ai/top-sd-artists
+* Some comparisons:
+	* https://imgur.com/a/ADPHh9q
+	* https://imgur.com/a/zzXqLPc
+	* https://imgur.com/a/TDGBAlc
 
 Anon's list of comparisons:
 * Stable Diffusion v1.5, Waifu Diffusion v1.3, Trinart it4
@@ -945,290 +500,9 @@ Anon's list of comparisons:
 **Creating fake animes:**
 * https://rentry.org/animedoesnotexist
 
-**1:1 NAI/Novel AI Cheatsheet:**
-* 1:1 NAI cheatsheet by anon: 
-	* Use unpruned/full model
-	* Load with ema weights (use .yaml config from base stable-diffusion, set use_ema to true) (minor)
-		* Doubles ram
-		* Anon: "I copied the one from this path (which is what voldy defaults to if one isn't specified):
-/repositories/stable-diffusion/configs/stable-diffusion/v1-inference.yaml
+##  Models, Embeddings, and Hypernetworks
 
-			And then on line 18 I set use_ema to True, and put that copy into the models folder with the correct name (name of model.yaml)."
-	
-	* CLIP layer = 2
-	* Reset sigma noise / strength to the default value of 1 (no need to use 0.69 / 0.67)
-	* Set eta noise seed delta to 31337
-	* If using Euler a, eta noise seed delta = 31337
-	* If prompt has weights, manually adjust the weight accordingly (voldy uses 1.1, NAI uses 1.05)
-	* Use --no-half argument (minor)
-
-**Adding Variety**
-https://www.reddit.com/r/StableDiffusion/comments/yaziws/how_to_get_more_variety_in_your_ai_images_tutorial/
-
-**Photoshop Workflow Example**
-https://www.reddit.com/r/StableDiffusion/comments/wyduk1/show_rstablediffusion_integrating_sd_in_photoshop/
-
-**Tips to find a good img**
->anon: like i mentioned before, if using a non-ancestral sampler such as euler that trends to converge on the same image after a bunch of steps, you can roll seeds with 20 or less steps and very small resolution, then stop when you find a good seed and generate again with higher quality. saves scads of time when trying to make some really complicated 125 token prompt
->
->so get a good image first with 512 rerolls
->use the same seed but now with highres enabled
-
-**Anon's best output settings**
-[txt2img]
-
-Positive: none
-Negative: lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts,signature, watermark, username, blurry, artist name, 3 legs, 3 arms
-Sampling Steps - 47/51
-Euler a
-Width -  512 normal/768 2 characters or better landscapes
-Height - 512 normal/768 full body
-CFG Scale: 12/12,5/18
-
-[img2img]
-
-Positive: complete image/none
-Negative: lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts,signature, watermark, username, blurry, artist name, 3 legs, weird
-Sampling Steps - 51
-Euler a
-Width -  512 normal/768 2 characters or better landscapes
-Height - 512 normal/768 full body
-CFG Scale: 18
-Denoising strength: 0,5/0,68
-
-**Anon's workflow:**
-Artist list: https://rentry.org/anime_and_titties
-Expressions and (STYLE): https://rentry.org/faces-faces-faces
-
-Anon's order:
-the picture's quality
-the picture's subject
-their physical appearance
-their emotion
-their clothing
-their pose
-the picture's setting
-
-**Lazy Prompting**
->go to *booru of your choice
->pick an image you really like
->click tags -> plain editor
->copypaste to prompt
->profit
-
-
-**Anon's Refinement Technique:**
-1. generate a picture with the prompt that you want, be very precise. I personally generate pictures that are 512x512 initially.
-2. once you get a decent picture to come out of the generation, it will be used as the base "sketch" to feed to img2img.
-3. if you want to, increase the resolution but if you do so set the denoising to about .60
-4. once you have the resolution you want and everything, keep reprocessing the image with a denoising of about 0.2 - 0.3.
-5. if something on the image bothers you, work on it in an image editor, for example using a brush of the same colour of the what's adjacent to the detail you want to remove, or if you want to add something (like refining fingers), make sure to use the pencil with a contrasted colour (I generally use black).
-6. after editing, always reprocess the image with a denoising of about 0.3
-7. once the result satisfies you enough, use the "R-ESRGAN 4x+ Anime6B" upscaler if you want the image upscaled.
-
-## Models, Embeddings, and Hypernetworks
-
-!!! Models, embeddings, and hypernetworks can be pickled. Download at your own risk. Use https://rentry.org/safeunpickle2 to unpickle
-
-### **Models (WIP)**
-**Organized list: https://rentry.org/sdmodels**
-**RISKY (MAJOR PICKLE WARNING) BUT A LOT OF MODELS HERE: https://bt4g.org/search/.ckpt/1**
-**Collection: https://docs.google.com/spreadsheets/d/1fzsjGDlmbbPEnJWY9V2q5a99ySrK1Rj37sk7YJz8fCc/edit#gid=0**
-**Organized list: https://cyberes.github.io/stable-diffusion-models/**
-
-**Groups (add more later):**
-* Waifu Diffusion (https://huggingface.co/hakurei/waifu-diffusion-v1-4)
-* Stability AI
-* Zeipher (https://ai.zeipher.com/)
-
-**Upcoming models:**
-* Waifu Diffusion v1.4: https://huggingface.co/hakurei/waifu-diffusion-v1-4
-	* Overview: https://gist.github.com/harubaru/313eec09026bb4090f4939d01f79a7e7
-
-**Stable Diffusion v1.4**
-* Torrent: magnet:?xt=urn:btih:3A4A612D75ED088EA542ACAC52F9F45987488D1C&tr=udp://tracker.opentrackr.org:1337
-* HuggingFace: https://huggingface.co/CompVis/stable-diffusion-v-1-4-original
-	* Login required
-* Google Drive: https://drive.google.com/file/d/1wHFgl0ivCmIZv88hVZXkb8oy9qCuaBGA/view
-
-**Waifu Diffusion VAE (250k images)**
-* https://huggingface.co/hakurei/waifu-diffusion-v1-4/blob/main/vae/kl-f8-anime.ckpt
-	* https://twitter.com/haruu1367/status/1579286947519864833
-	* "finetuned the SD 1.4 vae on a bunch of anime-styled images"
-	* Supposedly improves eyes and fingers
-	* To load, rename .ckpt to .vae.pt
-
-**Waifu Diffusion v1.3**
-* https://huggingface.co/hakurei/waifu-diffusion-v1-3
-* Click "Files and versions" to view all epochs
-* 600,000 high-resolution Danbooru images, 10 Epochs
-* Release Notes: https://gist.github.com/harubaru/f727cedacae336d1f7877c4bbe2196e1
-
-**Waifu Diffusion v1.2**
-Pruned Torrent: 
-``` python
-magnet:?xt=urn:btih:153590fd7e93ee11d8db951451056c362e3a9150&dn=wd-v1-2-full-ema-pruned.ckpt&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2F9.rarbg.com%3A2810%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=https%3A%2F%2Fopentracker.i2p.rocks%3A443%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fzecircle.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fyahor.ftp.sh%3A6969%2Fannounce&tr=udp%3A%2F%2Fvibe.sleepyinternetfun.xyz%3A1738%2Fannounce&tr=udp%3A%2F%2Fv2.iperson.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fuploads.gamecoast.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker2.dler.org%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker1.bt.moack.co.kr%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.theoks.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tcp.exchange%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.swateam.org.uk%3A2710%2Fannounce&tr=udp%3A%2F%2Ftracker.publictracker.xyz%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.bt4g.com%3A2095%2Fannounce
-```
-Full EMA Torrent:  
-``` python
-magnet:?xt=urn:btih:f45cecf4e9de86da83a78dd2cccd7f27d5557a52&dn=wd-v1-2-full-ema.ckpt&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2F9.rarbg.com%3A2810%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=https%3A%2F%2Fopentracker.i2p.rocks%3A443%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fzecircle.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fyahor.ftp.sh%3A6969%2Fannounce&tr=udp%3A%2F%2Fvibe.sleepyinternetfun.xyz%3A1738%2Fannounce&tr=udp%3A%2F%2Fv2.iperson.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fuploads.gamecoast.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker2.dler.org%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker1.bt.moack.co.kr%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.theoks.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tcp.exchange%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.swateam.org.uk%3A2710%2Fannounce&tr=udp%3A%2F%2Ftracker.publictracker.xyz%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.bt4g.com%3A2095%2Fannounce
-```
-
-**Trinart2**
-* https://huggingface.co/naclbit/trinart_stable_diffusion_v2/tree/main
-* Uses dropouts, 10k more images than Trinart1, new tagging strategy, and trained for longer
-
-**Trinart1**
-* https://huggingface.co/naclbit/trinart_stable_diffusion/tree/main
-* 3.5 epochs, 30k images
-* Obsolete
-
-**gg1342_testrun1_pruned**
-* ``` python 
-magnet:?xt=urn:btih:c95e266e15e13cf0e2d69b29338a89a94d736546&dn=gg1342_testrun1_pruned.ckpt&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2F9.rarbg.com%3A2810%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=https%3A%2F%2Fopentracker.i2p.rocks%3A443%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fzecircle.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fyahor.ftp.sh%3A6969%2Fannounce&tr=udp%3A%2F%2Fvibe.sleepyinternetfun.xyz%3A1738%2Fannounce&tr=udp%3A%2F%2Fv2.iperson.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fuploads.gamecoast.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker2.dler.org%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker1.bt.moack.co.kr%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.theoks.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tcp.exchange%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.swateam.org.uk%3A2710%2Fannounce&tr=udp%3A%2F%2Ftracker.publictracker.xyz%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.bt4g.com%3A2095%2Fannounce
-```
-
-* 280 NSFW nude solo women + 80 SFW fiction characters
-
-**Hentai Diffusion**
-* https://huggingface.co/Deltaadams/Hentai-Diffusion/tree/main
-* Based on Waifu Diffusion 1.2, trainede on 150k images from rule34 and gelbooru, focused training on hands and poses
-* Updated weekly
-
-**RD1412**
-* Pruned FP16
-``` python 
-magnet:?xt=urn:btih:da8986f9059ce4f64f84e7390eb542558b2cd466&dn=RD1412-pruned-fp16.ckpt&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=udp%3a%2f%2f9.rarbg.com%3a2810%2fannounce&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a6969%2fannounce&tr=http%3a%2f%2ftracker.openbittorrent.com%3a80%2fannounce&tr=udp%3a%2f%2fopentracker.i2p.rocks%3a6969%2fannounce&tr=https%3a%2f%2fopentracker.i2p.rocks%3a443%2fannounce&tr=udp%3a%2f%2fopen.stealth.si%3a80%2fannounce&tr=udp%3a%2f%2ftracker.torrent.eu.org%3a451%2fannounce&tr=udp%3a%2f%2ftracker.tiny-vps.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.moeking.me%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.0x.tf%3a6969%2fannounce&tr=udp%3a%2f%2fp4p.arenabg.com%3a1337%2fannounce&tr=udp%3a%2f%2fopen.demonii.com%3a1337%2fannounce&tr=udp%3a%2f%2fmovies.zsw.ca%3a6969%2fannounce&tr=udp%3a%2f%2fipv4.tracker.harry.lu%3a80%2fannounce&tr=udp%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=udp%3a%2f%2fexodus.desync.com%3a6969%2fannounce&tr=udp%3a%2f%2fbt.oiyo.tk%3a6969%2fannounce&tr=https%3a%2f%2ftracker.nanoha.org%3a443%2fannounce&tr=https%3a%2f%2ftracker.lilithraws.org%3a443%2fannounce
-```
-
-* Pruned FP32
-``` python 
-magnet:?xt=urn:btih:ab4c2d7308a3fa694f7409407399a1cc5d4c7ed9&dn=RD1412-pruned-fp32.ckpt&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=udp%3a%2f%2f9.rarbg.com%3a2810%2fannounce&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a6969%2fannounce&tr=http%3a%2f%2ftracker.openbittorrent.com%3a80%2fannounce&tr=udp%3a%2f%2fopentracker.i2p.rocks%3a6969%2fannounce&tr=https%3a%2f%2fopentracker.i2p.rocks%3a443%2fannounce&tr=udp%3a%2f%2fopen.stealth.si%3a80%2fannounce&tr=udp%3a%2f%2ftracker.torrent.eu.org%3a451%2fannounce&tr=udp%3a%2f%2ftracker.tiny-vps.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.moeking.me%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.0x.tf%3a6969%2fannounce&tr=udp%3a%2f%2fp4p.arenabg.com%3a1337%2fannounce&tr=udp%3a%2f%2fopen.demonii.com%3a1337%2fannounce&tr=udp%3a%2f%2fmovies.zsw.ca%3a6969%2fannounce&tr=udp%3a%2f%2fipv4.tracker.harry.lu%3a80%2fannounce&tr=udp%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=udp%3a%2f%2fexodus.desync.com%3a6969%2fannounce&tr=udp%3a%2f%2fbt.oiyo.tk%3a6969%2fannounce&tr=https%3a%2f%2ftracker.nanoha.org%3a443%2fannounce&tr=https%3a%2f%2ftracker.lilithraws.org%3a443%2fannounce 
-```
-
-**RD1212**
-* Pruned FP16
-``` python
-magnet:?xt=urn:btih:f4e78d085169d2077a316bd9b75723812c1ab429&dn=HenDiff_RD1212-pruned-fp16.ckpt&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=udp%3a%2f%2f9.rarbg.com%3a2810%2fannounce&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a6969%2fannounce&tr=http%3a%2f%2ftracker.openbittorrent.com%3a80%2fannounce&tr=udp%3a%2f%2fopentracker.i2p.rocks%3a6969%2fannounce&tr=https%3a%2f%2fopentracker.i2p.rocks%3a443%2fannounce&tr=udp%3a%2f%2fopen.stealth.si%3a80%2fannounce&tr=udp%3a%2f%2ftracker.torrent.eu.org%3a451%2fannounce&tr=udp%3a%2f%2ftracker.tiny-vps.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.moeking.me%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.0x.tf%3a6969%2fannounce&tr=udp%3a%2f%2fp4p.arenabg.com%3a1337%2fannounce&tr=udp%3a%2f%2fopen.demonii.com%3a1337%2fannounce&tr=udp%3a%2f%2fmovies.zsw.ca%3a6969%2fannounce&tr=udp%3a%2f%2fipv4.tracker.harry.lu%3a80%2fannounce&tr=udp%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=udp%3a%2f%2fexodus.desync.com%3a6969%2fannounce&tr=udp%3a%2f%2fbt.oiyo.tk%3a6969%2fannounce&tr=https%3a%2f%2ftracker.nanoha.org%3a443%2fannounce&tr=https%3a%2f%2ftracker.lilithraws.org%3a443%2fannounce
-```
-
-* Pruned FP32
-``` python
-magnet:?xt=urn:btih:2a6b60f454dcf89b81e7db034fcb1536b774628c&dn=HenDiff_RD1212-pruned-fp32.ckpt&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=udp%3a%2f%2f9.rarbg.com%3a2810%2fannounce&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a6969%2fannounce&tr=http%3a%2f%2ftracker.openbittorrent.com%3a80%2fannounce&tr=udp%3a%2f%2fopentracker.i2p.rocks%3a6969%2fannounce&tr=https%3a%2f%2fopentracker.i2p.rocks%3a443%2fannounce&tr=udp%3a%2f%2fopen.stealth.si%3a80%2fannounce&tr=udp%3a%2f%2ftracker.torrent.eu.org%3a451%2fannounce&tr=udp%3a%2f%2ftracker.tiny-vps.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.moeking.me%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.0x.tf%3a6969%2fannounce&tr=udp%3a%2f%2fp4p.arenabg.com%3a1337%2fannounce&tr=udp%3a%2f%2fopen.demonii.com%3a1337%2fannounce&tr=udp%3a%2f%2fmovies.zsw.ca%3a6969%2fannounce&tr=udp%3a%2f%2fipv4.tracker.harry.lu%3a80%2fannounce&tr=udp%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=udp%3a%2f%2fexodus.desync.com%3a6969%2fannounce&tr=udp%3a%2f%2fbt.oiyo.tk%3a6969%2fannounce&tr=https%3a%2f%2ftracker.nanoha.org%3a443%2fannounce&tr=https%3a%2f%2ftracker.lilithraws.org%3a443%2fannounce
-```
-
-* Full EMA
-``` python
-magnet:?xt=urn:btih:D0B89A0516205157EA0CBDDBBB49BC60C611A3B7&dn=RD1212.ckpt&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a80%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce
-```
-
-**Bare Feet / Full Body b4_t16_noadd**
-* Focused on bare feet and full body nude female images, good for genitalia and photorealistic feet
-* Pruned FP16 v3
-``` python 
-magnet:?xt=urn:btih:9530a8a0b43f83366216ab853b4419aa2056da58&dn=bf_fb_v3_t4_b16_noadd-ema-pruned-fp16.ckpt&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=udp%3a%2f%2f9.rarbg.com%3a2810%2fannounce&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a6969%2fannounce&tr=http%3a%2f%2ftracker.openbittorrent.com%3a80%2fannounce&tr=udp%3a%2f%2fopentracker.i2p.rocks%3a6969%2fannounce&tr=https%3a%2f%2fopentracker.i2p.rocks%3a443%2fannounce&tr=udp%3a%2f%2ftracker.torrent.eu.org%3a451%2fannounce&tr=udp%3a%2f%2ftracker.tiny-vps.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.skyts.net%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.pomf.se%3a80%2fannounce&tr=udp%3a%2f%2ftracker.moeking.me%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.dler.org%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.0x.tf%3a6969%2fannounce&tr=udp%3a%2f%2fp4p.arenabg.com%3a1337%2fannounce&tr=udp%3a%2f%2fopen.stealth.si%3a80%2fannounce&tr=udp%3a%2f%2fopen.demonii.com%3a1337%2fannounce&tr=udp%3a%2f%2fmovies.zsw.ca%3a6969%2fannounce&tr=udp%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=udp%3a%2f%2fexodus.desync.com%3a6969%2fannounce&tr=udp%3a%2f%2fbt.oiyo.tk%3a6969%2fannounce
-```
-
-* Pruned FP32 v3
-``` 
-magnet:?xt=urn:btih:1f6bab17c548e35ac2a412e3e9119e5f4e00bb50&dn=bf_fb_v3_t4_b16_noadd-ema-pruned-fp32.ckpt&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=udp%3a%2f%2f9.rarbg.com%3a2810%2fannounce&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a6969%2fannounce&tr=http%3a%2f%2ftracker.openbittorrent.com%3a80%2fannounce&tr=udp%3a%2f%2fopentracker.i2p.rocks%3a6969%2fannounce&tr=https%3a%2f%2fopentracker.i2p.rocks%3a443%2fannounce&tr=udp%3a%2f%2ftracker.torrent.eu.org%3a451%2fannounce&tr=udp%3a%2f%2ftracker.tiny-vps.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.skyts.net%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.pomf.se%3a80%2fannounce&tr=udp%3a%2f%2ftracker.moeking.me%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.dler.org%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.0x.tf%3a6969%2fannounce&tr=udp%3a%2f%2fp4p.arenabg.com%3a1337%2fannounce&tr=udp%3a%2f%2fopen.stealth.si%3a80%2fannounce&tr=udp%3a%2f%2fopen.demonii.com%3a1337%2fannounce&tr=udp%3a%2f%2fmovies.zsw.ca%3a6969%2fannounce&tr=udp%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=udp%3a%2f%2fexodus.desync.com%3a6969%2fannounce&tr=udp%3a%2f%2fbt.oiyo.tk%3a6969%2fannounce
-```
-
-**Lewd Diffusion**
-* 70k images from Danbooru, based on Waifu Diffusion 1.2
-* Dataset: https://drive.google.com/drive/folders/1f_BYi88LLTZUzBHkUz8PDgw6l7M7swkd?usp=sharing
-* Dataset stats: https://docs.google.com/spreadsheets/d/1BzNSXyT4fhiM64DwIJSCyAXuhRQ9fkxqcr-t1frIYkc/edit
-* 2 epochs
-```
-magnet:?xt=urn:btih:U5RICVYDEJL6LIJJWFKQOIVO5GMGCJNW&dn=last-pruned.ckpt&xl=3852165809&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce
-```
-
-* 1 epoch
-```
-magnet:?xt=urn:btih:fca8782a5a9861a6beb1aa3b48938bd1da1a665e&dn=LD-70k-1e-pruned.ckpt&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2F9.rarbg.com%3A2810%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=https%3A%2F%2Fopentracker.i2p.rocks%3A443%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fzecircle.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fyahor.ftp.sh%3A6969%2Fannounce&tr=udp%3A%2F%2Fvibe.sleepyinternetfun.xyz%3A1738%2Fannounce&tr=udp%3A%2F%2Fv2.iperson.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fuploads.gamecoast.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker2.dler.org%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker1.bt.moack.co.kr%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.theoks.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tcp.exchange%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.swateam.org.uk%3A2710%2Fannounce&tr=udp%3A%2F%2Ftracker.publictracker.xyz%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.bt4g.com%3A2095%2Fannounce
-```
-
-* 0 epochs, 40k images
-```
-magnet:?xt=urn:btih:f6976fbe3b9f93469bb62eb0c4950643b09f1f83&dn=Lewd-diffusion-pruned.ckpt&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2F9.rarbg.com%3A2810%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=https%3A%2F%2Fopentracker.i2p.rocks%3A443%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fzecircle.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fyahor.ftp.sh%3A6969%2Fannounce&tr=udp%3A%2F%2Fvibe.sleepyinternetfun.xyz%3A1738%2Fannounce&tr=udp%3A%2F%2Fv2.iperson.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fuploads.gamecoast.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker2.dler.org%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker1.bt.moack.co.kr%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.theoks.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tcp.exchange%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.swateam.org.uk%3A2710%2Fannounce&tr=udp%3A%2F%2Ftracker.publictracker.xyz%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.bt4g.com%3A2095%2Fannounce
-```
-
-**Yiffy**
-* During training explicit was misspelled as explict
-* Tags:
-	* https://mega.nz/file/ZkkTEYJY#X_j191NtHJRp0BKJusTqmWrs1-AdAILy99mqSAMpWbo
-	* https://pixeldrain.com/u/TkwJU3WG
-* 18 epochs (210k images from e621):
-	* https://sexy.canine.wf/file/yiffy-ckpt/yiffy-e18.ckpt
-```
-magnet:?xt=urn:btih:b177dd04ae7062b541c82ad26f897e0a9fa514f4&dn=yiffy-e18.ckpt&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce
-```
-* 15 epochs (210k images from e621): 
-	* https://sexy.canine.wf/file/yiffy-ckpt/yiffy-e15.ckpt
-	* https://pixeldrain.com/u/qkRKKpqg
-	* https://iwiftp.yerf.org/Furry/Software/Stable%20Diffusion%20Furry%20Finetune%20Models/Finetune%20models/yiffy-e15.ckpt
-```
-magnet:?xt=urn:btih:2b8d5f308244eddf56d4a350df84d63045e65dd6&dn=yiffy-e15.ckpt&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2F9.rarbg.com%3A2810%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=https%3A%2F%2Fopentracker.i2p.rocks%3A443%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fzecircle.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fyahor.ftp.sh%3A6969%2Fannounce&tr=udp%3A%2F%2Fvibe.sleepyinternetfun.xyz%3A1738%2Fannounce&tr=udp%3A%2F%2Fv2.iperson.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fuploads.gamecoast.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker2.dler.org%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker1.bt.moack.co.kr%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.theoks.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tcp.exchange%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.swateam.org.uk%3A2710%2Fannounce&tr=udp%3A%2F%2Ftracker.publictracker.xyz%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.bt4g.com%3A2095%2Fannounce
-```
-* 13 epochs
->* first 4 epochs were trained on ~70k images with lama infilling (the cause of all of our headaches, because the network found a pattern in the edges and started replicating it everywhere)
->* next 6 epochs were trained on ~120k images with random cropping and a lower LR
->* last epochs were done on a different dataset, not bigger than 150k
-	* https://iwiftp.yerf.org/Furry/Software/Stable%20Diffusion%20Furry%20Finetune%20Models/Finetune%20models/yiffy-e13.ckpt
-```
-magnet:?xt=urn:btih:6d749325cbdcf1fc044483fb0d53c233b60735dc&dn=yiffy-e13.ckpt&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2F9.rarbg.com%3A2810%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=https%3A%2F%2Fopentracker.i2p.rocks%3A443%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fzecircle.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fyahor.ftp.sh%3A6969%2Fannounce&tr=udp%3A%2F%2Fvibe.sleepyinternetfun.xyz%3A1738%2Fannounce&tr=udp%3A%2F%2Fv2.iperson.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fuploads.gamecoast.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker2.dler.org%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker1.bt.moack.co.kr%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.theoks.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tcp.exchange%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.swateam.org.uk%3A2710%2Fannounce&tr=udp%3A%2F%2Ftracker.publictracker.xyz%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.bt4g.com%3A2095%2Fannounce
-```
-**Furry**
-* 300k images from e621
-* Tags:
-	* https://mega.nz/file/co0UlQ5Z#vERcoYTWGJguTsXmysbLq1NL_xBS8txQhVvPI5E3QKE
-	* https://pixeldrain.com/u/FQwRjyyk
-* Epoch 4
-	* https://pixeldrain.com/u/dtYiYN7g
-	* https://iwiftp.yerf.org/Furry/Software/Stable%20Diffusion%20Furry%20Finetune%20Models/Finetune%20models/furry_epoch4.ckpt
-```
-magnet:?xt=urn:btih:a9635389ae4c5583b0cc76ec8f6dce35438b3016&dn=furry_epoch4.ckpt&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2F9.rarbg.com%3A2810%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=https%3A%2F%2Fopentracker.i2p.rocks%3A443%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fzecircle.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fyahor.ftp.sh%3A6969%2Fannounce&tr=udp%3A%2F%2Fvibe.sleepyinternetfun.xyz%3A1738%2Fannounce&tr=udp%3A%2F%2Fv2.iperson.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fuploads.gamecoast.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker2.dler.org%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker1.bt.moack.co.kr%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.theoks.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tcp.exchange%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.swateam.org.uk%3A2710%2Fannounce&tr=udp%3A%2F%2Ftracker.publictracker.xyz%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.bt4g.com%3A2095%2Fannounce
-```
-* Epoch 1
-	* https://iwiftp.yerf.org/Furry/Software/Stable%20Diffusion%20Furry%20Finetune%20Models/Finetune%20models/furry_epoch1.ckpt
-```
-magnet:?xt=urn:btih:d62bc9a088b206565005cab915a58fd26da1802e&dn=furry_epoch1.ckpt&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2F9.rarbg.com%3A2810%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=https%3A%2F%2Fopentracker.i2p.rocks%3A443%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fzecircle.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fyahor.ftp.sh%3A6969%2Fannounce&tr=udp%3A%2F%2Fvibe.sleepyinternetfun.xyz%3A1738%2Fannounce&tr=udp%3A%2F%2Fv2.iperson.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fuploads.gamecoast.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker2.dler.org%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker1.bt.moack.co.kr%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.theoks.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tcp.exchange%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.swateam.org.uk%3A2710%2Fannounce&tr=udp%3A%2F%2Ftracker.publictracker.xyz%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.bt4g.com%3A2095%2Fannounce
-```
-* Epoch 0
-	* https://iwiftp.yerf.org/Furry/Software/Stable%20Diffusion%20Furry%20Finetune%20Models/Finetune%20models/furry_epoch0_ckpt
-
-**Zack3D_Kinky-v1**
-* Over 100k images, filtered aesthetics, NSFW, trained on SD v1.4, good for furry, specializes in kinks like transformation, latex, tentacles, goo, ferals, bondage, etc.
-* Uses e621 tags with underscores
-	* https://pixeldrain.com/u/DEocAHsx
-```
-magnet:?xt=urn:btih:807a71d3ed3f887e41c492cf24fbd3c6f5a81534&dn=Zack3D_Kinky-v1.ckpt&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=udp%3a%2f%2fopen.tracker.cl%3a1337%2fannounce
-```
-
-**Anal Vore AVHumanFurryPony7**
-* 7 epochs, continued from Zack3D_Kinky-v1
-* Tags
-	* https://mega.nz/file/FmxSnRZa#I4JgsLTiXWoFUoDrQBWfVNnooUUOxqkFHEOPuCE1Hdc
-	* Download: https://mega.nz/file/4jR2WAIZ#p0A7eorXgI_ywC06zQiLcPwE3QdStEa86wwEdrDIE7A
-
-**Gape Model**
-* https://rentry.org/gapemodel
-
-**Pony Models**
->Purplesmart.AI's Pony v1:
-https://mega.nz/file/ZT1xEKgC#Xxir5udMmU_mKaRZAbBkF247Yk7DqCr01V0pDzSlYI0
-
->CookieSD's sfw/nsfw model:
-https://drive.google.com/drive/folders/14JyQE36wYABH-0TSV_HBEsBJ3r8ZITrS
-
-**Pussy Diffusion 10/14 (only use for inpainting)**
-* trained on sankaku+e621 on gaping_anus,gaping_pussy,large_penetration,fisting, prolapse
-* https://gofile.io/d/Viv9CJ
-* https://bbs.kfpromax.com/read.php?tid=963487
-* 链接: https://pan.baidu.com/s/1sC69cgSTWGuXCY79K5C_DA 提取码: 7qdp
-
-**a merged model of 80 NAI 20 TRIN120k**
-* https://mega nz/file/jB5lwa6J#ciSArZnJQLszvhatiMK2NTKFNjKYUhHJlXt9At3WRss
+### **Models***
 
 **Berrymix Recipe**
 Rentry: https://rentry.org/berrymix
@@ -1255,14 +529,7 @@ Rentry: https://rentry.org/berrymix
 * Another berry + vae: https://anonfiles.com/Rdq7j7F0ye/Berry_zip
 	* https://pastebin.com/h4gY7tGB
 
-* 
-
 * Dump of ckpt merges, might be pickled, uploader anon says to download at your own risk, could also be a fed bait or something: https://droptext.cc/bfxwb
-
-* NAI + Tri + Tri: 
-``` python 
-magnet:?xt=urn:btih:976D8785EA6C067951E3AE5B9A7FD3A0ED9D3DBE&dn=animefull-final-pruned_0.8-trinart2_step115000_0.2-Weighted_Sum-merged_0.9-trinart_characters_it4_v1_0.1-Weighted_sum-merged.ckpt&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a80%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce
-```
 
 **Fruit Salad Mix (might not be worth it to make)**
 >Fruit Salad Guide
@@ -1302,7 +569,6 @@ magnet:?xt=urn:btih:976D8785EA6C067951E3AE5B9A7FD3A0ED9D3DBE&dn=animefull-final-
 >At the top left of the web page click the "Stable Diffusion Checkpoint" drop down and select the Fruit's Salad.ckpt (or whatever you named it) 
 * Older files you need uploaded by anon (which means it might be pickled): https://codeload.github.com/AUTOMATIC1111/stable-diffusion-webui/zip/f7c787eb7c295c27439f4fbdf78c26b8389560be
 
-
 * NAI + hypernetworks (uploaded by UMI AI dev, I didn't audit the files myself for changes/pickles): 
 	* DL 1: https://anonfiles.com/U5Acl7F0y2/Novel_AI_Hypernetworks_zip
 	* DL 2: https://pixeldrain.com/u/FMJ4TQbM
@@ -1313,8 +579,6 @@ magnet:?xt=urn:btih:976D8785EA6C067951E3AE5B9A7FD3A0ED9D3DBE&dn=animefull-final-
 * Scarlett's Mix (good at cute witches): https://rentry.org/scarlett_mix
 
 * Mega mixing guide (has a different berry mix): https://rentry.org/lftbl
-
-
 
 ### **Dreambooth Models:**
 Links:
@@ -1389,7 +653,8 @@ Links:
 	* Trained on 3498 images and around 250K steps
 		* porn, sex acts of all sorts: anal sex, anilingus, ass, ass fingering, ball sucking, blowjob, cumshot, cunnilingus, dick, dildo, double penetration, exposed pussy, female masturbation, fingering, full nelson, handjob, large ass, large tits, lesbian kissing, massive ass, massive tits, o-face, sixty-nine, spread pussy, tentacle sex (try also oral/anal tentacle sex and tentacle dp), tit fucking, tit sucking, underboob, vaginal sex, long tongue, tits
 	* Example grid from training (single shot batch): https://cdn.discordapp.com/attachments/1010982959525929010/1035236689850941440/samples_gs-995960_e-000046_b000000.png
-* disney 2d animation style: https://huggingface.co/nitrosocke/classic-anim-diffusion
+* disney 2d (classic) animation style: https://huggingface.co/nitrosocke/classic-anim-diffusion
+	* https://www.reddit.com/r/StableDiffusion/comments/yhikn3/new_dreambooth_model_classic_animation_styles/
 * Kim Jung Gi: https://drive.google.com/drive/folders/1uL-oUUhuHL-g97ydqpDpHRC1m3HVcqBt
 	* https://twitter.com/bg_5you/status/1578146498768175105
 * Pyro's Blowjob Model: https://rentry.org/pyros-sd-model
@@ -1397,6 +662,9 @@ Links:
 	* https://mega.nz/file/lLtjCLwb#KgXPDzbTotcb0_quzzBMm6DaDCuSFIaF8CXxw1WsEs8
 	* Examples: https://www.reddit.com/gallery/yhuymu
 	* Examples: https://old.reddit.com/r/sdnsfw/comments/yhuymu/ill_never_need_any_porn_site_ever_again/
+* Pixel Art Sprite Sheet: https://huggingface.co/Onodofthenorth/SD_PixelArt_SpriteSheet_Generator
+	* 4 different angles
+	* Examples + Reddit post: https://www.reddit.com/r/StableDiffusion/comments/yj1kbi/ive_trained_a_new_model_to_output_pixel_art/
 
 ### **Embeddings**
 !!! info If an embedding is >80mb, I mislabeled it and it's a hypernetwork
@@ -1575,7 +843,7 @@ Found on 4chan:
 * Mikan (30 tokens, 36 images (before flipping/splitting), 5700steps, 5e-02:2000, 5e-03:4000): https://files.catbox.moe/xwdohx.pt
 	* creator: I've been getting best results with these tags: (orange hair and (hair tubes:1.2), (dog ears and dog tail and (huge ahoge:1.2):1.2)), green eyes
 	* apparently it's not very effective. a hypernetwork is WIP
-* Furry styled embed? (6000, 5.5k most): https://files.catbox.moe/s19ub3.7z
+* Fuurin Rei (6000, 5.5k most): https://files.catbox.moe/s19ub3.7z
 * Mutsuki (Blue Archive) embedding (10k step,150 image, no clip skip [set the "stop at last layers of clip model" option at 1 to get good results], 0.02:300, 0.01:1000, 0.005:2000, 0.002:3000, 0.0005:4000, 0.0005, vae disabled by renaming): https://files.catbox.moe/6yklfl.pt
 * Reine: https://files.catbox.moe/tv1zf4.pt
 * as109 (trained with 1000+ dataset, 0.003 learning rate, 0.12 loss rate trend, 25k step snapshot): https://litter.catbox.moe/5iwbi5.pt
@@ -1604,6 +872,27 @@ Found on 4chan:
 * Polka (NAI, 16 vectors, 5500 steps): https://files.catbox.moe/pmzyhi.png
 * Asutora style embedding (mainly reflected in coloring and shading, since his faces are very inconsistent): https://mega.nz/folder/nZoECZyI#vkuZJoQyBZN8p66n4DP62A 
 * Enna: https://files.catbox.moe/7edtp0.pt
+* Ghislaine Dedoldia ("dark-skinned female" init word, 12 vectors per token, 0.02:200, 0.01:1000, 0.005:2000, 0.002:3000, 0.0005:4000, 0.00005 LR, 10k steps 75 image crop data set) https://mega.nz/folder/JPVSVLbQ#SqGZb7OVKe_UNRvI0R8U8A
+	* Notes by uploader: Here is a terrible Ghislaine Dedoldia embedding I made while testing sd-tagging-helper and the new webui dataset tag editor extension. She has no tail because the crops were shit and I only trained on crops made using the helper. Sometimes the eye patch is on the wrong side because of two images where it was on the wrong eye. Stomach scar is sometimes there sort of but probably needed more time in the oven. She doesn't have dark skin because the AI is racist and probably because it was only tagged on half the images.
+	* Uploader: Use "dark-skinned female" in your prompt or she will be pale
+* Mizuryu-Kei (Mizuryu Kei): https://files.catbox.moe/bcy7vx.pt
+* kidmo: https://litter.catbox.moe/44e28e.pt
+	* dataset:kidmo
+	* dataset:no filter
+	* 10 tokens
+	* 26k steps
+	* 0.129 loss trend
+	* 90-ish dataset
+	* 0.0028 learning rate
+	* issue: generic as shit, irradiated with kpop, potato gaming (you'll know when you try to use this shit with i2i)
+* asanugget-16: https://litter.catbox.moe/9r0ixj.pt
+	* dataset: asanagi
+	* dataset: no pre-2010 artworks
+	* 16 tokens
+	* 22k steps
+	* 0.114 loss trend
+	* 500+ dataset (w/ auto focalpoint)
+	* 0.0028 learning rate
 
 Found on Discord:
 * Nahida v2: https://cdn.discordapp.com/attachments/1019446913268973689/1031321278713446540/nahida_v2.zip
@@ -1805,6 +1094,19 @@ Found on 4chan:
 	* Included is: Nanachi and Puuzaki Puuna (VAE was turned on during training)
 * HiRyS: https://mega.nz/file/Mk8jTZ4I#TdlF5Bxwz_gAuQeR0PWa_YUZotcQkA34d6m49I6eUMc
 	* Dead link, I think this is the same hypernetwork: https://litter.catbox.moe/rx8uv0.pt
+* 4k, 3d, highres images: 4k, 3d, highres images: https://mega.nz/file/UAEHkbhK#R-zdpiIz6Ig2-laa-M9_Hmtq6xgLNJZ0ZwVOiXt3OSc
+	* It has a preference for 3d design, large breasts and curves. It also has a preference for applying backgrounds,if none suggested. usually parks, beaches, indoors or cityscapes
+	* Comparison: https://i.4cdn.org/h/1667278030582788.png
+* Okegom (Funamusea / Deep Sea Prisoner): https://mega.nz/file/XYQF3YoZ#BAvBQduEx-tnUKvyJQ3mH-zOa_cKUKxpc58YpO8h2jc
+	* Crashed after 5.3k steps, continued training after when hypernetwork training resuming is broken. Apprently it got better
+	* Uploader: Alright, it's done. Maybe it's the small training data or the mediocre tagging but sometimes you get stuff that doesn't resemble their art style. Still releasing the three models I liked though, they work nicely with img2img.
+* Funamusea/Okegom/Mogeko (12500 steps): https://mega.nz/file/SBg0zBIa#BU1KkBY1vMvLXpfkDci1RZYi5f8P0yN5oyQzGYXF8q0
+	* Notes by uploader:
+	>Most results (at least with img2img) will have a chibi style regardless of your prompt.
+	>30 steps recommended.
+	>Does very well with white skin/pale characters, this is because the hypernetwork is trained mainly on white characters. Not because I wanted to but because it's what she tends to draw the most.
+	>Hypernetwork has most of her NSFW art in its data including a fanart which looks like it was drawn by her, just so the AI has a reference. So, yes, it can generate nudity and porn in her style, although I'm not sure about penetration stuff because I haven't tried.
+	>"outline" tag is recommended in prompt to have the same thick outlines she often uses in her artwork.
 
 Found on Korean Site of Wisdom (WIP):
 * Terada Tera: https://drive.google.com/file/d/1APwInBROTUdyeoW92yHFn_zBh7rY7b7I/view?usp=sharing
@@ -1833,7 +1135,9 @@ Found on Korean Site of Wisdom (WIP):
 	* https://arca.live/b/hypernetworks/60952481?category=%EA%B3%B5%EC%9C%A0&p=2#comment
 * Migonon: 
 	* https://mega.nz/folder/Ee8WCAoa#NpV9mpfkpnHscCu66L0vWw
-
+* Eula Lawrence (95000): https://mega.nz/file/l9tAHJBD#xdXMf7vulY4GJBigxegFVLSOULONnk4o86qKHYoBZmc
+	* (Training info) https://arca.live/b/hypernetworks/61954545?category=%EA%B3%B5%EC%9C%A0&p=1
+	* Model loaded at training time full-model-latest
 
 Found on Discord:
 * Art style of Rumiko Takahashi 
@@ -2051,6 +1355,10 @@ Collection of Aesthetic Gradients: https://github.com/vicgalle/stable-diffusion-
 ### DEAD/MISSING
 If you have one of these, please get it to me
 
+Dreambooth:
+Anya Taylor-Joy: https://drive.google.com/drive/mobile/folders/1f0FI2Vtr0dNfxyCzsNkNau20JT9Kmgn-
+* https://www.reddit.com/r/StableDiffusion/comments/xx8p1p/anya_taylorjoy_model_link_in_comments/
+
 Embed:
 * Omaru-polka: https://litter.catbox.moe/qfchu1.pt
 * Sakimichan: https://mega.nz/file/eE8QDKrI#y7kdyWgPUjI4ZkY8PSq89F28eU_Vz_0EgTbG6yAowH8
@@ -2063,12 +1371,17 @@ Hypernetworks:
 * 焦茶 / cogecha hypernetwork, trained against NAI: https://mega.nz/folder/BLtkVIjC#RO6zQaAYCOIii8GnfT92dw
 * 山北東 / northeast_mountain hypernetwork, trained against NAI: https://mega.nz/folder/RflGBS7R#88znRpu7YC1J1JYa9N-6_A
 
+* not sure if this is a hypernet: https://mega.nz/file/l9tAHJBD#xdXMf7vulY4GBigxegFVLSOULONnk4o86qKHYoBZmc
+	* probably a mis copy paste of Eula Lawrence: https://mega.nz/file/l9tAHJBD#xdXMf7vulY4GJBigxegFVLSOULONnk4o86qKHYoBZmc
+
 Datasets:
 * expanded ie_(raarami) dataset: https://litter.catbox.moe/j4mpde.zip
 * Toplessness: https://litter.catbox.moe/mttar5.zip
 * https://gofile.io/d/R74OtT
 * Onono imoko (NSFW + SFW, 300 cropped images): https://files.catbox.moe/dkn85w.zip
 * thanukiart (colored): https://www.dropbox.com/sh/mtf094lb5o61uvu/AABb2A83y4ws4-Rlc0lbbyHSa?dl=0
+
+
 
 ## Training
 * Training guide for textual inversion/embedding and hypernetworks: https://pastebin.com/dqHZBpyA
@@ -2104,13 +1417,16 @@ Datasets:
 * github + some documentation: https://github.com/cafeai/stable-textual-inversion-cafe
 * Documentation: https://www.reddit.com/r/StableDiffusion/comments/wvzr7s/tutorial_fine_tuning_stable_diffusion_using_only/
 
-* Site where you can train (I think): https://www.astria.ai/
+* Site where you can train: https://www.astria.ai/
 * Colab: https://colab.research.google.com/github/huggingface/notebooks/blob/main/diffusers/sd_textual_inversion_training.ipynb
 * Colab 2: https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb
 * Colab 3: https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
 * Colab 4 (fast): https://github.com/TheLastBen/fast-stable-diffusion
 
-* **GUI helper for manual tagging and cropping: https://github.com/arenatemp/sd-tagging-helper**
+* Dreambooth gui: https://github.com/smy20011/dreambooth-gui
+	* the app automatically chooses the best settings for your current VRAM
+
+* **GUI helper for manual tagging and cropping: https://github.com/arenatemp/sd-tagging-helper/**
 
 * Embed vector, clip skip, and vae comparison: https://desuarchive.org/g/thread/89392239#89392432
 
@@ -2212,17 +1528,9 @@ You want the ai to find things that are consistent thematics in your image. If y
 * Baffu: https://files.catbox.moe/ejh5sg.7z
 * tatsuki fujimoto: https://litter.catbox.moe/k09588.zip
 
-## Common questions (CTRL/CMD + F):
+## FAQ
 
-Questions to add:
-What model is the best?
-How do i convert img1 to img2?
-What is the abs easiest way to download this?
-How do i speed up generation?
-what is a tokenizer?
-what is parsing?
-what is float 16?
-what is a vae?
+Check out https://rentry.org/sdupdates for other questions
 
 **What's all the new stuff?**
 >Check here to see if your question is answered: 
@@ -2234,6 +1542,7 @@ what is a vae?
 >Refer to https://rentry.org/nai-speedrun (has the "Asuka test")
 >Easy guide: https://rentry.org/3okso
 >Standard guide: https://rentry.org/voldy
+>Detailed guide: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017
 >Paperspace: https://rentry.org/865dy
 
 >AMD Guide: https://rentry.org/sdamd
@@ -2281,272 +1590,20 @@ Check out one of these:
 * http://aiart.house
 * HF demo list: https://pastebin.com/9X1BPf8S
 
-**Are there any alternatives to gradio for sharing my stuff online?**
->Try ngrok (https://ngrok.com/, recommended by anon)
-* free
-* custom links
-* connection limit of ~60 users
-* anon thinks it gives more control for the host over Gradio
+**How do I run NSFW models in colab?**
+Info by anon, I'm not sure if it works:
 
-**Is there an invisible watermark?**
->If you're using AUTOMATIC1111's webui and referring to this: https://github.com/ShieldMnt/invisible-watermark#attack-performance, then no. The setting in the settings is never read.
-* code not used in the commit that added the setting in the settings: https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/f98338faa84ecce503e68d8ba13d5f7bbae52730
-
-**How do I get more of a strong effect on my embedding?**
->(might be outdated info) Embeddings take your image and find tokens from the current model that match the image, and when you use the embedding, it called on those specific tokens. So, it really depends on what embedding you're trying to create (how close it is to the default model, how pronounced the imgs are, etc). Plus, you can always add more emphasis for more of an effect
-
-**How does the increasing prompt token limit work?**
->With the token counter for each word, let's say you have the prompt:
+>!gdown https://huggingface.co/Daswer123/asdasdadsa/resolve/main/novelai_full.ckpt -O /content/stable-diffusion-webui/models/Stable-diffusion/nai.ckpt
+>!gdown https://huggingface.co/Daswer123/asdasdadsa/resolve/main/animevae.pt -O /content/stable-diffusion-webui/models/Stable-diffusion/nai.vae.pt
+>!gdown https://huggingface.co/Daswer123/asdasdadsa/raw/main/nai.yaml -O /content/stable-diffusion-webui/models/Stable-diffusion/nai.yaml
+>!gdown https://huggingface.co/Daswer123/asdasdadsa/resolve/main/v2.pt -O /content/stable-diffusion-webui/v2.pt
+>!gdown https://huggingface.co/Daswer123/asdasdadsa/raw/main/v2enable.py -O /content/stable-diffusion-webui/scripts/v2enable.py
 >
->girl (1), blue (2),..., apple (74), banana (75), orange (76), kiwi (77)
+>!wget https://pastebin.com/raw/ukEFznTb (embed) -O /content/stable-diffusion-webui/ui-config.json
 >
->The prompt would split after banana because banana consists of 1 token and the weights would reset to start from strong again. So it's basically like
->
->girl (1), blue (2),..., apple (74), banana (75) AND orange (1), kiwi (2)
+>now paste that above in a codeblock and excute it or use this colab https://colab.research.google.com/drive/1zN99ZouzlYObQaPfzwbgwJr6ZqcpYK5-?usp=sharing#scrollTo=SSP9suJcjlWs and select nai in the model dropdown
 
-**What is a vae?**
->Check out https://en.wikipedia.org/wiki/Variational_autoencoder
->TLDR: a filter that changes output
-
-**What is dreambooth?**
-* Read this for info: https://dreambooth.github.io/
-
-**What is difference merging/why is there a way to merge three models?**
->The first two models are merged using standard interpolation. The third model is for a difference merge. 
-
-* For models A, B, and C:
-	* The formula is A + (B - C) * (1 - M), where
-		* A is the model where the learning is going to be transfered
-		* B is the model that has been finetuned (trained) on a certain object
-		* C is the base model that was used to finetune B
-		* B-C is difference between B and C, which is added to A
-		* (1-M) is the multiplier > how much of the difference to add to A
-			* (1-M) is in the slider in the UI, where the slider being on the right makes (1-M) = 1
-
-**How would distributed training work?**
-> According to NeonTheCoder: "well a model trained ontop of another would be the same, plus added data, and slided data.
-> if you subtract the original from that you should be left with the difference, and the new data.
-> then if you add that ontop of another model, it should only be adding the difference it made from original SD to the target model, and the new data"
-
-> Basically: You train a model, subtract the original model so you only have the "trainings", then add the trainings to aonther model. This means you can delegate training tasks to different people and add up all the results.
-
-**Why doesn't my 4090 work?**
->You need to update your cuDNN or use an updated xformer.
-	https://github.com/C43H66N12O12S2/stable-diffusion-webui/releases/download/f/xformers-0.0.14.dev0-cp310-cp310-win_amd64.whl
->Uploaded cuDNN files by anon (which means it might be pickled): 
-	https://pomf2.lain.la/f/5u34v576.7z
-* Goes into stable-diffusion-webui\venv\Lib\site-packages\torch\lib if you're using venv, otherwise wherever your torch is installed.
-
-**What GPU should I buy?**
->Refer to https://docs.google.com/spreadsheets/d/1Zlv4UFiciSgmJZncCujuXKHwc4BcxbjbSBg71-SdeNk/. Generally, higher VRAM is better.
-
-**What does Stability AI's "no nudity" for their SFW model mean for us?**
->It's only speculation, but probably a loss in accurate anatomy and overall NSFW stuff. We can always train NSFW into the released model, though the quality will probably be worse than if Stability AI did it (thousands/millions of images vs billions of images).
-
-**What's the difference between an embedding and a hypernetwork?**
->By anon: Embeddings add new tokens to the vocabulary but leave the model unchanged, hypernet alters the behavior of the network itself within the layers - hypernet has a lot more capacity to change the behavior but you can obviously only have one active at once
-
-**Why does my output differ from someone else's output?**
-> Check to see if your settings match theirs. Also, using an optimization such as lowvram, medvram, and xformers will cause variations in outputs.
-
-> Hi-res generations are affected by the video card used
-	* https://desuarchive.org/g/thread/89259005/#89260871
-
-**Why do I keep getting/how do I fix a black output when using .vae with the NAI model?**
->Using --no-half-vae will fix the random black images when using the .vae
-
-**How do you add upscalers?**
->Put the files into stable-diffusion-webui/models/ESRGAN or GFPGAN, it should say on https://upscale.wiki/wiki/Model_Database
-
-**How do you add embeddings?**
->Make a folder in your webui install (next to webui-user.bat) named embeddings > put your .pt and .bin embedding files here
-
-**Why are my faces blurry/messed up/ugly/deformed/etc.?**
->This could be because of a variety of things. Generally, to fix this, try generating at a higher resolution, using hi-res fix, inpainting your face normally, inpainting your face at full resolution, editing a good face on top of your face and img2img-ing, adding pretty face (or some variant) to the positive prompt and ugly face (or some variant) to the negative prompt, and making the ai focus more on the face with a closer shot (e.g. "portrait shot").
-
-**What is textual inversion?**
->Textual inversion makes the ai brute forces tags that it thinks matches your imgs and creates an embedding. Doing this on a subject in many situations (e.g. different environments and poses) generally allows the AI to create better embedding
-
-**Stuff doesn't work/is outdated!**
-> Git pull or do a fresh install by git cloning into another folder. You can also git reset --hard [commit id], but be careful of overwriting your outputs/embeddings/models
-
-**What is ENSD?**
->ENSD is eta noise seed delta (in the settings). It shifts your seed and does some eta/sigma stuff. NAI uses 31337
-
-**Is the leaked NAI model safe?**
->The risk isn't 0, but there hasn't been any reports of getting hacked/pickled yet. Only you can decide if it's safe enough for you to use.
-
-**Is anything here safe??**
->Similarly, the risk isn't 0, but no one has gotten hacked from any links here as far I ask know.
-
-**Help! I need a prompt and I don't know where to start**
->Find a prompt someone else used and repurpose it for yourself. Think if what you like and just start writing tags/descriptions. If you need a tag but don't know the Danbooru equivalent, you can usually find it by searching danbooru [write what tag you want here]
-
-**How do I make better pictures?**
->For a general workflow:
-1. paint something really crude, it can literally be blobs of color
-2. img2img with a prompt
-3. edit original img or prompt or output input
-4. reimg2img/inpaint
-5. repeat last few steps until you get what you want
-
->Step 1 can be replaced with just starting with a txt2img if you want the AI to decide for you
-
-**What is no-half and full precision?**
->Most new GPUs will use half precision since it lowers VRAM. Only use no-half and/or full-precision if you want to get the absolute best quality (minor difference) or if you are running a 16xx card.
-
-**How to inpaint?**
-* Good guide: https://rentry.org/drfar
-* TLDR: Mask > describe ONLY the part you're inpainting > generate
-
-**Why doesn't inpainting work?**
-* Try running in incognito/private browsing mode, adblockers and certain plugins/extensions break inpainting
-* Try refreshing/restarting the webui
-
-**How do you get NAI (NovelAI) 1:1?**
-> Refer to https://rentry.org/sdupdates#prompting
-
-**Does order of prompts matter?**
->Yes, the order = priority that the AI will put in your img
-
-**How do I setup NAIFU?**
->Read the text file that tells you how to in the download
-
->By anon: (Windows):
-1) Make sure you install Python and check "Add Python to PATH": https://www.python.org/downloads/windows/
-2) Download the naifu torrent from this link:https://rentry.org/sdg_FAQ#naifu-novelai-model-backend-frontend.
-3) Inside of the naifu folder, right click program.zip and click "extract here" with 7zip or WinRAR.
-4) Run setup.bat and let it finish.
-5) Run run.bat and once it's running, open a new browser window/tab and make sure that you type in http://localhost:6969/ into the address bar.
-6) Bada bing bada boom you should have the site running locally on your PC.
-
-**What upscaler should I use?**
-> I recommend SD Upscaler, it adds details as well as upscales. For a while LSDR was regarded as the best, this might've changed though. Some anons like swinir, some like esrgan4x, ymmv
-
-**How do I know if X is loaded?**
->Ususally, the console will tell you. It will not tell you if hypernetworks or v2.pt is loaded
-
-**How do I update?**
->open command prompt in auto's folder and type "git pull". Or, right click in the folder, git bash here, git pull. To make sure you have the requirements, run "pip install -r requirements.txt" in the same fashion.
-
-**Recommended Settings (need to update this)?**
-* default NAI negatives: nsfw, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
-	* Supposedly adding "artist name" into here improves results
-* Prefix all prompts with masterpiece, best quality
-	* Apparently NAI adds another hidden "masterpiece" after "best quality", but this might've been debunked already
->For non-NAI models: Clip skip 0, everything else is good (afaik don't use hypernetworks, v2, yaml, VAE)
-
-**What are (parentheses), [brackets], {this thing}, <>, and decimals?**
->() is more emphasis, [] is less emphasis, {} is NAI's "implementation" of (), <> is for embeddings, decimals specify the number of ()'s so you don't need to type in a bunch.
-
->(boobs) would have more weight than [boobs] in the final result, (boobs:1.4) would increase the boobage by ~40% more than what they would've normally been, (boobs:0.6) will decrease it by ~40%. 
-	If using multiple (parenthesis) instead of decimals, is changed by a multiplier of 1.1 with each new parenthesis
-	>(n) = (n:1.1)
-	>((n)) = (n:1.21)
-	>(((n))) = (n:1.331)
-	>((((n)))) = (n:1.4641)
-	>(((((n)))) = (n:1.61051)
-	>((((((n)))))) = (n:1.771561)
-
-	[n] = (n:0.9090909090909091)
-	[[n]] = (n:0.8264462809917355)
-	[[[n]]] = (n:0.7513148009015778)
-	[[[[n]]]] = (n:0.6830134553650707)
-	[[[[[n]]]]] = (n:0.6209213230591552)
-	[[[[[[n]]]]]] = (n:0.5644739300537775) 
-
->([prompt]:[number less than 1]) = [using this syntax]
-	* I don't think decimals work with this syntax, it's undocumented in AUTOMATIC's wiki
-
->2 of {} = 1 of (), accurate with a difference of <1%
-
->by anon: exceeding 3x () or [] is less predictable and can overcook your prompt
-
-**How do you escape/use () for series names (or whatever is in () that isn't supposed to be weighted) in prompts?**
-* https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing
-* character \\(franchise\\)
-
-**What is prompt editing?**
-* https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#prompt-editing
-* Follows the format of [P1:P2:[step # to change from P1 to P2]]
-	* Good for creating a base with P1 and adding details with P2
-* Loads one prompt for x steps, then runs the next prompt
-* If the number is between 0 and 1, it's a fraction (percentage) of the number of steps after which to make the switch. If it's an integer greater than zero, it's just the step after which to make the switch.
-	* Example: The prompt is "a [fantasy:cyberpunk:16] landscape"
-    The model will draw a fantasy landscape for 16 steps. After step 16, it will switch to drawing a cyberpunk landscape
-
-**What is AND?**
->AND combines prompts together:
-
->A good metaphor to remember when prompting: P1 AND P2 AND P3 for 10 steps = P1 step 1, P2 step 2, P3 step 3, P1 step 4, etc... P1 step 10. It's good for combining two different prompts together, such as a background prompt and a subject prompt. 
-
-> By kind anon: each prompt creates a "guidance" vector saying how to change the image to "match" the prompt, whatever that is, and AND makes you have TWO prompts pulling the image in different directions (that get added together)
-
-> Technical: https://energy-based-model.github.io/Compositional-Visual-Generation-with-Composable-Diffusion-Models/
-
-**What are negative prompts?**
->By kind anon: this is also how negative prompts work-- it computes how to change the image to go towards the negative prompt, and SUBTRACTS that to move away from it
-
-**What are positive prompts?**
-* Positive prompts calculate how much each step should move toward the positive prompt. Adding weights increases how much towards (or past) the positive prompt the AI will travel
-
-**What's my best option if I want to imitate a specific artstyle?**
->You could try finding someone similar, doing textual inversion, or describing the artsyle (eg thick stroke, lineart, etc.)
-
-**What are hypernetworks, VAE, v2.pt, etc? **
->Hypernetworks are like styles for your generation
-
->VAE's fix faces and eyes, is generally good, but seems to dull colors
->* Disable if training
-
->v2.pt censors and generally changes the whole composition. a lot of people don't like it
-
->yaml doesn't seem to do anything except double ram usage
-
-**What is Deep Danbooru?**
->Deep Danbooru is an autotagger. The AI automatically finds Danbooru tags that it thinks matches the picture it's given. To activate it
-1. git pull, edit webui-user.bat
-2. add the --deepdanbooru argument to webui-user.bat so it looks like COMMANDLINE_ARGS=--deepdanbooru
-3. find the interrogation change in img2img.
-
-**How do I get NAIFU to automatically save images for me?**
->Edit run.bat. Ctrl + f to "export SAVE_files". Remove the "::" and change the word from export to set.
-
-**How do you load the VAE?**
->Rename it to [your model's name here].vae.pt and put it next to your model in the models/Stable-diffusion folder
-
-**How do you load hypernetworks?/How do you use hypernetworks?**
->create a hypernetworks folder in the models folder and place all the .pt files there
-
-**How do you load the v2.pt?**
->place the v2.pt in the same folder as your webui-user.bat file (the root folder) and add https://rentry.org/nai-prior-v2 into your scripts folder (rename the text file to [anything].py
-
-**How do you load the yaml?**
->It's not recommended to load the yaml because it doubles ram for no change in output, but if you really want to, rename it to [model name].yaml and place it next to your model.
-	
-> Asukaimguranon: I will report that the yaml didn't double my vram usage outright, but i experienced something like a memory leak because it oom crashed after a dozen gens at most (compared to non-yaml for hundreds of gens no problem). the gens i did get matched non-yaml 1:1 so there's basically no reason to use yaml ever.
-
-**What are wildcards?**
->by anon: wildcard just lets you create a text file with a list of prompt words, and then you reference that text file to randomly pick from it, so you could randomize hair color, or pose, specific character, etc
-
-**Where do you get wildcards?**
->Got this info from a kind anon in hdg: Search archive or git for wildcard pastebin and copy what you want. Then, download wildcards.py from AUTOMATIC1111's wiki. Place script + pastebin text files (which are in a folder named wildcards, the text files are named [wildcard name here].txt) in /scripts. Activate wildcards in AUTO's gui. In a prompt, you would write __[wildcard name here]__ to choose a random name from that txt file. To use weights: (__[wildcards name here]__:[weight amount]) 
-* Example wildcards: https://github.com/jtkelm2/stable-diffusion-webui-1/tree/master/scripts/wildcards
-
-* Dump: check links
-
-**What is interpolation when merging models?**
->It determines how much of each model is in the output model. if number is 40 for linear: 40% primary, 60% secondary. If number is 40 for sigmoid or inverse sig, this percent is weighted according to the graphs. sigmoid: primary checkpoint gets less weight than if using weighted sum. inverse sigmoid: opposite to sigmoid
-* https://archived.moe/g/thread/89007676#89008490
-* Calculate values yourself: https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/c250cb289c97fe303cef69064bf45899406f6a40#comments
-* Graph + Info: https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2658#issuecomment-1279581042
-
-**Can you make X?**
->If you're creative enough, probably. If it was trained on that, definitely
-
-## Rentrys + Link Dump, will sort:
-TLDR of everything: https://rentry.org/sd-tldr
-Current Issues: https://rentry.org/sd-issues
+## Link Dump will sort
 
 **Info:**
 * Detailed 1:1 setup NAI + current news: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017
@@ -2606,397 +1663,66 @@ Current Issues: https://rentry.org/sd-issues
 * Waifu2x: https://github.com/nagadomi/waifu2x
 * Gigapixel AI: https://www.topazlabs.com/gigapixel-ai
 
-**Face restoration**
-* GFPGAN: https://github.com/TencentARC/GFPGAN
+RunwayML: https://github.com/runwayml/stable-diffusion
 
-**Batch resize:**
-* https://sourceforge.net/projects/easyimagesizer/
-* https://github.com/FalseCAM/EasyImageSizer3
+GPU comparison: https://docs.google.com/spreadsheets/d/1Zlv4UFiciSgmJZncCujuXKHwc4BcxbjbSBg71-SdeNk/edit#gid=0
 
-**Git pull/revert guide:**
-* https://rentry.org/git_retard
+Undervolt guide: https://www.reddit.com/r/nvidia/comments/tw8j6r/there_are_two_methods_people_follow_when/
 
-Horde: https://stablehorde.net
+frames to video: https://github.com/jamriska/ebsynth
 
-A prompt dump: 
-https://pastebin.com/rbrtPCqZ
+Paperspace guide: https://rentry.org/865dy
 
-Part 1 NAI (with all the trackers I can find):
+More twitter anons: 
+https://twitter.com/knshtyk/media
 
-``` python
-magnet:?xt=urn:btih:5bde442da86265b670a3e5ea3163afad2c6f8ecc&dn=novelaileak&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2F9.rarbg.com%3A2810%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=https%3A%2F%2Fopentracker.i2p.rocks%3A443%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.pomf.se%3A80%2Fannounce&tr=udp%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fmovies.zsw.ca%3A6969%2Fannounce&tr=udp%3A%2F%2Fipv4.tracker.harry.lu%3A80%2Fannounce&tr=udp%3A%2F%2Fexplodie.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fbt.oiyo.tk%3A6969%2Fannounce&tr=https%3A%2F%2Ftracker.nanoha.org%3A443%2Fannounce&tr=https%3A%2F%2Ftracker.lilithraws.org%3A443%2Fannounce&tr=https%3A%2F%2Ftr.burnabyhighstar.com%3A443%2Fannounce
-```
-Part 2 NovelAI Leak: https://rentry.org/ewahd
+Sigmoid math: https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2658
 
-not sure what this is: https://rentry.org/naifunya
-UNPICKLER: https://rentry.org/safeunpickle2
-Prebuilt xformers: https://rentry.org/25i6yn
-img search: https://iqdb.org 
-Chinese NAI: https://ai.nya.la/
-Guide to setting up local NAI by chinese NAI: 
-
-``` python
-https://telegra.ph/NovelAI-%E5%8E%9F%E7%89%88%E7%BD%91%E9%A1%B5UI%E5%90%8E%E7%AB%AF%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B-10-10
-```
-
-Rebasin (alternative merging models): https://github.com/samuela/git-re-basin 
-WD 1.3 Torrents: https://rentry.org/WDtorrents
-
-learn ai (recommended by emad): https://www.fast.ai/
-https://jalammar.github.io/illustrated-stable-diffusion/
-
-
-* SDToolkit: all in one generator + upscaler
-	* https://github.com/SocketByte/SDToolkit
-
-AMD Ubundo 20.04
-* https://gist.github.com/geerlingguy/ff3c3cbcf4416be2c0c1e0f836a8183d
-
-Mac: try using invoke ai https://github.com/invoke-ai
-CPU (might be outdated): https://rentry.org/cputard
-
-Danbooru dump: https://www.gwern.net/Danbooru2021
-
-Outdated training: https://rentry.org/informal-training-guide
-even more outdated: https://rentry.org/dq6vm
-
-Free browser SD: https://huggingface.co/spaces/stabilityai/stable-diffusion
-https://promptart.labml.ai/playground
-https://novelai.manana.kr/
-https://boards.4channel.org/g/thread/89199040
-https://www.mage.space/
-https://github.com/TheLastBen/fast-stable-diffusion
-https://github.com/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb
-visualise.ai
-* Account required
-* Free unlimited 512x512/64 step runs
-img2img with stable horde: https://tinybots.net/artbot
-Free, GPU-less, powered by Stable Horde: https://dbzer0.itch.io/lucid-creations
-
-AMD Guide: https://rentry.org/ayymd-stable-diffustion-v1_4-guide
-
-Furry dump from SD Labs server: https://e621.net/db_export/
-2.5 mill posts from e621 with source links and more detailed tag info>>
-https://mega.nz/file/kxN0zZSC#DaGsogjU_pURYxm1T7ZB8MOvjetuU2tRJBGpJ5m8bK4
-Furry model tag counts >> https://mega.nz/file/AgdHDLLD#vERcoYTWGJguTsXmysbLq1NL_xBS8txQhVvPI5E3QKE 
-
-some 4chan alt afaik, maybe loli stuff: https://2chen.moe/tech/1909555?#bottom
-
-Japanese chan:
-https://www.2chan.net/
-
-Krita: https://github.com/Interpause/auto-sd-krita 
-cool showcase: https://www.thispersondoesnotexist.com/
-
-Voldy to NAI ui: https://pastebin.com/0NTMWFtb
-* save this to the root directory as user.css 
-
-Book: https://github.com/joelparkerhenderson/stable-diffusion-image-prompt-gallery
-
-Celebs: https://docs.google.com/spreadsheets/u/0/d/1IqXkYDXux97aU8Y5kqqBrBvCn3CLRDhMZ7lEWsAtwUc
-
-Multi GPU: https://hastebin.com/raw/labumiyiqo
-
-Barebones SD: https://github.com/AmericanPresidentJimmyCarter/stable-diffusion
-
-
-Explorer thing: http://cybernetnews.com/find-replace-multiple-files
-Messy room: https://twitter.com/8co28/status/1583434494354210817
-
-Video FPS interpolator: https://github.com/megvii-research/ECCV2022-RIFE
-Another Video interpolator (Flowframes): https://nmkd.itch.io/flowframes
-Another: https://film-net.github.io/
-
-Alternatives: https://github.com/brycedrennan/imaginAIry
-https://www.stablecabal.org/
-
-GPU speed comparison
-	* https://lambdalabs.com/blog/inference-benchmark-stable-diffusion/
-
-Proof of concept: 
-https://www.cutout.pro/photo-animer-gif-emoji/upload
-(then paste part of the original tone o remove the watermark)
-For her Voice :
-https://www.neural-reader.com/tts/start
-https://webmshare.com/play/O95LA
-
-Image manipulation and stuff: https://imagemagick.org/index.php
-
-Cool "is my image ai?" detection test: https://ai.azunyan1111.com/
-
-Tracker list: https://ngosang.github.io/trackerslist/
-
-Sampler comparison paper: https://arxiv.org/pdf/2206.00364.pdf
-
-e621 thing: https://furry.booru.org/ 
-
-img2img thing: https://huggingface.co/spaces/pharma/sd-prism
-
-classifier guidance info: https://benanne.github.io/2022/05/26/guidance.html
-
-Twitter anons: https://pastebin.com/k00qiJbL
-
-Facebook thing: https://github.com/facebookincubator/AITemplate
-
-Info for quick links: you can put CLIP_stop_at_last_layers in the quick settings list to make it more easily accessible.
-(you can do this for any option by going into inspect element and finding the ID, ignoring the setting_ part: https://files.catbox.moe/2lcolb.PNG )
-
-some colab: https://rentry.org/sd-colab-automatic
-
-alt: https://github.com/n00mkrad/text2image-gui
-1 click: https://github.com/cmdr2/stable-diffusion-ui
-
-3d: https://github.com/ashawkey/stable-dreamfusion
-https://dreamfusion3d.github.io/
-3d gens: https://colab.research.google.com/drive/1706ToQrkIZshRSJSHvZ1RuCiM__YX3Bz#scrollTo=i5-MWEjfBjYx
-https://colab.research.google.com/drive/1706ToQrkIZshRSJSHvZ1RuCiM__YX3Bz?authuser=2#scrollTo=i5-MWEjfBjYx
-	It's a bit more effort to set up, make sure you replace line 29 of main.py with
-
-	config = yaml.full_load(open(args.config, 'r'))
-
-https://sketchfab.com/3d-models/low-poly-beretta-m9-c79ea90735b248e588d5be49809d7b34
-
-installer, not sure if safe: https://github.com/EmpireMediaScience/A1111-Web-UI-Installer
-
-clip stuff: https://laion-aesthetic.datasette.io/laion-aesthetic-6pls/
-
-AI youtubers/guides:
-* https://www.youtube.com/c/RoyalSkiesLLC
-	* https://www.youtube.com/playlist?list=PLZpDYt0cyiusIUae2YnPZ26HTjC6yuhNU
-* https://www.youtube.com/c/NerdyRodent
-* Making art: https://www.youtube.com/user/pjgalbraith
-
-Slerp info: https://en.wikipedia.org/wiki/Slerp#Geometric_Slerp
-
-AI Music: https://github.com/openai/jukebox/
-
-booru thing: https://github.com/VivaLaPanda/infinibooru
-
-KR thing: https://novelai.manana.kr/
-
-some hosting thing: https://zguide.zeromq.org/
-old thing: https://www.thispersondoesnotexist.com/
-
-
-
-Clipart Studio plugin for lighting: https://nyatabe.booth.pm/items/4196349
-
-AI showcase: AI 3D animation
-https://twitter.com/TREE_Industries/status/1578071996033863681
-https://www.youtube.com/watch?v=-TS2iLhYP28
-https://www.youtube.com/watch?v=8oIQy6fxfCA
-AI 3D models
-https://www.youtube.com/watch?v=5j8I7V6blqM
-https://www.youtube.com/watch?v=uM5NPodZZ1U
-AI voice acting
-https://www.youtube.com/watch?v=oQx4SyM_iH4
-https://www.youtube.com/watch?v=ria6qt7UUN4
-AI music
-https://www.youtube.com/watch?v=QN0DDD7B3oU
-AI coding
-https://www.youtube.com/watch?v=pdSfgRYy8Ao&t=878s
-https://www.youtube.com/watch?v=_9aN1-0T8hg
-AI video
-https://www.youtube.com/watch?v=PHRg241NjJA
-
-Dance diffusion: 
-https://github.com/pollinations/dance-diffusion
-
-fun way to find out if you were used for training: https://haveibeentrained.com/
-
-Cool showcase by anons:
-This one is simple but very pretty, shows you how incredibly simple but powerful this technology is.
-https://twitter.com/tori29umai/status/1586367798988587014 
-
-This one is a fuller demonstration, converting an older music video into a hand-drawn style, just compare the facial expressions of the old and new versions, especially starting from 2:50
-https://www.bilibili.com/video/BV14D4y1r7NJ/
-
-This one is a test of style-transfer, using the famous artist Kurehito Misaki's textual inversion (illustrator of Saekano)
-https://www.bilibili.com/video/BV1D14y1j7KL/
-
-This one fuses Genshin and K-ON together
-https://www.bilibili.com/video/BV1JR4y1Q73a/
-
-The is the latest tech demo, rendering multi characters, and complex actions
-https://www.bilibili.com/video/BV1B14y1575G
-
-twitter anons:
-https://twitter.com/PorchedArt
-https://twitter.com/FEDERALOFFICER
-https://twitter.com/Elf_Anon
-https://twitter.com/ElfBreasts
-https://twitter.com/BluMeino
-https://twitter.com/Lisandra_brave
-https://twitter.com/nadanainone
-https://twitter.com/Rahmeljackson
-https://twitter.com/dproompter
-https://twitter.com/Kw0337
-https://twitter.com/AICoomer
-https://twitter.com/mommyartfactory
-https://twitter.com/ai_sneed
-https://twitter.com/YoucefN30829772
-https://twitter.com/KLaknatullah
-https://twitter.com/spee321
-https://twitter.com/EyeAI_
-https://twitter.com/S37030315
-https://twitter.com/ElfieAi
-https://twitter.com/Headstacker
-https://twitter.com/RaincoatWasted
-https://twitter.com/RatmanScott
-https://twitter.com/Merkurial_Mika
-https://twitter.com/epitaphtoadog
-https://twitter.com/lillyaiart
-(good stuff) https://twitter.com/LeftGRGR
-
-collection of papers to learn about this research from its inception: https://github.com/prodramp/DeepWorks/tree/main/12-Research-Papers
-https://www.lesswrong.com/posts/vJFdjigzmcXMhNTsx/simulators
-https://arxiv.org/abs/2110.13746
-
-something: http://blog.dlprimitives.org/
-
-some unpickle info: https://www.reddit.com/r/sdforall/comments/y5axt7/with_lots_of_models_appearing_due_merging_and/
-
-colab; https://colab.research.google.com/drive/1jUwJ0owjigpG-9m6AI_wEStwimisUE17?pli=1#scrollTo=Ucr5_i21xSjv
-
-webm from imgs: https://ffmpeg.party/webm-from-image-sequence/
-
-Music AIs: https://soundraw.io/
-https://boomy.com/
-https://www.aiva.ai/
-https://huggingface.co/spaces/fffiloni/img-to-music
-
-vocal ai: https://twitter.com/fifteenai
-
-text to speech ai (deepfake): https://fakeyou.com/
-
-Gradio alternative: ngrok (https://ngrok.com/)
-* free
-* custom links
-* connection limit of ~60 users
-* anon thinks it gives more control
-
-## Confirmed Drama
-
-
-10/20 News
-
-TLDR from reddit:
-* RunwayML releases the v1.5 model on their repo
-* Copyright takedown notice from StabilityAI
-* RunwayML CEO releases a slightly passive agressive message reminding that they have the right to release the model, which was created by a RunwayML Researcher and a University researcher. "Thanks" StabilityAI for the offered processing power
-* Emad (StabilityAI) responds on the Discord stating the copyright takedown notice was just a mistake. He states they have never prevented the release of a model, and they just want to make sure Stable Diffusion doesn't face legal issues. No word on the disagreement in itself, but it seems to imply that RunwayML disagreed on the way StabilityAI wanted to navigate the legal issues, and decided to just release the model.
-
-
-* TLDR: https://www.reddit.com/r/StableDiffusion/comments/y99yb1/a_summary_of_the_most_recent_shortlived_so_far/
-* Takedown notice: https://www.reddit.com/r/StableDiffusion/comments/y969ph/model_15_legal_investigation_and_takedown_warning/
-* CEO Statement: https://www.reddit.com/r/StableDiffusion/comments/y97ya0/official_response_on_sd_15_model_by_chris_at/
-	* https://huggingface.co/runwayml/stable-diffusion-v1-5/discussions/1
-* Link: https://www.reddit.com/r/StableDiffusion/comments/y960o8/stability_ai_issues_takedown_request_for/
-
-![discord](https://desu-usergeneratedcontent.xyz/g/image/1666/29/1666298013746.png)
-
-![4chan](https://desu-usergeneratedcontent.xyz/g/image/1666/34/1666345632262.png)
-anon's recap: 
->we are so open guys, we have a clause in our employee contracts stating that they have the right to release any model they work on
->we've never stopped developers from releasing models btw
->we didn't issue a takedown request btw
->well ok, we did issue a takedown request, but it wasn't a LEGAL request ok?
->there was no leak btw guys everything is fine haha folk get so riled up!
->one of the lead researchers of the model leaked OUR model, what a pathetic publicity stunt!
-
-
-**Quick Rundown:**
->emad confirming censorship for 1.5, no more porn
-Might cause anatomical issues in released model. Non-issue for NSFW though, especially with model merging
-
-Debunked, SD will probably release a SFW model before their 1.5 model because of legal issues
-
->drama between emad and automatic1111
-Emad issued a private and public apology over it
-AUTOMATIC v. StabilityAI:
-* Summary: https://www.reddit.com/r/StableDiffusion/comments/y1uuvj/automatic1111_did_nothing_wrong_some_people_are/
-* Funny, not sure if real, apparently it is: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2509
-* Control given back to community: https://www.reddit.com/r/StableDiffusion/comments/y1nc7t/rstablediffusion_should_be_independent_and_run_by/
-* Mod's story: https://www.reddit.com/r/StableDiffusion/comments/y19kdh/mod_here_my_side_of_the_story/
-* by anon: I think [StabilityAI] backpedaled a bit, offered to unban automatic. Offered to give control of community places back to the community.
-* automatic1111's repo removed from pinned guide on r/stablediffusion
-* all old mods on stable diffusion subreddit kicked and replaced by stabilityai members. Big discourse on corruption and true open-source training
-
-Emad will supposedly **not** censor the expected Stability AI model release since SAI are only training their SFW model
-* Conversation from AMA:
->>User: is it a risk the new models (v1.X, v2, v3, vX) to be released only on dreamstudio or for B2B(2C)? what can we do to help you on this?
->
->>Emad: basically releasing NSFW models is hard right now Emad: SFW models are training
->
->>User: could you also detail in more concrete terms what the "extreme edge cases" are to do with the delay in 1.5? i assume it's not all nudity in that case, just things that might cause legal concern?
->
->>Emad: Sigh, what type of image if created from a vanilla model (ie out of the box) could cause legal troubles for all involved and destroy all this. I do not want to say what it is and will not confirm for Reasons but you should be able to guess.
->
->>User: what is the practical difference between your SFW and NSFW models? just filtering of the dataset? if so, where is the line drawn -- all nudity and violence? as i understand it, the dataset used for 1.4 did not have so much NSFW material to start with, apart from artsy nudes
->
->>Emad: nudity really. Not sure violence is NSFW
-
-By the question asker:
->just want to clarify a misunderstanding that seems to have taken hold to do with 1.5 censorship
->i was the person asking emad about the clarifications about "extreme edge cases" and the difference between their NSFW and SFW models
->the context of that question was emad was speaking about how SFW models are easier to release right now because of potential legal issues with the NSFW models, and about training a separate set of SFW models
->the "extreme edge cases" question was about 1.5 specifically; as far as i understood it, 1.5 is one of their NSFW models and the "extreme edge cases" that they want to censor are cp, not all nudity
->the "SFW vs NSFW" question was about the distinction between two category of models that emad was referring to, the SFW models are separate and trained with most (all?) nsfw content filtered from the dataset, but not violence
->![Emad](https://cdn.discordapp.com/attachments/1031903589850959882/1031906934779019264/unknown.png)
->of course i'm not trying to shill for them or anything, and we'll see the true extent of the censorship if/when they release the models, but at the very least this is what was actually said
-
-## Unconfirmed Drama
-Quick Rundown:
->drama around models supposedly trained on CP
->>Don't download every random model link you come across
-
-Whether the fed bait is an actual fed bait or not cannot be confirmed
-
-Some anons theorize that the fed bait wasn't due to the ckpt but was due to glowie anon's scraper downloading actual CP from a torrent somewhere using a DHT search engine
-
-An anon claims to have tested the fed bait and said that the output a worse version of another existing model. Whether this is true or not cannot be confirmed
-
-Another anon's theory: "if he truly did get his acct taken down, he mentioned auto-scraping torrents, then it's possible the fed did have a honeypot or tracking on that particular torrent (but they didn't make the content), that seems the most likely to me. if this was all a hoax to spread panic about a particular torrent, he chose a relatively unknown torrent to do it with, for example it would be explosive if he made these accusations about the original novelai torrent. he may be telling the truth, but he hasn't provided strong evidence backing up the full story, so there are a lot of grains of salt to be taken"
-
-## Fed Bait Information
->Editor's note: I shortened the fed bait PSA because it was not officially confirmed by sources other than by the owner of SD training and the 4channer who got baited. It also took up too much space at the top. The fed bait info was a huge dump in the first place because it was a copy paste of the announcement from the SD training server and I got confirmation from the owner of SD training, and, if the announcement was true, it was a relevant and timely warning to delete/avoid downloading the pickle model. Even if this whole thing turns out to be a huge troll by both the owner and the 4channer, this situation showcases the danger of downloading random files from the internet. 
-
->Given the severity of the situation, the fed bait warning will stay a PSA (for now) to keep people wary of random ckpts/pts/vaes they download.
-
->That being said, future drama on this rentry will be confirmed by multiple sources before being posted at the top. For the unconfirmed drama, refer to https://rentry.org/sdupdates#unconfirmed-drama. 
-
-
-TLDR: fed allegedly uploaded ckpt of CP as a honeypot, anon downloaded it and got a warning from their seedbox who got a warning from Child Exploitation and Online Protection Command
-
-!!! danger There are claims of a model trained on CP in the wild
-
-	It is alleged that these models were distributed by feds via torrents starting around October 11, 2022.
-
-
-Similar (?) event last year: https://saucenao.blogspot.com/?view=classic
-
-Original fed post: ![original fed post](https://is2.4chan.org/g/1665809595734276.png) 
-
-Anon's statement: "one of our users was auto-scrapping every CKPT file on every tracker (pseudo) and they stumbled upon it, it had a weird name that literally nobody knew about until he searched on the 4chan archives and found what it was abt (pic related). then ofc he deleted it, and just a few minutes ago he told me he got a letter on his email from his seed box and it was abt "containing materials created and containing with sufficiently sexually suggestive images of minors" and it seems it was a fed bait"
-
-Email from seedbox company:
-![email from seedbox company](https://cdn.discordapp.com/attachments/1019320071681749042/1030682838112161802/blegh.png)
+maybe you can edit this to allow 8gb DB training: https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb
 
 ## Hall of Fame
-AUTOMATIC1111/Voldy: Best webui, for the people, madlad gigachad
-Leaker anon: Leaked NAI's imagen model + text gen
-Asuka anon: Large 1:1 NAI efforts before all the updates
-Booru anon: Self-hostable, intuitive, easy to setup booru
-Asuka Test Imgur anon: easy to follow guides, helping out the rentry
-Model anon: writing up https://rentry.org/sdmodels + helping out
-Glowie'd anon: first public fed bait
-Ixy anon: Good guide
-mogubro: A lot of hypernets. also cool name, very nice 
-koreanon: legendary korean disciple
+automatic1111
 
+## Miscellaneous
 
-## Misc
+Guide to installing NAI by anon:
+``` paython
+Guide for locally installing NovelAI:
 
--> (WIP) Precursor to https://rentry.org/sdwiki / https://github.com/questianon/SDwiki <-
+DOWNLOADING:
+get NovelAI from magnet:?xt=urn:btih:5bde442da86265b670a3e5ea3163afad2c6f8ecc&dn=novelaileak
+---or from picrel >>35097470 (Dead)
+get MinGW/Git from https://git-scm.com/download/win (or direct download: https://github.com/git-for-windows/git/releases/download/v2.37.3.windows.1/Git-2.37.3-64-bit.exe
+---When installing Git, make sure to select "Git Bash here".
+get Python from https://www.python.org/downloads/windows/ (or direct download: https://www.python.org/ftp/python/3.10.6/python-3.10.6-amd64.exe
+---When installing Python, make sure to select "add to Path".
 
-author socials: questianon !!YbTGdICxQOw (malt#6065, u/questianon, https://github.com/questianon, https://twitter.com/questianon), ping or tag if I need to change anything or if you have questions
+Start Git, and type "git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui";
+When you do this, it will create a folder called \stable-diffusion-webui\ (by default, in C:\Users\Username\)
+
+When you download the torrent:
+1. In \stableckpt\animefull-final-pruned\ rename 'model.ckpt' to 'final-pruned.ckpt'
+---Note: the 'animefull' model is the best overall, but struggles at recognizing and outputting VTuber characters in particular. For a better model in that regard, use the 'SFW' model instead; despite the name, it is not SFW-limited.
+2. Move 'final-prunded.ckpt' (the file you just renamed) and animevae.pt from \stableckpt\ to \stable-diffusion-webui\models\Stable-diffusion
+3. Rename 'animevae.pt' (the file you just moved) to 'final-pruned.vae.pt'
+4. Create a new folder \stable-diffusion-webui\models\hypernetworks\ and move all of the modules (which end in .pt) from \stableckpt\modules\modules\ (in the NovelAI)
+
+Whenever you want to run NovelAI from your computer, run webui-user.bat. The first time will initialize, which may cause some errors.
+If there are no errors, it will give you a web address (usually http://127.0.0.1:7860/ ). This is the WebUI, from which you run NovelAI using your computer's disk.
+The usual errors will require you to edit the .bat--do this in Notepad or n++.
+There will be a line of code beginning with "COMMANDLINE_ARGS=". Add "--precision full --no-half" directly after this, on the same line.
+If you get an error about "--skip-torch-cuda-test", add it as well (making the line "--skip-torch-cuda-test --precision full --no-half").
+
+After you started the .bat and got the WebUI loaded, go to Settings and scroll to Stable Diffusion. Set the checkpoint to final-pruned and the hypernetwork of your choice.
+```
+
+## Contact
+
+If you have information/files (e.g. embed) not on this list or you have questions, please contact me with details. 
+
+Socials: 
+Trip: questianon !!YbTGdICxQOw 
+Discord: malt#6065
+Reddit: u/questianon
+Github: https://github.com/questianon
+Twitter: https://twitter.com/questianon)
