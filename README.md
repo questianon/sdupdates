@@ -53,6 +53,11 @@ View the old stuff here: https://github.com/questianon/sdupdates/blob/main/sdupd
 		4. ```pip -r install requirements.txt```
 
 >11/2
+* Multiple people are working on a centralized location to upload embeddings/hypernetworks
+	* AIBooru devs
+	* Independent dev irythros
+	* Questianon (me)
+* Chinese documentation with machine translation for English: https://draw.dianas.cyou/en/
 * Auto-SD-Krita is getting turned into an extension: https://github.com/Interpause/auto-sd-paint-ext
 	* Original auto-sd-krita will be archived
 * Training image preview PR: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3594
@@ -497,6 +502,8 @@ Wildcard extension: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wild
 	* https://imgur.com/a/zzXqLPc
 	* https://imgur.com/a/TDGBAlc
 
+* Artists To Study: https://artiststostudy.pages.dev/
+
 Anon's list of comparisons:
 * Stable Diffusion v1.5, Waifu Diffusion v1.3, Trinart it4
 > https://imgur.com/a/ADPHh9q
@@ -852,7 +859,6 @@ Found on 4chan:
 		0.02:200, 0.01:1000, 0.005:2000, 0.002:3000, 0.0005:4000, 0.00005
 * Lina: https://files.catbox.moe/jnfo98.pt
 * Power (60k): https://files.catbox.moe/72dfvc.pt
-* Sakimichan (DEAD LINK): https://mega.nz/file/eE8QDKrI#y7kdyWgPUjI4ZkY8PSq89F28eU_Vz_0EgTbG6yAowH8
 * Takeda, Mogudan Fourchanbal (?, from KR site): https://files.catbox.moe/430rus.pt
 * Mikan (30 tokens, 36 images (before flipping/splitting), 5700steps, 5e-02:2000, 5e-03:4000): https://files.catbox.moe/xwdohx.pt
 	* creator: I've been getting best results with these tags: (orange hair and (hair tubes:1.2), (dog ears and dog tail and (huge ahoge:1.2):1.2)), green eyes
@@ -1121,6 +1127,8 @@ Found on 4chan:
 	>Does very well with white skin/pale characters, this is because the hypernetwork is trained mainly on white characters. Not because I wanted to but because it's what she tends to draw the most.
 	>Hypernetwork has most of her NSFW art in its data including a fanart which looks like it was drawn by her, just so the AI has a reference. So, yes, it can generate nudity and porn in her style, although I'm not sure about penetration stuff because I haven't tried.
 	>"outline" tag is recommended in prompt to have the same thick outlines she often uses in her artwork.
+* Sakimichan: https://mega.nz/file/TBJwFDLI#H_bgih8qbWe-EN4ntL_7ur6Ylr2qbcxhDwlC2AfWpnc
+	* dead link: https://mega.nz/file/eE8QDKrI#y7kdyWgPUjI4ZkY8PSq89F28eU_Vz_0EgTbG6yAowH8
 
 Found on Korean Site of Wisdom (WIP):
 * Terada Tera: https://drive.google.com/file/d/1APwInBROTUdyeoW92yHFn_zBh7rY7b7I/view?usp=sharing
@@ -1532,6 +1540,8 @@ Think of vectors per token as the number of individual traits the ai will associ
 Its also worth noting, the higher the count, the more images and more varied images you're going to want.
 
 You want the ai to find things that are consistent thematics in your image. If you use a small sample size, and all your images just happen to have girls in a bikini, or all with blonde hair, that trait might get attributed to your prompt, and suddenly "coffee cup" always turns out blonde girls in bikinis too.
+
+* Another training guide: https://www.reddit.com/r/stablediffusion/comments/y91luo
 
 ### Datasets
 * ie_(raarami): https://mega.nz/folder/4GkVQCpL#Bg0wAxqXtHThtNDaz2c90w
