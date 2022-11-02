@@ -16,7 +16,7 @@ View the old stuff here: https://github.com/questianon/sdupdates/blob/main/sdupd
 
 !!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates. There is also a WIP embedding directory here: https://github.com/questianon/sdupdates/blob/main/Embeddings.md
 
-!!! note If you know how to do stuff in markdown and html/can make a webpage easily/want to contribute in any way, contact me 
+!!! note If you know to how to javascript/want to contribute in any way, contact me 
 
 ### Quicklinks: 
 * News: https://rentry.org/sdupdates2#newsfeed
@@ -52,12 +52,20 @@ View the old stuff here: https://github.com/questianon/sdupdates/blob/main/sdupd
 		3. ```git pull```
 		4. ```pip -r install requirements.txt```
 
+>11/2
+* Auto-SD-Krita is getting turned into an extension: https://github.com/Interpause/auto-sd-paint-ext
+	* Original auto-sd-krita will be archived
+* Training image preview PR: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3594
+* Artist gives their thoughts on using AI (what problems it currently has): https://twitter.com/jairoumk3/status/1587363244062089216?t=HEd1gQkIiSLbvOk9X7lEeg&s=19
+* Clarification from yesterday's news:
+	* MMD + NAI showcase (UC = undesired content [NAI]/negative prompt [non-NAI], ): https://twitter.com/8co28/status/1587238661090791424?t=KJmJhfkG6GPcxS5P6fADgw&s=19 
+		* Creator found out that putting "3d" in the negative prompts makes outputs more illustration-like: https://twitter.com/8co28/status/1587004598899703808
+
 >11/1
 * SD Upscale broken on latest git pull: https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/4104
 	* Seems to affect some other parts of webui too
 * PR for hypernetwork resume fix: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3975
 * Dreambooth will probably not be integrated into AUTOMATIC1111's webui normally. It's likely to be turned into an extension: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3995#issuecomment-1298741868
-* MMD + NAI showcase (not sure what UC 3d is): https://twitter.com/8co28/status/1587238661090791424?t=KJmJhfkG6GPcxS5P6fADgw&s=19 
 * Dehydrate ("compress" down to 1gb) and rehydrate models: https://github.com/bmaltais/dehydrate
 	1. Use the ckpt_subtract.py script to subtract the original model from the DB model, leaving behind only the difference between the two.
     2. Compress the resulting model using tar, gzip, etc to roughly 1GB or less
@@ -74,6 +82,8 @@ View the old stuff here: https://github.com/questianon/sdupdates/blob/main/sdupd
 		* If I recall correctly, this is how ML Research Lab plans to do distributed model training
 	* Huggingface for ERNIE-ViLG: https://huggingface.co/spaces/PaddlePaddle/ERNIE-ViLG
 * AI art theft is now appearing (reuploads of AI art)
+	* Example: https://www.reddit.com/r/StableDiffusion/comments/yipeod/my_sdcreations_being_stolen_by_nftbros/
+	* anons reported stealing too
 * Lots of localization updates + improvements + extra goodies added if you update AUTOMATIC1111's webui
 * Wildcard script + collection of wildcards released: https://app.radicle.xyz/seeds/pine.radicle.garden/rad:git:hnrkcfpnw9hd5jb45b6qsqbr97eqcffjm7sby
 
@@ -268,7 +278,8 @@ Photoshop: https://github.com/Invary/IvyPhotoshopDiffusion
 Photoshop plugin (paid, not open source): https://www.flyingdog.de/sd/
 Krita plugins (free): 
 * https://github.com/sddebz/stable-diffusion-krita-plugin (listed in the OP, outdated? dead?)
-* https://github.com/Interpause/auto-sd-krita (a fork from above, more improvement)
+* https://github.com/Interpause/auto-sd-paint-ext
+	* https://github.com/Interpause/auto-sd-krita (a fork from above, more improvement)
 * https://www.flyingdog.de/sd/en/ (https://github.com/imperator-maximus/stable-diffusion-krita)
 
 GIMP:
@@ -344,6 +355,8 @@ Deforum (video animation): https://github.com/deforum-art/deforum-for-automatic1
 	* https://www.desmos.com/calculator/5nizby2zbn
 * Blender camera animations to deforum: https://github.com/micwalk/blender-export-diffusion
 * Tutorial: https://www.youtube.com/watch?v=lztn6qLc9UE
+
+Auto-SD-Krita: https://github.com/Interpause/auto-sd-paint-ext
 
 Aesthetic Gradients: https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients
 Aesthetic Scorer: https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer
@@ -665,6 +678,7 @@ Links:
 * Pixel Art Sprite Sheet: https://huggingface.co/Onodofthenorth/SD_PixelArt_SpriteSheet_Generator
 	* 4 different angles
 	* Examples + Reddit post: https://www.reddit.com/r/StableDiffusion/comments/yj1kbi/ive_trained_a_new_model_to_output_pixel_art/
+* WLOP: https://huggingface.co/SirVeggie/wlop
 
 ### **Embeddings**
 !!! info If an embedding is >80mb, I mislabeled it and it's a hypernetwork
@@ -1649,6 +1663,7 @@ Info by anon, I'm not sure if it works:
 * discord anon (allows for generation?, runs NovelAI model): https://pixai.art/
 * nsfw: https://pornpen.ai/
 * /vt/ collection, updated: https://mega.nz/folder/j2AgSB6Y#3Kcq-xms0fWU4na-aaTFhA/folder/unw2EIBI
+* AI porn: https://pornpen.ai/
 
 **Upscalers:**
 * Big list: https://upscale.wiki/wiki/Model_Database
@@ -1675,10 +1690,11 @@ Paperspace guide: https://rentry.org/865dy
 
 More twitter anons: 
 https://twitter.com/knshtyk/media
+https://twitter.com/knshtyk/media
 
 Sigmoid math: https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2658
 
-maybe you can edit this to allow 8gb DB training: https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb
+maybe you can edit this to allow 8gb DB training: https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb, https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth
 
 ## Hall of Fame
 automatic1111
