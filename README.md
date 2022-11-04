@@ -60,13 +60,13 @@ Update ETA: 12 hours until I go through today's and yesterday's content
 			b. Command prompt: click the spot in the "url" between the folder and the down arrow and type "command prompt". 
 			c. If you don't know how to do this, open command prompt, type "cd [path to stable-diffusion-webui]" (you can get this by right clicking the folder in the "url" or holding shift + right clicking the stable-diffusion-webui folder)
 		2. ```git pull```
-		3. ```pip -r install requirements.txt```
+		3. ```pip install -r requirements.txt```
 	* If on Linux: 
 		1. go to the webui directory
 		2. ```source ./venv/bin/activate```
 			a. if this doesn't work, run ```python -m venv venv``` beforehand
 		3. ```git pull```
-		4. ```pip -r install requirements.txt```
+		4. ```pip install -r requirements.txt```
 
 >11/3
 * More hypernetwork changes
