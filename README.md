@@ -14,7 +14,7 @@ View the old stuff here: https://github.com/questianon/sdupdates/blob/main/sdupd
 
 !!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates
 
-!!! note Changelog: added news and embeds+hypernets
+!!! note Changelog:
 
 !!! note Request: Looking for javascript + react coders (someone who knows how to make a form -> xlsx, doesn't need to be in js + react)
 
@@ -49,6 +49,8 @@ Reddit: u/questianon
 Github: https://github.com/questianon
 Twitter: https://twitter.com/questianon)
 
+Update ETA: 12 hours until I go through today's and yesterday's content
+
 ## NEWSFEED
 !!! note Don't forget to git pull to get a lot of new optimizations + updates, if SD breaks go backward in commits until it starts working again
 	Instructions:
@@ -66,9 +68,32 @@ Twitter: https://twitter.com/questianon)
 		3. ```git pull```
 		4. ```pip -r install requirements.txt```
 
+>11/3
+* More hypernetwork changes
+* Unofficial MagicMix implementation with Stable Diffusion in PyTorch: https://github.com/cloneofsimo/magicmix
+	* Good img2img with "geometric coherency and semantical layouts"
+* Convert any model to Safetensors and open a PR (public repository?)
+	* Safetensors are the unpicklable format
+	* https://huggingface.co/spaces/safetensors/convert
+	* https://github.com/huggingface/safetensors
+* Zeipher AI f222 model release: https://ai.zeipher.com/#tabs-2
+	* torrent: magnet:?xt=urn:btih:GR3IGMJDPJPW3B4WRT5B7SAN7CEBHWSZ&dn=f222&tr=http%3A%2F%2Ftracker.openbittorrent.com%2Fannounce
+* NVIDIA new paper detailing a better model than imagen: https://deepimagination.cc/eDiffi/
+	* You can "paint with words" (select part of the prompt and put it in the image)
+	* conditioned on the T5 XXL text embeddings (higher quality, incorrect objects), CLIP image embeddings (style + inspiration) and CLIP text embeddings (correct objects, less detail)
+	* has style transfer (control the style of the genreated sample using a reference style image)
+	* has better text in the final image (look through paper)
+	* issue would be running on consumer hardware since the T5 XXL embedding is 45 gb
+* NovelAI releases source code and documentation for training on non 512x512 resolutions (Aspect Ratio Bucketing)
+	* https://github.com/NovelAI/novelai-aspect-ratio-bucketing
+	* https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac
+	* https://www.reddit.com/r/NovelAi/comments/ykgns6/novelai_aspect_ratio_bucketing_source_code/
+	* https://twitter.com/novelaiofficial/status/1587907133643034624
+
 >11/2
-* f222 model release date on Friday from Zeipher AI
+* f222 model release date on Friday from Zeipher AI (f111 was better female anatomy, so maybe this is their next iteration)
 	* Discord: https://discord.gg/hqbrprK6
+	* Site: https://ai.zeipher.com/
 * Multiple people are working on a centralized location to upload embeddings/hypernetworks
 	* AIBooru devs
 	* Independent dev irythros
@@ -175,6 +200,7 @@ GREAT CHINESE TOME OF PROMPTING KNOWLEDGE AND WISDOM 101 GUIDE: https://docs.qq.
 * Backup: https://www105.zippyshare.com/v/lUYn1pXB/file.html
 * translated + download: https://mega.nz/folder/MssgiRoT#enJklumlGk1KDEY_2o-ViA
 * another backup? https://note.com/sa1p/n/ne71c846326ac
+* another another backup: https://files.catbox.moe/tmvjd7.zip
 
 GREAT CHINESE SCROLLS OF PROMPTING ON 1.5: HEIGHTENED LEVELS OF KNOWLEDGE AND WISDOM 101: https://docs.qq.com/doc/DWGh4QnZBVlJYRkly
 GREAT CHINESE ENCYCLOPEDIA OF PROMPTING ON GENERAL KNOWLEDGE: SPOOKY EDITION: https://docs.qq.com/doc/DWEpNdERNbnBRZWNL
@@ -213,9 +239,19 @@ Outdated guide: https://rentry.co/8vaaa
 Tip for more photorealism: https://www.reddit.com/r/StableDiffusion/comments/yhn6xx/comment/iuf1uxl/
 * TLDR: add noise to your img before img2img
 
+NAI prompt tips: https://docs.novelai.net/image/promptmixing.html
+NAI tips 2: https://docs.novelai.net/image/uifunctionalities.html
+
 SD 1.4 vs 1.5: https://postimg.cc/gallery/mhvWsnx
 Model merge comparisons: https://files.catbox.moe/rcxqsi.png
 Some sampler comparisons: https://www.reddit.com/r/StableDiffusion/comments/xmwcrx/a_comparison_between_8_samplers_for_5_different/
+Every sampler comparison: https://files.catbox.moe/u2d6mf.png
+>Prompt: 1girl, pointy ears, white hair, medium hair, ahoge, hair between eyes, green eyes, medium:small breasts, cyberpunk, hair strand, dynamic angle, cute, wide hips, blush, sharp eyes, ear piercing, happy, hair highlights, multicoloured hair, cybersuit, cyber gas mask, spaceship computers, ai core, spaceship interior
+>Negative prompt: lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, animal ears, panties
+>
+>Original image:
+>Steps: 50, Sampler: DDIM, CFG scale: 11, Seed: 3563250880, Size: 1024x1024, Model hash: cc024d46, Denoising strength: 0.57, Clip skip: 2, ENSD: 31337, First pass size: 512x512
+>NAI/SD mix at 0.25
 
 Deep Danbooru: https://github.com/KichangKim/DeepDanbooru
 Demo: https://huggingface.co/spaces/hysts/DeepDanbooru
@@ -291,7 +327,10 @@ Unprompted extension released: https://github.com/ThereforeGames/unprompted
 * Can make shortcodes
 * "You can pull text from files, set up your own variables, process text through conditional functions, and so much more "
 
+StylePile: https://github.com/some9000/StylePile
+
 Ideas for when you have none: https://pentoprint.org/first-line-generator/
+Colors: http://colorcode.is/search?q=pantone
 
 PaintHua.com - New GUI focusing on Inpainting and Outpainting
 * https://www.reddit.com/r/StableDiffusion/comments/ygp0iv/painthuacom_new_gui_focusing_on_inpainting_and/
@@ -339,7 +378,29 @@ Script for outpainting: https://github.com/TKoestlerx/sdexperiments
 Img2img animation script: https://github.com/Animator-Anon/Animator/blob/main/animation_v6.py
 * Can use in txt2img mode and combine with https://film-net.github.io/ for content aware interpolation
 
+Google's interpolation script: https://github.com/google-research/frame-interpolation
+
 Animation Guide: https://rentry.org/AnimAnon#introduction
+
+Animating faces by anon: 
+* https://github.com/yoyo-nb/Thin-Plate-Spline-Motion-Model
+* How to Animate faces from Stable Diffusion!
+
+``` python
+workflow looks like this:
+>generate square portrait (i use 1024 for this example)
+>create or find driving video
+>crop driving video to square with ffmpeg, making sure to match the general distance from camera and face position(it does not do well with panning/zooming video or too much head movement)
+>run thin-plate-spline-motion-model
+>take result.mp4 and put it into Video2x (Waifu2x Caffe)
+>put into flowframes for 60fps and webm
+
+>if you don't care about upscaling it makes 256x256 pretty easily
+>an extension for webui could probably be made by someone smarter than me, its a bit tedious right now with so many terminals
+
+here is a pastebin of useful commands for my workflow
+https://pastebin.com/6Y6ZK8PN
+```
 
 Giffusion tutorial:
 ``` python 
@@ -396,6 +457,43 @@ Wildcard script + collection of wildcards: https://app.radicle.xyz/seeds/pine.ra
 Clip interrogator: https://colab.research.google.com/github/pharmapsychotic/clip-interrogator/blob/main/clip_interrogator.ipynb
 2: https://github.com/pharmapsychotic/clip-interrogator
 
+Guide by anon:
+
+```
+How I enhance my images with SD upscale and inpainting:
+
+For this example I'll use this base image:
+https://files.catbox.moe/rwny67.png (embed)
+I'll send its prompt to the img2img tab with the "Send to img2img" button, but before upscaling I want to fix some details first.
+Using a simple image editor I crudely fix any messed up details like mangled hands or broken perspectives:
+https://files.catbox.moe/2fk22h.png (embed)
+
+I then run the SD upscale script a couple times with the following settings:
+>30 steps
+>sampler: Euler a, and DDIM if my original picture is "grainy" and I want to retain that.
+>CFG: same as base image (don't know if it matters)
+>seed:-1
+>between .15 and .35 denoising, depending on how many rough details need to be ironed out. (Something with crude edits made in paint will need at least .2 or higher denoising)
+>upscaler: usually "ESRGAN_4x", sometimes "4x-UltraSharp" (download it if you don't have it)
+>tile overlap: default 64 (I've never messed with this setting desu)
+
+Once I'm satisfied with the result (https://files.catbox.moe/8snbto.png (embed)) I'll press the "Send to inpaint" button.
+
+Here I inpaint a new face with the following settings:
+(Don't forget to switch off the SD upscale script here)
+>masked content: original
+>inpaint at full resolution: true (important)
+>Inpaint at full resolution padding, pixels: 32 (mess around with this setting if you get weird black or discolored edges)
+>sampling steps: same as before
+>sampler: same as before
+>denoising between 0.2 and 0.5 depending on how little I want the new face to resemble the face that's already there. If your base image doesn't even have a face, just set it to 0.5
+>seed:-1
+
+And that's pretty much it. Final result: https://files.catbox.moe/zhkkqk.png (embed)
+
+You could keep inpainting new details here over and over. If it's not adding what you want, just manually add a 1000 years in paint version before you inpaint, or even just insert a png of the thing you want to add, and it'll work.
+```
+
 **VAEs**
 
 Tutorial + how to use on ALL models (applies for the NAI vae too): https://www.reddit.com/r/StableDiffusion/comments/yaknek/you_can_use_the_new_vae_on_old_models_as_well_for/
@@ -424,7 +522,8 @@ Tutorial + how to use on ALL models (applies for the NAI vae too): https://www.r
 * Github for scraper: https://github.com/onusai/grab-booru-tags 
 
 Wildcards: 
-* Huge collection that works: https://danbooru.donmai.us/wiki_pages/tag_groups
+* Danbooru tags: https://danbooru.donmai.us/wiki_pages/tag_groups
+* Artist tags: https://danbooru.donmai.us/artists
 * https://desuarchive.org/g/thread/89006003#89007479
 * https://rentry.org/sdWildcardLists
 * Guide (ish): https://is2.4chan.org/h/1665343016289442.png 
@@ -490,6 +589,11 @@ Wildcards:
 * Danbooru tag group wildcard dump organized into folders: https://files.catbox.moe/hz5mom.zip
 	* by uploader anon: "I recommend using Dynamic Prompting rather than the normal Wildcards extension. It does everything the Wildcards extension does and then some, * being a thing is especially great and so is |"
 * Poses: https://rentry.org/m9dz6
+* Clothes: https://pastebin.com/4a0BscGr
+* sex positions: https://files.catbox.moe/tzibuf.txt
+* Angles: https://pastebin.com/T8w8HEED
+* Poses: https://pastebin.com/bgkunjw2
+* Hairstyles: https://pastebin.com/GguTseaR
 
 Wildcard extension: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wildcards/
 
@@ -542,6 +646,12 @@ Anon's list of comparisons:
 
 **Creating fake animes:**
 * https://rentry.org/animedoesnotexist
+
+Some observations by anon:
+1. Removing the spaces after the commas changed nothing
+2. Using "best_quality" instead of "best_quality" did change the image. masterpiece,best_quality,akai haato but she is a spider,blonde hair,blue eyes
+3. Changing all of the spaces into underscores changed the image somewhat substantially.
+4. Replacing those commas with spaces changed the image again.
 
 ##  Models, Embeddings, and Hypernetworks
 
@@ -711,6 +821,9 @@ Links:
 	* 4 different angles
 	* Examples + Reddit post: https://www.reddit.com/r/StableDiffusion/comments/yj1kbi/ive_trained_a_new_model_to_output_pixel_art/
 * WLOP: https://huggingface.co/SirVeggie/wlop
+* corporate memphis A.I model (infographics): https://huggingface.co/jinofcoolnes/corporate_memphis/tree/main
+	* https://twitter.com/Rahmeljackson/status/1588435864769925121?s=20&t=j2jCYpS7HW8WjgK15Hg7BA
+	* https://www.patreon.com/posts/74213085?pr=true
 
 ### **Embeddings**
 !!! info If an embedding is >80mb, I mislabeled it and it's a hypernetwork
@@ -938,6 +1051,11 @@ Found on 4chan:
 	* 0.114 loss trend
 	* 500+ dataset (w/ auto focalpoint)
 	* 0.0028 learning rate
+* Ohisashimono (20k to 144k): https://www.mediafire.com/folder/eslki3wzlmesj/ohi
+* Shadman: https://files.catbox.moe/fhwn7m.png
+* ratatatat74: https://mega.nz/folder/PfhRUbST#6oXUaNjk_B6nhJzjc_M0UA
+	* Uploader: Because the source images were prominently lewd in some shape or form, it really likes to give half-naked people.
+	* In combination with Puuzaki Puuna, it certainly brings out some interesting humanoid Nanachis.
 
 Found on Discord:
 * Nahida v2: https://cdn.discordapp.com/attachments/1019446913268973689/1031321278713446540/nahida_v2.zip
@@ -1154,6 +1272,9 @@ Found on 4chan:
 	>"outline" tag is recommended in prompt to have the same thick outlines she often uses in her artwork.
 * Sakimichan: https://mega.nz/file/TBJwFDLI#H_bgih8qbWe-EN4ntL_7ur6Ylr2qbcxhDwlC2AfWpnc
 	* dead link: https://mega.nz/file/eE8QDKrI#y7kdyWgPUjI4ZkY8PSq89F28eU_Vz_0EgTbG6yAowH8
+* arnest (109 images, 12000 steps): https://mega.nz/file/HNIhlZ7B#o1hpR04PxBDWTEHDfxLfbRi_9K56HVJ58YgCwDUeRMw
+	* uploader: Hypernetwork trained on 109 total images dating from 2015 to 2022, including his deleted NSFW commissions and Fanbox content. Also trained on like two or three pre-2015 images just because why not. Should be able to do Touhou characters (especially Alice and Patchouli) extremely well.
+	* I recommend using the white pupils tag for the eyes to look like picrel.
 
 Found on Korean Site of Wisdom (WIP):
 * Terada Tera: https://drive.google.com/file/d/1APwInBROTUdyeoW92yHFn_zBh7rY7b7I/view?usp=sharing
@@ -1403,8 +1524,9 @@ Collection of Aesthetic Gradients: https://github.com/vicgalle/stable-diffusion-
 If you have one of these, please get it to me
 
 Dreambooth:
-Anya Taylor-Joy: https://drive.google.com/drive/mobile/folders/1f0FI2Vtr0dNfxyCzsNkNau20JT9Kmgn-
-* https://www.reddit.com/r/StableDiffusion/comments/xx8p1p/anya_taylorjoy_model_link_in_comments/
+* Anya Taylor-Joy: https://drive.google.com/drive/mobile/folders/1f0FI2Vtr0dNfxyCzsNkNau20JT9Kmgn-
+	* https://www.reddit.com/r/StableDiffusion/comments/xx8p1p/anya_taylorjoy_model_link_in_comments/
+* Fujimoto: https://huggingface.co/demibit/fujimoto_temp/tree/main
 
 Embed:
 * Omaru-polka: https://litter.catbox.moe/qfchu1.pt
@@ -1434,6 +1556,7 @@ Datasets:
 * Training guide for textual inversion/embedding and hypernetworks: https://pastebin.com/dqHZBpyA
 * Hypernetwork Training by ixynetworkanon: https://rentry.org/hypernetwork4dumdums
 * Training with e621 content: https://rentry.org/sd-e621-textual-inversion 
+* Informal Model Training Guide: https://rentry.org/informal-training-guide
 * Anon's guide: https://rentry.org/stmam
 * Anon2's guide: https://rentry.org/983k3
 	* Full Textual Inversion folder: https://files.catbox.moe/c6502c.7z
@@ -1491,6 +1614,7 @@ Datasets:
 * VAE: https://huggingface.co/stabilityai
 
 * Image Scraper: https://github.com/mikf/gallery-dl
+* Img scraper 2: https://github.com/Bionus/imgbrd-grabber
 
 * Bulk resizer: https://www.birme.net/?target_width=512&target_height=512
 
@@ -1603,8 +1727,8 @@ Check out https://rentry.org/sdupdates for other questions
 >Refer to
 >* https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017
 >* Very easy Asuka 1:1 Euler A: https://boards.4chan.org/h/thread/6893903#p6894236
->	 * Asuka Euler guide: https://imgur.com/a/DCYJCSX
->	* Asuka Euler a guide: https://imgur.com/a/s3llTE5
+>	* Asuka Euler guide + trpin;esjpptomg: https://imgur.com/a/DCYJCSX
+>	* Asuka Euler a guide + troubleshooting: https://imgur.com/a/s3llTE5
 
 **What is pickling/getting pickled?**
 >ckpt files and python files can execute code. Getting pickled is when these files execute malicious code that infect your computer with malware. It's a memey/funny way of saying you got hacked.
@@ -1638,6 +1762,26 @@ Check out one of these:
 	* DALL·E mini
 * http://aiart.house
 * HF demo list: https://pastebin.com/9X1BPf8S
+
+**How do I directly check AUTOMATIC1111's webui updates?**
+>For a complete list of updates, go here: https://github.com/AUTOMATIC1111/stable-diffusion-webui/commits/master
+
+**What are embeddings?**
+>https://textual-inversion.github.io/
+>More info in sdupdates (1), various wikis, and various rentrys
+>TLDR: it mashes tokens until it finds things in the model that matches most with the training images
+
+**What is...?**
+>What is a VAE?
+Variational autoencoder, basically a "compressor" that can turn images into a smaller representation and then "decompress" them back to their original size. This is needed so you don't need tons of VRAM and processing power since the "diffusion" part is done in the smaller representation (I think). The newer SD 1.5 VAEs have been trained more and they can recreate some smaller details better.
+>What is pruning?
+Removing unnecessary data (anything that isn't needed for image generation) from the model so that it takes less disk space and fits more easily into your VRAM
+>What is a pickle, not referring to the python file format? What is the meme surrounding this?
+When the NAI model leaked people were scared that it might contain malicious code that could be executed when the model is loaded. People started making pickle memes because of the file format.
+>Why is some stuff tagged as being 'dangerous', and why does the StableDiffusion WebUI have a 'safe-unpickle' flag? -- I'm stuck on pytorch 1.11 so I have to disable this
+Safe unpickling checks the pickle's code library imports against an approved list. If it tried to import something that isn't on the list it won't load it. This doesn't necessarily mean it's dangerous but you should be cautious. Some stuff might be able to slip through and execute arbitrary code on your computer.
+>Is the rentry stuff all written by one person or many?
+There are many people maintaining different rentries.
 
 **How do I run NSFW models in colab?**
 Info by anon, I'm not sure if it works:
@@ -1725,11 +1869,57 @@ Paperspace guide: https://rentry.org/865dy
 
 More twitter anons: 
 https://twitter.com/knshtyk/media
-https://twitter.com/knshtyk/media
+https://twitter.com/NAIoppailoli
+    https://twitter.com/PorchedArt
+    https://twitter.com/FEDERALOFFICER
+    https://twitter.com/Elf_Anon
+    https://twitter.com/ElfBreasts
+    https://twitter.com/BluMeino
+    https://twitter.com/Lisandra_brave
+    https://twitter.com/nadanainone
+    https://twitter.com/Rahmeljackson
+    https://twitter.com/dproompter
+    https://twitter.com/Kw0337
+    https://twitter.com/AICoomer
+    https://twitter.com/mommyartfactory
+    https://twitter.com/ai_sneed
+    https://twitter.com/YoucefN30829772
+    https://twitter.com/KLaknatullah
+    https://twitter.com/spee321
+    https://twitter.com/EyeAI_
+    https://twitter.com/S37030315
+    https://twitter.com/ElfieAi
+    https://twitter.com/Headstacker
+    https://twitter.com/RaincoatWasted
+    https://twitter.com/epitaphtoadog
+    https://twitter.com/Merkurial_Mika
+    https://twitter.com/FizzleDorf
 
 Sigmoid math: https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2658
 
 maybe you can edit this to allow 8gb DB training: https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb, https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth
+
+Linux help: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3525
+Linux thing: https://github.com/pytorch/examples/tree/main/mnist
+
+cheap GPU thing: https://www.coreweave.com/gpu-cloud-pricing
+
+Karras: https://arxiv.org/pdf/2206.00364.pdf
+
+something that uses DirectML (like tensorflow): https://www.travelneil.com/stable-diffusion-windows-amd.html
+* site 2: https://www.travelneil.com/stable-diffusion-updates.html
+
+archive: https://archive.ph/
+
+windows xformers: https://www.reddit.com/r/StableDiffusion/comments/xz26lq/automatic1111_xformers_cross_attention_with_on/
+
+4chan archives:
+https://archive.alice.al/vt/
+https://warosu.org/lit/
+desuarchive.org/
+https://archived.moe/
+
+NAI almost a booru: https://mega.nz/folder/23oAxTLD#vNH9tPQkiP1KCp72d2qINQ
 
 ## Hall of Fame
 automatic1111
