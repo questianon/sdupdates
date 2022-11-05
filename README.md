@@ -14,7 +14,7 @@ View the old stuff here: https://github.com/questianon/sdupdates/blob/main/sdupd
 
 !!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates
 
-!!! note Changelog:
+!!! note Changelog: added news
 
 !!! note Request: Looking for javascript + react coders (someone who knows how to make a form -> xlsx, doesn't need to be in js + react)
 
@@ -68,6 +68,48 @@ Update ETA: 12 hours until I go through today's and yesterday's content
 		3. ```git pull```
 		4. ```pip install -r requirements.txt```
 
+updating this section again
+
+>11/4
+* New version of DiffusionBee released: https://www.reddit.com/r/StableDiffusion/comments/ylmtsz/new_version_of_diffusionbee_easiest_way_to_run/
+	* https://github.com/divamgupta/diffusionbee-stable-diffusion-ui
+* Artist gives observations on using AI to make money: https://www.reddit.com/r/StableDiffusion/comments/yh8j0a/ai_art_is_popular_and_makes_money_confessions_of/
+* US Copyright Office supposedly states that visual work shall be substantially made by a human to be copyrightable
+	* Pt. 1: https://www.reddit.com/r/COPYRIGHT/comments/xkkh3d/us_copyright_office_registers_a_heavily/
+	* https://www.reddit.com/r/StableDiffusion/comments/yhdyc0/artist_states_that_us_copyright_office_intends_to/
+	* https://www.reddit.com/r/COPYRIGHT/comments/yhdtnb/artist_states_that_us_copyright_office_intends_to/
+* From one of the original DreamBooth authors: Stop using SKS as the initializer word
+	* SKS is a gun recognized by SD
+	* https://i.imgur.com/tFA0Vy1.jpg
+	* https://www.reddit.com/r/StableDiffusion/comments/yju5ks/from_one_of_the_original_dreambooth_authors_stop/
+* Unprompted extension has ads
+	* Apparently it can be easily modified to get rid of the ads
+* Established artist gives a good take about SD: https://www.reddit.com/r/StableDiffusion/comments/yhjovv/how_to_make_money_as_an_artist_with_a_personal/
+* (repost from 11/3 with extra information) NVIDIA new paper detailing a better model than imagen: https://deepimagination.cc/eDiffi/
+	* You can "paint with words" (select part of the prompt and put it in the image)
+	* conditioned on the T5 XXL text embeddings (higher quality, incorrect objects, text to text), CLIP image embeddings (style + inspiration, text to image) and CLIP text embeddings (correct objects, less detail)
+	* Uses expert models: each step/group of steps uses a different model
+	* has style transfer (control the style of the genreated sample using a reference style image)
+	* has better text in the final image (look through paper)
+	* **issue would be running on consumer hardware since the T5 XXL embedding is 40+ gb VRAM**
+	* https://arxiv.org/abs/2211.01324
+	* https://www.reddit.com/r/StableDiffusion/comments/ykqfql/nvidia_publishes_paper_on_their_own_texttoimage/
+* (oldish news) Extension installer and manager in AUTOMATIC1111's webui
+* NovelAI tokenizer for CLIP and some other models: https://novelai.net/tokenizer
+* Batch model merging script released: https://github.com/lodimasq/batch-checkpoint-merger
+* script that pulls prompt from Krea.ai and Lexica.art based on search terms released: https://github.com/Vetchems/sd-lexikrea
+* Depthmap script released: https://github.com/thygate/stable-diffusion-webui-depthmap-script
+	* creates depth maps from generated images
+	* outputs can be viewed on 3D or holographic devices like VR headsets, can be used in render or game engines, or maybe even 3D printed
+* Training picker extension released: https://github.com/Maurdekye/training-picker
+	* video > keyframes > training
+* Some statements from Emad (CEO of StabilityAI)
+	* next model will be released after retraining some stuff
+	* New **open source** models are expected to be released by other groups in the upcoming months that are better than 1.5
+	* Making it easier to fine tune models
+	* 2.0 model will be "done when done"
+	* https://cdn.discordapp.com/attachments/662466568172601369/1038223793279217734/1.png
+
 >11/3
 * More hypernetwork changes
 * Unofficial MagicMix implementation with Stable Diffusion in PyTorch: https://github.com/cloneofsimo/magicmix
@@ -78,12 +120,6 @@ Update ETA: 12 hours until I go through today's and yesterday's content
 	* https://github.com/huggingface/safetensors
 * Zeipher AI f222 model release: https://ai.zeipher.com/#tabs-2
 	* torrent: magnet:?xt=urn:btih:GR3IGMJDPJPW3B4WRT5B7SAN7CEBHWSZ&dn=f222&tr=http%3A%2F%2Ftracker.openbittorrent.com%2Fannounce
-* NVIDIA new paper detailing a better model than imagen: https://deepimagination.cc/eDiffi/
-	* You can "paint with words" (select part of the prompt and put it in the image)
-	* conditioned on the T5 XXL text embeddings (higher quality, incorrect objects), CLIP image embeddings (style + inspiration) and CLIP text embeddings (correct objects, less detail)
-	* has style transfer (control the style of the genreated sample using a reference style image)
-	* has better text in the final image (look through paper)
-	* issue would be running on consumer hardware since the T5 XXL embedding is 45 gb
 * NovelAI releases source code and documentation for training on non 512x512 resolutions (Aspect Ratio Bucketing)
 	* https://github.com/NovelAI/novelai-aspect-ratio-bucketing
 	* https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac
@@ -208,6 +244,10 @@ GREAT JAPANESE TOME OF MASTERMINDING ANIME PROMPTS AND IMAGINATIVE AI MACHINATIO
 * author: https://twitter.com/p1atdev_art/
 Japenese wiki: https://seesaawiki.jp/nai_ch/d/
 
+Using emoticons can be really good:
+🕊💥😱😲😶🙄 leads to https://files.catbox.moe/biy755.png
+🌷🕊🗓👋😛👋 leads to https://files.catbox.moe/7khxe0.png
+
 Database of prompts: https://publicprompts.art/
 * Discord: https://discord.com/invite/jvQJFFFx26
 
@@ -328,6 +368,7 @@ Unprompted extension released: https://github.com/ThereforeGames/unprompted
 * "You can pull text from files, set up your own variables, process text through conditional functions, and so much more "
 
 StylePile: https://github.com/some9000/StylePile
+script that pulls prompt from Krea.ai and Lexica.art based on search terms: https://github.com/Vetchems/sd-lexikrea
 
 Ideas for when you have none: https://pentoprint.org/first-line-generator/
 Colors: http://colorcode.is/search?q=pantone
@@ -444,6 +485,7 @@ Deforum (video animation): https://github.com/deforum-art/deforum-for-automatic1
 	* https://www.desmos.com/calculator/5nizby2zbn
 * Blender camera animations to deforum: https://github.com/micwalk/blender-export-diffusion
 * Tutorial: https://www.youtube.com/watch?v=lztn6qLc9UE
+* Diffusion_cadence variation value comparison: https://www.reddit.com/r/StableDiffusion/comments/yh3dno/diffusion_cadence_variation_testing_values_to/
 
 Auto-SD-Krita: https://github.com/Interpause/auto-sd-paint-ext
 
@@ -520,6 +562,7 @@ Tutorial + how to use on ALL models (applies for the NAI vae too): https://www.r
 * Another script: https://pastecode.io/s/q6fpoa8k
 * Another: https://pastecode.io/s/t7qg2z67
 * Github for scraper: https://github.com/onusai/grab-booru-tags 
+* Tag copier: https://greasyfork.org/en/scripts/453443-danbooru-tag-copier
 
 Wildcards: 
 * Danbooru tags: https://danbooru.donmai.us/wiki_pages/tag_groups
@@ -630,6 +673,8 @@ Wildcard extension: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wild
 	* https://imgur.com/a/TDGBAlc
 
 * Artists To Study: https://artiststostudy.pages.dev/
+* Comparison of using and not using "by artist [first name] [last name]": https://www.reddit.com/r/StableDiffusion/comments/yiny15/by_artist_firstname_lastname_really_does_makes_a/
+	* https://drive.google.com/drive/folders/1qATxaaOb97fxgm5QY8MXIoMAX3FI6WZ0?usp=sharing
 
 Anon's list of comparisons:
 * Stable Diffusion v1.5, Waifu Diffusion v1.3, Trinart it4
@@ -653,11 +698,18 @@ Some observations by anon:
 3. Changing all of the spaces into underscores changed the image somewhat substantially.
 4. Replacing those commas with spaces changed the image again.
 
+Reduce bias of dreambooth models: https://www.reddit.com/r/StableDiffusion/comments/ygyq2j/a_simple_method_explained_in_the_comments_to/?utm_source=share&utm_medium=web2x&context=3
+
+Landscape tutorial: https://www.reddit.com/r/StableDiffusion/comments/yivokx/landscape_matte_painting_with_stable_diffusion/
+* https://preview.redd.it/18v93697u8x91.jpg?width=1000&format=pjpg&auto=webp&s=d31fb3efae70ec5e7c9f02befa04a94371b1bbf6
+
 ##  Models, Embeddings, and Hypernetworks
 
 !!! Downloads listed as "sus" or "might be pickled" generally mean there were 0 replies and not enough "information" (like training info). or, the replies indicated they were suspicious. I don't think any of the embeds/hypernets have had their code checked so they could all be malicious, but as far as I know no one has gotten pickled yet 
 
 ### **Models***
+
+* pokemon, uses defusers (not DB): https://huggingface.co/lambdalabs/sd-pokemon-diffusers
 
 **Berrymix Recipe**
 Rentry: https://rentry.org/berrymix
@@ -817,13 +869,19 @@ Links:
 	* https://mega.nz/file/lLtjCLwb#KgXPDzbTotcb0_quzzBMm6DaDCuSFIaF8CXxw1WsEs8
 	* Examples: https://www.reddit.com/gallery/yhuymu
 	* Examples: https://old.reddit.com/r/sdnsfw/comments/yhuymu/ill_never_need_any_porn_site_ever_again/
-* Pixel Art Sprite Sheet: https://huggingface.co/Onodofthenorth/SD_PixelArt_SpriteSheet_Generator
+* Pixel Art Sprite Sheet (stardew valley): https://huggingface.co/Onodofthenorth/SD_PixelArt_SpriteSheet_Generator
 	* 4 different angles
 	* Examples + Reddit post: https://www.reddit.com/r/StableDiffusion/comments/yj1kbi/ive_trained_a_new_model_to_output_pixel_art/
 * WLOP: https://huggingface.co/SirVeggie/wlop
 * corporate memphis A.I model (infographics): https://huggingface.co/jinofcoolnes/corporate_memphis/tree/main
 	* https://twitter.com/Rahmeljackson/status/1588435864769925121?s=20&t=j2jCYpS7HW8WjgK15Hg7BA
 	* https://www.patreon.com/posts/74213085?pr=true
+* Tron: https://huggingface.co/dallinmackay/Tron-Legacy-diffusion
+	* https://www.reddit.com/r/StableDiffusion/comments/yi3nty/my_tronstyle_dreambooth_model_available_to/
+* Superhero: https://huggingface.co/ogkalu/Superhero-Diffusion
+	* https://www.reddit.com/r/StableDiffusion/comments/yl3ug8/superhero_diffusion_new_dreambooth_model/
+* Chicken (trained on images from r/chickens): https://huggingface.co/fake4325634/chkn
+	* https://www.reddit.com/r/StableDiffusion/comments/ylmcov/chicken_diffusion_dreambooth_model/
 
 ### **Embeddings**
 !!! info If an embedding is >80mb, I mislabeled it and it's a hypernetwork
@@ -860,6 +918,8 @@ Found on 4chan:
 * Collection: https://gitlab.com/mwlp/sd 
 * Senri Gan: https://files.catbox.moe/8sqmeh.rar
 * Collection: https://gitgud.io/viper1/stable-diffusion-embeddings
+* Repo for some: https://git.evulid.cc/wasted-raincoat/Textual-Inversion-Embeds/src/branch/master/simonstalenhag
+* automatic's secret embedding list: https://gitlab.com/16777216c/stable-diffusion-embeddings
 
 * Henreader embedding, all 311 imgs on gelbooru, trained on NAI: https://files.catbox.moe/gr3hu7.pt
 	* https://mega.nz/folder/7k0R2arB#5_u6PYfdn-ZS7sRdoecD2A/folder/Go9CRRoC
@@ -874,7 +934,7 @@ Found on 4chan:
 	* Dead link: https://litter.catbox.moe/wh0tkl.pt
 * Takeda Hiromitsu Embedding 130k steps: https://litter.catbox.moe/a2cpai.pt
 * Takeda embedding at 120000 steps: https://filebin.net/caggim3ldjvu56vn
-* Nenechi embedding: https://mega.nz/folder/E0lmSCrb#Eaf3wr4ZdhI2oettRW4jtQ
+* Nenechi (momosuzu nene) embedding: https://mega.nz/folder/E0lmSCrb#Eaf3wr4ZdhI2oettRW4jtQ
 * Touhou Fumo embedding (57 epochs): https://birchlabs.co.uk/share/textual-inversion/fumo.cpu.pt
 	* https://twitter.com/Birchlabs/status/1579937213617680385
 * Abigail from Great Pretender (24k steps): https://workupload.com/file/z6dQQC8hWzr 
@@ -883,13 +943,12 @@ Found on 4chan:
 * Gigachad: https://easyupload.io/nlha2m
 * Kusada Souta (95k steps): https://files.catbox.moe/k78y65.pt
 * Yohan1754: https://files.catbox.moe/3vkg2o.pt
-* Repo for some: https://git.evulid.cc/wasted-raincoat/Textual-Inversion-Embeds/src/branch/master/simonstalenhag
-* automatic's secret embedding list: https://gitlab.com/16777216c/stable-diffusion-embeddings
 * Niro: https://take-me-to.space/WKRY9IE.pt
 * Kaneko Kazuma (Kazuma Kaneko): https://litter.catbox.moe/6glsh1.pt
 * Senran Kagura (850 CGs, deepdanbooru tags, 0.005 learning rate, 768x768, 3000 iterations): https://files.catbox.moe/jwiy8u.zip
-* Abmono (14.7k): https://www.mediafire.com/file/id2uh4gkzvavsbc/abmono-14700.pt/file
-* DEAD LINK Deadflow (190k, "bitchass"(?)): https://litter.catbox.moe/03lqr6.pt
+* Abmayo (miku) (14.7k): https://www.mediafire.com/folder/trxo3wot10j41/abmono
+	* https://www.mediafire.com/file/id2uh4gkzvavsbc/abmono-14700.pt/file
+	* https://mega.nz/file/u11GTAKK#QKG2uIYd9ccDggC_2YzprsqWvqTVwvYgvbYQ19ouq9M
 * Aroma Sensei (86k, "aroma"): https://files.catbox.moe/wlylr6.pt
 * Zun (75:25 weighted sum NAI full:WD): https://www.fluffyboys.moe/sd/zunstyle.pt
 * Kurisu Mario (20k): https://files.catbox.moe/r7puqx.pt
@@ -898,12 +957,13 @@ Found on 4chan:
 	* Mirror: https://litter.catbox.moe/6valfk.pt
 * Valorant (25k): https://files.catbox.moe/n7i9lq.pt
 	* Mirror: https://files.catbox.moe/n7i9lq.pt
-* Takifumi (40k, 153 imgs): https://freeufopictures.com/ai/embeddings/takafumi/
+* Takifumi (40k, 153 imgs, NAI): https://freeufopictures.com/ai/embeddings/takafumi/
+	* for competition swimsuit lovers
 * 40hara (228 imgs, 70k, 421 after processing): https://freeufopictures.com/ai/embeddings/40hara/
 * Tsurai (160k, NAI): https://mega.nz/file/bBYjjRoY#88o-WcBXOidEwp-QperGzEr1qb8J2UFLHbAAY7bkg4I
-* Wagashi (12k, shitass(?)), no associated pic or replies so might be pickled: https://litter.catbox.moe/ktch8r.pt
 * jtveemo (150k): https://a.pomf.cat/kqeogh.pt
 	* Creator anon: "I didn't crop out any of the @jtveemo stuff so put twitter username in the negatives."
+	* 150k steps, 0.005 LR, art from exhentai collection and processed with mirror and autocrop, deepdanbooru
 * Nahida (Genshin Impact): https://files.catbox.moe/nwqx5b.zip
 * Arcane (SD 1.4): https://files.catbox.moe/z49k24.pt
 	* People say this triggered the pickle warning, so it might be pickled.
@@ -1275,6 +1335,9 @@ Found on 4chan:
 * arnest (109 images, 12000 steps): https://mega.nz/file/HNIhlZ7B#o1hpR04PxBDWTEHDfxLfbRi_9K56HVJ58YgCwDUeRMw
 	* uploader: Hypernetwork trained on 109 total images dating from 2015 to 2022, including his deleted NSFW commissions and Fanbox content. Also trained on like two or three pre-2015 images just because why not. Should be able to do Touhou characters (especially Alice and Patchouli) extremely well.
 	* I recommend using the white pupils tag for the eyes to look like picrel.
+* Zanamaoria (20k steps, 47 imgs, mostly dark-skinned elves, and paizuri/huge tits): https://files.catbox.moe/10iasp.pt
+	* 18500 steps: https://files.catbox.moe/xgf1ho.pt
+* Pinvise (30k steps, 5e-6 for 8k steps and 5e-7 for the rest): https://litter.catbox.moe/nrpkuy.pt
 
 Found on Korean Site of Wisdom (WIP):
 * Terada Tera: https://drive.google.com/file/d/1APwInBROTUdyeoW92yHFn_zBh7rY7b7I/view?usp=sharing
@@ -1531,6 +1594,8 @@ Dreambooth:
 Embed:
 * Omaru-polka: https://litter.catbox.moe/qfchu1.pt
 * Sakimichan: https://mega.nz/file/eE8QDKrI#y7kdyWgPUjI4ZkY8PSq89F28eU_Vz_0EgTbG6yAowH8
+* Deadflow (190k, "bitchass"(?)): https://litter.catbox.moe/03lqr6.pt
+* Wagashi (12k, shitass(?)), no associated pic or replies so might be pickled: https://litter.catbox.moe/ktch8r.pt
 
 Hypernetworks:
 * Chinese telegram (dead link): https://t.me/+H4EGgSS-WH8wYzBl
@@ -1598,6 +1663,12 @@ Datasets:
 
 * **GUI helper for manual tagging and cropping: https://github.com/arenatemp/sd-tagging-helper/**
 
+* Training on multiple people at once comparison: https://www.reddit.com/r/StableDiffusion/comments/yjd5y5/more_dreambooth_experiments_training_on_several/
+
+* Extract keyframes from a video to use for training: https://github.com/Maurdekye/training-picker
+
+* Huge collection of regularization images: https://huggingface.co/datasets/ProGamerGov/StableDiffusion-v1-5-Regularization-Images
+
 * Embed vector, clip skip, and vae comparison: https://desuarchive.org/g/thread/89392239#89392432
 
 * Hypernet comparison discussion: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2284
@@ -1622,7 +1693,7 @@ Datasets:
 * Old model merging: https://github.com/eyriewow/merge-models
 * Model merge guide: https://rentry.org/lftbl
 * Supposedly empty ckpt to help with memory issues, might be pickled: https://easyupload.io/ggfxvc
-
+* batch checkpoint merger: https://github.com/lodimasq/batch-checkpoint-merger
 
 * Aesthetic Gradients: https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients
 
@@ -1704,12 +1775,14 @@ You want the ai to find things that are consistent thematics in your image. If y
 ## FAQ
 
 Check out https://rentry.org/sdupdates for other questions
+https://rentry.org/sdg_FAQ
 
 **What's all the new stuff?**
 >Check here to see if your question is answered: 
 * https://scribe.froth.zone/m/global-identity?redirectUrl=https%3A%2F%2Fblog.novelai.net%2Fnovelai-improvements-on-stable-diffusion-e10d38db82ac
 * https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac
 * https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki
+* https://www.reddit.com/r/StableDiffusion
 
 **How do I set this up?**
 >Refer to https://rentry.org/nai-speedrun (has the "Asuka test")
@@ -1843,6 +1916,7 @@ Info by anon, I'm not sure if it works:
 * nsfw: https://pornpen.ai/
 * /vt/ collection, updated: https://mega.nz/folder/j2AgSB6Y#3Kcq-xms0fWU4na-aaTFhA/folder/unw2EIBI
 * AI porn: https://pornpen.ai/
+* Booru + generator, anime focused: https://pixai.art/
 
 **Upscalers:**
 * Big list: https://upscale.wiki/wiki/Model_Database
@@ -1920,6 +1994,17 @@ desuarchive.org/
 https://archived.moe/
 
 NAI almost a booru: https://mega.nz/folder/23oAxTLD#vNH9tPQkiP1KCp72d2qINQ
+
+prompting thing: https://www.reddit.com/r/StableDiffusion/comments/yirl1c/we_are_pleased_to_announce_the_launch_of_the/
+
+something for ML: https://github.com/geohot/tinygrad
+
+
+something for better centralization but probably will be unpopular compared to auto: 
+https://github.com/Sygil-Dev/nataili
+(apparently according to anon) creators of
+https://aqualxx.github.io/stable-ui/
+
 
 ## Hall of Fame
 automatic1111
