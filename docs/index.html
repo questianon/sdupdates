@@ -7,16 +7,21 @@
   <meta name="description" content="documentation and archival" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css" />
+ 
+  <style type="text/css">
+   .sidebar li {
+   	margin 0;
+   	line-height: 2em;}
+   .sidebar ul li ul {
+   	padding-bottom: 10px;}
+   body:not(.ready) {
+     overflow: auto;
+     }
+ </style>
+ 
  </head>
  <body>
   <!-- Docsify v4 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-  <!--
-  <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
-   -->
   <div id="app"></div>
   <script>
     window.$docsify = {
@@ -30,6 +35,8 @@
       formatUpdated: '{MM}/{DD} {HH}:{mm}'
     }
   </script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
 
  </body>
 </html>
