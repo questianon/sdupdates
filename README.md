@@ -14,7 +14,7 @@ View the old stuff here: https://github.com/questianon/sdupdates/blob/main/sdupd
 
 !!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates
 
-!!! note Changelog: added news
+!!! note Changelog: all sdg
 
 !!! note Request: Looking for javascript + react coders (someone who knows how to make a form -> xlsx, doesn't need to be in js + react)
 
@@ -24,6 +24,7 @@ View the old stuff here: https://github.com/questianon/sdupdates/blob/main/sdupd
 * Prompting: https://rentry.org/sdupdates2#prompting
 * Models, Embeddings, and Hypernetworks: https://rentry.org/sdupdates2#models-embeddings-and-hypernetworks
 	* Models: https://rentry.org/sdupdates2#models
+	* EveryDream Trainer:https://rentry.org/sdupdates2#everydream-trainer
 	* Dreambooth Models: https://rentry.org/sdupdates2#dreambooth-models
 	* Embeddings: https://rentry.org/sdupdates2#embeddings
 	* Hypernetworks: https://rentry.org/sdupdates2#hypernetworks
@@ -49,7 +50,7 @@ Reddit: u/questianon
 Github: https://github.com/questianon
 Twitter: https://twitter.com/questianon)
 
-Update ETA: 12 hours until I go through today's and yesterday's content
+Update ETA: Busy today, will update tomorrow with all sdg links from the past 2 days, vt hdg and reddit from the past day
 
 ## NEWSFEED
 !!! note Don't forget to git pull to get a lot of new optimizations + updates, if SD breaks go backward in commits until it starts working again
@@ -68,7 +69,32 @@ Update ETA: 12 hours until I go through today's and yesterday's content
 		3. ```git pull```
 		4. ```pip install -r requirements.txt```
 
-updating this section again
+>11/5 continued+11/6
+* Loab, might be creepypasta: https://en.wikipedia.org/wiki/Loab
+* AUTO UI speedup fix: https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/32c0eab89538ba3900bf499291720f80ae4b43e5
+* AUTOMATIC1111 added the ability to create extensions that add localizations: https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/a2a1a2f7270a865175f64475229838a8d64509ea
+	* Related note from AUTO: https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/9cd1a66648b4c19136687100f9705d442f31e7f9
+* Karras scheduler fix PR (I'm not sure if this change is better): https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4373/commits/f508cefe7995603a05f41b8e948ec1c80631360f
+	* anon says that DPM++2S a can converge in 6 steps using this fix
+* On August 13, 2018, Section 1051 of the John S. McCain National Defense Authorization Act for Fiscal Year 2019 (P.L. 115-232) established the National Security Commission on Artificial Intelligence as an independent Commission “to consider the methods and means necessary to advance the development of artificial intelligence, machine learning, and associated technologies to comprehensively address the national security and defense needs of the United States.”
+	* https://www.nscai.gov/about/
+	* https://www.nscai.gov/commissioners/commissioner-bio/
+* How Google’s former CEO Eric Schmidt helped write A.I. laws in Washington without publicly disclosing investments in A.I. startups
+	* https://www.cnbc.com/2022/10/24/how-googles-former-ceo-eric-schmidt-helped-write-ai-laws-in-washington-without-publicly-disclosing-investments-in-ai-start-ups.html
+* Pickle scanner catered for SD models, hypernetworks, and embeddings released: https://github.com/zxix/stable-diffusion-pickle-scanner
+* Visual novel released: https://beincrypto.com/ai-art-worlds-first-bot-generated-graphic-novel-hits-the-market/
+	* https://www.amazon.com/Star-Maker-Illustrated-Olaf-Stapledon-ebook/dp/B0BFHJPGKP#customerReviews
+* DDIM solver++, the successor to DDIM (which was already fast and converged quickly) released and added to webui: https://github.com/LuChengTHU/dpm-solver
+	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4304#issuecomment-1304571438
+	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/4280
+	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4304
+	* Relevant k-diffusion update: https://github.com/crowsonkb/k-diffusion
+	* https://arxiv.org/abs/2211.01095
+	* Comparison: https://i.4cdn.org/g/1667590513563375.png
+
+>11/5
+* new pickle inspector: https://github.com/lopho/pickle_inspector
+	* From ML research labs server
 
 >11/4
 * New version of DiffusionBee released: https://www.reddit.com/r/StableDiffusion/comments/ylmtsz/new_version_of_diffusionbee_easiest_way_to_run/
@@ -231,6 +257,7 @@ Tag effects on img: https://pastebin.com/GurXf9a4
 * Anon says that "8k, 4k, (highres:1.1), best quality, (masterpiece:1.3)" leads to nice details
 
 Japanese prompt collection: http://yaraon-blog.com/archives/225884
+Chinese scroll collection: https://note.com/sa1p/
 GREAT CHINESE TOME OF PROMPTING KNOWLEDGE AND WISDOM 101 GUIDE: https://docs.qq.com/doc/DWHl3am5Zb05QbGVs
 * Site: https://aiguidebook.top/
 * Backup: https://www105.zippyshare.com/v/lUYn1pXB/file.html
@@ -255,6 +282,8 @@ Krea AI prompt database: https://github.com/krea-ai/open-prompts
 Prompt search: https://www.ptsearch.info/home/
 Another search: http://novelai.io/
 4chan prompt search: https://desuarchive.org/g/search/text/masterpiece%20high%20quality/
+Prompt book: https://openart.ai/promptbook
+Prompt word/phrase collection: https://huggingface.co/spaces/Gustavosta/MagicPrompt-Stable-Diffusion/raw/main/ideas.txt
 
 Japanese prompt generator: https://magic-generator.herokuapp.com/
 Build your prompt (chinese): https://tags.novelai.dev/
@@ -269,6 +298,8 @@ Multilingual info by anon:
 >But some of emoji and Chinese/Japanese character is meaningful for CLIP. Like イカ, which means squid in Japanese. You will get something like squid if you put these character in prompt. 
 >anon2: yeah，because the CLIP can not understand Chinese , so here the “natural language” I should translate some depiction to English.
 Multilingual study: https://jalonso.notion.site/Stable-Diffusion-Language-Comprehension-5209abc77a4f4f999ec6c9b4a48a9ca2
+
+Aesthetic value: https://laion-aesthetic.datasette.io/laion-aesthetic-6pls
 
 NAI to webui translator (not 100% accurate): https://seesaawiki.jp/nai_ch/d/%a5%d7%a5%ed%a5%f3%a5%d7%a5%c8%ca%d1%b4%b9
 
@@ -285,6 +316,7 @@ NAI tips 2: https://docs.novelai.net/image/uifunctionalities.html
 SD 1.4 vs 1.5: https://postimg.cc/gallery/mhvWsnx
 Model merge comparisons: https://files.catbox.moe/rcxqsi.png
 Some sampler comparisons: https://www.reddit.com/r/StableDiffusion/comments/xmwcrx/a_comparison_between_8_samplers_for_5_different/
+More comparisons: https://files.catbox.moe/csrjt5.jpg
 Every sampler comparison: https://files.catbox.moe/u2d6mf.png
 >Prompt: 1girl, pointy ears, white hair, medium hair, ahoge, hair between eyes, green eyes, medium:small breasts, cyberpunk, hair strand, dynamic angle, cute, wide hips, blush, sharp eyes, ear piercing, happy, hair highlights, multicoloured hair, cybersuit, cyber gas mask, spaceship computers, ai core, spaceship interior
 >Negative prompt: lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, animal ears, panties
@@ -422,6 +454,8 @@ Img2img animation script: https://github.com/Animator-Anon/Animator/blob/main/an
 Google's interpolation script: https://github.com/google-research/frame-interpolation
 
 Animation Guide: https://rentry.org/AnimAnon#introduction
+Chroma key after SD: https://files.catbox.moe/d27xdl.gif 
+* Cool mmd vid (20 frames, I think it uses chroma key): https://files.catbox.moe/jtp14x.mp4
 
 Animating faces by anon: 
 * https://github.com/yoyo-nb/Thin-Plate-Spline-Motion-Model
@@ -497,7 +531,8 @@ Wildcards: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wildcards/
 Wildcard script + collection of wildcards: https://app.radicle.xyz/seeds/pine.radicle.garden/rad:git:hnrkcfpnw9hd5jb45b6qsqbr97eqcffjm7sby
 
 Clip interrogator: https://colab.research.google.com/github/pharmapsychotic/clip-interrogator/blob/main/clip_interrogator.ipynb
-2: https://github.com/pharmapsychotic/clip-interrogator
+2 (apparently better than AUTO webui's interrogate): https://huggingface.co/spaces/pharma/CLIP-Interrogator, https://github.com/pharmapsychotic/clip-interrogator
+
 
 Guide by anon:
 
@@ -535,6 +570,18 @@ And that's pretty much it. Final result: https://files.catbox.moe/zhkkqk.png (em
 
 You could keep inpainting new details here over and over. If it's not adding what you want, just manually add a 1000 years in paint version before you inpaint, or even just insert a png of the thing you want to add, and it'll work.
 ```
+
+Inpainting a face by anon:
+>send the picture to inpaint
+>modify the prompt to remove anything related to the background
+>add (face) to the prompt
+>slap a masking blob over the whole face
+>mask blur 10-16 (may have to adjust after), masked content: original, inpaint at full resolution checked, full resolution padding 0, sampling steps ~40-50, sampling method DDIM, width and height set to your original picture's full res
+>denoising strength .4-.5 if you want minor adjustments, .6-.7 if you want to really regenerate the entire masked area
+>let it rip
+
+* AUTOMATIC1111 webui modification that "compensates for the natural heavy-headedness of sd by adding a line from 0 -> sqrt(2) over the 0 -> 74 token range (anon)" (evens out the token weights)
+	* https://rentry.org/wkk37
 
 **VAEs**
 
@@ -637,6 +684,7 @@ Wildcards:
 * Angles: https://pastebin.com/T8w8HEED
 * Poses: https://pastebin.com/bgkunjw2
 * Hairstyles: https://pastebin.com/GguTseaR
+* Actresses: https://raw.githubusercontent.com/Mylakovich/SD-wildcards/main/wildcards/actress.txt
 
 Wildcard extension: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wildcards/
 
@@ -673,8 +721,10 @@ Wildcard extension: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wild
 	* https://imgur.com/a/TDGBAlc
 
 * Artists To Study: https://artiststostudy.pages.dev/
+* Big compilation of artists: https://sgreens.notion.site/4ca6f4e229e24da6845b6d49e6b08ae7?v=fdf861d1c65d456e98904fe3f3670bd3
 * Comparison of using and not using "by artist [first name] [last name]": https://www.reddit.com/r/StableDiffusion/comments/yiny15/by_artist_firstname_lastname_really_does_makes_a/
 	* https://drive.google.com/drive/folders/1qATxaaOb97fxgm5QY8MXIoMAX3FI6WZ0?usp=sharing
+* 414 artists comparison using BerryMix: https://mega.nz/file/MX00jb6I#sWbvlt8AhH0B2CZTJJVmfz-LTZIB9O0sLYqjoWbvwN0
 
 Anon's list of comparisons:
 * Stable Diffusion v1.5, Waifu Diffusion v1.3, Trinart it4
@@ -706,6 +756,8 @@ Landscape tutorial: https://www.reddit.com/r/StableDiffusion/comments/yivokx/lan
 ##  Models, Embeddings, and Hypernetworks
 
 !!! Downloads listed as "sus" or "might be pickled" generally mean there were 0 replies and not enough "information" (like training info). or, the replies indicated they were suspicious. I don't think any of the embeds/hypernets have had their code checked so they could all be malicious, but as far as I know no one has gotten pickled yet 
+
+!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html
 
 ### **Models***
 
@@ -783,11 +835,33 @@ Rentry: https://rentry.org/berrymix
 	* https://cdn.discordapp.com/attachments/1034551880220672181/1036386279207731262/unknown.png
 	* https://cdn.discordapp.com/attachments/1034551880220672181/1036386278813474857/unknown.png
 
+**Modified berry mix**
+>model is custom berrymix-style mix:
+>Add Difference (A=NAI, B=F222, C=SD 1.4, M=1.0) => tmp.ckpt
+>Mixed Sum (A=tmp.ckpt, B=SD 1.5, M=0.2) (M might've been 0.25, but i think it was 0.2)
+>Examples: https://files.catbox.moe/3pscvp.png, https://i.4cdn.org/g/1667680791817462.png
+ 
+* UNET to ckpt models (use at your own risk, might be pickled): https://rentry.org/U2C-Models
+ 
 * Scarlett's Mix (good at cute witches): https://rentry.org/scarlett_mix
 
 * Mega mixing guide (has a different berry mix): https://rentry.org/lftbl
 
+### **EveryDream Trainer**
+
+!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html
+
+Download + info + prompt templates: https://github.com/victorchall/EveryDream-trainer
+* by anon: allows you to train multiple subjects quickly via labelling file names but it requires a normalization training set of random labelled images in order to preserve model integrity
+
+* Made in Abyss: https://drive.google.com/drive/u/0/folders/1FxFitSdqMmR-fNrULmTpaQwKEefi4UGI
+	* https://old.reddit.com/r/StableDiffusion/comments/ylroyp/made_in_abyss_dreambooth_model_i_am_working_on/
+	* Download reply: https://old.reddit.com/r/StableDiffusion/comments/ylroyp/made_in_abyss_dreambooth_model_i_am_working_on/iv3w5b3/
+
 ### **Dreambooth Models:**
+
+!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html
+
 Links:
 * https://huggingface.co/waifu-research-department
 * https://huggingface.co/jinofcoolnes
@@ -843,7 +917,7 @@ Links:
 	* https://twitter.com/Rahmeljackson/status/1586037466548551681?s=20&t=F9mU9uOFEDGKYTVl00DzUg
 	* https://www.patreon.com/posts/73899634?pr=true
 * Comics: https://huggingface.co/ogkalu/Comic-Diffusion
-* Modern Disney style (modi, mo-di): https://huggingface.co/nitrosocke/mo-di-diffusion
+* Modern Disney style (modi, mo-di): https://huggingface.co/nitrosocke/mo-di-diffusion/
 * Silco: https://huggingface.co/jinofcoolnes/silcomodel/tree/main
 	* https://www.patreon.com/posts/silco-model-73477832?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator
 	* https://twitter.com/Rahmeljackson/status/1582515393381662720?s=20&t=K1tuYmsK4Xo9RBLcqooD-A
@@ -882,11 +956,14 @@ Links:
 	* https://www.reddit.com/r/StableDiffusion/comments/yl3ug8/superhero_diffusion_new_dreambooth_model/
 * Chicken (trained on images from r/chickens): https://huggingface.co/fake4325634/chkn
 	* https://www.reddit.com/r/StableDiffusion/comments/ylmcov/chicken_diffusion_dreambooth_model/
+* 1.5 based model created from the Spede images (not too sure if this is Dreambooth): https://mega.nz/file/mdcVARhL#FUq5TL2xp7FuzzgMS4B20sOYYnPZsyPMw93sPMHeQ78
 
 ### **Embeddings**
 !!! info If an embedding is >80mb, I mislabeled it and it's a hypernetwork
 
 !!! info Use a download manager to download these. It saves a lot of time + good download managers will tell you if you have already downloaded one
+
+!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html
 
 * Text Tutorial: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion
 	* Make sure to use pictures of your subject in varied areas, it gives more for the AI to work with
@@ -899,6 +976,7 @@ Links:
 * Collection 3: https://cyberes.github.io/stable-diffusion-textual-inversion-models/
 * **Korean megacollection:**
 	* https://arca.live/b/hypernetworks?category=%EA%B3%B5%EC%9C%A0
+		* Link scrape: https://pastebin.com/p0F4k98y
 	* (includes mega compilation of artists): https://arca.live/b/hypernetworks/60940948
 	* Original: https://arca.live/b/hypernetworks/60930993
 	* **Large collection of stuff from korean megacollection: https://mega.nz/folder/sSACBAgC#kNiPVzRwnuzs8JClovS1Tw**
@@ -1088,7 +1166,6 @@ Found on 4chan:
 * Harada Takehito (disgaea artist) (78k steps with 150 images): https://files.catbox.moe/e2iatm.pt
 * Mda (1700 images and trained for 20k): https://files.catbox.moe/tz37dj.pt
 * Polka (NAI, 16 vectors, 5500 steps): https://files.catbox.moe/pmzyhi.png
-* Asutora style embedding (mainly reflected in coloring and shading, since his faces are very inconsistent): https://mega.nz/folder/nZoECZyI#vkuZJoQyBZN8p66n4DP62A 
 * Enna: https://files.catbox.moe/7edtp0.pt
 * Ghislaine Dedoldia ("dark-skinned female" init word, 12 vectors per token, 0.02:200, 0.01:1000, 0.005:2000, 0.002:3000, 0.0005:4000, 0.00005 LR, 10k steps 75 image crop data set) https://mega.nz/folder/JPVSVLbQ#SqGZb7OVKe_UNRvI0R8U8A
 	* Notes by uploader: Here is a terrible Ghislaine Dedoldia embedding I made while testing sd-tagging-helper and the new webui dataset tag editor extension. She has no tail because the crops were shit and I only trained on crops made using the helper. Sometimes the eye patch is on the wrong side because of two images where it was on the wrong eye. Stomach scar is sometimes there sort of but probably needed more time in the oven. She doesn't have dark skin because the AI is racist and probably because it was only tagged on half the images.
@@ -1116,6 +1193,14 @@ Found on 4chan:
 * ratatatat74: https://mega.nz/folder/PfhRUbST#6oXUaNjk_B6nhJzjc_M0UA
 	* Uploader: Because the source images were prominently lewd in some shape or form, it really likes to give half-naked people.
 	* In combination with Puuzaki Puuna, it certainly brings out some interesting humanoid Nanachis.
+* WLOP: https://mega.nz/folder/PfhRUbST#6oXUaNjk_B6nhJzjc_M0UA/folder/KWJUSR7T
+	* This embedding has 24 vectors, has been trained by a rate of 0.00005 and was completed at the steps of around 35000.
+	* The embedding was trained on NovelAI (final-pruned.ckpt).
+	* Uploader's Note: This embedding has a HUGE problem in keeping the signature out - feel free to crop out the signature if you wish to redo the embedding. If you do find a way to remove it without recreating the whole embedding - feel free to post it in 4chan/g/ and I may stumble upon it.
+	* Note 2: Use inpainting on the face in img2img to create some beautiful faces if they come out distorted initially.
+* Asutora style embedding (mainly reflected in coloring and shading, since his faces are very inconsistent): https://mega.nz/folder/nZoECZyI#vkuZJoQyBZN8p66n4DP62A 
+	* uploader: satisfactory results over 20k steps
+	* Comparisons: https://i.4cdn.org/g/1667701438177228.jpg
 
 Found on Discord:
 * Nahida v2: https://cdn.discordapp.com/attachments/1019446913268973689/1031321278713446540/nahida_v2.zip
@@ -1128,6 +1213,8 @@ Found on Reddit:
 !!! info If a hypernetwork is <80mb, I mislabeled it and it's an embedding
 
 !!! info Use a download manager to download these. It saves a lot of time + good download managers will tell you if you have already downloaded one
+
+!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html
 
 * anon: "Requires extremely low learning rate, 0.000005 or 0.0000005"
 **Good Rentry: https://rentry.co/naihypernetworks**
@@ -1338,6 +1425,15 @@ Found on 4chan:
 * Zanamaoria (20k steps, 47 imgs, mostly dark-skinned elves, and paizuri/huge tits): https://files.catbox.moe/10iasp.pt
 	* 18500 steps: https://files.catbox.moe/xgf1ho.pt
 * Pinvise (30k steps, 5e-6 for 8k steps and 5e-7 for the rest): https://litter.catbox.moe/nrpkuy.pt
+* Black Souls II (V2 wasn't uploaded because it was "disappointing"):
+	* V1 (Image: 181 augmented to 362,Learning Rate 5e-5:362,5e-6:14000,5e-7:20000, steps: 10k): https://files.catbox.moe/fdoyt9.pt
+	* V3 (Image:164 augmented to 328, Learning Rate 5e-5:328,5e-6:14000,5e-7:20000, steps: 10k): https://files.catbox.moe/1r36tp.pt
+		* uploader: Unlike V1, I manually edited almost all tags generated with deepdanbooru with the dataset tag editor
+	* Uncensored X/Y plots:
+		* V3 (strength: 1) : https://files.catbox.moe/tse4kr.png, https://files.catbox.moe/8y91f0.png (no 'sketch')
+		* V1 (strength: 0.7): https://files.catbox.moe/pml06i.png ('sketch'), https://files.catbox.moe/18993y.png (without "sketch")
+	* Uploader: Those two hypernetwork seem to be more accurate if we put "sketch" in the prompt. V1 break if we set hypernetwork strength to 1 (or anything over 0.8) and 0.7 seem to be the sweet spot. V3 does not seem to have the same problem.
+
 
 Found on Korean Site of Wisdom (WIP):
 * Terada Tera: https://drive.google.com/file/d/1APwInBROTUdyeoW92yHFn_zBh7rY7b7I/view?usp=sharing
@@ -1649,6 +1745,7 @@ Datasets:
 * Dataset tag manager that can also load loss.: https://github.com/starik222/BooruDatasetTagManager
 * Tips on hypernetwork layer structure: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2670#discussioncomment-4010316
 * Prompt template + info: https://github.com/victorchall/EveryDream-trainer
+	* by anon: allows you to train multiple subjects quickly via labelling file names but it requires a normalization training set of random labelled images in order to preserve model integrity
 * github + some documentation: https://github.com/cafeai/stable-textual-inversion-cafe
 * Documentation: https://www.reddit.com/r/StableDiffusion/comments/wvzr7s/tutorial_fine_tuning_stable_diffusion_using_only/
 
@@ -1690,8 +1787,27 @@ Datasets:
 * Bulk resizer: https://www.birme.net/?target_width=512&target_height=512
 
 * Model merging math: https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/c250cb289c97fe303cef69064bf45899406f6a40#comments
-* Old model merging: https://github.com/eyriewow/merge-models
+* Old model merging: https://github.com/eyriewow/merge-models/
+* Can use ckpt_merge script from https://github.com/bmaltais/dehydrate
+	* python3 merge.py <path to model 1> <path to model2> --alpha <value between 0.0 and 1.0> --output <output filename>
+From anon: For sigmoid/inverse sigmoid interpolation between modesl, add this code starting with line 38 of merge.py:
+``` python
+for key in tqdm(theta_0.keys(), desc="Stage 1/2"):
+    if "model" in key and key in theta_1:
+        # sigmoid
+        alpha = alpha * alpha * (3 - (2 * alpha))
+        theta_0[key] = theta_0[key] + ((theta_1[key] - theta_0[key]) * alpha)
+
+        # inverse sigmoid
+        #alpha = 0.5 - math.sin(math.asin(1.0 - 2.0 * alpha) / 3.0)
+        #theta_0[key] = theta_0[key] + ((theta_1[key] - theta_0[key]) * alpha)
+
+        # Weighted sum
+        #theta_0[key] = ((1 - alpha) * theta_0[key]) + (alpha * theta_1[key])
+```
+	
 * Model merge guide: https://rentry.org/lftbl
+	* anon: The Checkpoint Merger tab in webui works well. It uses standard RAM not VRAM. As a general guide, you need 2x as much RAM as the total combined size of the models you need to load. 
 * Supposedly empty ckpt to help with memory issues, might be pickled: https://easyupload.io/ggfxvc
 * batch checkpoint merger: https://github.com/lodimasq/batch-checkpoint-merger
 
@@ -1805,7 +1921,7 @@ https://rentry.org/sdg_FAQ
 
 **What is pickling/getting pickled?**
 >ckpt files and python files can execute code. Getting pickled is when these files execute malicious code that infect your computer with malware. It's a memey/funny way of saying you got hacked.
-* Automatic1111's webui should unpickle the files for you: https://github.com/AUTOMATIC1111/stable-diffusion-webui/search?q=pickle&type=commits
+* Automatic1111's webui should unpickle the files for you, but that is only 1 line of defense: https://github.com/AUTOMATIC1111/stable-diffusion-webui/search?q=pickle&type=commits
 * https://docs.python.org/3/library/pickle.html
 
 **I want to run this, but my computer is too bad. Is there any other way?**
@@ -1822,7 +1938,7 @@ Check out one of these:
 	* Free unlimited 512x512/64 step runs
 * img2img with stable horde: https://tinybots.net/artbot
 * Free, GPU-less, powered by Stable Horde: https://dbzer0.itch.io/lucid-creations
-* Free crowdsourced distributed cluster for Stable Diffusion: https://stablehorde.net/
+* Free crowdsourced distributed cluster for Stable Diffusion (not sure how safe this is because of p2p): https://stablehorde.net/
 * https://creator.nightcafe.studio/
 * Service of free image generation: Artificy.com
 	* Free for personal use
@@ -1835,9 +1951,19 @@ Check out one of these:
 	* DALL·E mini
 * http://aiart.house
 * HF demo list: https://pastebin.com/9X1BPf8S
+* Automatic1111 webui on SageMaker Studio Lab (free): https://github.com/Miraculix200/StableDiffusionUI_SageMakerSL/blob/main/StableDiffusionUI_SageMakerSL.ipynb
+* notebook for running Dreambooth on SageMaker Studio Lab: https://github.com/Miraculix200/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion_SageMakerSL.ipynb
 
 **How do I directly check AUTOMATIC1111's webui updates?**
 >For a complete list of updates, go here: https://github.com/AUTOMATIC1111/stable-diffusion-webui/commits/master
+
+**What do I do if a new updates bricks/breaks my AUTOMATIC1111 webui installation?**
+>Go to https://github.com/AUTOMATIC1111/stable-diffusion-webui/commits/master
+>See when the change happened that broke your install
+>Get the blue number on the right before the change
+>Open a command line/git bash to where you usually git pull (the root of your install)
+>'git checkout <blue number without these angled brackets>'
+>to reset your install, use 'git checkout master'
 
 **What are embeddings?**
 >https://textual-inversion.github.io/
@@ -1869,6 +1995,27 @@ Info by anon, I'm not sure if it works:
 >
 >now paste that above in a codeblock and excute it or use this colab https://colab.research.google.com/drive/1zN99ZouzlYObQaPfzwbgwJr6ZqcpYK5-?usp=sharing#scrollTo=SSP9suJcjlWs and select nai in the model dropdown
 
+**How do I get better performance on my 4090?""
+>Check this: https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2449
+
+**How does token padding work?**
+>https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2192
+>Help improve coherency when having words that overlap token set bondaries.
+>
+>When a token is at a boundary of 75 and it is not a comma, the last n tokens (n which can be spec. in config) are checked to see if any are a comma. If one is, tokens are padded starting from that comma to the next mult. of 75, and the tokens that were there before get moved into the next token set.
+>
+>ex: {[74]=comma,[75]=orange},{[76]=hair} -> {[74]=comma,[75]=padding},{[76]=orange, [77]=hair}
+
+**How do I use highres fix?**
+>https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features#stable-diffusion-upscale
+From anon:
+>Enable Upscale latent space image when doing hires. fix in settings
+>Enable Highres. fix
+>Keep the width and height to 0 in the section that opened up, play around with denoising from the default 0.7
+>Adjust sliders from 512x512 to your desired higher resolution
+>wait longer for each generation
+>learn to use SD Upscale script in img2img because it can be better sometimes
+
 ## Link Dump will sort
 
 **Info:**
@@ -1895,9 +2042,11 @@ Info by anon, I'm not sure if it works:
 * GPU buying guide: https://rentry.org/stablediffgpubuy
 	* Spreadsheet: https://docs.google.com/spreadsheets/d/1Zlv4UFiciSgmJZncCujuXKHwc4BcxbjbSBg71-SdeNk/edit#gid=0
 	* Basic guide: https://docs.google.com/document/u/0/d/1lF9_5MIhALo7xCxKpQCZNL_jrJdUHYgJ3prET5yC1rI/mobilebasic
-* CSP SD: https://github.com/mika-f/nekodraw
+* Clip Studio Paint (CSP) SD: https://github.com/mika-f/nekodraw
 * Link collection: https://github.com/pomee4/SD-LinkList
 * debug guide: https://rentry.org/pf98i
+* Info dump: https://rentry.org/sdhassan
+* Massive dumpy dump: https://rentry.org/RentrySD
 
 **Boorus:**
 * Danbooru: danbooru.donmai.us/
@@ -2005,6 +2154,24 @@ https://github.com/Sygil-Dev/nataili
 (apparently according to anon) creators of
 https://aqualxx.github.io/stable-ui/
 
+Old guide for DB: https://techpp.com/2022/10/10/how-to-train-stable-diffusion-ai-dreambooth/
+
+colab thing: https://github.com/JingShing/ImageAI-colab-ver
+
+drama thing that doesn't really change anything: https://www.reddit.com/r/StableDiffusion/comments/ylrop5/automatic1111_there_is_no_requirement_to_make/
+
+cpu img2img that is slow and filtered: https://huggingface.co/spaces/fffiloni/stable-diffusion-img2img
+
+Debian linux guide: http
+
+anon: 
+>sentences are superior. SD interprets text relating concepts together based on proximity and order. If you batch just tags together you'll find that adding one tag can change the whole prompt and is affected by words near it, whereas with a sentence the changes are more subtle and gradual because words have seperators between them. It makes sense to just make good sentences in the first place
+>https://en.m.wikipedia.org/wiki/BERT_(language_model)
+>it tries to simulate how synapses in the human brain connect when looking at text. The weights it places or the words it interpret have different values based on interpretation. But practically it means if you prompt
+```
+leather, collar,,,,,,,,,,,,,,,,,,,,,,,,,,,,,cheese 
+```
+>The filler text just means you're likely to get a leather collar with cheese separately. To get a leather cheese collar its going to be very difficult since these concepts are far removed from one another.
 
 ## Hall of Fame
 automatic1111
