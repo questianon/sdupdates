@@ -14,9 +14,11 @@ View the old stuff here: https://github.com/questianon/sdupdates/blob/main/sdupd
 
 !!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates
 
-!!! note Changelog: all sdg
+!!! note Changelog: added hdg sdg, vt wip
 
 !!! note Request: Looking for javascript + react coders (someone who knows how to make a form -> xlsx, doesn't need to be in js + react)
+
+All rentry links are ended with a '.org' here and can be changed to a '.co'. Also, use incognito/private browsing when opening google links, else you lose your anonymity / someone may dox you
 
 ### Quicklinks: 
 * Contact: https://rentry.org/sdupdates2#contact
@@ -70,6 +72,13 @@ Update ETA: Busy today, will update tomorrow with all sdg links from the past 2 
 		4. ```pip install -r requirements.txt```
 
 >11/5 continued+11/6
+* (info from anon, not usre if true): Apparently there's a bug where "Desktop Window Manager" eats GPU-cycles randomly when generating
+* Standalone dreambooth extension based on ShivShiram's repo: https://github.com/d8ahazard/sd_dreambooth_extension
+	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3995
+	* Author note: I've added requirements installer, multiple concept training via JSON, and moved some bit about. UI still needs fixing, some stuff broken there, but it should be able to train a model for now.
+* Huggingface pickle info: https://huggingface.co/docs/hub/security-pickle
+* AUTOMATIC1111's webui now has another layer of ckpt filtering before the pickle inspector named safe.py: https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/master/modules/safe.py
+* UMI AI updated to become an extension + major updates (improvements, added stuff, randomization): https://www.patreon.com/posts/74267457
 * Loab, might be creepypasta: https://en.wikipedia.org/wiki/Loab
 * AUTO UI speedup fix: https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/32c0eab89538ba3900bf499291720f80ae4b43e5
 * AUTOMATIC1111 added the ability to create extensions that add localizations: https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/a2a1a2f7270a865175f64475229838a8d64509ea
@@ -84,13 +93,15 @@ Update ETA: Busy today, will update tomorrow with all sdg links from the past 2 
 * Pickle scanner catered for SD models, hypernetworks, and embeddings released: https://github.com/zxix/stable-diffusion-pickle-scanner
 * Visual novel released: https://beincrypto.com/ai-art-worlds-first-bot-generated-graphic-novel-hits-the-market/
 	* https://www.amazon.com/Star-Maker-Illustrated-Olaf-Stapledon-ebook/dp/B0BFHJPGKP#customerReviews
-* DDIM solver++, the successor to DDIM (which was already fast and converged quickly) released and added to webui: https://github.com/LuChengTHU/dpm-solver
+* DPM solver++, the successor to DDIM (which was already fast and converged quickly) released and added to webui: https://github.com/LuChengTHU/dpm-solver
 	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4304#issuecomment-1304571438
 	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/4280
 	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4304
 	* Relevant k-diffusion update: https://github.com/crowsonkb/k-diffusion
 	* https://arxiv.org/abs/2211.01095
 	* Comparison: https://i.4cdn.org/g/1667590513563375.png
+	* Comparison 2: https://user-images.githubusercontent.com/20920490/200128399-f6f5c332-af80-4a0c-ba6d-0cb299744418.jpg
+	* Comparison 3: https://i.4cdn.org/h/1667717716435289.jpg
 
 >11/5
 * new pickle inspector: https://github.com/lopho/pickle_inspector
@@ -271,12 +282,14 @@ GREAT JAPANESE TOME OF MASTERMINDING ANIME PROMPTS AND IMAGINATIVE AI MACHINATIO
 * author: https://twitter.com/p1atdev_art/
 Japenese wiki: https://seesaawiki.jp/nai_ch/d/
 
-Using emoticons can be really good:
+Using emoticons and emojis can be really good: https://docs.google.com/spreadsheets/d/1aTYr4723NSPZul6AVYOX56CVA0YP3qPos8rg4RwVIzA/edit#gid=1453378351
 🕊💥😱😲😶🙄 leads to https://files.catbox.moe/biy755.png
 🌷🕊🗓👋😛👋 leads to https://files.catbox.moe/7khxe0.png
 
 Database of prompts: https://publicprompts.art/
 * Discord: https://discord.com/invite/jvQJFFFx26
+
+Hololive prompts: https://rentry.org/3y56t
 
 Krea AI prompt database: https://github.com/krea-ai/open-prompts
 Prompt search: https://www.ptsearch.info/home/
@@ -290,6 +303,8 @@ Build your prompt (chinese): https://tags.novelai.dev/
 NAI Prompts: https://seesaawiki.jp/nai_ch/d/%c8%c7%b8%a2%a5%ad%a5%e3%a5%e9%ba%c6%b8%bd/%a5%a2%a5%cb%a5%e1%b7%cf
 
 Japanese wiki: https://seesaawiki.jp/nai_ch/
+* Apparently a good subwiki: https://seesaawiki.jp/nai_ch/d/%c7%ed%a4%ae%a5%b3%a5%e9%a5%c6%a5%af
+
 Korean wiki: https://arca.live/b/aiart/60392904
 Korean wiki 2: https://arca.live/b/aiart/60466181
 
@@ -324,6 +339,8 @@ Every sampler comparison: https://files.catbox.moe/u2d6mf.png
 >Original image:
 >Steps: 50, Sampler: DDIM, CFG scale: 11, Seed: 3563250880, Size: 1024x1024, Model hash: cc024d46, Denoising strength: 0.57, Clip skip: 2, ENSD: 31337, First pass size: 512x512
 >NAI/SD mix at 0.25
+
+f222 comparisons: https://desuarchive.org/g/search/text/f222/filter/text/start/2022-11-01/
 
 Deep Danbooru: https://github.com/KichangKim/DeepDanbooru
 Demo: https://huggingface.co/spaces/hysts/DeepDanbooru
@@ -626,6 +643,7 @@ Wildcards:
 * Another script: https://files.catbox.moe/hvly0p.rar
 * Script: https://gist.github.com/h-a-te/30f4a51afff2564b0cfbdf1e490e9187
 * UMI AI: https://www.patreon.com/posts/umi-ai-official-73544634
+	* Check the presets folder for a lot of dumps
 
 * Dump: 
 	* faces https://rentry.org/pu8z5
@@ -757,11 +775,13 @@ Landscape tutorial: https://www.reddit.com/r/StableDiffusion/comments/yivokx/lan
 
 !!! Downloads listed as "sus" or "might be pickled" generally mean there were 0 replies and not enough "information" (like training info). or, the replies indicated they were suspicious. I don't think any of the embeds/hypernets have had their code checked so they could all be malicious, but as far as I know no one has gotten pickled yet 
 
-!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html
+!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html, https://huggingface.co/docs/hub/security-pickle
 
 ### **Models***
 
 * pokemon, uses defusers (not DB): https://huggingface.co/lambdalabs/sd-pokemon-diffusers
+
+* NAI to diffusers (?, not too sure): https://huggingface.co/millionlive765/ntest
 
 **Berrymix Recipe**
 Rentry: https://rentry.org/berrymix
@@ -787,6 +807,10 @@ Rentry: https://rentry.org/berrymix
 * Berry + Novelai VAE (Might be malicious): https://mega.nz/folder/8HUikarD#epAOm3l2hltC_s_oiSC9dg
 * Another berry + vae: https://anonfiles.com/Rdq7j7F0ye/Berry_zip
 	* https://pastebin.com/h4gY7tGB
+* Berry torrent (torrent hash 19810fe6, hash 579c005f, might be malicious): 
+``` python
+magnet:?xt=urn:btih:e975132162842e0b3e96948f8bffcb66071ecc97&dn=berry_mix.ckpt&tr=udp%3a%2f%2ftracker.torrent.eu.org%3a451%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce
+```
 
 * Dump of ckpt merges, might be pickled, uploader anon says to download at your own risk, could also be a fed bait or something: https://droptext.cc/bfxwb
 
@@ -845,11 +869,20 @@ Rentry: https://rentry.org/berrymix
  
 * Scarlett's Mix (good at cute witches): https://rentry.org/scarlett_mix
 
+* Delusional Mix: https://rentry.org/DelusionalModelMix
+
+* MMD V1-18 MODEL MERGE
+	* v1: https://mega.nz/file/AEdGHQDR#TmNfhjZiidDiL8TAesRqCDXO2qHfnJ_AnV59vPY6XwA
+	* v2: https://mega.nz/file/QEFiBYZI#UHDGNgTvImZX7r9r6d2z3-kUqzW0tHdmk-SpihcrZn0
+	* LIST OF MERGED MODELS: https://discord.com/channels/900672465276116994/1035895704377368687
+	* Discord: https://discord.gg/6YB3cwU2
+
 * Mega mixing guide (has a different berry mix): https://rentry.org/lftbl
+	* Model showcases from lftbl: https://rentry.co/LFTBL-showcase
 
 ### **EveryDream Trainer**
 
-!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html
+!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html, https://huggingface.co/docs/hub/security-pickle
 
 Download + info + prompt templates: https://github.com/victorchall/EveryDream-trainer
 * by anon: allows you to train multiple subjects quickly via labelling file names but it requires a normalization training set of random labelled images in order to preserve model integrity
@@ -860,7 +893,7 @@ Download + info + prompt templates: https://github.com/victorchall/EveryDream-tr
 
 ### **Dreambooth Models:**
 
-!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html
+!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html, https://huggingface.co/docs/hub/security-pickle
 
 Links:
 * https://huggingface.co/waifu-research-department
@@ -963,7 +996,7 @@ Links:
 
 !!! info Use a download manager to download these. It saves a lot of time + good download managers will tell you if you have already downloaded one
 
-!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html
+!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html, https://huggingface.co/docs/hub/security-pickle
 
 * Text Tutorial: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion
 	* Make sure to use pictures of your subject in varied areas, it gives more for the AI to work with
@@ -1201,6 +1234,24 @@ Found on 4chan:
 * Asutora style embedding (mainly reflected in coloring and shading, since his faces are very inconsistent): https://mega.nz/folder/nZoECZyI#vkuZJoQyBZN8p66n4DP62A 
 	* uploader: satisfactory results over 20k steps
 	* Comparisons: https://i.4cdn.org/g/1667701438177228.jpg
+* y'shtola: https://files.catbox.moe/5hefsb.pt
+	* Uploader: You may need to use square brackets to lower it's impact. Also it likes making cencored pics unless you add penis to the input prompt
+* Selentoxx (nai, 16v, 10k): https://files.catbox.moe/0j7ugy.png
+* Aki (Goodboy, nai, 16v, 10k): https://files.catbox.moe/1p14ra.png
+* Sana (nai, 15v): 
+	* 10k: https://files.catbox.moe/g112gm.png
+	* 100k: https://files.catbox.moe/3ndubu.png
+	* In case these aren't good, use:
+	* 10k: https://files.catbox.moe/r5ciho.pt
+	* 25k: https://files.catbox.moe/e6aurx.pt
+	* 50k: https://files.catbox.moe/lz016k.pt
+	* 75k: https://files.catbox.moe/jhdjc9.pt
+	* 100k: https://files.catbox.moe/2lvv2z.pt
+	* Uploader note: don't use more than 0.8 weighting or else it gets deep fried
+* delutaya: https://files.catbox.moe/r6pylz.pt
+* Bonus (?, not sure what this is): https://files.catbox.moe/0i5qfl.pt
+
+NOTE TO MYSELF, ADD THAT PONY EMBEDDING THAT I DOWNLOADING 2 WEEKS AGO
 
 Found on Discord:
 * Nahida v2: https://cdn.discordapp.com/attachments/1019446913268973689/1031321278713446540/nahida_v2.zip
@@ -1214,7 +1265,7 @@ Found on Reddit:
 
 !!! info Use a download manager to download these. It saves a lot of time + good download managers will tell you if you have already downloaded one
 
-!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html
+!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html, https://huggingface.co/docs/hub/security-pickle
 
 * anon: "Requires extremely low learning rate, 0.000005 or 0.0000005"
 **Good Rentry: https://rentry.co/naihypernetworks**
@@ -1424,7 +1475,8 @@ Found on 4chan:
 	* I recommend using the white pupils tag for the eyes to look like picrel.
 * Zanamaoria (20k steps, 47 imgs, mostly dark-skinned elves, and paizuri/huge tits): https://files.catbox.moe/10iasp.pt
 	* 18500 steps: https://files.catbox.moe/xgf1ho.pt
-* Pinvise (30k steps, 5e-6 for 8k steps and 5e-7 for the rest): https://litter.catbox.moe/nrpkuy.pt
+* Pinvise (30k steps, 5e-6 for 8k steps and 5e-7 for the rest): https://files.catbox.moe/dec3h3.pt
+	* dead: https://litter.catbox.moe/nrpkuy.pt
 * Black Souls II (V2 wasn't uploaded because it was "disappointing"):
 	* V1 (Image: 181 augmented to 362,Learning Rate 5e-5:362,5e-6:14000,5e-7:20000, steps: 10k): https://files.catbox.moe/fdoyt9.pt
 	* V3 (Image:164 augmented to 328, Learning Rate 5e-5:328,5e-6:14000,5e-7:20000, steps: 10k): https://files.catbox.moe/1r36tp.pt
@@ -1433,7 +1485,18 @@ Found on 4chan:
 		* V3 (strength: 1) : https://files.catbox.moe/tse4kr.png, https://files.catbox.moe/8y91f0.png (no 'sketch')
 		* V1 (strength: 0.7): https://files.catbox.moe/pml06i.png ('sketch'), https://files.catbox.moe/18993y.png (without "sketch")
 	* Uploader: Those two hypernetwork seem to be more accurate if we put "sketch" in the prompt. V1 break if we set hypernetwork strength to 1 (or anything over 0.8) and 0.7 seem to be the sweet spot. V3 does not seem to have the same problem.
+* Hataraki Ari (30k, 50k, and 100k steps): https://mega.nz/folder/TZ5jXYrb#-NXJo8wlmanr8ebbJ5GBBQ
+	* Training Info: 
+	>Modules: 768, 320, 640, 1280
+	>Hypernetwork layer structure: 1, 2, 1
+	>Activation function: swish + dropout
+	>Layer weights initialization / normalization: none
+	>115 images, size 512x512, manually selected from patreon gallery on sadpanda
+	>Watermarks + text manually removed or cropped out
+	>Deepbooru used for captions
+	>Hypernetwork learning rate: 5e-6:12000, 5e-7:30000, 2.5e-7:50000, 1e-7:100000
 
+	* Uploader note: Works best with huge or gigantic breasts. Occasionally has some problems with extra limbs or nipples. Tags like tall female, muscular female or abs may lead to small heads or weirdly proportioned bodies, so I recommend lowering the weighting on those.
 
 Found on Korean Site of Wisdom (WIP):
 * Terada Tera: https://drive.google.com/file/d/1APwInBROTUdyeoW92yHFn_zBh7rY7b7I/view?usp=sharing
@@ -1755,6 +1818,8 @@ Datasets:
 * Colab 3: https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
 * Colab 4 (fast): https://github.com/TheLastBen/fast-stable-diffusion
 
+* Original dreambooth: https://github.com/JoePenna/Dreambooth-Stable-Diffusion
+
 * Dreambooth gui: https://github.com/smy20011/dreambooth-gui
 	* the app automatically chooses the best settings for your current VRAM
 
@@ -1899,6 +1964,7 @@ https://rentry.org/sdg_FAQ
 * https://blog.novelai.net/novelai-improvements-on-stable-diffusion-e10d38db82ac
 * https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki
 * https://www.reddit.com/r/StableDiffusion
+* https://github.com/AUTOMATIC1111/stable-diffusion-webui/search
 
 **How do I set this up?**
 >Refer to https://rentry.org/nai-speedrun (has the "Asuka test")
@@ -1922,7 +1988,8 @@ https://rentry.org/sdg_FAQ
 **What is pickling/getting pickled?**
 >ckpt files and python files can execute code. Getting pickled is when these files execute malicious code that infect your computer with malware. It's a memey/funny way of saying you got hacked.
 * Automatic1111's webui should unpickle the files for you, but that is only 1 line of defense: https://github.com/AUTOMATIC1111/stable-diffusion-webui/search?q=pickle&type=commits
-* https://docs.python.org/3/library/pickle.html
+* anon: there are checks but they can be disabled and you can still bypass with nested things
+* https://docs.python.org/3/library/pickle.html, https://huggingface.co/docs/hub/security-pickle
 
 **I want to run this, but my computer is too bad. Is there any other way?**
 Check out one of these:
@@ -2016,6 +2083,10 @@ From anon:
 >wait longer for each generation
 >learn to use SD Upscale script in img2img because it can be better sometimes
 
+**Why doesn't model merging work?**
+>Make sure you have enough ram (2 models that are 2 gb requires 4 gb of ram). Increase your page file if necessary
+
+
 ## Link Dump will sort
 
 **Info:**
@@ -2066,6 +2137,7 @@ From anon:
 * /vt/ collection, updated: https://mega.nz/folder/j2AgSB6Y#3Kcq-xms0fWU4na-aaTFhA/folder/unw2EIBI
 * AI porn: https://pornpen.ai/
 * Booru + generator, anime focused: https://pixai.art/
+* /vt/ huge image collection: https://mega.nz/folder/23oAxTLD#vNH9tPQkiP1KCp72d2qINQ
 
 **Upscalers:**
 * Big list: https://upscale.wiki/wiki/Model_Database
@@ -2141,8 +2213,6 @@ https://archive.alice.al/vt/
 https://warosu.org/lit/
 desuarchive.org/
 https://archived.moe/
-
-NAI almost a booru: https://mega.nz/folder/23oAxTLD#vNH9tPQkiP1KCp72d2qINQ
 
 prompting thing: https://www.reddit.com/r/StableDiffusion/comments/yirl1c/we_are_pleased_to_announce_the_launch_of_the/
 
