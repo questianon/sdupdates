@@ -14,7 +14,7 @@ View the old stuff here: https://github.com/questianon/sdupdates/blob/main/sdupd
 
 !!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates
 
-!!! note Changelog: added hdg sdg, vt wip
+!!! note Changelog: added hdg sdg vt reddit, some discord
 
 !!! note Request: Looking for javascript + react coders (someone who knows how to make a form -> xlsx, doesn't need to be in js + react)
 
@@ -72,6 +72,21 @@ Update ETA: Busy today, will update tomorrow with all sdg links from the past 2 
 		4. ```pip install -r requirements.txt```
 
 >11/5 continued+11/6
+* Lots of issues with overpaying for dreambooth training: https://www.reddit.com/r/StableDiffusion/comments/ynb6h1/dont_overpay_for_dreambooth_training/
+	* TLDR (from the creator of the dreambooth ui):
+		You don't need pay more than 10$ for a hosted dreambooth training.
+		Make sure you have access the trained model (ckpt) before you pay for it.
+* (Deleted this by accident) Unprompted extension has ads now
+	* Extensions > uncheck unprompted and reload
+	* There are ways to mod it to remove ads
+	* FOSS with ads will be the norm if enough support is given
+	* https://www.reddit.com/r/StableDiffusion/comments/ynshup/ads_are_starting_to_appear_in_our_foss/
+* Anon says that if you mess with k-diffusion's scheduling, you can make DPM++ 2M Karras a lot better at low steps.
+	* https://rentry.org/wf7pv
+	* Reasoning: https://github.com/crowsonkb/k-diffusion/issues/43#issuecomment-1304916783
+		* tldr: we are using the sigmas of the next step instead of the current step
+	* https://i.4cdn.org/g/1667784374378916.png
+* (somehow forgot to add this since it's release) Inpainting conditioning mask strength released for AUTOMATIC1111 (save composition while img2img/inpainting)
 * (info from anon, not usre if true): Apparently there's a bug where "Desktop Window Manager" eats GPU-cycles randomly when generating
 * Standalone dreambooth extension based on ShivShiram's repo: https://github.com/d8ahazard/sd_dreambooth_extension
 	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3995
@@ -263,6 +278,7 @@ Update ETA: Busy today, will update tomorrow with all sdg links from the past 2 
 ## Prompting
 Google Docs with a prompt list/ranking/general info for waifu creation: 
 https://docs.google.com/document/d/1Vw-OCUKNJHKZi7chUtjpDEIus112XBVSYHIATKi1q7s/edit?usp=sharing
+Ranked and calssibied danbooru tags, sorted by amount of pictures, and ranked by type and quality (WD): https://cdn.discordapp.com/attachments/1029235713989951578/1038585908934483999/Kopi_af_WAIFU_MASTER_PROMPT_DANBOORU_LIST.pdf
 Anon's prompt collection: https://mega.nz/folder/VHwF1Yga#sJhxeTuPKODgpN5h1ALTQg
 Tag effects on img: https://pastebin.com/GurXf9a4
 * Anon says that "8k, 4k, (highres:1.1), best quality, (masterpiece:1.3)" leads to nice details
@@ -285,6 +301,7 @@ Japenese wiki: https://seesaawiki.jp/nai_ch/d/
 Using emoticons and emojis can be really good: https://docs.google.com/spreadsheets/d/1aTYr4723NSPZul6AVYOX56CVA0YP3qPos8rg4RwVIzA/edit#gid=1453378351
 🕊💥😱😲😶🙄 leads to https://files.catbox.moe/biy755.png
 🌷🕊🗓👋😛👋 leads to https://files.catbox.moe/7khxe0.png
+spoken squiggle: https://twitter.com/AI_Illust_000/status/1588838369593032706
 
 Database of prompts: https://publicprompts.art/
 * Discord: https://discord.com/invite/jvQJFFFx26
@@ -297,6 +314,9 @@ Another search: http://novelai.io/
 4chan prompt search: https://desuarchive.org/g/search/text/masterpiece%20high%20quality/
 Prompt book: https://openart.ai/promptbook
 Prompt word/phrase collection: https://huggingface.co/spaces/Gustavosta/MagicPrompt-Stable-Diffusion/raw/main/ideas.txt
+
+Dynamic prompts: https://github.com/adieyal/sd-dynamic-prompts
+* guide: https://www.reddit.com/r/StableDiffusion/comments/ynztiz/how_to_turbocharge_your_prompts_using/
 
 Japanese prompt generator: https://magic-generator.herokuapp.com/
 Build your prompt (chinese): https://tags.novelai.dev/
@@ -332,6 +352,8 @@ SD 1.4 vs 1.5: https://postimg.cc/gallery/mhvWsnx
 Model merge comparisons: https://files.catbox.moe/rcxqsi.png
 Some sampler comparisons: https://www.reddit.com/r/StableDiffusion/comments/xmwcrx/a_comparison_between_8_samplers_for_5_different/
 More comparisons: https://files.catbox.moe/csrjt5.jpg
+More: https://i.redd.it/o440iq04ocy91.jpg (https://www.reddit.com/r/StableDiffusion/comments/ynt7ap/another_new_sampler_steps_comparison/)
+More: https://i.redd.it/ck4ujoz2k6y91.jpg (https://www.reddit.com/r/StableDiffusion/comments/yn2yp2/automatic1111_added_more_samplers_so_heres_a/)
 Every sampler comparison: https://files.catbox.moe/u2d6mf.png
 >Prompt: 1girl, pointy ears, white hair, medium hair, ahoge, hair between eyes, green eyes, medium:small breasts, cyberpunk, hair strand, dynamic angle, cute, wide hips, blush, sharp eyes, ear piercing, happy, hair highlights, multicoloured hair, cybersuit, cyber gas mask, spaceship computers, ai core, spaceship interior
 >Negative prompt: lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, animal ears, panties
@@ -410,6 +432,7 @@ http://dalle2-prompt-generator.s3-website-us-west-2.amazonaws.com/
 https://randomwordgenerator.com/
 funny prompt gen that surprisingly works: https://www.grc.com/passwords.htm
 Unprompted extension released: https://github.com/ThereforeGames/unprompted
+* HAS ADS
 * Wildcards on steroids
 * Powerful scripting language 
 * Can create templates out of booru tags
@@ -444,6 +467,8 @@ Blender:
 https://github.com/carson-katri/dream-textures
 https://github.com/benrugg/AI-Render
 
+External masking: https://github.com/dfaker/stable-diffusion-webui-cv2-external-masking-script
+anon: theres a commanda rg for adding basic painting, its '--gradio-img2img-tool'
 
 Script collection: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts
 Prompt matrix tutorial: https://gigazine.net/gsc_news/en/20220909-automatic1111-stable-diffusion-webui-prompt-matrix/
@@ -474,6 +499,8 @@ Animation Guide: https://rentry.org/AnimAnon#introduction
 Chroma key after SD: https://files.catbox.moe/d27xdl.gif 
 * Cool mmd vid (20 frames, I think it uses chroma key): https://files.catbox.moe/jtp14x.mp4
 
+More animation guide: https://www.reddit.com/r/StableDiffusion/comments/ymwk53/better_frame_consistency/
+
 Animating faces by anon: 
 * https://github.com/yoyo-nb/Thin-Plate-Spline-Motion-Model
 * How to Animate faces from Stable Diffusion!
@@ -493,6 +520,8 @@ workflow looks like this:
 here is a pastebin of useful commands for my workflow
 https://pastebin.com/6Y6ZK8PN
 ```
+
+Another person who used it: https://www.reddit.com/r/StableDiffusion/comments/ynejta/stable_diffusion_animated_with_thinplate_spline/
 
 Giffusion tutorial:
 ``` python 
@@ -546,6 +575,7 @@ Autocomplete Tags: https://github.com/DominikDoom/a1111-sd-webui-tagcomplete
 Prompt Randomizer: https://github.com/adieyal/sd-dynamic-prompting
 Wildcards: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wildcards/
 Wildcard script + collection of wildcards: https://app.radicle.xyz/seeds/pine.radicle.garden/rad:git:hnrkcfpnw9hd5jb45b6qsqbr97eqcffjm7sby
+Symmetric image script: https://github.com/dfaker/SD-latent-mirroring
 
 Clip interrogator: https://colab.research.google.com/github/pharmapsychotic/clip-interrogator/blob/main/clip_interrogator.ipynb
 2 (apparently better than AUTO webui's interrogate): https://huggingface.co/spaces/pharma/CLIP-Interrogator, https://github.com/pharmapsychotic/clip-interrogator
@@ -743,6 +773,8 @@ Wildcard extension: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wild
 * Comparison of using and not using "by artist [first name] [last name]": https://www.reddit.com/r/StableDiffusion/comments/yiny15/by_artist_firstname_lastname_really_does_makes_a/
 	* https://drive.google.com/drive/folders/1qATxaaOb97fxgm5QY8MXIoMAX3FI6WZ0?usp=sharing
 * 414 artists comparison using BerryMix: https://mega.nz/file/MX00jb6I#sWbvlt8AhH0B2CZTJJVmfz-LTZIB9O0sLYqjoWbvwN0
+* 558 artists comparison: https://decentralizedcreator.com/list-of-artists-supported-by-stable-diffusion/
+* NAI artist comparison + some extra information: https://zele.st/NovelAI/?Artists
 
 Anon's list of comparisons:
 * Stable Diffusion v1.5, Waifu Diffusion v1.3, Trinart it4
@@ -864,6 +896,12 @@ magnet:?xt=urn:btih:e975132162842e0b3e96948f8bffcb66071ecc97&dn=berry_mix.ckpt&t
 >Add Difference (A=NAI, B=F222, C=SD 1.4, M=1.0) => tmp.ckpt
 >Mixed Sum (A=tmp.ckpt, B=SD 1.5, M=0.2) (M might've been 0.25, but i think it was 0.2)
 >Examples: https://files.catbox.moe/3pscvp.png, https://i.4cdn.org/g/1667680791817462.png
+
+**Blueberry Mix**
+>NAI + SD1.5 Weighted Sum @ 0.25 -> NAI-v1.5-0.25
+>NAI-v1.5-0.25 + F222 + SD1.5 Difference @ 1.0 -> berry-lite
+>berry-lite + r34_e4 Weighted Sum @ 0.15 -> blueberrymix
+* xy plot: https://i.4cdn.org/h/1667753676787577.jpg
  
 * UNET to ckpt models (use at your own risk, might be pickled): https://rentry.org/U2C-Models
  
@@ -990,6 +1028,11 @@ Links:
 * Chicken (trained on images from r/chickens): https://huggingface.co/fake4325634/chkn
 	* https://www.reddit.com/r/StableDiffusion/comments/ylmcov/chicken_diffusion_dreambooth_model/
 * 1.5 based model created from the Spede images (not too sure if this is Dreambooth): https://mega.nz/file/mdcVARhL#FUq5TL2xp7FuzzgMS4B20sOYYnPZsyPMw93sPMHeQ78
+* Redshift Diffusion (High quality 3D renders): https://huggingface.co/nitrosocke/redshift-diffusion
+	* https://www.reddit.com/r/StableDiffusion/comments/ynz33f/dreambooth_model_release_redshift_diffusion_high/
+* Cats: https://huggingface.co/dallinmackay/Cats-Musical-diffusion
+* Van Gogh: https://huggingface.co/dallinmackay/Van-Gogh-diffusion
+	* https://www.reddit.com/r/StableDiffusion/comments/ymtud0/my_van_gogh_style_loving_vincent_dreambooth_model/
 
 ### **Embeddings**
 !!! info If an embedding is >80mb, I mislabeled it and it's a hypernetwork
@@ -1249,7 +1292,10 @@ Found on 4chan:
 	* 100k: https://files.catbox.moe/2lvv2z.pt
 	* Uploader note: don't use more than 0.8 weighting or else it gets deep fried
 * delutaya: https://files.catbox.moe/r6pylz.pt
-* Bonus (?, not sure what this is): https://files.catbox.moe/0i5qfl.pt
+* Aloe (hololive, 16v, 10k, nai): https://files.catbox.moe/kv2hdd.png
+	* Called 'bonus', not too sure if this is the pt for the embed abovehttps://files.catbox.moe/0i5qfl.pt
+* Fauna (16v, 10k, nai): https://files.catbox.moe/zizgrw.png
+* wawa (15v, 10k, nai): https://files.catbox.moe/2vpyi2.png
 
 NOTE TO MYSELF, ADD THAT PONY EMBEDDING THAT I DOWNLOADING 2 WEEKS AGO
 
@@ -1734,6 +1780,72 @@ Found on Discord:
 	>Steps: 8750
 	* Download: https://anonfiles.com/H7RajcFby6/yabuki_kentarou_1_1_relu_5e-5_-8750_pt 
 
+* namori(1,1_relu_5e-5)-9000.pt
+	>Source image count: 50 (white-bg, hi-res, and hi-qual)
+	>Dataset image count: 98 (split, 512x512)
+	>Dataset stress test: excellent (LR 0.0005, 2000 steps)
+	>Model: NAI [925997e9]
+	>Layer: 1, 1
+	>Learning rate: 0.00005
+	>Steps: 9000
+	>Preview: https://i.imgur.com/MEmvDCS.jpg
+	>Download: https://anonfiles.com/n2W8rdF7y5/namori_1_1_relu_5e-5_-9000_pt
+
+* Yordles:
+
+	>Hey everyone , these hypernetworks were released by me (IWillRemember) (IWillRemember#1912 on discord) if you have any questions you can find me on discord!
+	>
+	>These hyper networks were trained for roughly 30000 steps at different learning rates on 80 images
+	>
+	>Yordles = to be use with an HYPERNETWORK STRENGHT OF 0,7
+	>Yordles-FullSTR = to be useed with an HYPERNETWORK STRENGHT OF 1
+	>
+	>I suggest experimenting alot with prompts since they both give roughly the same results but i included both since some people might like the stronger version better.
+	>
+	>They were trained with NAI but they work best with Arena's Gape60 (i highly suggest using it)
+	>
+	>They are trained on the following tags: Yordle, tristana, lulu_(league_oflegends), poppy(league_oflegends), vex(league_oflegends), shortstack
+	>I don't know why but discord modifies the tags for lulu, vex and poppy so read the readme txt !! 
+	>
+	>I highly suggest building around a specific character but you can make your own yordles too! try using different prompts to amplify the chances of getting a specific character .
+	>
+	>Example for Poppy : masterpiece, highest quality, digital art, colored skin, blue skin, white skin, 1girl, (yordle:1.1), purple eyes, (poppy(league_of_legends):1.1), shortstack, twintails, fang, red scarf, white armor, thighs, sitting, night, gradient background , grass , blonde hair , on back, :d
+	>
+	>I suggest not using negative prompts or use only the conditional ones like : monochrome, letterbox, ecc ecc
+	>
+	>Thank you for reading ! and happy yordle prompting !
+	>
+	>https://mega.nz/file/FCdiSIbI#ekOnlvox0ksEe1zzOQCFXgMJPkClEFPJFfGaAXv4rYc
+	>
+	>Examples:
+	>https://cdn.discordapp.com/attachments/1023082871822503966/1037513553386684527/poppy.png
+	>https://cdn.discordapp.com/attachments/1023082871822503966/1037513571355066448/lulu.png 
+	>I don't know why but discord modifies the tags for lulu, vex and poppy so read the readme txt !!
+	
+Colored eyes:
+
+	>Hey everyone , this hypernetwork was released by me (IWillRemember) (IWillRemember#1912 on discord) if you have any questions you can find me on discord!
+	>
+	>Did the Hn as a commission for a friend 😄
+	>
+	>I'm releasing an Hn to do better animation like glowing eyes, and a more slender face/upper body.
+	>
+	>The tags are : 
+	>detailed eyes, 
+	>(color) eyes  = ex: white eyes, blue eyes, etc etc
+	>collarbone
+	>
+	>Trained for 12k steps on a 80 ish images dataset
+	>
+	>You can use the Hn with a str of 1 without any problem.
+	>
+	>Happy prompting!
+	>
+	>Example: https://media.discordapp.net/attachments/1023082871822503966/1038115846222008392/00162-3940698197-masterpiece_highest_quality_digital_art_1girl_on_back_detailed_eyes_perfect_face_detailed_face_breasts_white_hair_yell.png?width=648&height=702
+	>
+	>https://mega.nz/file/dHFwmaxS#NQhMPjT4TElPXX_YAZhTsFrQ36PDJhpWFm9BcHU_BO4 
+
+
 ### **Aesthetic Gradients**
 Collection of Aesthetic Gradients: https://github.com/vicgalle/stable-diffusion-aesthetic-gradients/tree/main/aesthetic_embeddings
 
@@ -1755,6 +1867,7 @@ Embed:
 * Sakimichan: https://mega.nz/file/eE8QDKrI#y7kdyWgPUjI4ZkY8PSq89F28eU_Vz_0EgTbG6yAowH8
 * Deadflow (190k, "bitchass"(?)): https://litter.catbox.moe/03lqr6.pt
 * Wagashi (12k, shitass(?)), no associated pic or replies so might be pickled: https://litter.catbox.moe/ktch8r.pt
+* ex-penis-50000.pt and ex-penis-35000.pt
 
 Hypernetworks:
 * Chinese telegram (dead link): https://t.me/+H4EGgSS-WH8wYzBl
@@ -1811,12 +1924,14 @@ Datasets:
 	* by anon: allows you to train multiple subjects quickly via labelling file names but it requires a normalization training set of random labelled images in order to preserve model integrity
 * github + some documentation: https://github.com/cafeai/stable-textual-inversion-cafe
 * Documentation: https://www.reddit.com/r/StableDiffusion/comments/wvzr7s/tutorial_fine_tuning_stable_diffusion_using_only/
+* Guide on dreambooth training in comments: https://www.reddit.com/r/StableDiffusion/comments/yo05gy/cyberpunk_character_concepts/
 
 * Site where you can train: https://www.astria.ai/
 * Colab: https://colab.research.google.com/github/huggingface/notebooks/blob/main/diffusers/sd_textual_inversion_training.ipynb
 * Colab 2: https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb
 * Colab 3: https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
 * Colab 4 (fast): https://github.com/TheLastBen/fast-stable-diffusion
+* site?: drawanyone.com
 
 * Original dreambooth: https://github.com/JoePenna/Dreambooth-Stable-Diffusion
 
@@ -2242,6 +2357,18 @@ anon:
 leather, collar,,,,,,,,,,,,,,,,,,,,,,,,,,,,,cheese 
 ```
 >The filler text just means you're likely to get a leather collar with cheese separately. To get a leather cheese collar its going to be very difficult since these concepts are far removed from one another.
+
+Resource thing: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Images-Filename-Name-and-Subdirectory
+
+ai voice self train: https://github.com/neonbjb/tortoise-tts
+
+ERNIE creators (about: Awesome pre-trained models toolkit based on PaddlePaddle. (400+ models including Image, Text, Audio, Video and Cross-Modal with Easy Inference & Serving)): https://github.com/PaddlePaddle/PaddleHub
+* https://www.paddlepaddle.org.cn/hub
+* ernie: https://github.com/PaddlePaddle/PaddleHub/tree/develop/modules/image/text_to_image/ernie_vilg
+
+info: https://www.reddit.com/r/StableDiffusion/comments/yjwuls/demystifying_prompting_what_you_need_to_know/
+
+something dreambooth someone used it so I add it here: https://github.com/kanewallmann/Dreambooth-Stable-Diffusion
 
 ## Hall of Fame
 automatic1111
