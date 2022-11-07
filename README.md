@@ -1,4 +1,5 @@
 View the old stuff here: https://github.com/questianon/sdupdates/blob/main/sdupdates%20backup.md or https://www.rentry.org/sdupdates
+The rentry is generally updated more frequently than this github so I don't spam watchers with 1 line additions
 
 # SD RESOURCE GOLDMINE 2
 
@@ -71,23 +72,36 @@ Update ETA: Busy today, will update tomorrow with all sdg links from the past 2 
 		3. ```git pull```
 		4. ```pip install -r requirements.txt```
 
+>11/7
+* ddetailer released: https://github.com/dustysys/ddetailer
+	* object detection and auto-mask, helpful in fixing faces without manually masking
+* (didn't see this until now) Training TI on 6gb when xformers is available inplemented: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4056
+* (From yesterday) Unprompted extension has ads (self-ad, not google ad) now
+	* Extensions > uncheck unprompted and reload
+	* There are ways to mod it to remove ads
+		* Way by anon: Edit style.css so it has:
+			>#unprompted #toggle-ad {opacity:0.5}
+			>#unprompted #toggle-ad:hover {opacity:1;}
+			>#unprompted {margin-bottom:2em}
+			>#unprompted #ad.active {opacity:0;max-height:000px;padding:00px 00px;transition:1s cubic-bezier(0, 0, 0, 0);}
+			>#unprompted #ad {transition:0.5s cubic-bezier(0, 0, 0, 0);max-height:0;overflow:hidden;opacity:0;padding:0px 00px;}
+	* FOSS with ads will be the norm if enough support is given
+	* https://www.reddit.com/r/StableDiffusion/comments/ynshup/ads_are_starting_to_appear_in_our_foss/
+	* Creator's statement: https://www.reddit.com/r/StableDiffusion/comments/ynshup/comment/ivbhhrf/?utm_source=share&utm_medium=web2x&context=3
+
 >11/5 continued+11/6
+* Drama in SD Training Labs server/ML Research Labs server: https://rentry.org/sdupdates2#misc
 * Lots of issues with overpaying for dreambooth training: https://www.reddit.com/r/StableDiffusion/comments/ynb6h1/dont_overpay_for_dreambooth_training/
 	* TLDR (from the creator of the dreambooth ui):
 		You don't need pay more than 10$ for a hosted dreambooth training.
 		Make sure you have access the trained model (ckpt) before you pay for it.
-* (Deleted this by accident) Unprompted extension has ads now
-	* Extensions > uncheck unprompted and reload
-	* There are ways to mod it to remove ads
-	* FOSS with ads will be the norm if enough support is given
-	* https://www.reddit.com/r/StableDiffusion/comments/ynshup/ads_are_starting_to_appear_in_our_foss/
 * Anon says that if you mess with k-diffusion's scheduling, you can make DPM++ 2M Karras a lot better at low steps.
 	* https://rentry.org/wf7pv
 	* Reasoning: https://github.com/crowsonkb/k-diffusion/issues/43#issuecomment-1304916783
 		* tldr: we are using the sigmas of the next step instead of the current step
 	* https://i.4cdn.org/g/1667784374378916.png
 * (somehow forgot to add this since it's release) Inpainting conditioning mask strength released for AUTOMATIC1111 (save composition while img2img/inpainting)
-* (info from anon, not usre if true): Apparently there's a bug where "Desktop Window Manager" eats GPU-cycles randomly when generating
+* (info from anon, not sure if true): Apparently there's a bug where "Desktop Window Manager" eats GPU-cycles randomly when generating
 * Standalone dreambooth extension based on ShivShiram's repo: https://github.com/d8ahazard/sd_dreambooth_extension
 	* https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/3995
 	* Author note: I've added requirements installer, multiple concept training via JSON, and moved some bit about. UI still needs fixing, some stuff broken there, but it should be able to train a model for now.
@@ -338,6 +352,8 @@ Aesthetic value: https://laion-aesthetic.datasette.io/laion-aesthetic-6pls
 
 NAI to webui translator (not 100% accurate): https://seesaawiki.jp/nai_ch/d/%a5%d7%a5%ed%a5%f3%a5%d7%a5%c8%ca%d1%b4%b9
 
+Prompt editing parts of image but without using img2img/inpaint/prompt editing guide by anon: https://files.catbox.moe/fglywg.JPG
+
 Tip Dump: https://rentry.org/robs-novel-ai-tips
 Tips: https://github.com/TravelingRobot/NAI_Community_Research/wiki/NAI-Diffusion:-Various-Tips-&-Tricks
 Info dump of tips: https://rentry.org/Learnings
@@ -569,6 +585,7 @@ Deforum (video animation): https://github.com/deforum-art/deforum-for-automatic1
 
 Auto-SD-Krita: https://github.com/Interpause/auto-sd-paint-ext
 
+ddetailer (object detection and auto-mask, helpful in fixing faces without manually masking): https://github.com/dustysys/ddetailer
 Aesthetic Gradients: https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients
 Aesthetic Scorer: https://github.com/tsngo/stable-diffusion-webui-aesthetic-image-scorer
 Autocomplete Tags: https://github.com/DominikDoom/a1111-sd-webui-tagcomplete
@@ -945,6 +962,7 @@ Links:
 * Big collection: https://publicprompts.art/
 * Big collection of sex models (Might be a large pickle, so be careful): https://rentry.org/kwai
 * Collection: https://cyberes.github.io/stable-diffusion-dreambooth-library/
+* /vt/ collection: https://mega.nz/folder/L2hhmRja#CCydQIW7rBcQIFaJl8r6sg/folder/L6RUURqJ
 
 * Nami: https://mega.nz/file/VlQk0IzC#8MEhKER_IjoS8zj8POFDm3ZVLHddNG5woOcGdz4bNLc
 * https://huggingface.co/IShallRiseAgain/StudioGhibli/tree/main
@@ -1033,6 +1051,13 @@ Links:
 * Cats: https://huggingface.co/dallinmackay/Cats-Musical-diffusion
 * Van Gogh: https://huggingface.co/dallinmackay/Van-Gogh-diffusion
 	* https://www.reddit.com/r/StableDiffusion/comments/ymtud0/my_van_gogh_style_loving_vincent_dreambooth_model/
+* Rouge the Bat (44 SFW images of Rouge the Bat for 1600 or 2400 steps, keyword: 'rkugasebz'): https://huggingface.co/ChanseyIsForeverAI/Rouge-the-bat-dreambooth
+	* Examples: https://i.imgur.com/X12W59D.png
+				https://i.imgur.com/Lpul7Pf.png
+				https://i.imgur.com/r0bc6i8.png
+				https://i.imgur.com/gkEW0w0.png
+				https://i.imgur.com/Zj8PtZC.png
+
 
 ### **Embeddings**
 !!! info If an embedding is >80mb, I mislabeled it and it's a hypernetwork
@@ -1040,6 +1065,8 @@ Links:
 !!! info Use a download manager to download these. It saves a lot of time + good download managers will tell you if you have already downloaded one
 
 !!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html, https://huggingface.co/docs/hub/security-pickle
+
+You can check .pts here for their training info using a text editor
 
 * Text Tutorial: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion
 	* Make sure to use pictures of your subject in varied areas, it gives more for the AI to work with
@@ -1292,8 +1319,8 @@ Found on 4chan:
 	* 100k: https://files.catbox.moe/2lvv2z.pt
 	* Uploader note: don't use more than 0.8 weighting or else it gets deep fried
 * delutaya: https://files.catbox.moe/r6pylz.pt
-* Aloe (hololive, 16v, 10k, nai): https://files.catbox.moe/kv2hdd.png
-	* Called 'bonus', not too sure if this is the pt for the embed abovehttps://files.catbox.moe/0i5qfl.pt
+* Delutaya (another unrelated, 16v, 10k, nai): https://files.catbox.moe/kv2hdd.png
+* mano-aloe-v1q (nai, manoaloe,mano aloe): https://files.catbox.moe/0i5qfl.pt
 * Fauna (16v, 10k, nai): https://files.catbox.moe/zizgrw.png
 * wawa (15v, 10k, nai): https://files.catbox.moe/2vpyi2.png
 
@@ -1543,6 +1570,8 @@ Found on 4chan:
 	>Hypernetwork learning rate: 5e-6:12000, 5e-7:30000, 2.5e-7:50000, 1e-7:100000
 
 	* Uploader note: Works best with huge or gigantic breasts. Occasionally has some problems with extra limbs or nipples. Tags like tall female, muscular female or abs may lead to small heads or weirdly proportioned bodies, so I recommend lowering the weighting on those.
+
+* IRyS (not sure if this is a reupload of a previous one): https://files.catbox.moe/qnery5.pt
 
 Found on Korean Site of Wisdom (WIP):
 * Terada Tera: https://drive.google.com/file/d/1APwInBROTUdyeoW92yHFn_zBh7rY7b7I/view?usp=sharing
@@ -2370,6 +2399,8 @@ info: https://www.reddit.com/r/StableDiffusion/comments/yjwuls/demystifying_prom
 
 something dreambooth someone used it so I add it here: https://github.com/kanewallmann/Dreambooth-Stable-Diffusion
 
+youtuber that helped people understand webui: https://www.youtube.com/channel/UCEIMmQErvGDLXpmlzp7L-yg
+
 ## Hall of Fame
 automatic1111
 
@@ -2405,3 +2436,18 @@ If you get an error about "--skip-torch-cuda-test", add it as well (making the l
 
 After you started the .bat and got the WebUI loaded, go to Settings and scroll to Stable Diffusion. Set the checkpoint to final-pruned and the hypernetwork of your choice.
 ```
+
+SD labs/ML Research Drama (tldr so a lot of context might be missing (?)):
+I don't frequent SD discord servers often so this info might be wrong:
+- Original owner (Dep) of ML Research gave ownership to someone else (Elinas) so he can focus on exams
+- Elinas does stuff
+- Elinas doesn't give Dep server back 
+- Drama
+- Dep's side's argument (might be wrong/is missing context): immoral to not return server, Elinas is abusive admin who bans/censors people who go against him, Elinas changing direction of server
+- Elina's side's argument (might be wrong/is missing context): Dep is racist/insensitive, Dep joked about deleting the server, Dep generally unfit for running server, Elinas doing positive things for the server, claims to only have banned one person for three days for using slurs
+
+Servers so you can check the validity for yourself:
+ML (Elinas): https://discord.gg/8qwHNcgZ
+SD (Dep): https://discord.gg/Xz8CBFCT
+
+Automatic statement: https://cdn.discordapp.com/attachments/1015751613840883735/1038490258104385636/20221105_DiscordPTB_025525.png
