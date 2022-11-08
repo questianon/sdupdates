@@ -73,10 +73,17 @@ Update ETA: Busy today, will update tomorrow with all sdg links from the past 2 
 		4. ```pip install -r requirements.txt```
 
 >11/8+11/7
+* AI video by google (Phenaki + Imagen Video Combination): https://www.youtube.com/clip/Ugkx_p77cvDSUkXBXRlVuq2sHVTu5YTwGiFB
+* Using SD as a compressor: https://pub.towardsai.net/stable-diffusion-based-image-compresssion-6f1f0a399202
+* Unofficial "paint with words" implementation for SD: https://github.com/cloneofsimo/paint-with-words-sd
+	* From NVIDIA's eDiffi that lets you choose areas to prompt ("painting with your words") > helps choose locations for objects (word > attention map)
+* Style transfer script: https://github.com/nicolai256/Few-Shot-Patch-Based-Training
 * Dreambooth extension released: https://github.com/d8ahazard/sd_dreambooth_extension
 	* Downloadable through the extension manager
 	* Bug (anon provided): checkpoint saving per N iteration makes you OOM if you are on 12gb, if you disable that then your entire thing wont save, so you have to make the number match the maximum steps for it to save properly
-* (move this down later) anything.ckpt, a Chinese finetune of NAI, is released: https://www.bilibili.com/read/cv19603218
+* anything.ckpt, a Chinese finetune of NAI, is released: https://www.bilibili.com/read/cv19603218
+	* Torrent: https://rentry.org/sdmodels#anything-v30-38c1ebe3-1a7df6b8-6569e224
+	* Supposed ddl, I didn't check these for pickles: https://rentry.org/NAI-Anything_v3_0_n_v2_1
 	* instructions to download from Baidu from outside China and without SMS or an account and with speeds more than 100KBps: 
 		>Download a download manager that allows for a custom user-agent (e.g. IDM)
 			>If you need IDM, contact me
@@ -86,9 +93,11 @@ Update ETA: Busy today, will update tomorrow with all sdg links from the past 2 
 		>In the bottom box area, click the folder icon next to NovelAI
 		>Open your dl manager and add 'netdisk;11.33.3;' into the user-agent section (remove the ')
 		>Click the paperclip icon next to the item you want to download in the bottom box and put it into your download manager
+		>
+		>To get anything v3 and v2.1: first box:https://pan.baidu.com/s/1r--2XuWV--MVoKKmTftM-g, second box:ANYN
 	* SDmodel owner thinks it's resumed training
-	* seems to provide more details over NAI, but also seems to overfry some stuff. Try lowering the cfg
-	* Might be CCP spyware or something, it's probably safe but I didn't unpickle it myself
+	* seems to provide more detailed backgrounds and characters over NAI, but also seems to overfry some stuff. Try lowering the cfg if that happens
+	* Passes AUTOMATIC's pickle tester, but there's no guarantee on pickle safety
 
 >11/7
 * ddetailer released: https://github.com/dustysys/ddetailer
@@ -397,6 +406,9 @@ Every sampler comparison: https://files.catbox.moe/u2d6mf.png
 >Steps: 50, Sampler: DDIM, CFG scale: 11, Seed: 3563250880, Size: 1024x1024, Model hash: cc024d46, Denoising strength: 0.57, Clip skip: 2, ENSD: 31337, First pass size: 512x512
 >NAI/SD mix at 0.25
 
+New samplers: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/4363
+New vs. DDIM: https://files.catbox.moe/5hfl9h.png
+
 f222 comparisons: https://desuarchive.org/g/search/text/f222/filter/text/start/2022-11-01/
 
 Deep Danbooru: https://github.com/KichangKim/DeepDanbooru
@@ -409,6 +421,8 @@ Collection of Aesthetic Gradients: https://github.com/vicgalle/stable-diffusion-
 Euler vs. Euler A: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/2017#discussioncomment-4021588
 * Euler: https://cdn.discordapp.com/attachments/1036718343140409354/1036719238607540296/euler.gif
 * Euler A: https://cdn.discordapp.com/attachments/1036718343140409354/1036719239018590249/euler_a.gif
+
+According to anon: DPM++ should converge to result much much faster than Euler does. It should still converge to the same result though.
 
 Seed hunting: 
 * By nai speedrun asuka imgur anon:
@@ -617,42 +631,7 @@ Clip interrogator: https://colab.research.google.com/github/pharmapsychotic/clip
 2 (apparently better than AUTO webui's interrogate): https://huggingface.co/spaces/pharma/CLIP-Interrogator, https://github.com/pharmapsychotic/clip-interrogator
 
 
-Guide by anon:
-
-```
-How I enhance my images with SD upscale and inpainting:
-
-For this example I'll use this base image:
-https://files.catbox.moe/rwny67.png (embed)
-I'll send its prompt to the img2img tab with the "Send to img2img" button, but before upscaling I want to fix some details first.
-Using a simple image editor I crudely fix any messed up details like mangled hands or broken perspectives:
-https://files.catbox.moe/2fk22h.png (embed)
-
-I then run the SD upscale script a couple times with the following settings:
->30 steps
->sampler: Euler a, and DDIM if my original picture is "grainy" and I want to retain that.
->CFG: same as base image (don't know if it matters)
->seed:-1
->between .15 and .35 denoising, depending on how many rough details need to be ironed out. (Something with crude edits made in paint will need at least .2 or higher denoising)
->upscaler: usually "ESRGAN_4x", sometimes "4x-UltraSharp" (download it if you don't have it)
->tile overlap: default 64 (I've never messed with this setting desu)
-
-Once I'm satisfied with the result (https://files.catbox.moe/8snbto.png (embed)) I'll press the "Send to inpaint" button.
-
-Here I inpaint a new face with the following settings:
-(Don't forget to switch off the SD upscale script here)
->masked content: original
->inpaint at full resolution: true (important)
->Inpaint at full resolution padding, pixels: 32 (mess around with this setting if you get weird black or discolored edges)
->sampling steps: same as before
->sampler: same as before
->denoising between 0.2 and 0.5 depending on how little I want the new face to resemble the face that's already there. If your base image doesn't even have a face, just set it to 0.5
->seed:-1
-
-And that's pretty much it. Final result: https://files.catbox.moe/zhkkqk.png (embed)
-
-You could keep inpainting new details here over and over. If it's not adding what you want, just manually add a 1000 years in paint version before you inpaint, or even just insert a png of the thing you want to add, and it'll work.
-```
+Enchancement Workflow by anon: https://pastebin.com/8WVyDxt9
 
 Inpainting a face by anon:
 >send the picture to inpaint
@@ -672,7 +651,7 @@ Tutorial + how to use on ALL models (applies for the NAI vae too): https://www.r
 
 * SD 1.4 Anime styled: https://huggingface.co/hakurei/waifu-diffusion-v1-4/blob/main/vae/kl-f8-anime.ckpt
 	* https://twitter.com/haruu1367/status/1579286947519864833
-* Stability AI: https://huggingface.co/stabilityai
+* Stability AI's VAE (an anon recommended vae-ft-mse-840k-ema-pruned): https://huggingface.co/stabilityai
 
 **Booru tag scraping:**
 * https://sleazyfork.org/en/scripts/451098-get-booru-tags 
@@ -814,6 +793,11 @@ Someone's prompt using a lot of wildcards: Positive Prompt: (masterpiece:1.4), (
 * 558 artists comparison: https://decentralizedcreator.com/list-of-artists-supported-by-stable-diffusion/
 * NAI artist comparison + some extra information: https://zele.st/NovelAI/?Artists
 
+Some comparisons of 421 different artists in different models.
+* > Berry Mix: https://mega.nz/file/8OlUkapK#4XpOm4kOcw3LOJZeSuSZbO89tRrAuRO_RSfmu_RqzWA
+* > SD v1.5 (CLIP 1): https://mega.nz/file/dDU2WB5B#wFsVS0RUX6YK2IJiOtQ5nI7sMMrWEqZg2r3fZrCQ4OI
+* > SD v1.5 (CLIP 2): https://mega.nz/file/lS1iyQCT#zJhV6URsT01QJpYdqbf3Jubhyi09rXn8FFT-HaXvgd0
+
 Anon's list of comparisons:
 * Stable Diffusion v1.5, Waifu Diffusion v1.3, Trinart it4
 > https://imgur.com/a/ADPHh9q
@@ -865,11 +849,39 @@ Compare that with what you'd get trying to generate the same exact proompt using
 
 ### **Models***
 
+* Stability AI's VAE (an anon recommended vae-ft-mse-840k-ema-pruned): https://huggingface.co/stabilityai
+
 * pokemon, uses defusers (not DB): https://huggingface.co/lambdalabs/sd-pokemon-diffusers
 
 * NAI to diffusers (?, not too sure): https://huggingface.co/millionlive765/ntest
 
 * NAI torrent apparently, not sure if it's real: https://files.catbox.moe/tk686z.torrent
+
+* Papercut: https://huggingface.co/Fictiverse/Stable_Diffusion_PaperCut_Model
+
+
+* anything.ckpt, a Chinese finetune of NAI: https://www.bilibili.com/read/cv19603218
+	* instructions to download from Baidu from outside China and without SMS or an account and with speeds more than 100KBps: 
+		>Download a download manager that allows for a custom user-agent (e.g. IDM)
+			>If you need IDM, contact me
+		>Go here: https://udown.vip/#/
+		>In the "在线解析" section, put 'https://pan.baidu.com/s/1gsk77KWljqPBYRYnuzVfvQ' into the first prompt box and 'hheg' in the second (remove the ')
+		>Click the first blue button
+		>In the bottom box area, click the folder icon next to NovelAI
+		>Open your dl manager and add 'netdisk;11.33.3;' into the user-agent section (remove the ')
+		>Click the paperclip icon next to the item you want to download in the bottom box and put it into your download manager
+	* I didn't check these: https://rentry.org/NAI-Anything_v3_0_n_v2_1
+	* SDmodel owner thinks it's resumed training
+	* seems to provide more detailed backgrounds and characters over NAI, but also seems to overfry some stuff. Try lowering the cfg if that happens
+	* Might be CCP spyware or something, it's probably safe but I didn't unpickle it myself
+
+potential magnet that someone gave me
+``` python
+magnet:?xt=urn:btih:689c0fe075ab4c7b6c08a6f1e633491d41186860&dn=Anything-V3.0.ckpt&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=udp%3a%2f%2f9.rarbg.com%3a2810%2fannounce&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a6969%2fannounce&tr=udp%3a%2f%2fopentracker.i2p.rocks%3a6969%2fannounce&tr=https%3a%2f%2fopentracker.i2p.rocks%3a443%2fannounce&tr=udp%3a%2f%2ftracker.torrent.eu.org%3a451%2fannounce&tr=udp%3a%2f%2fopen.stealth.si%3a80%2fannounce&tr=http%3a%2f%2ftracker.openbittorrent.com%3a80%2fannounce&tr=udp%3a%2f%2fvibe.sleepyinternetfun.xyz%3a1738%2fannounce&tr=udp%3a%2f%2ftracker1.bt.moack.co.kr%3a80%2fannounce&tr=udp%3a%2f%2ftracker.zerobytes.xyz%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.tiny-vps.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.theoks.net%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.swateam.org.uk%3a2710%2fannounce&tr=udp%3a%2f%2ftracker.publictracker.xyz%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.monitorit4.me%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.moeking.me%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.encrypted-data.xyz%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.dler.org%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.army%3a6969%2fannounce&tr=http%3a%2f%2ftracker.bt4g.com%3a2095%2fannounce
+```
+from: https://bt4g.org/magnet/689c0fe075ab4c7b6c08a6f1e633491d41186860
+
+another magnet on https://rentry.org/sdmodels from the author
 
 **Berrymix Recipe**
 Rentry: https://rentry.org/berrymix
@@ -975,6 +987,7 @@ magnet:?xt=urn:btih:e975132162842e0b3e96948f8bffcb66071ecc97&dn=berry_mix.ckpt&t
 	* v2: https://mega.nz/file/QEFiBYZI#UHDGNgTvImZX7r9r6d2z3-kUqzW0tHdmk-SpihcrZn0
 	* LIST OF MERGED MODELS: https://discord.com/channels/900672465276116994/1035895704377368687
 	* Discord: https://discord.gg/6YB3cwU2
+	* HF: https://huggingface.co/ShinCore/MMDv1-18
 
 * Mega mixing guide (has a different berry mix): https://rentry.org/lftbl
 	* Model showcases from lftbl: https://rentry.co/LFTBL-showcase
@@ -1106,6 +1119,8 @@ Links:
 * Gyokai/onono imoko/@_himehajime: https://mega.nz/folder/HzYT1T7L#H9TWVVYowA0cX8Eh6x_H3g
 	* use term 'gyokai' under class '1girl' e.g 'illustration of gyokai 1girl' + optionally 'multicolored hair, halftone, polka dot'
 	* Img: https://i.4cdn.org/h/1667881224238388.jpg
+* Amano: https://huggingface.co/RayHell/Amano-Diffusion
+* Midjourney: https://huggingface.co/prompthero/midjourney-v4-diffusion
 
 ### **Embeddings**
 !!! info If an embedding is >80mb, I mislabeled it and it's a hypernetwork
@@ -1376,6 +1391,9 @@ Found on 4chan:
 * Elira (16v, 3k, nai sfw): https://litter.catbox.moe/4ylbez.png
 * Rratatat (NAI, 16v, 10k): https://files.catbox.moe/nrekhk.png
 	* Uploader: Works better with "red hair, multicolored hair, twintails"
+* WLOP (reupload, retrained WITHOUT signatures - 24 vectors, 0.00005 learning rate, around 19000 steps: https://mega.nz/folder/PfhRUbST#6oXUaNjk_B6nhJzjc_M0UA
+* ratatatat74 (reupload, retrained WITHOUT VAE - 24 vectors, 0.00005 learning rate, 13500 steps): https://mega.nz/folder/PfhRUbST#6oXUaNjk_B6nhJzjc_M0UA
+* Wiwa embed steps pre deep frying: https://files.catbox.moe/6lu6od.zip
 
 NOTE TO MYSELF, ADD THAT PONY EMBEDDING THAT I DOWNLOADING 2 WEEKS AGO
 
@@ -1577,8 +1595,7 @@ Found on 4chan:
 	* Alkemanubis: Alkemanubis is with elu activation function and normalisation, Alkemanubis4 is with swish and dropout, Alkemanubis5 is with linear and dropout. All have 1, 2, 4, 2, 1 layer structure.
 	* dataset and more fullres preview grid are inside too.
 * HKSW (wrong eye color because of dataset): https://files.catbox.moe/dykyab.pt
-* Nanachi (retrained, 4700 steps, sketches are good, VAE turned off): https://mega.nz/folder/PfhRUbST#6oXUaNjk_B6nhJzjc_M0UA
-	* Included is: Nanachi and Puuzaki Puuna (VAE was turned on during training)
+* Nanachi and Puuzaki Puuna (retrained, 4700 steps, sketches are good, VAE turned off): https://mega.nz/folder/PfhRUbST#6oXUaNjk_B6nhJzjc_M0UA
 * HiRyS: https://mega.nz/file/Mk8jTZ4I#TdlF5Bxwz_gAuQeR0PWa_YUZotcQkA34d6m49I6eUMc
 	* Dead link, I think this is the same hypernetwork: https://litter.catbox.moe/rx8uv0.pt
 * 4k, 3d, highres images: 4k, 3d, highres images: https://mega.nz/file/UAEHkbhK#R-zdpiIz6Ig2-laa-M9_Hmtq6xgLNJZ0ZwVOiXt3OSc
@@ -1625,6 +1642,9 @@ Found on 4chan:
 	* Uploader note: Works best with huge or gigantic breasts. Occasionally has some problems with extra limbs or nipples. Tags like tall female, muscular female or abs may lead to small heads or weirdly proportioned bodies, so I recommend lowering the weighting on those.
 
 * IRyS (not sure if this is a reupload of a previous one): https://files.catbox.moe/qnery5.pt
+* Nanachi (reupload, re-retrained WITHOUT sneaky VAE - 0.000005 learning rate, around 16000 steps, around 13000 steps): https://mega.nz/folder/PfhRUbST#6oXUaNjk_B6nhJzjc_M0UA
+* Puuzaki Puuna (reupload, re-retrained WITHOUT sneaky VAE - 0.000005 learning rate): https://mega.nz/folder/PfhRUbST#6oXUaNjk_B6nhJzjc_M0UA
+
 
 Found on Korean Site of Wisdom (WIP):
 * Terada Tera: https://drive.google.com/file/d/1APwInBROTUdyeoW92yHFn_zBh7rY7b7I/view?usp=sharing
@@ -2008,7 +2028,7 @@ Datasets:
 * Documentation: https://www.reddit.com/r/StableDiffusion/comments/wvzr7s/tutorial_fine_tuning_stable_diffusion_using_only/
 * Guide on dreambooth training in comments: https://www.reddit.com/r/StableDiffusion/comments/yo05gy/cyberpunk_character_concepts/
 * Dreambooth on 12gb no WSL: https://gist.github.com/geocine/e51fcc8511c91e4e3b257a0ebee938d0
-* Good Twitter Tutorial (read replies): https://twitter.com/divamgupta/status/1587452063721693185
+* Very good beginner Twitter tutorial (read replies): https://twitter.com/divamgupta/status/1587452063721693185
 
 * Site where you can train: https://www.astria.ai/
 * Colab: https://colab.research.google.com/github/huggingface/notebooks/blob/main/diffusers/sd_textual_inversion_training.ipynb
@@ -2016,6 +2036,9 @@ Datasets:
 * Colab 3: https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
 * Colab 4 (fast): https://github.com/TheLastBen/fast-stable-diffusion
 * site?: drawanyone.com
+
+Extension: https://github.com/d8ahazard/sd_dreambooth_extension
+* Based on https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth
 
 * Original dreambooth: https://github.com/JoePenna/Dreambooth-Stable-Diffusion
 
@@ -2076,6 +2099,8 @@ for key in tqdm(theta_0.keys(), desc="Stage 1/2"):
 * batch checkpoint merger: https://github.com/lodimasq/batch-checkpoint-merger
 
 * Aesthetic Gradients: https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients
+
+* Image aesthetic rating (?): https://github.com/waifu-diffusion/aesthetic
 
 * 1 img TI: https://huggingface.co/lambdalabs/sd-image-variations-diffusers
 
@@ -2197,14 +2222,14 @@ https://rentry.org/sdg_FAQ
 	now __reduce__ is restricted (anything not NN related), the joke lives on as a meme
 
 **I want to run this, but my computer is too bad. Is there any other way?**
-Check out one of these:
-* Free online browser SD: https://huggingface.co/spaces/stabilityai/stable-diffusion
+Check out one of these (I did not used most of these, so they might be unsafe to use):
+* (used and safe) Free online browser SD: https://huggingface.co/spaces/stabilityai/stable-diffusion
 * https://promptart.labml.ai/playground
 * https://novelai.manana.kr/
 * https://boards.4channel.org/g/thread/89199040
 * https://www.mage.space/
-* https://github.com/TheLastBen/fast-stable-diffusion
-* https://github.com/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb
+* (used and safe) https://github.com/TheLastBen/fast-stable-diffusion
+* (used and safe) https://github.com/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb
 * visualise.ai
 	* Account required
 	* Free unlimited 512x512/64 step runs
@@ -2225,6 +2250,8 @@ Check out one of these:
 * HF demo list: https://pastebin.com/9X1BPf8S
 * Automatic1111 webui on SageMaker Studio Lab (free): https://github.com/Miraculix200/StableDiffusionUI_SageMakerSL/blob/main/StableDiffusionUI_SageMakerSL.ipynb
 * notebook for running Dreambooth on SageMaker Studio Lab: https://github.com/Miraculix200/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion_SageMakerSL.ipynb
+* anything.ckpt: https://colab.research.google.com/drive/1CkIPJrtXa3hlRsVk4NgpM637gmE3Ly5v
+* Google Colab webui with 1.5/1.5 inpainting/VAE/waifu division (?): https://colab.research.google.com/drive/1VYmKX7eayuI8iTaCFKVHw9uxSkLo8Mde
 
 **How do I directly check AUTOMATIC1111's webui updates?**
 >For a complete list of updates, go here: https://github.com/AUTOMATIC1111/stable-diffusion-webui/commits/master
@@ -2325,6 +2352,7 @@ From anon:
 * debug guide: https://rentry.org/pf98i
 * Info dump: https://rentry.org/sdhassan
 * Massive dumpy dump: https://rentry.org/RentrySD
+* Miraheze: https://stablediffusion.miraheze.org/wiki/Main_Page
 
 **Boorus:**
 * Danbooru: danbooru.donmai.us/
@@ -2396,6 +2424,7 @@ https://twitter.com/NAIoppailoli
     https://twitter.com/epitaphtoadog
     https://twitter.com/Merkurial_Mika
     https://twitter.com/FizzleDorf
+	https://twitter.com/ai_hexcrawl
 
 Sigmoid math: https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/2658
 
@@ -2465,6 +2494,22 @@ something dreambooth someone used it so I add it here: https://github.com/kanewa
 youtuber that helped people understand webui: https://www.youtube.com/channel/UCEIMmQErvGDLXpmlzp7L-yg
 
 something: https://theinpaint.com/
+
+cool mmd to img2img while staying consistent: https://twitter.com/nZk1015/status/1589317103383113729
+
+Pretty nice explanation on VAE: https://youtu.be/hoLmBFEsHHg
+
+api info: https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3734
+
+poser: https://app.posemy.art/
+
+safetensor thing?: https://ctftime.org/writeup/16723
+
+Nvidia overclocking, undervolting, benching, etc: https://github.com/LunarPSD/NvidiaOverclocking/blob/main/Nvidia%20Overclocking.md
+
+Pytorch and torch vision compiled with different CUDA versions: 
+>source venv/bin/activate
+>pip install -I pytorch==11.3
 
 ## Hall of Fame
 automatic1111
