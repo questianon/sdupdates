@@ -15,7 +15,7 @@ The rentry is generally updated more frequently than this github so I don't spam
 
 !!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates
 
-!!! note Changelog: added hdg sdg vt reddit, some discord
+!!! note Changelog: vt hdg some extra discord stuff, need to do sdg
 
 !!! note Request: Looking for javascript + react coders (someone who knows how to make a form -> xlsx, doesn't need to be in js + react)
 
@@ -39,7 +39,7 @@ All rentry links are ended with a '.org' here and can be changed to a '.co'. Als
 * FAQ: https://rentry.org/sdupdates2#common-questions-ctrlcmd-f
 * Link Dump: https://rentry.org/sdupdates2#rentrys-link-dump-will-sort
 * Hall of Fame: https://rentry.org/sdupdates2#hall-of-fame
-* Miscellaneous: https://rentry.org/sdupdates2#misc
+* Miscellaneous: https://rentry.org/sdupdates2#miscellaneous
 * Github: https://github.com/questianon/sdupdates/
 
 ## Contact
@@ -71,6 +71,24 @@ Update ETA: Busy today, will update tomorrow with all sdg links from the past 2 
 			a. if this doesn't work, run ```python -m venv venv``` beforehand
 		3. ```git pull```
 		4. ```pip install -r requirements.txt```
+
+>11/8+11/7
+* Dreambooth extension released: https://github.com/d8ahazard/sd_dreambooth_extension
+	* Downloadable through the extension manager
+	* Bug (anon provided): checkpoint saving per N iteration makes you OOM if you are on 12gb, if you disable that then your entire thing wont save, so you have to make the number match the maximum steps for it to save properly
+* (move this down later) anything.ckpt, a Chinese finetune of NAI, is released: https://www.bilibili.com/read/cv19603218
+	* instructions to download from Baidu from outside China and without SMS or an account and with speeds more than 100KBps: 
+		>Download a download manager that allows for a custom user-agent (e.g. IDM)
+			>If you need IDM, contact me
+		>Go here: https://udown.vip/#/
+		>In the "在线解析" section, put 'https://pan.baidu.com/s/1gsk77KWljqPBYRYnuzVfvQ' into the first prompt box and 'hheg' in the second (remove the ')
+		>Click the first blue button
+		>In the bottom box area, click the folder icon next to NovelAI
+		>Open your dl manager and add 'netdisk;11.33.3;' into the user-agent section (remove the ')
+		>Click the paperclip icon next to the item you want to download in the bottom box and put it into your download manager
+	* SDmodel owner thinks it's resumed training
+	* seems to provide more details over NAI, but also seems to overfry some stuff. Try lowering the cfg
+	* Might be CCP spyware or something, it's probably safe but I didn't unpickle it myself
 
 >11/7
 * ddetailer released: https://github.com/dustysys/ddetailer
@@ -180,7 +198,7 @@ Update ETA: Busy today, will update tomorrow with all sdg links from the past 2 
 * More hypernetwork changes
 * Unofficial MagicMix implementation with Stable Diffusion in PyTorch: https://github.com/cloneofsimo/magicmix
 	* Good img2img with "geometric coherency and semantical layouts"
-* Convert any model to Safetensors and open a PR (public repository?)
+* Convert any model to Safetensors and open a PR (pull request = a request/proposal to apply a modification to a github repository)
 	* Safetensors are the unpicklable format
 	* https://huggingface.co/spaces/safetensors/convert
 	* https://github.com/huggingface/safetensors
@@ -316,6 +334,7 @@ Using emoticons and emojis can be really good: https://docs.google.com/spreadshe
 🕊💥😱😲😶🙄 leads to https://files.catbox.moe/biy755.png
 🌷🕊🗓👋😛👋 leads to https://files.catbox.moe/7khxe0.png
 spoken squiggle: https://twitter.com/AI_Illust_000/status/1588838369593032706
+Anon: The emoji performs well in terms of semantic accuracy because it is only one character.
 
 Database of prompts: https://publicprompts.art/
 * Discord: https://discord.com/invite/jvQJFFFx26
@@ -753,6 +772,8 @@ Wildcards:
 
 Wildcard extension: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wildcards/
 
+Someone's prompt using a lot of wildcards: Positive Prompt: (masterpiece:1.4), (best quality:1.4), [[nsfw]], highres, large breasts, 1girl, detailed clothing, skimpy clothing, __haircolor__, __haircut__, __hairlength__, __eyecolor__, __cum__, ((__fetish__)), __lingerie__, __lingeriestate__, ((__sexacts__)), __sexposition__,
+
 **Artist Comparisons (may or may not work with NAI):**
 * SD 1.5 artists (might lag your pc): https://docs.google.com/spreadsheets/d/1SRqJ7F_6yHVSOeCi3U82aA448TqEGrUlRrLLZ51abLg/htmlview#
 * pre-modern art: https://www.artrenewal.org/Museum/Search#/
@@ -820,6 +841,22 @@ Reduce bias of dreambooth models: https://www.reddit.com/r/StableDiffusion/comme
 Landscape tutorial: https://www.reddit.com/r/StableDiffusion/comments/yivokx/landscape_matte_painting_with_stable_diffusion/
 * https://preview.redd.it/18v93697u8x91.jpg?width=1000&format=pjpg&auto=webp&s=d31fb3efae70ec5e7c9f02befa04a94371b1bbf6
 
+Anon's process: 
+- Start with a prompt to get the general scenario you have in mind, here I was just looking to seggs the rrat so I used the embed here >>36743515 and described some of her character features to help steer the AI (in this case hair details, sharp teeth, her mouse ears and tail) as well as making her be naked and having vaginal sex
+- Generate images at a default resolution size (512 by X pixels) at a relative standard number of steps (30 in this case) and keep going until I find an image thats in a position I like (in this case seed 1920052602 gave me a very nice one to work with, as you can see here https://files.catbox.moe/8z2mua.png (embed))
+- Copy the seed of the image and paste it into the Seed field on the Web UI, which will maintain the composition of the image. I then double the resolution I was working with (so here I went from 512 by 768 to 1024 by 1536) and checkmark the "Hires fix option" underneath the width and height sliders. Hires fix is the secret sauce on the Web UI that helps maintain the detail of the image when you are upscaling the resolution of the image, and combined with that Upscale latent space option I mentioned earlier it really enhances the detail. With that done you can generate the upscaled image.
+- Play around with the weights of the prompt tags and add things to the negatives to fix little things like hair being too red, tummy too chubby, etc. You have to be careful with adding new tags because that can drastically change the image
+
+Anon's booba process:
+    >you can generate a perfect barbie doll anatomy but more accurate chuba in curated
+    >then switch to full, img2img it on the same seed after blotching nipples on it like a caveman, and hit generate
+
+Boooba v2: 
+1. Generate whatever NSFW proompt you were thinking of using the CURATED model, yes, I know that sounds ridiculous https://files.catbox.moe/b6k6i4.png (embed)
+2. Inpaint the naughty bits back in. You REALLY don't have to do a good job of this: https://files.catbox.moe/yegjrw.png (embed)
+3. Switch to Full after clicking "Save", set Strength to 0.69, Noise to 0.17, and make sure you copy/paste the same seed # back in. Hit Generate: https://files.catbox.moe/8dag88.png (embed)
+Compare that with what you'd get trying to generate the same exact proompt using the Full model purely txt2img on the same seed: https://files.catbox.moe/ytfdv3.png (embed)
+
 ##  Models, Embeddings, and Hypernetworks
 
 !!! Downloads listed as "sus" or "might be pickled" generally mean there were 0 replies and not enough "information" (like training info). or, the replies indicated they were suspicious. I don't think any of the embeds/hypernets have had their code checked so they could all be malicious, but as far as I know no one has gotten pickled yet 
@@ -831,6 +868,8 @@ Landscape tutorial: https://www.reddit.com/r/StableDiffusion/comments/yivokx/lan
 * pokemon, uses defusers (not DB): https://huggingface.co/lambdalabs/sd-pokemon-diffusers
 
 * NAI to diffusers (?, not too sure): https://huggingface.co/millionlive765/ntest
+
+* NAI torrent apparently, not sure if it's real: https://files.catbox.moe/tk686z.torrent
 
 **Berrymix Recipe**
 Rentry: https://rentry.org/berrymix
@@ -919,6 +958,11 @@ magnet:?xt=urn:btih:e975132162842e0b3e96948f8bffcb66071ecc97&dn=berry_mix.ckpt&t
 >NAI-v1.5-0.25 + F222 + SD1.5 Difference @ 1.0 -> berry-lite
 >berry-lite + r34_e4 Weighted Sum @ 0.15 -> blueberrymix
 * xy plot: https://i.4cdn.org/h/1667753676787577.jpg
+ 
+**Blackberry Mix** (Blueberry swapped for older SD and Zeipher female anatomy models)
+>NAI + SD1.4 Weighted Sum @ 0.25 -> NAI-v1.4-0.25
+>NAI-v1.4-0.25 + F111 + SD1.4 Difference @ 1.0 -> berry-lite
+>berry-lite + r34_e4 Weighted Sum @ 0.15 -> blackberrymix
  
 * UNET to ckpt models (use at your own risk, might be pickled): https://rentry.org/U2C-Models
  
@@ -1057,7 +1101,11 @@ Links:
 				https://i.imgur.com/r0bc6i8.png
 				https://i.imgur.com/gkEW0w0.png
 				https://i.imgur.com/Zj8PtZC.png
-
+* Made in Abyss (MIA 1-6 V2): https://drive.google.com/drive/folders/1FxFitSdqMmR-fNrULmTpaQwKEefi4UGI?usp=sharing
+	* Uploader note: I was hesitant to share this one because I have been having a lot of problems with the new captioning format. With the new format essentially we have much better multiple character flexibility and outfits. You can generate 2 characters in completely separate outfits with a high percentage of no blending. However, my new captioning was causing everything to train significantly slower, so some side characters don't look as good as they did in the original 1-6 model. There is also a strict captioning format I used, so I also uploaded a prompt readme to the folder which contains all the information needed to best use this model 
+* Gyokai/onono imoko/@_himehajime: https://mega.nz/folder/HzYT1T7L#H9TWVVYowA0cX8Eh6x_H3g
+	* use term 'gyokai' under class '1girl' e.g 'illustration of gyokai 1girl' + optionally 'multicolored hair, halftone, polka dot'
+	* Img: https://i.4cdn.org/h/1667881224238388.jpg
 
 ### **Embeddings**
 !!! info If an embedding is >80mb, I mislabeled it and it's a hypernetwork
@@ -1323,6 +1371,11 @@ Found on 4chan:
 * mano-aloe-v1q (nai, manoaloe,mano aloe): https://files.catbox.moe/0i5qfl.pt
 * Fauna (16v, 10k, nai): https://files.catbox.moe/zizgrw.png
 * wawa (15v, 10k, nai): https://files.catbox.moe/2vpyi2.png
+* Wagashi: https://mega.nz/file/exM21aTT#eawWbqsmajzs-TUCWfrVHvsG2HBEZ3HcYR5cy1AxFPw
+* Deadflow: https://mega.nz/file/y41WHIgC#pXtCly7bzjDNJ7RZl7685_Nj1LTliIif_f_1BWMhHSE
+* Elira (16v, 3k, nai sfw): https://litter.catbox.moe/4ylbez.png
+* Rratatat (NAI, 16v, 10k): https://files.catbox.moe/nrekhk.png
+	* Uploader: Works better with "red hair, multicolored hair, twintails"
 
 NOTE TO MYSELF, ADD THAT PONY EMBEDDING THAT I DOWNLOADING 2 WEEKS AGO
 
@@ -1954,6 +2007,8 @@ Datasets:
 * github + some documentation: https://github.com/cafeai/stable-textual-inversion-cafe
 * Documentation: https://www.reddit.com/r/StableDiffusion/comments/wvzr7s/tutorial_fine_tuning_stable_diffusion_using_only/
 * Guide on dreambooth training in comments: https://www.reddit.com/r/StableDiffusion/comments/yo05gy/cyberpunk_character_concepts/
+* Dreambooth on 12gb no WSL: https://gist.github.com/geocine/e51fcc8511c91e4e3b257a0ebee938d0
+* Good Twitter Tutorial (read replies): https://twitter.com/divamgupta/status/1587452063721693185
 
 * Site where you can train: https://www.astria.ai/
 * Colab: https://colab.research.google.com/github/huggingface/notebooks/blob/main/diffusers/sd_textual_inversion_training.ipynb
@@ -2135,6 +2190,12 @@ https://rentry.org/sdg_FAQ
 * anon: there are checks but they can be disabled and you can still bypass with nested things
 * https://docs.python.org/3/library/pickle.html, https://huggingface.co/docs/hub/security-pickle
 
+* anon:
+	pickle is a format that can load code objects
+	originally the objects weren't sanitized, so remote code could run
+	>by implementing __reduce__ in a class which instances we are going to pickle, we can give the pickling process a callable plus some arguments to run
+	now __reduce__ is restricted (anything not NN related), the joke lives on as a meme
+
 **I want to run this, but my computer is too bad. Is there any other way?**
 Check out one of these:
 * Free online browser SD: https://huggingface.co/spaces/stabilityai/stable-diffusion
@@ -2230,6 +2291,8 @@ From anon:
 **Why doesn't model merging work?**
 >Make sure you have enough ram (2 models that are 2 gb requires 4 gb of ram). Increase your page file if necessary
 
+**Why is my downloaded embedding so bad?**
+>Make sure that you're using the correct model. Anon says,"Embeddings and hypernetworks only work reliably on the model they were trained for". Also, play around with weighting your embedding
 
 ## Link Dump will sort
 
@@ -2400,6 +2463,8 @@ info: https://www.reddit.com/r/StableDiffusion/comments/yjwuls/demystifying_prom
 something dreambooth someone used it so I add it here: https://github.com/kanewallmann/Dreambooth-Stable-Diffusion
 
 youtuber that helped people understand webui: https://www.youtube.com/channel/UCEIMmQErvGDLXpmlzp7L-yg
+
+something: https://theinpaint.com/
 
 ## Hall of Fame
 automatic1111
