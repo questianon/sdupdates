@@ -15,9 +15,7 @@ The rentry is generally updated more frequently than this github so I don't spam
 
 !!! info There is now a github for this rentry: https://github.com/questianon/sdupdates. This should allow you to see changes across the different updates
 
-!!! note Changelog: vt hdg some extra discord stuff, need to do sdg
-
-!!! note Request: Looking for javascript + react coders (someone who knows how to make a form -> xlsx, doesn't need to be in js + react)
+!!! note Changelog: everything except discord and reddit
 
 All rentry links are ended with a '.org' here and can be changed to a '.co'. Also, use incognito/private browsing when opening google links, else you lose your anonymity / someone may dox you
 
@@ -72,6 +70,17 @@ Update ETA: Busy today, will update tomorrow with all sdg links from the past 2 
 		3. ```git pull```
 		4. ```pip install -r requirements.txt```
 
+>11/9+11/8
+* Advanced Prompt Tuning method (APT), can train embeddings with one image: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/2945
+	* Will be an extension (?)
+	* SD with APT: https://github.com/7eu7d7/DreamArtist-stable-diffusion
+	* pretrained model for fast training by creator: https://github.com/7eu7d7/pixiv_AI_crawler
+* New latent diffusion-based upscaler by StabilityAI staff member: https://twitter.com/StabilityAI/status/1590531946026717186
+	* Colab: https://colab.research.google.com/drive/1o1qYJcFeywzCIdkfKJy7cTpgZTCM2EI4
+* Discovered what NAI's "Variations" feature does (by enhance anon): Alright, variations is really similar to enhance. It sends it to img2img with strength hardcoded @ 0.8, and then increments the seed by 1 for each variation given. Nothing super special.
+* Discovered what NAI's "Enhance" feature does (by anon): It upscales the image with Lanczos (defaults to 1.5x, which is the max), and then sends it to img2img with [whatever sampler you specified] @ 50 steps, with the denoising strength ranging from 0.2 to 0.6 (this is the "Magnitude" value that NAI shows, ranging from 1 to 5). It's like a much more expensive version of SD Upscale, which does it as tiles to save VRAM, and instead this does it on the whole image at once, so it requires more VRAM.
+* US imposes new export restrictions on NVIDIA to China
+
 >11/8+11/7
 * AI video by google (Phenaki + Imagen Video Combination): https://www.youtube.com/clip/Ugkx_p77cvDSUkXBXRlVuq2sHVTu5YTwGiFB
 * Using SD as a compressor: https://pub.towardsai.net/stable-diffusion-based-image-compresssion-6f1f0a399202
@@ -81,7 +90,9 @@ Update ETA: Busy today, will update tomorrow with all sdg links from the past 2 
 * Dreambooth extension released: https://github.com/d8ahazard/sd_dreambooth_extension
 	* Downloadable through the extension manager
 	* Bug (anon provided): checkpoint saving per N iteration makes you OOM if you are on 12gb, if you disable that then your entire thing wont save, so you have to make the number match the maximum steps for it to save properly
-* anything.ckpt, a Chinese finetune of NAI, is released: https://www.bilibili.com/read/cv19603218
+* anything.ckpt (v3 6569e224; v2.1 619c23f0), a Chinese finetune/training continuation of NAI, is released: https://www.bilibili.com/read/cv19603218
+	* Huggingface, might be pickled: https://huggingface.co/Linaqruf/anything-v3.0/tree/main
+		* Uploader pruned one of the 3.0 models down to 4gb
 	* Torrent: https://rentry.org/sdmodels#anything-v30-38c1ebe3-1a7df6b8-6569e224
 	* Supposed ddl, I didn't check these for pickles: https://rentry.org/NAI-Anything_v3_0_n_v2_1
 	* instructions to download from Baidu from outside China and without SMS or an account and with speeds more than 100KBps: 
@@ -95,9 +106,11 @@ Update ETA: Busy today, will update tomorrow with all sdg links from the past 2 
 		>Click the paperclip icon next to the item you want to download in the bottom box and put it into your download manager
 		>
 		>To get anything v3 and v2.1: first box:https://pan.baidu.com/s/1r--2XuWV--MVoKKmTftM-g, second box:ANYN
+			* another link that has 1 letter changed that could mean it's pickled: https://pan.baidu.com/s/1r--2XuWV--MVoKKmTfyM-g
 	* SDmodel owner thinks it's resumed training
-	* seems to provide more detailed backgrounds and characters over NAI, but also seems to overfry some stuff. Try lowering the cfg if that happens
-	* Passes AUTOMATIC's pickle tester, but there's no guarantee on pickle safety
+	* seems to be better (e.g. provide more detailed backgrounds and characters) than NAI, but can overfry some stuff. Try lowering the cfg if that happens
+	* Passes AUTOMATIC's pickle tester and https://github.com/zxix/stable-diffusion-pickle-scanner, but there's no guarantee on pickle safety, so it still might be ccp spyware
+	* Use the vae or else your outputs will have a grey filter
 
 >11/7
 * ddetailer released: https://github.com/dustysys/ddetailer
@@ -117,7 +130,7 @@ Update ETA: Busy today, will update tomorrow with all sdg links from the past 2 
 	* Creator's statement: https://www.reddit.com/r/StableDiffusion/comments/ynshup/comment/ivbhhrf/?utm_source=share&utm_medium=web2x&context=3
 
 >11/5 continued+11/6
-* Drama in SD Training Labs server/ML Research Labs server: https://rentry.org/sdupdates2#misc
+* Drama in SD Training Labs server/ML Research Labs server: https://rentry.org/sdupdates2#miscellaneous
 * Lots of issues with overpaying for dreambooth training: https://www.reddit.com/r/StableDiffusion/comments/ynb6h1/dont_overpay_for_dreambooth_training/
 	* TLDR (from the creator of the dreambooth ui):
 		You don't need pay more than 10$ for a hosted dreambooth training.
@@ -490,12 +503,15 @@ Unprompted extension released: https://github.com/ThereforeGames/unprompted
 
 StylePile: https://github.com/some9000/StylePile
 script that pulls prompt from Krea.ai and Lexica.art based on search terms: https://github.com/Vetchems/sd-lexikrea
+randomize generation params for txt2img, works with other extensions: https://github.com/stysmmaker/stable-diffusion-webui-randomize
 
 Ideas for when you have none: https://pentoprint.org/first-line-generator/
 Colors: http://colorcode.is/search?q=pantone
 
-PaintHua.com - New GUI focusing on Inpainting and Outpainting
+https://www.painthua.com/ - New GUI focusing on Inpainting and Outpainting
 * https://www.reddit.com/r/StableDiffusion/comments/ygp0iv/painthuacom_new_gui_focusing_on_inpainting_and/
+* To use it with webui add this to webui-user.bat:  --api --cors-allow-origins=https://www.painthua.com 
+* Vid: https://www.bilibili.com/video/BV16e4y1a7ne/
 
 I didn't check the safety of these plugins, but they're open source, so you can check them yourself
 Photoshop/Krita plugin (free): https://internationaltd.github.io/defuser/ (kinda new and currently only 2 stars on github)
@@ -545,7 +561,7 @@ Img2img animation script: https://github.com/Animator-Anon/Animator/blob/main/an
 Google's interpolation script: https://github.com/google-research/frame-interpolation
 
 Animation Guide: https://rentry.org/AnimAnon#introduction
-Chroma key after SD: https://files.catbox.moe/d27xdl.gif 
+Chroma key after SD (fully prompted?): https://files.catbox.moe/d27xdl.gif 
 * Cool mmd vid (20 frames, I think it uses chroma key): https://files.catbox.moe/jtp14x.mp4
 
 More animation guide: https://www.reddit.com/r/StableDiffusion/comments/ymwk53/better_frame_consistency/
@@ -625,7 +641,11 @@ Autocomplete Tags: https://github.com/DominikDoom/a1111-sd-webui-tagcomplete
 Prompt Randomizer: https://github.com/adieyal/sd-dynamic-prompting
 Wildcards: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wildcards/
 Wildcard script + collection of wildcards: https://app.radicle.xyz/seeds/pine.radicle.garden/rad:git:hnrkcfpnw9hd5jb45b6qsqbr97eqcffjm7sby
-Symmetric image script: https://github.com/dfaker/SD-latent-mirroring
+Symmetric image script (latent mirroring): https://github.com/dfaker/SD-latent-mirroring
+* Comparisons: 
+	* No mirroring - https://files.catbox.moe/blbnwt.png (embed)
+	* Alternate Steps - Roll Channels - fraction 0.2 - https://files.catbox.moe/dprlxr.png (embed)
+	* Alternate Steps - Roll Channels - fraction 0.3 - https://files.catbox.moe/7az24b.png
 
 Clip interrogator: https://colab.research.google.com/github/pharmapsychotic/clip-interrogator/blob/main/clip_interrogator.ipynb
 2 (apparently better than AUTO webui's interrogate): https://huggingface.co/spaces/pharma/CLIP-Interrogator, https://github.com/pharmapsychotic/clip-interrogator
@@ -642,7 +662,7 @@ Inpainting a face by anon:
 >denoising strength .4-.5 if you want minor adjustments, .6-.7 if you want to really regenerate the entire masked area
 >let it rip
 
-* AUTOMATIC1111 webui modification that "compensates for the natural heavy-headedness of sd by adding a line from 0 -> sqrt(2) over the 0 -> 74 token range (anon)" (evens out the token weights)
+* AUTOMATIC1111 webui modification that "compensates for the natural heavy-headedness of sd by adding a line from 0 -> sqrt(2) over the 0 -> 74 token range (anon)" (evens out the token weights with a linear model, helps with the weight reset at 75 tokens (?))
 	* https://rentry.org/wkk37
 
 **VAEs**
@@ -651,7 +671,9 @@ Tutorial + how to use on ALL models (applies for the NAI vae too): https://www.r
 
 * SD 1.4 Anime styled: https://huggingface.co/hakurei/waifu-diffusion-v1-4/blob/main/vae/kl-f8-anime.ckpt
 	* https://twitter.com/haruu1367/status/1579286947519864833
-* Stability AI's VAE (an anon recommended vae-ft-mse-840k-ema-pruned): https://huggingface.co/stabilityai
+* Stability AI's VAE: https://huggingface.co/stabilityai 
+	* Comparisons: https://huggingface.co/stabilityai/sd-vae-ft-mse-original
+	* an anon recommended vae-ft-mse-840k-ema-pruned: https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.ckpt, https://huggingface.co/stabilityai/sd-vae-ft-mse-original/tree/main
 
 **Booru tag scraping:**
 * https://sleazyfork.org/en/scripts/451098-get-booru-tags 
@@ -748,6 +770,7 @@ Wildcards:
 * Poses: https://pastebin.com/bgkunjw2
 * Hairstyles: https://pastebin.com/GguTseaR
 * Actresses: https://raw.githubusercontent.com/Mylakovich/SD-wildcards/main/wildcards/actress.txt
+* Punks: https://pastebin.com/rw2fPSHe
 
 Wildcard extension: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wildcards/
 
@@ -845,9 +868,13 @@ Compare that with what you'd get trying to generate the same exact proompt using
 
 !!! Downloads listed as "sus" or "might be pickled" generally mean there were 0 replies and not enough "information" (like training info). or, the replies indicated they were suspicious. I don't think any of the embeds/hypernets have had their code checked so they could all be malicious, but as far as I know no one has gotten pickled yet 
 
-!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html, https://huggingface.co/docs/hub/security-pickle
+!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html, https://huggingface.co/docs/hub/security-pickle. Make sure to check them for pickles using a tool like https://github.com/zxix/stable-diffusion-pickle-scanner
 
 ### **Models***
+
+Collection of potentially dangerous models: https://bt4g.org/search/.ckpt/1
+
+* SD v1.5: https://huggingface.co/runwayml/stable-diffusion-v1-5
 
 * Stability AI's VAE (an anon recommended vae-ft-mse-840k-ema-pruned): https://huggingface.co/stabilityai
 
@@ -860,7 +887,11 @@ Compare that with what you'd get trying to generate the same exact proompt using
 * Papercut: https://huggingface.co/Fictiverse/Stable_Diffusion_PaperCut_Model
 
 
-* anything.ckpt, a Chinese finetune of NAI: https://www.bilibili.com/read/cv19603218
+* anything.ckpt (v3 6569e224; v2.1 619c23f0), a Chinese finetune/training continuation of NAI, is released: https://www.bilibili.com/read/cv19603218
+	* Huggingface, might be pickled: https://huggingface.co/Linaqruf/anything-v3.0/tree/main
+		* Uploader pruned one of the 3.0 models down to 4gb
+	* Torrent: https://rentry.org/sdmodels#anything-v30-38c1ebe3-1a7df6b8-6569e224
+	* Supposed ddl, I didn't check these for pickles: https://rentry.org/NAI-Anything_v3_0_n_v2_1
 	* instructions to download from Baidu from outside China and without SMS or an account and with speeds more than 100KBps: 
 		>Download a download manager that allows for a custom user-agent (e.g. IDM)
 			>If you need IDM, contact me
@@ -870,15 +901,31 @@ Compare that with what you'd get trying to generate the same exact proompt using
 		>In the bottom box area, click the folder icon next to NovelAI
 		>Open your dl manager and add 'netdisk;11.33.3;' into the user-agent section (remove the ')
 		>Click the paperclip icon next to the item you want to download in the bottom box and put it into your download manager
-	* I didn't check these: https://rentry.org/NAI-Anything_v3_0_n_v2_1
-	* SDmodel owner thinks it's resumed training
-	* seems to provide more detailed backgrounds and characters over NAI, but also seems to overfry some stuff. Try lowering the cfg if that happens
-	* Might be CCP spyware or something, it's probably safe but I didn't unpickle it myself
-
+		>
+		>To get anything v3 and v2.1: first box:https://pan.baidu.com/s/1r--2XuWV--MVoKKmTftM-g, second box:ANYN
+			* another link that has 1 letter changed that could mean it's pickled: https://pan.baidu.com/s/1r--2XuWV--MVoKKmTfyM-g
+	* seems to be better (e.g. provide more detailed backgrounds and characters) than NAI, but can overfry some stuff. Try lowering the cfg if that happens
+	* Passes AUTOMATIC's pickle tester and https://github.com/zxix/stable-diffusion-pickle-scanner, but there's no guarantee on pickle safety, so it still might be ccp spyware
+	* Use the vae or else your outputs will have a grey filter
+	* Supposed torrent from anon on /g/ (don't know if safe)
+	
 potential magnet that someone gave me
 ``` python
 magnet:?xt=urn:btih:689c0fe075ab4c7b6c08a6f1e633491d41186860&dn=Anything-V3.0.ckpt&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=udp%3a%2f%2f9.rarbg.com%3a2810%2fannounce&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a6969%2fannounce&tr=udp%3a%2f%2fopentracker.i2p.rocks%3a6969%2fannounce&tr=https%3a%2f%2fopentracker.i2p.rocks%3a443%2fannounce&tr=udp%3a%2f%2ftracker.torrent.eu.org%3a451%2fannounce&tr=udp%3a%2f%2fopen.stealth.si%3a80%2fannounce&tr=http%3a%2f%2ftracker.openbittorrent.com%3a80%2fannounce&tr=udp%3a%2f%2fvibe.sleepyinternetfun.xyz%3a1738%2fannounce&tr=udp%3a%2f%2ftracker1.bt.moack.co.kr%3a80%2fannounce&tr=udp%3a%2f%2ftracker.zerobytes.xyz%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.tiny-vps.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.theoks.net%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.swateam.org.uk%3a2710%2fannounce&tr=udp%3a%2f%2ftracker.publictracker.xyz%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.monitorit4.me%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.moeking.me%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.encrypted-data.xyz%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.dler.org%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.army%3a6969%2fannounce&tr=http%3a%2f%2ftracker.bt4g.com%3a2095%2fannounce
 ```
+
+Mag2
+``` python
+Little update, here's the link with all including VAE (second one)
+magnet:?xt=urn:btih:689C0FE075AB4C7B6C08A6F1E633491D41186860&dn=Anything-V3.0.ckpt&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a80%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce
+
+magnet:?xt=urn:btih:E87B1537A4B5B5F2E23236C55F2F2F0A0BB6EA4A&dn=NAI-Anything&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a80%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce
+```
+
+Mag3
+``` pythonmagnet:?xt=urn:btih:689c0fe075ab4c7b6c08a6f1e633491d41186860&dn=Anything-V3.0.ckpt&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2F9.rarbg.com%3A2810%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=https%3A%2F%2Fopentracker.i2p.rocks%3A443%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Fvibe.sleepyinternetfun.xyz%3A1738%2Fannounce&tr=udp%3A%2F%2Ftracker1.bt.moack.co.kr%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.zerobytes.xyz%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.theoks.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.swateam.org.uk%3A2710%2Fannounce&tr=udp%3A%2F%2Ftracker.publictracker.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.monitorit4.me%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.moeking.me%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.encrypted-data.xyz%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.army%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.altrosky.nl%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.bt4g.com%3A2095%2Fannounce
+```
+
 from: https://bt4g.org/magnet/689c0fe075ab4c7b6c08a6f1e633491d41186860
 
 another magnet on https://rentry.org/sdmodels from the author
@@ -994,7 +1041,7 @@ magnet:?xt=urn:btih:e975132162842e0b3e96948f8bffcb66071ecc97&dn=berry_mix.ckpt&t
 
 ### **EveryDream Trainer**
 
-!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html, https://huggingface.co/docs/hub/security-pickle
+!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html, https://huggingface.co/docs/hub/security-pickle. Make sure to check them for pickles using a tool like https://github.com/zxix/stable-diffusion-pickle-scanner
 
 Download + info + prompt templates: https://github.com/victorchall/EveryDream-trainer
 * by anon: allows you to train multiple subjects quickly via labelling file names but it requires a normalization training set of random labelled images in order to preserve model integrity
@@ -1005,7 +1052,7 @@ Download + info + prompt templates: https://github.com/victorchall/EveryDream-tr
 
 ### **Dreambooth Models:**
 
-!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html, https://huggingface.co/docs/hub/security-pickle
+!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html, https://huggingface.co/docs/hub/security-pickle. Make sure to check them for pickles using a tool like https://github.com/zxix/stable-diffusion-pickle-scanner
 
 Links:
 * https://huggingface.co/waifu-research-department
@@ -1020,6 +1067,7 @@ Links:
 * Big collection of sex models (Might be a large pickle, so be careful): https://rentry.org/kwai
 * Collection: https://cyberes.github.io/stable-diffusion-dreambooth-library/
 * /vt/ collection: https://mega.nz/folder/L2hhmRja#CCydQIW7rBcQIFaJl8r6sg/folder/L6RUURqJ
+* Big collection: https://publicprompts.art/
 
 * Nami: https://mega.nz/file/VlQk0IzC#8MEhKER_IjoS8zj8POFDm3ZVLHddNG5woOcGdz4bNLc
 * https://huggingface.co/IShallRiseAgain/StudioGhibli/tree/main
@@ -1121,13 +1169,25 @@ Links:
 	* Img: https://i.4cdn.org/h/1667881224238388.jpg
 * Amano: https://huggingface.co/RayHell/Amano-Diffusion
 * Midjourney: https://huggingface.co/prompthero/midjourney-v4-diffusion
+* Borderlands (training info in reddit): 
+https://www.reddit.com/r/StableDiffusion/comments/yong77/borderlands_model_works_for/
+	* https://publicprompts.art/borderlands-dreambooth-model/
+* Pixel art model: https://publicprompts.art/all-in-one-pixel-art-dreambooth-model/
+	* https://www.reddit.com/r/stablediffusion/comments/yqtm3k
+* Satania (has two iterations of the model, 500 step has more flexibility but 1k can look nicer if you want base Satania, link will expire soon): https://i.mmaker.moe/sd/mmkr-greatmosu-satania.7z
+* Pokemon: https://huggingface.co/justinpinkney/pokemon-stable-diffusion
+* final fantasy tactics: https://huggingface.co/jinofcoolnes/FinalfantasyTactics/tree/main
+	* https://twitter.com/Rahmeljackson/status/1590401243641368576
+	* https://www.patreon.com/posts/final-fantasy-74440534
+* smthdssmth: https://huggingface.co/Marre-Barre/smthdssmth
+* A model I found on /vt/, not too sure what it is of: https://drive.google.com/file/d/1iR9wVI1wm4M6ZTJgJR_i3TZPAQBDB0Bk/view?usp=share_link
 
 ### **Embeddings**
 !!! info If an embedding is >80mb, I mislabeled it and it's a hypernetwork
 
 !!! info Use a download manager to download these. It saves a lot of time + good download managers will tell you if you have already downloaded one
 
-!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html, https://huggingface.co/docs/hub/security-pickle
+!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html, https://huggingface.co/docs/hub/security-pickle. Make sure to check them for pickles using a tool like https://github.com/zxix/stable-diffusion-pickle-scanner
 
 You can check .pts here for their training info using a text editor
 
@@ -1394,6 +1454,18 @@ Found on 4chan:
 * WLOP (reupload, retrained WITHOUT signatures - 24 vectors, 0.00005 learning rate, around 19000 steps: https://mega.nz/folder/PfhRUbST#6oXUaNjk_B6nhJzjc_M0UA
 * ratatatat74 (reupload, retrained WITHOUT VAE - 24 vectors, 0.00005 learning rate, 13500 steps): https://mega.nz/folder/PfhRUbST#6oXUaNjk_B6nhJzjc_M0UA
 * Wiwa embed steps pre deep frying: https://files.catbox.moe/6lu6od.zip
+* Nilou (by anon, not sure if safe or of any training info, NOTE TO MYSELF SEARCH FOR THIS EMBED's DISCORD): https://cdn.discordapp.com/attachments/1019446913268973689/1039909937884713070/nilou.pt
+	* https://pastebin.com/AJAuVqCi
+* Makima (500s, 4v, NAI): https://i.4cdn.org/h/1668023713496532.png
+* Fauna (updated, NAI, 8v, 10k): https://files.catbox.moe/dmu00i.png
+* New rrat (8v, 10k, NAI): https://files.catbox.moe/fyqxjf.png
+* Weine (8v, 10k, nai): https://files.catbox.moe/b9cn4z.png
+* Moona (10k, 8v, nai): https://files.catbox.moe/tuh4nj.png
+* Aki (another, Goodboy, nai, 8v, 10k, nai): https://files.catbox.moe/k2cgxj.png
+* Delu (another, notaloe, 8v, 10k, nai): https://files.catbox.moe/cvykdm.png
+* Moona 2 (another anon, nai, moonmoon, nai, 8v, 10k): https://files.catbox.moe/yh8ora.png
+* Kobogaki (nai, 8v, 10k): https://files.catbox.moe/0r3a8o.png
+* Yopi (nai, 8v, 10k): https://files.catbox.moe/hoh865.png
 
 NOTE TO MYSELF, ADD THAT PONY EMBEDDING THAT I DOWNLOADING 2 WEEKS AGO
 
@@ -1409,7 +1481,7 @@ Found on Reddit:
 
 !!! info Use a download manager to download these. It saves a lot of time + good download managers will tell you if you have already downloaded one
 
-!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html, https://huggingface.co/docs/hub/security-pickle
+!!! All files in this section (ckpt, vae, pt, hypernetwork, embedding, etc) can be malicious: https://docs.python.org/3/library/pickle.html, https://huggingface.co/docs/hub/security-pickle. Make sure to check them for pickles using a tool like https://github.com/zxix/stable-diffusion-pickle-scanner
 
 * anon: "Requires extremely low learning rate, 0.000005 or 0.0000005"
 **Good Rentry: https://rentry.co/naihypernetworks**
@@ -1421,9 +1493,12 @@ Big dumpy of a lot of hypernets (has slime too): https://mega.nz/folder/kPdBkT5a
 Collection of asanuggy + maybe some more: https://mega.nz/folder/Uf1jFTiT#TZe4d41knlvkO1yg4MYL2A
 Collection: https://mega.nz/folder/fVhXRLCK#4vRO9xVuME0FGg3N56joMA
 **Mogudan, Mumumu (Three Emu), Satou Shouji + constant updates: https://mega.nz/folder/hlZAwara#wgLPMSb4lbo7TKyCI1TGvQ**
-**Korean megacollection:**
-* https://arca.live/b/hypernetworks?category=%EA%B3%B5%EC%9C%A0
-* (includes mega compilation of artists): https://arca.live/b/hypernetworks/60940948?category=%EA%B3%B5%EC%9C%A0&p=1
+* **Korean megacollection:**
+	* https://arca.live/b/hypernetworks?category=%EA%B3%B5%EC%9C%A0
+		* Link scrape: https://pastebin.com/p0F4k98y
+	* (includes mega compilation of artists): https://arca.live/b/hypernetworks/60940948
+	* Original: https://arca.live/b/hypernetworks/60930993
+	* **Large collection of stuff from korean megacollection: https://mega.nz/folder/sSACBAgC#kNiPVzRwnuzs8JClovS1Tw**
 
 **Chinese telegram (uploaded by telegram anon): magnet:?xt=urn:btih:8cea1f404acfa11b5996d1f1a4af9e3ef2946be0&dn=ChatExport%5F2022-10-30&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce**
 >I've made a full export of the Chinese Telegram channel.
@@ -1432,8 +1507,7 @@ Collection: https://mega.nz/folder/fVhXRLCK#4vRO9xVuME0FGg3N56joMA
 >If you don't want all that, I would recommend downloading everything but the 'files' folder first (like 26 MB), then opening the html file to decide what you want.
 * Dead link: https://t.me/+H4EGgSS-WH8wYzBl
 
- Big collection: https://drive.google.com/drive/folders/1-itk7b_UTrxVdWJcp6D0h4ak6kFDKsce?usp=sharing
-* https://drive.google.com/drive/folders/1-itk7b_UTrxVdWJcp6D0h4ak6kFDKsce?usp=sharing
+* Big collection: https://drive.google.com/drive/folders/1-itk7b_UTrxVdWJcp6D0h4ak6kFDKsce?usp=sharing
 * https://arca.live/b/aiart/60927159?p=1
 * https://arca.live/b/hypernetworks/60927228?category=%EA%B3%B5%EC%9C%A0&p=2
 
@@ -1959,6 +2033,8 @@ Collection of Aesthetic Gradients: https://github.com/vicgalle/stable-diffusion-
 ### DEAD/MISSING
 If you have one of these, please get it to me
 
+Apparently there's a Google drive collection of downloads? (might be the korean site but mistyped)
+
 Dreambooth:
 * Anya Taylor-Joy: https://drive.google.com/drive/mobile/folders/1f0FI2Vtr0dNfxyCzsNkNau20JT9Kmgn-
 	* https://www.reddit.com/r/StableDiffusion/comments/xx8p1p/anya_taylorjoy_model_link_in_comments/
@@ -1988,7 +2064,7 @@ Datasets:
 * https://gofile.io/d/R74OtT
 * Onono imoko (NSFW + SFW, 300 cropped images): https://files.catbox.moe/dkn85w.zip
 * thanukiart (colored): https://www.dropbox.com/sh/mtf094lb5o61uvu/AABb2A83y4ws4-Rlc0lbbyHSa?dl=0
-
+* Moona: https://files.catbox.moe/mmrf0v.rar
 
 
 ## Training
@@ -2029,6 +2105,10 @@ Datasets:
 * Guide on dreambooth training in comments: https://www.reddit.com/r/StableDiffusion/comments/yo05gy/cyberpunk_character_concepts/
 * Dreambooth on 12gb no WSL: https://gist.github.com/geocine/e51fcc8511c91e4e3b257a0ebee938d0
 * Very good beginner Twitter tutorial (read replies): https://twitter.com/divamgupta/status/1587452063721693185
+* Japanese finetuning guide (?): https://note.com/kohya_ss/n/nbf7ce8d80f29
+* Guide: https://github.com/nitrosocke/dreambooth-training-guide
+* TI Guide: https://bennycheung.github.io/stable-diffusion-training-for-embeddings
+* Faunanon guide: https://files.catbox.moe/vv8gwa.png
 
 * Site where you can train: https://www.astria.ai/
 * Colab: https://colab.research.google.com/github/huggingface/notebooks/blob/main/diffusers/sd_textual_inversion_training.ipynb
@@ -2064,7 +2144,11 @@ Extension: https://github.com/d8ahazard/sd_dreambooth_extension
 
 * Hypernetwork comparison: https://files.catbox.moe/q8h8o3.png
 
-* FIND COMPARISON OF ALL MODELS (self note)
+anything.ckpt comparisons
+Old final-pruned: https://files.catbox.moe/i2zu0b.png (embed)
+v3-pruned-fp16: https://files.catbox.moe/k1tvgy.png (embed)
+v3-pruned-fp32: https://files.catbox.moe/cfmpu3.png (embed)
+v3 full or whatever: https://files.catbox.moe/t9jn7y.png (embed)
 
 * VAE: https://huggingface.co/stabilityai
 
@@ -2098,6 +2182,13 @@ for key in tqdm(theta_0.keys(), desc="Stage 1/2"):
 * Supposedly empty ckpt to help with memory issues, might be pickled: https://easyupload.io/ggfxvc
 * batch checkpoint merger: https://github.com/lodimasq/batch-checkpoint-merger
 
+Supposedly how to append model data without merging by anon:
+>x = (Final Dreambooth Model) - (Original Model)
+>filter x for x >= (Some Threshold)
+>out = (Model You Want To Merge It With) * (1 - M) + x * M
+
+Model merging method: https://github.com/samuela/git-re-basin
+
 * Aesthetic Gradients: https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients
 
 * Image aesthetic rating (?): https://github.com/waifu-diffusion/aesthetic
@@ -2107,6 +2198,24 @@ for key in tqdm(theta_0.keys(), desc="Stage 1/2"):
 * You can set a learning rate of "0.1:500, 0.01:1000, 0.001:10000" in textual inversion and it will follow the schedule
 
 * Tip: combining natural language sentences and tags can create a better training
+
+* Dreambooth on 2080ti 11GB (anon's guide):
+	* Save checkpoint every N steps: 0
+	* Generate preview every N steps: 0
+	* ON "Don't cache latents"
+	* ON "Train Text Encoder"
+	* ON "Use 8bit Adam", note on this
+	* ON "Gradient Checkpointing"
+	* "Mixed Precision: fp16"
+	* 
+	* 8bit adam doesn't appear to help unless you also add the TORCH_COMMAND line into your launch bat as per the github page:
+
+``` python
+set TORCH_COMMAND="pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116"
+```
+
+	* Runs at about 1.7it/s with a 9700k., 50% CPU usage, full VRAM usage, approx 10-40% GPU, it goes up and down.
+
 
 * Training a TI on 6gb (not sure if safe or even works, instructions by uploader anon): https://pastebin.com/iFwvy5Gy
 	* Have xformers enabled.
@@ -2167,6 +2276,8 @@ Its also worth noting, the higher the count, the more images and more varied ima
 You want the ai to find things that are consistent thematics in your image. If you use a small sample size, and all your images just happen to have girls in a bikini, or all with blonde hair, that trait might get attributed to your prompt, and suddenly "coffee cup" always turns out blonde girls in bikinis too.
 
 * Another training guide: https://www.reddit.com/r/stablediffusion/comments/y91luo
+
+* Super simple embed guide by anon: Grab the high quality images, run them through the processor. Create an embedding called `art by {artist}. Then train that same embedding with your processed images and set the learning rate to the following: `0.1:500,0.05:1000,0.025:1500,0.001:2000,1e-5` Run it for 10k steps and you'll be good. No need for an entire hypernetwork.
 
 ### Datasets
 * ie_(raarami): https://mega.nz/folder/4GkVQCpL#Bg0wAxqXtHThtNDaz2c90w
@@ -2252,6 +2363,12 @@ Check out one of these (I did not used most of these, so they might be unsafe to
 * notebook for running Dreambooth on SageMaker Studio Lab: https://github.com/Miraculix200/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion_SageMakerSL.ipynb
 * anything.ckpt: https://colab.research.google.com/drive/1CkIPJrtXa3hlRsVk4NgpM637gmE3Ly5v
 * Google Colab webui with 1.5/1.5 inpainting/VAE/waifu division (?): https://colab.research.google.com/drive/1VYmKX7eayuI8iTaCFKVHw9uxSkLo8Mde
+* Site (didn't test): https://ai-images.net/
+
+* Some gpu rental sites:
+	* has free plan: https://colab.research.google.com/
+	* https://vast.ai/
+	* https://www.runpod.io/
 
 **How do I directly check AUTOMATIC1111's webui updates?**
 >For a complete list of updates, go here: https://github.com/AUTOMATIC1111/stable-diffusion-webui/commits/master
@@ -2321,6 +2438,10 @@ From anon:
 **Why is my downloaded embedding so bad?**
 >Make sure that you're using the correct model. Anon says,"Embeddings and hypernetworks only work reliably on the model they were trained for". Also, play around with weighting your embedding
 
+**Which depickler should I use?**
+>By anon: The webui scanner is very basic. The zxix scanner is much more thorough but it is not clear that it provides truly comprehensive protection. The lopho scanner is targeted directly at Torch models (great!) but is not a standalone script (not great!).
+* Links: https://github.com/lopho/pickle_inspector, https://github.com/zxix/stable-diffusion-pickle-scanner
+
 ## Link Dump will sort
 
 **Info:**
@@ -2339,6 +2460,7 @@ From anon:
 * Another easy to setup SD: https://github.com/cmdr2/stable-diffusion-ui
 * Models: https://rentry.org/sdmodels
 * Japanese 4chan: https://may.2chan.net/b/
+	* Example thread: https://may.2chan.net/b/res/1033557742.htm
 * Japanese 4chan 2: https://find.5ch.net/search?q=JNVA%E9%83%A8
 * Japanese 4chan 3: http://nozomi.2ch.sc/test/read.cgi/liveuranus/1666357371/355-
 * General info: https://rentry.org/sd-nativeisekaitoo
@@ -2353,6 +2475,7 @@ From anon:
 * Info dump: https://rentry.org/sdhassan
 * Massive dumpy dump: https://rentry.org/RentrySD
 * Miraheze: https://stablediffusion.miraheze.org/wiki/Main_Page
+* Japanese guide(?): https://rentry.co/zk4u5
 
 **Boorus:**
 * Danbooru: danbooru.donmai.us/
@@ -2373,6 +2496,7 @@ From anon:
 * AI porn: https://pornpen.ai/
 * Booru + generator, anime focused: https://pixai.art/
 * /vt/ huge image collection: https://mega.nz/folder/23oAxTLD#vNH9tPQkiP1KCp72d2qINQ
+* yodayo: https://yodayo.com/explore/?key=&type=posts&sort=recent
 
 **Upscalers:**
 * Big list: https://upscale.wiki/wiki/Model_Database
@@ -2511,6 +2635,37 @@ Pytorch and torch vision compiled with different CUDA versions:
 >source venv/bin/activate
 >pip install -I pytorch==11.3
 
+Upscaler and img viewer: https://sourceforge.net/projects/jpegview/
+
+anon info for 4090: anyone on a 4090
+
+in launch.py replace line 127
+
+With
+
+torch_command = os.environ.get('TORCH_COMMAND', "pip install torch==1.11.0+cu115 torchvision==0.12.0+cu115 --extra-index-url https://download.pytorch.org/whl/cu115")
+
+as this build of Torch is built with CUDA 11.8 whereas the one that AUTOMATIC uses by defualt is not and will cause issue.
+
+depicklage: https://github.com/trailofbits/fickling
+
+cool ai speech synthesis where they talk to each other: https://infiniteconversation.com/
+
+Torch is not able to use GPU error fix by anon: 
+Activate the webui VENV and Force reinstall torch with cuda
+If you are on windows:
+open cmd on
+stable-diffusion-webui\venv\Scripts
+type activate
+type pip install -U torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113
+
+If you want you can install with a more recent torch/cuda too
+pip install -U torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu117
+
+Webm maker: https://github.com/dfaker/WebmGenerator
+
+danbooru: https://paperswithcode.com/dataset/danbooru2020
+
 ## Hall of Fame
 automatic1111
 
@@ -2541,7 +2696,7 @@ When you download the torrent:
 Whenever you want to run NovelAI from your computer, run webui-user.bat. The first time will initialize, which may cause some errors.
 If there are no errors, it will give you a web address (usually http://127.0.0.1:7860/ ). This is the WebUI, from which you run NovelAI using your computer's disk.
 The usual errors will require you to edit the .bat--do this in Notepad or n++.
-There will be a line of code beginning with "COMMANDLINE_ARGS=". Add "--precision full --no-half" directly after this, on the same line.
+There will be a line of code beginning with "COMMANDLINE_ARGS=". Add "--precision full --no-half" directly after this, on the same line. (remove the quotations)
 If you get an error about "--skip-torch-cuda-test", add it as well (making the line "--skip-torch-cuda-test --precision full --no-half").
 
 After you started the .bat and got the WebUI loaded, go to Settings and scroll to Stable Diffusion. Set the checkpoint to final-pruned and the hypernetwork of your choice.
@@ -2549,15 +2704,17 @@ After you started the .bat and got the WebUI loaded, go to Settings and scroll t
 
 SD labs/ML Research Drama (tldr so a lot of context might be missing (?)):
 I don't frequent SD discord servers often so this info might be wrong:
-- Original owner (Dep) of ML Research gave ownership to someone else (Elinas) so he can focus on exams
+- Original owner (Dep) of ML Research gave ownership to Elinas so he can focus on exams
 - Elinas does stuff
 - Elinas doesn't give Dep server back 
 - Drama
 - Dep's side's argument (might be wrong/is missing context): immoral to not return server, Elinas is abusive admin who bans/censors people who go against him, Elinas changing direction of server
 - Elina's side's argument (might be wrong/is missing context): Dep is racist/insensitive, Dep joked about deleting the server, Dep generally unfit for running server, Elinas doing positive things for the server, claims to only have banned one person for three days for using slurs
+- Server moved from [ML] to [SD]
+- Everything was resolved in the background between Elinas and the other staff, so there shouldn't be any more drama
 
-Servers so you can check the validity for yourself:
-ML (Elinas): https://discord.gg/8qwHNcgZ
-SD (Dep): https://discord.gg/Xz8CBFCT
+Servers:
+ML: https://discord.gg/8qwHNcgZ
+SD: https://discord.gg/Xz8CBFCT
 
 Automatic statement: https://cdn.discordapp.com/attachments/1015751613840883735/1038490258104385636/20221105_DiscordPTB_025525.png
