@@ -43,16 +43,48 @@ Twitter: https://twitter.com/questianon)
 		3. ```git pull```
 		4. ```pip install -r requirements.txt```
 		
->11/14+11/15+11/16+11/17+11/18 (done with hdg and sdg)
-* AltDiffusion released: https://huggingface.co/BAAI/AltDiffusion-m9
+>11/19 (continued) + 11/20 + 11/21 + some of 11/22
+* Someone took sdupdates6. I stopped at sdupdates5. I only own sdupdates, 2, 3, 4, 5, and goldmine, 2, and 3. Anything else is fake
+* (Not sure if implemented) Textual inversion training is implemented incorrectly in AUTOMATIC1111's webui, the original authors edited something that allowed for better training in less time (someone reported 4 vectors, 30 images, Learning Rate 0.1, and 30 steps of training on a 3090 was enough for a good embedding): https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4680
+	* Pull Request: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4886
+	* Related PR for hypernetworks: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4509
+* Pull request to support safetensors, the unpickleable and fast format to replace pytorch: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4930
+	* Another: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4869
+* HuggingFace and Pytorch collaborated to make transformer based models faster using optimum library (4.5x speedup using one line, aka you can prompt even faster): https://twitter.com/huggingface/status/1594783600855158805
+	* https://twitter.com/PyTorch/status/1594766050851102720
+	* Docs: https://huggingface.co/docs/optimum/bettertransformer/overview
+* SceneComposer: Any-Level Semantic image Synthesis releasd (basically prompting but it puts the things where you actually want it) by John Hopkins University and Adobe: https://zengyu.me/scenec/
+	* Text -> mask the area you want with the level of "precision" (coarse to fine) -> draws the stuff where you want it -> can further refine with more masks (watch the demo to see an example)
+	* Demo: https://zengyu.me/scenec/resources/demo_video.mp4
+	* Git: https://github.com/zengxianyu/scenec
+	* Paper: https://arxiv.org/abs/2211.11742
+* Magic3D (Text to 3D) by NVIDIA released: https://deepimagination.cc/Magic3D/
+	* Creates 3D mesh models using text
+* Pure pytorch implementation of deepdanbooru released: https://github.com/AUTOMATIC1111/TorchDeepDanbooru
+	* AUTOMATIC1111 debating wheter to remove tensorflow version from webui or keep both in. He prefers the former
+* Extension to test phrase similarity in AUTOMATIC1111's webui released: https://gitlab.com/azamshato/simula
+* (Added related extension) CLIPSeg demo (text-based inpainting): https://huggingface.co/spaces/nielsr/text-based-inpainting
+	* Txt2mask (current webui extension): https://github.com/ThereforeGames/txt2mask
+* (recently updated) Prompt travel: https://github.com/Kahsolt/stable-diffusion-webui-prompt-travel
+* Accelerate launch implemented: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4527
+	* https://huggingface.co/docs/accelerate/index
+* Upload to 4chan with a prompt automatically: https://rentry.org/promptchan
+* Anime NYK and Anime LA ban AI art: https://www.artnews.com/art-news/news/anime-conventions-ban-ai-art-1234647165/
+* Midjourney x Spellbrush creates https://nijijourney.com/ (midjourney but anime)
+
+>11/19
+* AUTOMATIC1111 webui updated, git pull to update for fixes + some new features
+	* Updates: https://github.com/AUTOMATIC1111/stable-diffusion-webui/commits/master
+* (From yesterday, fixed the image) AltDiffusion released: https://huggingface.co/BAAI/AltDiffusion-m9
 	* Supports English(En), Chinese(Zh), Spanish(Es), French(Fr), Russian(Ru), Japanese(Ja), Korean(Ko), Arabic(Ar) and Italian(It)
 	* Original Chinese and English based model: https://huggingface.co/BAAI/AltDiffusion
 	* Open source
 	* Backed by bilingual CLIP model named AltCLIP
-	* Example: https://i.4cdn.org/g/1668837915177041s.jpg
+	* Example: https://i.4cdn.org/g/1668837915177041.png
+
+>11/14+11/15+11/16+11/17+11/18 (sdg + hdg done)
 * High Performance Machine Learning and Data Analytics for CPUs, GPUs, Accelerators and Heterogeneous Clusters released (not sure if safe): https://github.com/nod-ai/SHARK
 * Safetensors, the pickleless format, is way faster than pytorch: https://huggingface.co/docs/safetensors/speed
-* CLIPSeg (text-based inpainting): https://huggingface.co/spaces/nielsr/text-based-inpainting
 * Img2img using "human" instructions through language model + text to image model: https://www.timothybrooks.com/instruct-pix2pix
 * Dynamic Prompts now supports first-class templating logic: https://github.com/adieyal/sd-dynamic-prompts/blob/main/jinja2.md
 * Latent-NERF released, similar to stable-dreamfusion that creates more constrained outputs (?): https://github.com/eladrich/latent-nerf
@@ -148,7 +180,6 @@ https://docs.google.com/document/d/1Vw-OCUKNJHKZi7chUtjpDEIus112XBVSYHIATKi1q7s/
 Ranked and calssibied danbooru tags, sorted by amount of pictures, and ranked by type and quality (WD): https://cdn.discordapp.com/attachments/1029235713989951578/1038585908934483999/Kopi_af_WAIFU_MASTER_PROMPT_DANBOORU_LIST.pdf
 Anon's prompt collection: https://mega.nz/folder/VHwF1Yga#sJhxeTuPKODgpN5h1ALTQg
 Tag effects on img: https://pastebin.com/GurXf9a4
-Clothing comparison: https://files.catbox.moe/z3n66e.jpg
 * Anon says that "8k, 4k, (highres:1.1), best quality, (masterpiece:1.3)" leads to nice details
 
 Chinese scroll collection: https://note.com/sa1p/
@@ -163,6 +194,10 @@ Scroll 2: https://docs.qq.com/doc/DWGh4QnZBVlJYRkly
 Scroll 3 (spooky): https://docs.qq.com/doc/DWEpNdERNbnBRZWNL
 Tome: https://docs.qq.com/doc/DSHBGRmRUUURjVmNM
 Tome 2 (missing link)
+Spellbook: https://docs.qq.com/doc/DWHFOd2hDSFJaamFm
+* https://www.bilibili.com/read/cv19903596
+* https://www.bilibili.com/read/cv19903680
+
 Japanese Scroll: https://p1atdev.notion.site/021f27001f37435aacf3c84f2bc093b5?p=f9d8c61c4ed8471a9ca0d701d80f9e28
 * author: https://twitter.com/p1atdev_art/
 Japenese wiki: https://seesaawiki.jp/nai_ch/d/
@@ -172,6 +207,8 @@ Using emoticons and emojis can be really good: https://docs.google.com/spreadshe
 🌷🕊🗓👋😛👋 leads to https://files.catbox.moe/7khxe0.png
 spoken squiggle: https://twitter.com/AI_Illust_000/status/1588838369593032706
 Anon: The emoji performs well in terms of semantic accuracy because it is only one character.
+
+According to an anon, the vae seems to be provide saturation/contrast and some line thickness (vae-ft-ema-56000-ema-pruned, https://huggingface.co/stabilityai/sd-vae-ft-ema-original/blob/main/vae-ft-ema-560000-ema-pruned.ckpt). Example (left with 56k, right with anything vae): https://i.4cdn.org/h/1669086238979897s.jpg
 
 Database of prompts: https://publicprompts.art/
 * Discord: https://discord.com/invite/jvQJFFFx26
@@ -196,6 +233,7 @@ Dynamic prompts: https://github.com/adieyal/sd-dynamic-prompts
 Japanese prompt generator: https://magic-generator.herokuapp.com/
 Build your prompt (chinese): https://tags.novelai.dev/
 NAI Prompts: https://seesaawiki.jp/nai_ch/d/%c8%c7%b8%a2%a5%ad%a5%e3%a5%e9%ba%c6%b8%bd/%a5%a2%a5%cb%a5%e1%b7%cf
+Prompt similarity tester: https://gitlab.com/azamshato/simula
 
 Japanese wiki: https://seesaawiki.jp/nai_ch/
 * Apparently a good subwiki: https://seesaawiki.jp/nai_ch/d/%c7%ed%a4%ae%a5%b3%a5%e9%a5%c6%a5%af
@@ -281,6 +319,7 @@ Danbooru Tag Exporter: https://sleazyfork.org/en/scripts/452976-danbooru-tags-se
 Another: https://sleazyfork.org/en/scripts/453380-danbooru-tags-select-to-export-edited
 Tags (latest vers): https://sleazyfork.org/en/scripts/453304-get-booru-tags-edited
 Basic gelbooru scraper: https://pastebin.com/0yB9s338
+Scrape danbooru images and tags like fetch.py for e621 for tagging datasets: https://github.com/JetBoom/boorutagparser
 UMI AI: https://www.patreon.com/klokinator
 * Discord: https://discord.gg/9K7j7DTfG2
 * Author is looking for help filling out and improving wildcards
@@ -335,7 +374,7 @@ Blender:
 https://github.com/carson-katri/dream-textures
 https://github.com/benrugg/AI-Render
 
-External masking: https://github.com/dfaker/stable-diffusion-webui-cv2-external-masking-script
+External masking for inpainting (no more brush or WIN magnifier): https://github.com/dfaker/stable-diffusion-webui-cv2-external-masking-script
 anon: theres a commanda rg for adding basic painting, its '--gradio-img2img-tool'
 
 Script collection: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts
@@ -363,10 +402,14 @@ Img2img animation script: https://github.com/Animator-Anon/Animator/blob/main/an
 
 Google's interpolation script: https://github.com/google-research/frame-interpolation
 
+Deforum guide: https://docs.google.com/document/d/1RrQv7FntzOuLg4ohjRZPVL7iptIyBhwwbcEYEW2OfcI/edit
 Animation Guide: https://rentry.org/AnimAnon#introduction
 Rotoscope guide: https://rentry.org/AnimAnon-Rotoscope
 Chroma key after SD (fully prompted?): https://files.catbox.moe/d27xdl.gif 
 * Cool mmd vid (20 frames, I think it uses chroma key): https://files.catbox.moe/jtp14x.mp4
+
+Prompt travel: https://github.com/Kahsolt/stable-diffusion-webui-prompt-travel
+* Example (30 min, 5k steps, 124 images): https://i.4cdn.org/g/1668879797247188.webm
 
 More animation guide: https://www.reddit.com/r/StableDiffusion/comments/ymwk53/better_frame_consistency/
 Animation guide + example for face: https://www.reddit.com/r/StableDiffusion/comments/ys434h/animating_generated_face_test/
@@ -463,6 +506,7 @@ Tutorial + how to use on ALL models (applies for the NAI vae too): https://www.r
 * Stability AI's VAE: https://huggingface.co/stabilityai 
 	* Comparisons: https://huggingface.co/stabilityai/sd-vae-ft-mse-original
 	* an anon recommended vae-ft-mse-840k-ema-pruned: https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.ckpt, https://huggingface.co/stabilityai/sd-vae-ft-mse-original/tree/main
+* Trinart's vae (the autencoder fix): https://huggingface.co/naclbit/trinart_characters_19.2m_stable_diffusion_v1
 
 **Booru tag scraping:**
 * https://sleazyfork.org/en/scripts/451098-get-booru-tags 
@@ -563,6 +607,16 @@ Wildcards:
 * Curated RPG Character classes (based on TTRPG character class names): https://pastebin.com/6ujb7NNe
 * Hairstyle: https://pastebin.com/Ux6SdTdp
 
+Class comparison: https://files.catbox.moe/c1yfvf.jpg (MASSIVE IMAGE)
+* Smaller: https://files.catbox.moe/vntwk1.jpg, https://files.catbox.moe/t8teqj.jpg
+* Prompts: https://pastebin.com/SEb876pq
+
+Artist comparison: https://files.catbox.moe/kulo8m.jpg
+* OCR to get the names: https://pastebin.com/JB9QcnLZ
+
+Clothing comparison: https://files.catbox.moe/z3n66e.jpg
+"Punk" Comparison: https://files.catbox.moe/se3533.png
+
 Wildcard extension: https://github.com/AUTOMATIC1111/stable-diffusion-webui-wildcards/
 
 Someone's prompt using a lot of wildcards: Positive Prompt: (masterpiece:1.4), (best quality:1.4), [[nsfw]], highres, large breasts, 1girl, detailed clothing, skimpy clothing, __haircolor__, __haircut__, __hairlength__, __eyecolor__, __cum__, ((__fetish__)), __lingerie__, __lingeriestate__, ((__sexacts__)), __sexposition__,
@@ -614,6 +668,8 @@ Some comparisons of 421 different artists in different models.
 * > SD v1.5 (CLIP 2): https://mega.nz/file/lS1iyQCT#zJhV6URsT01QJpYdqbf3Jubhyi09rXn8FFT-HaXvgd0
 
 * Big comparison grid: https://files.catbox.moe/9wgqx9.jpg
+
+VAE comparison (none, SD, WD, Anything, NAI): https://i.4cdn.org/g/1669056754991690.png
 
 Anon's list of comparisons:
 * Stable Diffusion v1.5, Waifu Diffusion v1.3, Trinart it4
@@ -681,6 +737,8 @@ the interesting thing that i've noticed from Denoising strength is not linear, i
 9. Use Flowframes to interpolate the inbetween frame to match the original video frame rate.
 ```
 Ex: https://files.catbox.moe/e30szo.mp4
+
+File2prompt (I think it's multiple generations in a row?): https://rentry.org/file2prompt
 
 ##  Models, Embeddings, and Hypernetworks
 
@@ -754,10 +812,15 @@ another magnet on https://rentry.org/sdmodels from the author
 	* Note: Use CLIP 2 and resolutions greater than 640x640
 
 * Artstation Models (by WD dev): https://huggingface.co/hakurei/artstation-diffusion
+	* Prebuilt ckpt (not sure if safe): https://huggingface.co/NoCrypt/artstation-diffusion/tree/main
 
 * Nitro Diffusion (Multi-style model trained on three artstyles, archer style, arcane style, and modern disney style): https://huggingface.co/nitrosocke/Nitro-Diffusion
 
 * High quality anime images (eimisanimediffusion): https://huggingface.co/eimiss/EimisAnimeDiffusion_1.0v
+
+*Hrrzg style 768px: https://huggingface.co/TheLastBen/hrrzg-style-768px
+
+* Ghibli Diffusion (tokens: ghibli style): https://huggingface.co/nitrosocke/Ghibli-Diffusion
 
 **MODEL MIXES**
 
@@ -827,7 +890,38 @@ and sd v1.5 instead of sd v1.4
 
 AloeVera mix: https://mega.nz/file/4bEzxB6Q#j3QwgNxHiYOmT8Y4OgHP9mlzvFbCkEK1DUepMoIBI50
 
-An anon recommended the Hassan1.3 if you do 3DPD
+Nutmeg mix:
+``` python
+0.05 NAI + SD1.5
+0.05 mix + f222
+0.05 mix + r34
+0.05 mix + SF
+0.3 Anything + mix
+```
+
+Hyper-versatile SD model: https://huggingface.co/BuniRemo/Redshift-WD12-SD14-NAI-FMD_Checkpoint_Merger_-_Hyper-Versatile_Stable_Diffusion_Model
+* Made from Redshift Diffusion, Waifu Diffusion 1.2, Stable Diffusion 1.4, Novel AI, Yiffy, and Zack3D_Kinky-v1; capable of rendering humans, furries, landscapes, backgrounds, buildings, Disney style, painterly styles, and more
+
+Hassan (has a few mixes, not sure if the dls are safe): https://rentry.org/sdhassan
+* An anon recommended the Hassan1.3 if you do 3DPD
+* 1.4 ex: https://imgur.com/a/TUWkJmh
+
+Anonmix: 
+>Weighted Sum @ 0.05 to make tempmodel1
+>
+>A: Anything.V3, B: SD1.5, C: null
+>
+>Add Difference @ 1.0 to make tempmodel2
+>
+>A: tempmodel1, B: Zeipher F222, C: SD1.5
+>
+>Weighted Sum @ 0.25 to make tempmodel3
+>
+>A: tempmodel2, B: r34_e4, C: Null
+>
+>Weighted Sum @ 0.20 to make FINAL MODEL
+>
+>A: tempmodel3, B: NAI
 
 Big collection of berry mixes: https://rentry.org/dbhhk (https://archived.moe/h/thread/6984678/#q6985842)
 
@@ -1032,7 +1126,13 @@ https://www.reddit.com/r/StableDiffusion/comments/yong77/borderlands_model_works
 * Rei and Liduke (not sure if safe): https://rentry.org/eeayv
 	* Rei: https://pixeldrain.com/u/Sruc4DDk
 	* Liduke: https://pixeldrain.com/u/4T3oBcRy
-
+* Mikasa + Dataset: https://mega.nz/folder/x9FRkAzC#zPs19Nhx7ASZQwauj0PiyA
+	* Note: You have to get a bit creative with the prompt since I didn't clean up the tags, you often need to combine a ton of redundant tags to get the effect you want. Example images included along with a list of all tags for experimentation. If you merge the checkpoint with something else the visuals improve dramatically. The artist tags in the list will guide it towards a particular aesthetic.
+* Ranma (replicates late '80s early '90s anime, specifically the Ranma 1/2 anime): https://huggingface.co/tashachan28/ranma_diffusion
+* VRass (based on Anytthing V3, trained on free VRoid clothing, good for img2img, supports high denoising (0.6-0.8), token: vrass)
+* Hapu: https://mega.nz/file/xWdTAbzI#TVaq9Fgds2V43IWai09NdoLDSJHx6FMy_14UTWL1HEQ
+* AISee (made from 3k artworks from some website, more info in the link): https://huggingface.co/grinman/AIsee
+* BTD6 monkeys (not sure if dreambooth): https://huggingface.co/Junglerally/Stable-BTD6
 
 ### **Embeddings**
 !!! info If an embedding is >80mb, I mislabeled it and it's a hypernetwork
@@ -1377,6 +1477,8 @@ Found on 4chan:
 * look at the 2nd and 3rd images: https://www.reddit.com/gallery/y4tmzo
 * Negative embedding to be used in the negatives (supposedly a quality enhancer, supposedly fixes hands): https://huggingface.co/datasets/Nerfgun3/bad_prompt
 	* https://old.reddit.com/r/StableDiffusion/comments/yy2i5a/i_created_a_negative_embedding_textual_inversion/
+* Elysia (Honkai Impact): https://mega.nz/file/qnxiDQxR#3g7_gI-8OD83gPEWu-XjcPCedHCsvbjnxzjxW4c8GAo
+	* https://www.pixiv.net/en/artworks/102931348
 
 ### **Hypernetworks:**
 !!! info If a hypernetwork is <80mb, I mislabeled it and it's an embedding
@@ -1394,7 +1496,7 @@ Senri Gan: https://files.catbox.moe/8sqmeh.rar
 Big dumpy of a lot of hypernets (has slime too): https://mega.nz/folder/kPdBkT5a#5iOXPnrSfVNU7F2puaOx0w
 Collection of asanuggy + maybe some more: https://mega.nz/folder/Uf1jFTiT#TZe4d41knlvkO1yg4MYL2A
 Collection: https://mega.nz/folder/fVhXRLCK#4vRO9xVuME0FGg3N56joMA
-**Mogudan, Mumumu (Three Emu), Satou Shouji + constant updates (thanks mogubro): https://mega.nz/folder/hlZAwara#wgLPMSb4lbo7TKyCI1TGvQ**
+**Mogubro + constant updates: https://mega.nz/folder/hlZAwara#wgLPMSb4lbo7TKyCI1TGvQ**
 * **Korean megacollection:**
 	* https://arca.live/b/hypernetworks?category=%EA%B3%B5%EC%9C%A0
 		* Link scrape: https://pastebin.com/p0F4k98y
@@ -1619,25 +1721,6 @@ Found on 4chan:
 * Nanachi (reupload, re-retrained WITHOUT sneaky VAE - 0.000005 learning rate, around 16000 steps, around 13000 steps): https://mega.nz/folder/PfhRUbST#6oXUaNjk_B6nhJzjc_M0UA
 * Puuzaki Puuna (reupload, re-retrained WITHOUT sneaky VAE - 0.000005 learning rate): https://mega.nz/folder/PfhRUbST#6oXUaNjk_B6nhJzjc_M0UA
 * Sayori (trained on mostly nsfw CGs (30 out of 40 images were nsfw) from nekopara, koikuma + fandisc, and tropical liquor, trained on NAI pruned): https://mega.nz/file/LegFzJxa#Q1Se9fByKcjuXA2DNWt0gCaV3rCP8U-voBKgFjOevF8
-* Mogudan (final update), Mumumu (Three Emu wip), Satou Shouji: https://mega.nz/folder/hlZAwara#wgLPMSb4lbo7TKyCI1TGvQ
-	* Has training info, dataset, comparison, and hypernetworks
-	* Creator likes 111500s the best
-	* Training info: 
-		>155 image dataset, split oversized (threshold 0.75, overlap ratio 0.1), deepdanbooru tagging (score threshold 0.75)
-		>layer structure: 1, 2, 1
-		>activation function: linear
-		>weight initialization: normal
-		>learning rate: 0.0000005
-		>
-		>The image count after splitting them ended up being 291, and I manually pruned some of the deepdanbooru tags out of the busier images, the AI was autotagging shit that I absolutely didn't want it to learn, like background details or fabric prints.
-		>
-		>I tried mish and softsign, using xaviernormal, with and without normalization/dropout, different layer structures. For some reason, only this combination was able to nail Mogudan's art style, the others only managed to learn his coloring and shading.
-		>
-		>Meanwhile, the Mumumu one worked really well with mish, and the WIP Satou Shouji one appears to work really good with softsign (so far).
-* Olga Discordia (35k): https://www.dropbox.com/s/fc8bg0ti7uy8qxz/olgadiscordiav6-35000.pt?dl=0
-	* make sure you have these prompt to activate her: yellow eyes, intricate eyes, (symmetrical face), (mature female:1.2), pointy ears, elf, earrings, hair over one eye, jewelry, dark elf, breasts, black hair, long hair, dark skin, parted lips, thighhighs, gloves, 1girl, solo, 
-	* final-pruned model. mixberry gives good results too. clip set at 2. vae is optional
-	* More info by creator: can use final-pruned, berrymix and v3 without any problem. i do not recommend vae with it. clip set at 1 for higher detail. 2 for whatever. to get the prompt working, make sure to included dark elf, dark skinned female, and pointy ears. 
 * Henreader: https://files.catbox.moe/q6t6vw.pt
 	* 104 imgs, mostly from Loli no Himo and some of his recent art, used a grabber to download with gelbooru tags
 	* Training settings:
@@ -1667,6 +1750,39 @@ Found on 4chan:
 	* Example: https://i.4cdn.org/g/1668824088843108s.jpg
 * Muk (monsieur): https://files.catbox.moe/q8jnsd.pt
 	* Example: https://i.4cdn.org/g/1668824504567981s.jpg
+* Olga Discordia (35k, old version): https://www.dropbox.com/s/fc8bg0ti7uy8qxz/olgadiscordiav6-35000.pt?dl=0
+	* make sure you have these prompt to activate her: yellow eyes, intricate eyes, (symmetrical face), (mature female:1.2), pointy ears, elf, earrings, hair over one eye, jewelry, dark elf, breasts, black hair, long hair, dark skin, parted lips, thighhighs, gloves, 1girl, solo, 
+	* final-pruned model. mixberry gives good results too. clip set at 2. vae is optional
+	* More info by creator: can use final-pruned, berrymix and v3 without any problem. i do not recommend vae with it. clip set at 1 for higher detail. 2 for whatever. to get the prompt working, make sure to included dark elf, dark skinned female, and pointy ears. 
+* olga discordia (Kuroinu) (50k steps):
+	* https://www.dropbox.com/s/ivz7nr43b0xmbth/olgadiscordiav8-10000-7000%20armor%20-%20Copy.pt?dl=0
+	* to activate olga, please use this prompt: 1girl, olga discordia, amber eyes, dark elf and dark skinned female, hair covering one eye.
+	* for additional stuff, such as her outfit, you have to use purple armor, purple sleeves and purple thighhighs. for the top acccuracy, use disconnected corset purple armor. weight accordingly too.
+	* NOTE: was trained with censored images. make sure to have censored and mosaic censored in the negative. put 1 or 2 emphasis on it. up to you.
+	* works with every model too. works best with naileak and all berrymixes. clip at 1 or 2 depends on the model. enjoy
+* Mogudan), Mumumu (Three Emu), Satou Shouji, Onomeshin, Bang-You, Aoi Nagisa, Honjou Raita, Amazon : https://mega.nz/folder/hlZAwara#wgLPMSb4lbo7TKyCI1TGvQ
+	* Changelog of new stuff: onomeshin (pic https://i.4cdn.org/h/1669000305326267.png), Bang-You (https://i.4cdn.org/h/1669000350687492.png), Aoi Nagisa (https://i.4cdn.org/h/1669000401417659.png), Honjou Raita (uses new options, comparison between current one and the one mogubro uploaded: https://i.4cdn.org/h/1669000583045601.png), Amazon (https://i.4cdn.org/h/1669114002712582.png): 
+	* Has training info, dataset, comparison, and hypernetworks
+	* Amazon hypernet does the best on DPM++ 2M a Karras, has deformities on some other samplers
+* Albino_Otokuyou (Otokuyou's Shinroi Ko character) (White eyelashes and true albinos): https://files.catbox.moe/k7ftww.rar
+	* Good when using with Nerfgun3's new Albino_style
+	* ex: https://i.4cdn.org/g/1668896107598228.jpg (Prompt: https://rentry.org/gacnc)
+	* Best results: Half-closed eyes at low weight may have some benefits. Using my Albino_Otokuyou Shiroi Ko Hypernet at just 0.2 strength helps with white eyelash cohesion. Use 'parted bangs' and 'swept bangs' and prompts that clear space above the eyes to help consistently generate white eyelashes, experiment as you like.
+	* Issues: My 30000step Hypernet has a slight problem squashing images, reducing the strength helps mitigate this quite abit, the AlbinoFix is slightly weaker but may be best used with Nerfgun3's embedding.
+* Tatata + Dataset (supposedly trained on CHINAI + 0.45(Trinart115-SD-1.4)): https://mega.nz/folder/sTV0EI6b#hGotLRXpotvmYxqfTb_KMw/folder/8eMylBTK
+* Eula Lawrence (old, seemed to be misplaced):  https://mega.nz/file/l9tAHJBD#xdXMf7vulY4GJBigxegFVLSOULONnk4o86qKHYoBZmc
+* Kincora (Azur Lane artist): https://files.catbox.moe/enzbw6.pt
+	*  Training:
+		* >layer: 1, 2, 1
+		* >activation function: linear
+		* >initialization: Normal
+		* >Images: 136 (half of those image are just portrait version of the other half)  or  272 if we count flipped images
+		* >Dataset:  https://files.catbox.moe/yc9kkh.7z
+		* >Steps: 20k
+		* >Learning rate: 5e-5:816,5e-6:10000,5e-7:20000
+		* >resolution: 512x512
+		* >Template: [filewords] 
+	* Example (it's the one on the right): https://i.4cdn.org/g/1669142706465584.jpg
 
 Found on Discord:
 * Art style of Rumiko Takahashi 
@@ -1977,19 +2093,11 @@ Hypernetworks:
 * 焦茶 / cogecha hypernetwork, trained against NAI: https://mega.nz/folder/BLtkVIjC#RO6zQaAYCOIii8GnfT92dw
 * 山北東 / northeast_mountain hypernetwork, trained against NAI: https://mega.nz/folder/RflGBS7R#88znRpu7YC1J1JYa9N-6_A
 
-* not sure if this is a hypernet: https://mega.nz/file/l9tAHJBD#xdXMf7vulY4GBigxegFVLSOULONnk4o86qKHYoBZmc
-	* probably a mis copy paste of Eula Lawrence: https://mega.nz/file/l9tAHJBD#xdXMf7vulY4GJBigxegFVLSOULONnk4o86qKHYoBZmc
-
 Datasets:
 * expanded ie_(raarami) dataset: https://litter.catbox.moe/j4mpde.zip
 * Toplessness: https://litter.catbox.moe/mttar5.zip
 * https://gofile.io/d/R74OtT
-* Onono imoko (NSFW + SFW, 300 cropped images): https://files.catbox.moe/dkn85w.zip
 * thanukiart (colored): https://www.dropbox.com/sh/mtf094lb5o61uvu/AABb2A83y4ws4-Rlc0lbbyHSa?dl=0
-* Moona: https://files.catbox.moe/mmrf0v.rar
-* Au'ra, a playable race from Final Fantasy (~100 imgs): https://mega.nz/folder/ZWcXCYpB#Zo-dHbp_u30iIz-LxLUGyA
-
-Training dataset with aesthetic ratings: https://github.com/JD-P/simulacra-aesthetic-captions
 
 ## Training
 * Training guide for textual inversion/embedding and hypernetworks: https://pastebin.com/dqHZBpyA
@@ -2070,7 +2178,9 @@ Extension: https://github.com/d8ahazard/sd_dreambooth_extension
 
 * **GUI helper for manual tagging and cropping: https://github.com/arenatemp/sd-tagging-helper/**
 
-* Waifu Diffusion 1.4 Tagger: https://mega.nz/file/ptA2jSSB#G4INKHQG2x2pGAVQBn-yd_U5dMgevGF8YYM9CR_R1SY
+* Waifu Diffusion 1.4 Tagger (you can use to tag datasets): 
+https://github.com/toriato/stable-diffusion-webui-wd14-tagger
+https://mega.nz/file/ptA2jSSB#G4INKHQG2x2pGAVQBn-yd_U5dMgevGF8YYM9CR_R1SY
 
 Image tagger helper: https://github.com/nub2927/image_tagger/
 
@@ -2200,6 +2310,27 @@ Vector guide by anon: https://rentry.org/dah4f
 
 * Has training info and a tutorial for Asagi Igawa, Edjit, and Rouge the Bat embeds (RealYiffingFar#4510): https://mega.nz/folder/5nIAnJaA#YMClwO8r7tR1zdJJeTfegA
 
+* Anon's dreambooth guide:
+for a character, steps ~1500-2000
+checkpoint every 500 if you have the VRAM for it, else 99999 (ie: at the end), previews are shit don't even bother, 99999
+learning rate: 0.000001-0.000005, I don't have a reason for it, default is probably fine.
+instance prompt: [filewords], class prompt: 1girl, 20x regularisation images than training images, style matters, if you want anime get anime regularisation stuff.
+advanced: auto-adjust, batch size: 2, 8bit adam, fp16, don't cache latents (noticeable speedup if you do cache), train text, train EMA, gradient checkpointing, 2 gradient accumulation
+
+none of this is concrete stuff I do every time, I just roll whatever works. the single most important stuff is to ensure you never tag anything that isn't in an image after cropping.
+reduce the tags as much as humanly possible, ie:
+
+legwear, black thighhighs, long socks, long thighhighs, pantyhose, stockings, etc.
+
+to just:
+
+thighhighs
+
+try add images that both do and do not use all of your tags. if you have a pic with thighhighs, include at least one without, otherwise the tag is meaningless
+if your training cannot establish a positive and negative for each tag it's gonna struggle to recall those features
+have makima with yellow eyes? include some girl with similar features but red or blue eyes, or just an entirely different girl that's been accurately tagged with the negatives you need
+in this way you can distinguish between features and emphasise stuff.
+
 ### Datasets:
 * ie_(raarami): https://mega.nz/folder/4GkVQCpL#Bg0wAxqXtHThtNDaz2c90w
 	* Expanded (DEAD LINK): https://litter.catbox.moe/j4mpde.zip
@@ -2217,6 +2348,16 @@ Vector guide by anon: https://rentry.org/dah4f
 * Anya: https://litter.catbox.moe/o5efml.zip
 * Amelia Watson: https://files.catbox.moe/vrr2sl.zip
 * Henreader (NSFW + loli): https://files.catbox.moe/e0e3nk.7z
+* olga discordia from kuroinu: https://www.dropbox.com/s/wir30k9oj3uvnay/process%202.rar?dl=0
+* Olga (another?): https://tstorage.info/a70vikp8waeg
+* LeMat and Radom (guns): https://files.catbox.moe/zen22z.zip
+* AK and SCAR (gun families): https://files.catbox.moe/7vo31t.zip
+* Alkemanubis, Siina You Honzuki, Tatata: https://mega.nz/folder/sTV0EI6b#hGotLRXpotvmYxqfTb_KMw
+* Onono imoko (NSFW + SFW, 300 cropped images): https://files.catbox.moe/dkn85w.zip
+* Moona: https://files.catbox.moe/mmrf0v.rar
+* Au'ra, a playable race from Final Fantasy (~100 imgs): https://mega.nz/folder/ZWcXCYpB#Zo-dHbp_u30iIz-LxLUGyA
+
+Training dataset with aesthetic ratings: https://github.com/JD-P/simulacra-aesthetic-captions
 
 ## FAQ
 
@@ -2273,6 +2414,7 @@ Check out one of these (I did not used most of these, so they might be unsafe to
 * https://boards.4channel.org/g/thread/89199040
 * https://www.mage.space/
 * (used and safe) https://github.com/TheLastBen/fast-stable-diffusion
+	* https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast_stable_diffusion_AUTOMATIC1111.ipynb
 * (used and safe) https://github.com/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb
 * visualise.ai
 	* Account required
@@ -2294,10 +2436,11 @@ Check out one of these (I did not used most of these, so they might be unsafe to
 * SD 1.5: https://colab.research.google.com/drive/1kw3egmSn-KgWsikYvOMjJkVDsPLjEMzl
 * https://dreamlike.art/
 * https://pixelz.ai/
-* Anything v3 + Gigachad models: https://colab.research.google.com/github/Miraculix200/StableDiffusionUI_Colab/blob/main/StableDiffusionUI_Colab.ipynb#scrollTo=R-xAdMA5wxXd
+* Anything v3 + Gigachad models + a lot of other models + simple sd webui launcher that doesn't require an account/tokens: https://colab.research.google.com/github/Miraculix200/StableDiffusionUI_Colab/blob/main/StableDiffusionUI_Colab.ipynb#scrollTo=R-xAdMA5wxXd
 * Paperspace (has a free plan): https://www.paperspace.com/pricing
 * Old WD demo model: https://huggingface.co/spaces/hakurei/waifu-diffusion-demo
 * Site, needs account, not free forever: https://getimg.ai/
+* Deforum: https://colab.research.google.com/github/deforum-art/deforum-stable-diffusion/blob/main/Deforum_Stable_Diffusion.ipynb
 
 * Some gpu rental sites:
 	* has free plan: https://colab.research.google.com/
@@ -2315,7 +2458,11 @@ Check out one of these (I did not used most of these, so they might be unsafe to
 >'git checkout <blue number without these angled brackets>'
 >to reset your install, use 'git checkout master'
 
-**What is...?**
+> `git checkout .` will clean any changes you do
+
+> Another Guide: https://rentry.org/git_retard
+
+**What is...? (by anon)**
 >What is a VAE?
 Variational autoencoder, basically a "compressor" that can turn images into a smaller representation and then "decompress" them back to their original size. This is needed so you don't need tons of VRAM and processing power since the "diffusion" part is done in the smaller representation (I think). The newer SD 1.5 VAEs have been trained more and they can recreate some smaller details better.
 >What is pruning?
@@ -2371,6 +2518,7 @@ Anon:
 * Massive dumpy dump: https://rentry.org/RentrySD
 * Miraheze: https://stablediffusion.miraheze.org/wiki/Main_Page
 * Japanese guide(?): https://rentry.co/zk4u5
+* Setup: https://www.howtogeek.com/832491/how-to-run-stable-diffusion-locally-with-a-gui-on-windows/
 
 **Boorus:**
 * Danbooru: danbooru.donmai.us/
@@ -2535,3 +2683,41 @@ TI info: https://textual-inversion.github.io/
 RAM checker: https://learn.microsoft.com/en-us/sysinternals/downloads/rammap
 
 danbooru tags: if you have a link to the page with the image, just add .json to the end of the url to get all the tags in order
+
+Prebuilt xformers: https://rentry.org/25i6yn
+
+Putting whl files for xformers:
+``` python
+Place it in the webui folder
+Open up cmd prompt or bash in that folder
+venv\Scripts\activate.bat or source ./venv/bin/activate
+pip install <your xformers file>.whl
+```
+
+Denoising modification that some anon did:
+``` python
+add these lines and replace the denosed[i] = ... in sd_samplers.py:319 with
+
+                v = (torch.norm(denoised_uncond[i])*torch.norm(x_out[cond_index]))
+                u = (torch.norm(denoised_uncond[i])/torch.norm(x_out[cond_index]))
+                formula = (1 + (0.015 / (u * torch.cos(cond_scale - (torch.pi / (u/v))) + (3 + (cond_scale % 2)) )))
+                denoised[i] += (x_out[cond_index] - denoised_uncond[i]) * (weight * cond_scale) * formula
+```
+
+Nijijourney (midjourney but anime): https://nijijourney.com/
+
+xformers download: https://github.com/C43H66N12O12S2/stable-diffusion-webui/releases/
+
+Pixiv 3D modelling (probably can use for img2img/animations, free?): https://vroid.com/en
+
+issues with memory fragmentation: 
+https://github.com/pytorch/pytorch/issues/31252
+https://pytorch.org/docs/stable/cuda.html
+https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues?q=is%3Aissue+is%3Aopen+fragmentation
+
+exif viewer: https://github.com/exif-js/exif-js
+https://exifdata.com/
+
+safety filter thing, super outdated: https://www.reddit.com/r/StableDiffusion/comments/wv2nw0/tutorial_how_to_remove_the_safety_filter_in_5/
+
+* Upload to 4chan with a prompt automatically: https://rentry.org/promptchan
