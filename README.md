@@ -57,7 +57,14 @@ Twitter: https://twitter.com/questianon)
 	* Emad's statement: https://discord.com/channels/1002292111942635562/1002292398703001601/1045151904767942818
 	* Current implementations of Stable Diffusion need to have their code edited to support SD v2. It shouldn't be too hard to implement according to Emad
 
+	- Running SD 2.0:
+	`python scripts/txt2img.py --prompt "a professional photograph of an astronaut riding a horse" --ckpt <path/to/model.ckpt/> --config <path/to/config.yaml/>` 
+	Example: `python scripts/txt2img.py --prompt "a professional photograph of an astronaut riding a horse" --ckpt <path/to/768model.ckpt/> --config configs/stable-diffusion/v2-inference-v.yaml --H 768 --W 768 `
+	Another example: `python3.10 txt2img.py --prompt "woman showing her hands" --ckpt ../stable-diffusion-2/768-v-ema.ckpt --config configs/stable-diffusion/v2-inference-v.yaml --H 768 --W 768`
 
+	- Rudimentary support on AUTOMATIC1111's webui: https://github.com/MrCheeze/stable-diffusion-webui/commit/069591b06bbbdb21624d489f3723b5f19468888d
+
+* Emad Q&A on 11/24: https://discord.gg/TeTtZGTq?event=1045032204557897768 
 * Lightweight library to accelerate Stable-Diffusion, Dreambooth into fastest inference models with one single line of code: https://github.com/VoltaML/voltaML-fast-stable-diffusion
 * New sampler pull request (DPM++ SDE): https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4961
 * Extension that patches hypernetwork training released: https://github.com/aria1th/Hypernetwork-MonkeyPatch-Extension
