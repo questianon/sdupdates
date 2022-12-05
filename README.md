@@ -38,23 +38,85 @@ Twitter: https://twitter.com/questianon)
 		3. ```git pull```
 		4. ```pip install -r requirements.txt```
 		
->Rest of 11/22 + 11/23
+!!! info
+
+	**Notable upcoming events:**
 
 
+	**Waifu Diffusion v1.4 is coming out on December 26th**
+	* WD 1.4 information provided to me:
+		* New Deepdanbooru for better tagging (prerelease right now)
+		* much better hands - look at 'Cafe Unofficial Instagram TEST Model Release' for a sample of what it can do in an unfinished model
+		* Trained off SD 1.5
+		* Creator: "In terms of general flexibility of being able to prompt a wide range of things, wd1.4 should be better than everything" (planned to supercede all current models, including NAI and anything.ckpt, to the point where you don't need to merge)
+		* Creator: "we may create our own version of hypernetworks and create fine tunes for anime and realistic styles"
+		* Creator: the instagram model training includes improvements such as:
+			1. dynamic image aspect training (as in we trained images with ZERO cropping, the entire image is fed into SD all at once, even if it's landscape or portrait)
+			2. unconditional training such that the model can somewhat self improve
+			3. higher resolutions during training (640x640 max)
+			4. much faster training code (6-8x performance increase)
+			5. better training hyperparameters
+			6. automated blip captioning of all images
+		* Dataset and associated tags will be public
+		* Haru and Cafe came up with a temporary plan that may be able to drastically improve the performance of clip without having to retrain clip from scratch, though it'll have to happen after wd1.4
+		* to prevent bleed from the images, each source will have a tag associated with it in the caption data when fed into SD		
+		
+>11/26 to 12/9
+- Sorry for the long hiatus, I've just been busy with irl stuff the last two weeks. An update that hopefully covers everything that I've missed and changes some long overdue things will be worked on by the end of this week.
+- Waifu Diffusion 1.4 is delayed to Dec 26 due to a database issue (not SD 2.0)
+
+>11/25+11/26
+- My SD Hypertextbook, a tutorial that teaches a newcomer how to install and use Stable Diffusion, is released: https://rentry.org/sdhypertextbook
+- SD 2.0 has support in AUTOMATIC1111's webui: https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/ce6911158b5b2f9cf79b405a1f368f875492044d
+- (Reupload with new info) Pull request to support safetensors, the unpickleable and fast format to replace pytorch: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4930
+	- Git checkout this commit
+	- Convert your models locally: read the PR's first comment 
+	- Convert your models in the cloud: https://colab.research.google.com/drive/1YYzfYZEJTb3dAo9BX6w6eZINIuRsNv6l#scrollTo=ywbCl6ufwzmW
+		
+>11/24
+* SD Training Labs is going to conduct the first global public distributed training on November 27th
+	* Distributed training information provided to me:
+		* Attempted combination of the compute power of over 40+ peers worldwide to train a finetune of Stable Diffusion with Hivemind
+		* This is an experimental test that is not guaranteed to work
+		* This is a peer-to-peer network.
+			* You can use a VPN to connect
+			* Run inside an isolated container if possible
+			* Developer will try to add code to prevent malicious scripting, but nothing is guaranteed
+		* Current concerns with training like this:
+			* Concern 1 - Poisoning: A node can connect and use a malicious dataset hence affecting the averaged gradients. Similar to a blockchain network, this will only have a small effect on the averaged weights. The larger the amount of malicious nodes connected, the more power they will have on the averaged weights. At the moment we are implementing super basic (and vague) discord account verification. 
+			* Concern 2 - RCE: Pickle exploits should not be possible but haven't been tested. 
+			* Concern 3 - IP leak & firewall issues: Due to the structure of hivemind, IPs will be seen by other peers. You can avoid this by seting client-only mode, but you will limit the network reach. IPFS should be possible to be used to avoid firewall and NAT issues but doesn't work at the moment
+* Unstable Diffusion launching Kickstarter on December 9th to fund the research and development of AI models fine-tuned and trained on extremely large datasets specifically curated on NSFW
+	- https://discord.com/channels/1010980909568245801/1011042718853648526/1045519049955749898
+* Current implementations (WIP or not) of getting SD V2 on AUTOMATIC1111's webuiL
+	- https://gist.github.com/toriato/3d1b2da54ef15c100e8996dd546da825
+	- Pull request: https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/5011#issuecomment-1326384199
+	- https://github.com/uservar/stable-diffusion-webui/commits/dev2
+- Harem generator released: https://github.com/Extraltodeus/multi-subject-render
+	- Generates multiple complex subjects on a single image all at once
+- New Stable Diffusion trainer released: https://github.com/CCRcmcpe/scal-sdt
+	- Meant as a replacement for https://github.com/CCRcmcpe/diffusers
+	- "Developed in parallel to https://github.com/Mikubill/naifu-diffusion, but I focus more on training in local environment instead of hivemind"
 * **SD V2 released: https://stability.ai/blog/stable-diffusion-v2-release**
+	- https://www.reddit.com/r/StableDiffusion/comments/z36mm2/stable_diffusion_20_announcement/
 	- Stable Diffusion 2.0: An all-new text-to-image model trained with a brand new text encoder OpenCLIP, greatly improving the quality of generated images relative to earlier V1 releases
+		- Trained from scratch using OpenCLIP-ViT/H text encoder that generates 512x512 images, with improvements over previous releases (better FID and CLIP-g scores)
 	- Updated Inpainting Diffusion: A new text-guided inpainting model fine-tuned on Stable Diffusion 2.0
 	- Upscaler Diffusion: Enhance image resolution by 4x while preserving fine details
 	- depth2img: A variant image-to-image model focused on the overall structure and shape of input images, allowing you to radically change up the contents of your images without altering their composition
 		- Infers the depth of input images --> better img2img (preserved coherence)
 		- Seems like it's similar to Midjourney's "remix" feature
+		- This model is conditioned on monocular depth estimates inferred via MiDaS and can be used for structure-preserving img2img and shape-conditional synthesis
 	* Trained on 512x512 and 768x768 --> can generate images at these resolutions by default
-	* Combined with the upscaler, you can generate images of at least 2048x2048 by default
+		- For 768x768, the model was fine-tuned to generate 768x768 images, using v-prediction
+	* Combined with the upscaler, you can generate images of at least 2048x2048 by default. It's recommnended to install Efficient Attention (https://github.com/facebookresearch/xformers)
 	* Trained on an aesthetic subset of the LAION-5B dataset created by the DeepFloyd team at Stability AI, **which is then further filtered to remove adult content using LAION’s NSFW filter**.
 	* Optimized to run on one GPU
+	* Model is released under a revised "CreativeML Open RAIL++-M License" license
 	* Download: https://huggingface.co/stabilityai
 	* Github: https://github.com/Stability-AI/stablediffusion
 	* Emad's statement: https://discord.com/channels/1002292111942635562/1002292398703001601/1045151904767942818
+	* Twitter: https://twitter.com/StabilityAI/status/1595590319566819328?t=PXgar920uu4SnCOSjx0Mkw&s=19
 	* Current implementations of Stable Diffusion need to have their code edited to support SD v2. It shouldn't be too hard to implement according to Emad
 
 	- Running SD 2.0:
@@ -63,8 +125,24 @@ Twitter: https://twitter.com/questianon)
 	Another example: `python3.10 txt2img.py --prompt "woman showing her hands" --ckpt ../stable-diffusion-2/768-v-ema.ckpt --config configs/stable-diffusion/v2-inference-v.yaml --H 768 --W 768`
 
 	- Rudimentary support on AUTOMATIC1111's webui: https://github.com/MrCheeze/stable-diffusion-webui/commit/069591b06bbbdb21624d489f3723b5f19468888d
+	- Free tier colab (didn't test): https://colab.research.google.com/drive/1YPFfjFC2NFm0nIxNHXm4fVsxmGPsf38S?usp=sharing
+	- Local (didn't test): https://github.com/AmericanPresidentJimmyCarter/stable-diffusion
+	- Discord bot (didn't test): https://github.com/AmericanPresidentJimmyCarter/yasd-discord-bot
+- StabilityAI solves legal problems --> it's possible there will be more frequent news and releases: https://discord.com/channels/1002292111942635562/1002292112739549196/1045158750631243786
+	- https://www.reddit.com/r/StableDiffusion/comments/z37ke7/emad_just_said_on_discord_that_it_is_possible/
+- Completely A.I. generated webcomic: https://globalcomix.com/c/paintings-photographs/chapters/en/1/4
+	- https://www.reddit.com/r/StableDiffusion/comments/z2qkyj/i_created_a_completely_aigenerated_webcomic_over/
+- Another pickle scanner released: https://www.reddit.com/r/StableDiffusion/comments/z2zu2x/keep_yourself_safe_when_downloading_models_pickle/
+	- GUI repo: https://github.com/diStyApps/Stable-Diffusion-Pickle-Scanner-GUI
+	- Windows app: https://github.com/diStyApps/Stable-Diffusion-Pickle-Scanner-GUI/releases/download/v0.1.0/distys-Stable-Diffusion-Pickle-Scanner-GUI.v0.1.0.zip
+	- original repo: https://github.com/mmaitre314/picklescan
 
+>Rest of 11/22 + 11/23
 * Emad Q&A on 11/24: https://discord.gg/TeTtZGTq?event=1045032204557897768 
+* NULL-text inversion for editing real images using guided diffusion models (AKA convert an image into latent space and edit it): https://github.com/thepowerfuldeez/null-text-inversion
+	* https://www.reddit.com/r/StableDiffusion/comments/yyqufb/nulltext_inversion_for_editing_real_images_using/
+* First multilingual text2image model released: https://huggingface.co/sberbank-ai/Kandinsky_2.0
+* Improving Addam's second-order approximation: https://twitter.com/_clashluke/status/1594327381317419010
 * Lightweight library to accelerate Stable-Diffusion, Dreambooth into fastest inference models with one single line of code: https://github.com/VoltaML/voltaML-fast-stable-diffusion
 * New sampler pull request (DPM++ SDE): https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4961
 * Extension that patches hypernetwork training released: https://github.com/aria1th/Hypernetwork-MonkeyPatch-Extension
