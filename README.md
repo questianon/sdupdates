@@ -61,8 +61,71 @@ Twitter: https://twitter.com/questianon)
 		* Haru and Cafe came up with a temporary plan that may be able to drastically improve the performance of clip without having to retrain clip from scratch, though it'll have to happen after wd1.4
 		* to prevent bleed from the images, each source will have a tag associated with it in the caption data when fed into SD		
 		
->11/26 to 12/9
-- Sorry for the long hiatus, I've just been busy with irl stuff the last two weeks. An update that hopefully covers everything that I've missed and changes some long overdue things will be worked on by the end of this week.
+>11/26 to 12/12
+- Update your AUTOMATIC1111 installation for a lot of fixes + features
+	- Notable updates I can find:
+		- Adding --gradio-inpaint-tool and color-sketch: https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/5cd5a672f7889dcc018c3873ec557d645ebe35d0
+		- Safetensors merged: https://github.com/AUTOMATIC1111/stable-diffusion-webui/pull/4930
+			- To enable SafeTensors for GPU, the `SAFETENSORS_FAST_GPU environment` variable needs to be set to `1`
+			- Batch conversion script is in the PR
+			- Convert: https://huggingface.co/spaces/safetensors/convert
+		- A bunch of UI updates/fixes
+		- Proper SD 2.0 support (primary commit linked): https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/ce6911158b5b2f9cf79b405a1f368f875492044d
+		- Improvements for various tools (like upscalers)
+- (forgot to put this ever since it was created, but it's really good) InvokeAI, an all-in-one alternative to Automatic1111's webui, is updated with a lot of stuff: https://github.com/invoke-ai/InvokeAI
+	- InvokeAI needs only ~3.5GB of VRAM to generate a 512x768 image (and less for smaller images), and is compatible with Windows/Linux/Mac (M1 & M2).
+	- Has features like: UI Outpainting, Embedding Management, a unified (infinite) canvas, and an image viewer
+	- Very user friendly (simple UI) and super easy to install (1-clicK)
+	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/zabmht/invokeai_22_release_the_unified_canvas/
+- Unstable Diffusion reaches $25000 kickstarter goal for further training of SD 2.0
+	- https://www.kickstarter.com/projects/unstablediffusion/unstable-diffusion-unrestricted-ai-art-powered-by-the-crowd
+	- Goals:
+		- Community GPU Cloud: researchers and community model makers can request compute grants and train their own models and datasets on our system, provided they will release the results open source
+		- Further training using more steps and images
+		- Only filtered out children to prevent misuse
+- Stable Diffusion v2.1 released: https://stability.ai/blog/stablediffusion2-1-release7-dec-2022
+	- https://huggingface.co/stabilityai/stable-diffusion-2-1
+	- Reduced the strength of filters to allow for generating better people
+- LORA - Low-rank Adaptation for Fast Text-to-Image Diffusion Fine-tuning space (based on the github from below): https://huggingface.co/spaces/ysharma/Low-rank-Adaptation
+	- Dreambooth at twice the speed
+	- Super small model file sizes (3-4MB)
+	- Supposedly better than full fine-tuning according to author of the linked space
+	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/ziwwzh/lora_dreambooth_web_ui_finetune_stable_diffusion/
+- Dreambooth on 6 GB VRAM and under 16 GB RAM released (LORA from above): https://github.com/cloneofsimo/lora
+	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/zfqkh3/we_can_now_do_dreambooth_on_a_gpu_with_only_6gb/
+	- How to run on Windows natively without WSL (uses similar steps to linked guide): https://www.reddit.com/r/StableDiffusion/comments/ydip3s/guide_dreambooth_training_with_shivamshriraos/
+- StableTuner, a GUI based Stable Diffusion finetuner, released: https://github.com/devilismyfriend/StableTuner
+	- Easy to install and use, friendly GUI, and all-in-one finetuner/trainer
+	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/zd3xut/stabletuner_a_nononsense_powerful_finetuner_with/
+- openOutpaint released: https://github.com/zero01101/openOutpaint
+	- Open source, self-hosted, offline, lightweight, easy to use outpainting for AUTOMATIC1111's webui
+	- Guide: https://github.com/zero01101/openOutpaint/wiki/SBS-Guided-Example
+	- Manual: https://github.com/zero01101/openOutpaint/wiki/Manual
+	- Reddit (has more features listed in comments): https://www.reddit.com/r/StableDiffusion/comments/zi2nr9/openoutpaint_v0095_an_aggressively_open_source/
+- OpenAI releases ChatGPT, a language model for dialogue (info in the link): https://openai.com/blog/chatgpt/
+	- Demo (requires account): https://chat.openai.com/	
+- Automatic1111 adds support for SD depth model
+	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/zi6x66/automatic1111_added_support_for_new_depth_model/
+	- Instructions on how to use by reddit user: 
+		1. Download https://huggingface.co/stabilityai/stable-diffusion-2-depth (model) and place it in models/Stable-diffusion
+		2. Download https://raw.githubusercontent.com/Stability-AI/stablediffusion/main/configs/stable-diffusion/v2-midas-inference.yaml (config) and place it in the same folder as the checkpoint
+		3. Rename the config to 512-depth-ema.yaml
+		4. Start Stable-Diffusion-Webui, select the 512-depth-ema checkpoint and use img2img as you normally would.
+- depthmap2mask extension released that can create 3d depth map masks --> supposedly better img2img
+	- Seems to be an alternative to conditioning image mask weight
+- Dreambooth training based on Shivam's repo extension updated to support SD v2.0 (find it in the extensions tab)
+- Script to convert diffusers models to ckpt and (vice versa?) released: https://github.com/lawfordp2017/diffusers/tree/main/scripts
+- AUTOMATIC1111 webui now on HuggingFace: https://huggingface.co/spaces/camenduru/webui
+- Pickle Scanner GUI updated: https://github.com/diStyApps/Stable-Diffusion-Pickle-Scanner-GUI
+- Dream Textures (Stable Diffusion for Blender) demo: https://twitter.com/CarsonKatri/status/1600248599254007810
+	- Github: https://github.com/carson-katri/dream-textures
+	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/zf2b9k/absolutely_crazy_addon_in_blender_to_add_textures/
+- Stable Diffusion IOS app  released: https://www.reddit.com/r/StableDiffusion/comments/z5ndpw/i_made_a_stable_diffusion_for_anime_app_in_your/
+	- Offline?
+	- App Store: https://apps.apple.com/us/app/waifu-art-ai-local-generator/id6444585505
+- Simple Dreambooth training (but costs money) service released: https://openart.ai/photobooth
+- All in one Stable Diffusion server (costs money but seems cheap and easy to use) released: https://rundiffusion.com/
+	- https://www.reddit.com/r/StableDiffusion/comments/zea5rd/thank_you_to_all_the_alpha_testers/
 - Waifu Diffusion 1.4 is delayed to Dec 26 due to a database issue (not SD 2.0)
 
 >11/25+11/26
@@ -494,7 +557,6 @@ Twitter: https://twitter.com/questianon)
 * Lots of localization updates + improvements + extra goodies added if you update AUTOMATIC1111's webui
 * Wildcard script + collection of wildcards released: https://app.radicle.xyz/seeds/pine.radicle.garden/rad:git:hnrkcfpnw9hd5jb45b6qsqbr97eqcffjm7sby
 
->10/31
 >10/31
 * Unprompted extension released: https://github.com/ThereforeGames/unprompted
 	* Wildcards on steroids
