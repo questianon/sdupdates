@@ -62,6 +62,7 @@ Twitter: https://twitter.com/questianon)
 		* to prevent bleed from the images, each source will have a tag associated with it in the caption data when fed into SD		
 		
 >11/26 to 12/12
+- Goldmine is being reorganized and curated, update will come out when it looks organized
 - Update your AUTOMATIC1111 installation for a lot of fixes + features
 	- Notable updates I can find:
 		- Adding --gradio-inpaint-tool and color-sketch: https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/5cd5a672f7889dcc018c3873ec557d645ebe35d0
