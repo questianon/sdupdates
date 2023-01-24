@@ -5,7 +5,7 @@
 
 !!! danger Warnings: 
 
-	1. Ckpts/hypernetworks/embeddings and scripts downloaded from here are ==not== interently safe as of right now. They can be pickled/contain malicious code. Use your common sense and protect yourself as you would with any random download link you would see on the internet.
+	1. Python ckpts/hypernetworks/embeddings and scripts downloaded from here are ==not== interently safe. They can be pickled/contain malicious code. Use your common sense and protect yourself as you would with any random download link you would see on the internet.
 
 	2. Monitor your GPU temps and increase cooling and/or undervolt them if you need to. There have been claims of GPU issues due to high temps.
 
@@ -38,29 +38,47 @@ Twitter: https://twitter.com/questianon)
 		3. ```git pull```
 		4. ```pip install -r requirements.txt```
 		
-!!! info
+!!! note Sticky Note
+	
+	Update on SDupdates/Goldmine/Hypertext/whatever else:
+	Hi everyone. It's been a while since this repo has been updated, and I deeply apologize for not communicating what's going on with the repo better. I took a break from the Stable Diffusion scene for the past few months because I got sick, my hands started tingling a lot, and various other personal reasons/events in my life took precedence. However, now that all of that's dealt with, I'm officially back from my hiatus. 
+	
+	Updates will roll out inconsistently for a while before it normalizes back to at least one update a day. It'll take a while to catch up with everything new as well as remove all the deprecated/useless stuff from the repos and finish organizing the Goldmine, so expect a goldmine + news + tutorial megaupdate by the end of this week (hopefully) or next week. I'll also be checking my socials and catching up with what people have sent, so if you have any new info, feel free to send it over. In terms of keeping people updated with the state of the repo, I'll have a section in the news repo where I can post things like a to-do list or inform the community if I need to take a lengthy break (which I don't plan to in the foreseeable future). 
+	
+	What I'm planning to remove/change/add:
+	- The comparisons between samplers and stuff: There have been so many updates that these should mostly be deprecated by now. Finding them is also really easy online. If there happens to be a megacomparison between a ton, I'll think about keeping it in.
+	~ The misc section: It'll either be organized properly or thrown out
+	~ Old news: The newsfeed doesn't need to have info from the beginning of Stable Diffusion, so I'll probably move it to an archive somewhere.
+	- All the model links: They're probably going to be shortened or, if they're reposted a million times elsewhere, reduced to a list on pastebin or something
+	- Random links in random sections (ex: some random wiki page that's linked 50 times already in the goldmine): Redundancy
+	- Links that provide only a little info but have a super long url: Takes up too much character space and if it only has one tidbit of new info, it's probably not too important
+	+ The pull requests, discussions, and issues on Github
+	~ Maybe the new embeds/hypernets/loras/dreambooths?: The only issue I see with this is that it'll take a long time to sort through and check the download links from 4ch, discord, etc. Maybe I'll just sort through the 4ch ones and, if I have extra time, sort through the other sites? Not too sure 
+	
+	Please give me feedback on 4ch, reddit, etc. what else should/shouldn't be changed and I'll do my best to incorporate it
 
-	**Notable upcoming events:**
+	Current goal: Catch up on SD
 
+>1/23
+- Class action lawsuit filed by three artists against Stability AI, Midjourney, and Deviant Art for Stable Diffusion
+	- Same lawyers as those that sued Github Copilot
+	- Reddit post: https://www.reddit.com/r/StableDiffusion/comments/10bj8jm/class_action_lawsuit_filed_against_stable/
+	- Youtube video I found: https://www.youtube.com/watch?v=gv9cdTh8cUo
+- Low-rank Adaptation for Fast Text-to-Image Diffusion Fine-tuning (Lora) released
+	- Alternative to Dreambooth, 3mb files
+	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/1078nsf/version_010_of_lora_released_alternative_to/
+	- Github: https://github.com/cloneofsimo/lora
+	- Notebook: https://github.com/cloneofsimo/lora/blob/master/scripts/run_inference.ipynb
+- Safetensors seems to be the norm now, and they should be safe for you to download and use.
+- Checkpoint repository with a nice ui released: https://civitai.com/
+- Various updates to ChatGPT: https://openai.com/blog/chatgpt/
+- Open Assistant: Basically open source ChatGPT
+	- Github: https://github.com/LAION-AI/Open-Assistant
+- (Somewhat old?, relevant because of ChatGPT) Largest Open Multilingual Language Model: BLOOM
+	- https://huggingface.co/bigscience/bloom
+	- https://bigscience.huggingface.co/blog/bloom
+- Many updates to AUTOMATIC1111's webui, make sure to git pull/update to get them
 
-	**Waifu Diffusion v1.4 is coming out on December 26th**
-	* WD 1.4 information provided to me:
-		* New Deepdanbooru for better tagging (prerelease right now)
-		* much better hands - look at 'Cafe Unofficial Instagram TEST Model Release' for a sample of what it can do in an unfinished model
-		* Trained off SD 1.5
-		* Creator: "In terms of general flexibility of being able to prompt a wide range of things, wd1.4 should be better than everything" (planned to supercede all current models, including NAI and anything.ckpt, to the point where you don't need to merge)
-		* Creator: "we may create our own version of hypernetworks and create fine tunes for anime and realistic styles"
-		* Creator: the instagram model training includes improvements such as:
-			1. dynamic image aspect training (as in we trained images with ZERO cropping, the entire image is fed into SD all at once, even if it's landscape or portrait)
-			2. unconditional training such that the model can somewhat self improve
-			3. higher resolutions during training (640x640 max)
-			4. much faster training code (6-8x performance increase)
-			5. better training hyperparameters
-			6. automated blip captioning of all images
-		* Dataset and associated tags will be public
-		* Haru and Cafe came up with a temporary plan that may be able to drastically improve the performance of clip without having to retrain clip from scratch, though it'll have to happen after wd1.4
-		* to prevent bleed from the images, each source will have a tag associated with it in the caption data when fed into SD		
-		
 >11/26 to 12/12
 - Goldmine is being reorganized and curated, update will come out when it looks organized
 - Update your AUTOMATIC1111 installation for a lot of fixes + features
