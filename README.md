@@ -3467,6 +3467,9 @@ Check out one of these (I did not used most of these, so they might be unsafe to
 	* https://vast.ai/
 	* https://www.runpod.io/
 
+**I have decided to get a new GPU for stable diffusion, are there any benchmarks for the relative performance of the GPUs
+>Tom's Hardware recently released benchmarks for various GPUs https://www.tomshardware.com/news/stable-diffusion-gpu-benchmarks, note that if you plan to do fine-tuning of the models you may want to consider sticking to an NVIDIA GPU that has at least 16GB VRAM.
+	
 **How do I directly check AUTOMATIC1111's webui updates?**
 >For a complete list of updates, go here: https://github.com/AUTOMATIC1111/stable-diffusion-webui/commits/master
 
