@@ -1,13 +1,11 @@
 # SD Updates (3)
 ->Only news here<-
 ->Find downloads and links here: https://rentry.org/sdgoldmine<-
-->Old stuff here https://rentry.org/sdupdates2 and here https://rentry.org/sdupdates<-
+->Old stuff here https://rentry.org/oldsdupdates<-
 
 !!! danger Warnings: 
 
-	1. Python ckpts/hypernetworks/embeddings and scripts downloaded from here are ==not== interently safe. They can be pickled/contain malicious code. Use your common sense and protect yourself as you would with any random download link you would see on the internet.
-
-	2. Monitor your GPU temps and increase cooling and/or undervolt them if you need to. There have been claims of GPU issues due to high temps.
+	1. Monitor your GPU temps and increase cooling and/or undervolt them if you need to. There have been claims of GPU issues due to high temps.
 
 All rentry links are ended with a '.org' here and can be changed to a '.co'. Also, use incognito/private browsing when opening google links, else you lose your anonymity / someone may dox you
 
@@ -20,7 +18,7 @@ Trip: questianon !!YbTGdICxQOw
 Discord: malt#6065
 Reddit: u/questianon
 Github: https://github.com/questianon
-Twitter: https://twitter.com/questianon)
+Twitter: https://twitter.com/questianon
 
 !!! note Update instructions. If SD breaks go backward in commits until it starts working again
 	Instructions:
@@ -54,7 +52,7 @@ Twitter: https://twitter.com/questianon)
 	- Links that provide only a little info but have a super long url: Takes up too much character space and if it only has one tidbit of new info, it's probably not too important
 	+ The pull requests, discussions, and issues on Github
 	~ Maybe the new embeds/hypernets/loras/dreambooths?: The only issue I see with this is that it'll take a long time to sort through and check the download links from 4ch, discord, etc. Maybe I'll just sort through the 4ch ones and, if I have extra time, sort through the other sites? Not too sure 
-	- Delete all the links that I think no one uses: I'll just dump them somewhere and if I see a lot of people using it I'll add it back to the goldmine	
+	- Delete all the links that I think no one uses: I'll just dump them somewhere and if I see a lot of people using it I'll add it back to the goldmine
 
 	Please give me feedback on 4ch, reddit, etc. what else should/shouldn't be changed and I'll do my best to incorporate it
 
@@ -71,7 +69,8 @@ Twitter: https://twitter.com/questianon)
 	- Github: https://github.com/cloneofsimo/lora
 	- Notebook: https://github.com/cloneofsimo/lora/blob/master/scripts/run_inference.ipynb
 - Safetensors seems to be the norm now, and they should be safe for you to download and use.
-- Checkpoint repository with a nice ui released: https://civitai.com/
+- Large checkpoint repository with a nice ui released: https://civitai.com/
+	- Has sorting options, previews, comments, etc. Seems to be an uncensored replacement for HuggingFace?
 - Android APK for generating 256x256 images from NovelAI released: https://github.com/EdVince/Stable-Diffusion-NCNN
 - Various updates to ChatGPT: https://openai.com/blog/chatgpt/
 - Open Assistant: Basically open source ChatGPT
@@ -79,7 +78,7 @@ Twitter: https://twitter.com/questianon)
 - (Somewhat old?, relevant because of ChatGPT) Largest Open Multilingual Language Model: BLOOM
 	- https://huggingface.co/bigscience/bloom
 	- https://bigscience.huggingface.co/blog/bloom
-- Many updates to AUTOMATIC1111's webui, make sure to git pull/update to get them
+- Many UI and functional updates to AUTOMATIC1111's webui, make sure to git pull/update to get them
 - Old newsfeed posts have been archived: https://rentry.org/oldsdupdates
 
 >11/26 to 12/12
