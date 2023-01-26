@@ -58,6 +58,8 @@ Twitter: https://twitter.com/questianon
 
 	Current goal: Catch up on SD
 
+	Update: I got sick the day after posting this, so next update will be delayed :(
+
 >1/23
 - Class action lawsuit filed by three artists against Stability AI, Midjourney, and Deviant Art for Stable Diffusion
 	- Same lawyers as those that sued Github Copilot
