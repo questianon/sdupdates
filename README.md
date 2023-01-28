@@ -60,6 +60,17 @@ Twitter: https://twitter.com/questianon
 
 	Update: I got sick the day after posting this, so next update will be delayed :(
 
+>1/28
+- Stable Diffusion Accelerated API (SDA) released by SAIL: https://github.com/chavinlo/sda-node
+	- Uses TensorRT to speed up generation speeds on NVIDIA cards
+		- Generate a 512x512 @ 25 steps image in half a second
+	- HTTP API
+	- More schedulers from diffusers
+	- Weighted prompts (ex.: "a cat :1.2 AND a dog AND a penguin :2.2")
+	- More step counts from accelerated schedulers
+	- Extended prompts (broken at the moment)
+	- You can test it on their server before you download it: https://discord.gg/RWbpNGyN
+
 >1/23
 - Class action lawsuit filed by three artists against Stability AI, Midjourney, and Deviant Art for Stable Diffusion
 	- Same lawyers as those that sued Github Copilot
