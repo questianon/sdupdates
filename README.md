@@ -60,6 +60,14 @@ Twitter: https://twitter.com/questianon
 
 	Update: I got sick the day after posting this, so next update will be delayed :(
 
+>2/2
+- Netflix short animation uses image generation for its backgrounds
+	- https://twitter.com/NetflixJP/status/1620357552025538561
+- Text to 3D dynamic video using 4D paper released: https://make-a-video3d.github.io/
+	- Can view from any camera location and angle
+- Text to Live: Image and video editing using text
+	- https://text2live.github.io/
+
 >1/28
 - Stable Diffusion Accelerated API (SDA) released by SAIL: https://github.com/chavinlo/sda-node
 	- Uses TensorRT to speed up generation speeds on NVIDIA cards
