@@ -3,10 +3,6 @@
 ->Find downloads and links here: https://rentry.org/sdgoldmine<-
 ->Old stuff here https://rentry.org/oldsdupdates<-
 
-!!! danger Warnings: 
-
-	1. Monitor your GPU temps and increase cooling and/or undervolt them if you need to. There have been claims of GPU issues due to high temps.
-
 All rentry links are ended with a '.org' here and can be changed to a '.co'. Also, use incognito/private browsing when opening google links, else you lose your anonymity / someone may dox you
 
 ## Contact
@@ -35,30 +31,59 @@ Twitter: https://twitter.com/questianon
 			a. if this doesn't work, run ```python -m venv venv``` beforehand
 		3. ```git pull```
 		4. ```pip install -r requirements.txt```
+	
+	If AUTOMATIC1111's Github goes down, you can try checking his alt repo: https://gitgud.io/AUTOMATIC1111/stable-diffusion-webui
 		
-!!! note Sticky Note
-	
-	Update on SDupdates/Goldmine/Hypertext/whatever else:
-	Hi everyone. It's been a while since this repo has been updated, and I deeply apologize for not communicating what's going on with the repo better. I took a break from the Stable Diffusion scene for the past few months because personal reasons/events in my life took precedence. However, now that all of that's dealt with, I'm officially back from my hiatus. 
-	
-	Updates will roll out inconsistently for a while before it normalizes back to at least one update a day. It'll take a while to catch up with everything new as well as remove all the deprecated/useless stuff from the repos and finish organizing the Goldmine, so expect a goldmine + news + tutorial megaupdate by the end of this week (hopefully) or next week. I'll also be checking my socials and catching up with what people have sent, so if you have any new info, feel free to send it over. In terms of keeping people updated with the state of the repo, I'll have a section in the news repo where I can post things like a to-do list or inform the community if I need to take a lengthy break (which I don't plan to in the foreseeable future). 
-	
-	What I'm planning to remove/change/add:
-	- The comparisons between samplers and stuff: There have been so many updates that these should mostly be deprecated by now. Finding them is also really easy online. If there happens to be a megacomparison between a ton, I'll think about keeping it in.
-	~ The misc section: It'll either be organized properly or thrown out
-	~ Old news: The newsfeed doesn't need to have info from the beginning of Stable Diffusion, so I'll probably move it to an archive somewhere.
-	- All the model links: They're probably going to be shortened or, if they're reposted a million times elsewhere, reduced to a list on pastebin or something
-	- Random links in random sections (ex: some random wiki page that's linked 50 times already in the goldmine): Redundancy
-	- Links that provide only a little info but have a super long url: Takes up too much character space and if it only has one tidbit of new info, it's probably not too important
-	+ The pull requests, discussions, and issues on Github
-	~ Maybe the new embeds/hypernets/loras/dreambooths?: The only issue I see with this is that it'll take a long time to sort through and check the download links from 4ch, discord, etc. Maybe I'll just sort through the 4ch ones and, if I have extra time, sort through the other sites? Not too sure 
-	- Delete all the links that I think no one uses: I'll just dump them somewhere and if I see a lot of people using it I'll add it back to the goldmine
 
-	Please give me feedback on 4ch, reddit, etc. what else should/shouldn't be changed and I'll do my best to incorporate it
-
-	Current goal: Catch up on SD
-
-	Update: I got sick the day after posting this, so next update will be delayed :(
+>2/22
+- Huggingface adds a diffusion model gallery: https://huggingface.co/spaces/huggingface-projects/diffusers-gallery
+- OpenAI tries to restrict language models and open source projects: https://arxiv.org/pdf/2301.04246.
+	- https://twitter.com/harmlessai/status/1624617240225288194
+	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/111fbvb/closedai_strikes_again
+- A1111 released an auto installer for his webui: https://github.com/AUTOMATIC1111/stable-diffusion-webui/releases/tag/v1.0.0-pre
+- InstructPix2Pix built into A1111's webui
+	- IP2P is a model that can make changes to an image use natural language prompts
+		- https://www.timothybrooks.com/instruct-pix2pix
+	- Model download: https://huggingface.co/timbrooks/instruct-pix2pix/tree/main
+	- Reddit post with more information: https://www.reddit.com/r/StableDiffusion/comments/10tjzmf/instructpix2pix_is_built_straight_into_the/
+- ControlNet + Houdini (3D software) extension wip
+	- https://www.reddit.com/r/StableDiffusion/comments/115eax6/im_working_on_api_for_the_a1111_controlnet/
+- LORA training guide: https://i.imgur.com/J8xXLLy.png
+	- https://www.reddit.com/r/StableDiffusion/comments/110up3f/i_made_a_lora_training_guide_its_a_colab_version/
+- ControlNet guide: https://i.redd.it/a2ifnjcqj4ja1.png
+- 2 weeks old but the ControlNet extension is released
+	- Neural network that adds more control over Stable Diffusion models without merging or requiring much img2img
+	- Probably the largest improvement to compositional prompting (fixes hands greatly!) and img2img
+	- Allows for extracting compositions and poses from images
+		- You can mix this with 3D pose software like Daz3D, https://magicposer.com/, and the OpenPose extension to create characters with specific poses quickly
+	- Has many different preprocessors and models
+		- In recent update, you can use multiple models at once (enable this in the settings)
+		- Example model: Sketch - Converts a sketch into a base for an image, retaining the basic composition
+	- Has an option to guess the image provided and generate something even with no prompt
+	- Simple explanation of all the settings and models: https://www.reddit.com/r/StableDiffusion/comments/119o71b/a1111_controlnet_extension_explained_like_youre_5/
+	- Pruned models (good for most people): https://civitai.com/models/9868/controlnet-pre-trained-difference-models
+	- Original models: https://huggingface.co/lllyasviel/ControlNet
+	- Original Github: https://github.com/lllyasviel/ControlNet
+	- A1111 Plugin Github: https://github.com/Mikubill/sd-webui-controlnet
+- OpenPose plugin released
+	- Extract pose information from images
+	- Works with ControlNet
+	- Github: https://github.com/fkunn1326/openpose-editor
+- Attend-and-Excite: Introduces Generative Semantic Nursing to intervene during the generative process to guide the model to generate all the tokens in a prompt
+	- Github: https://github.com/AttendAndExcite/Attend-and-Excite
+	- Paper: https://arxiv.org/abs/2301.13826
+	- Website: https://attendandexcite.github.io/Attend-and-Excite/
+- Free and open source photoshop plugin released a few weeks ago
+	- Github: https://github.com/AbdullahAlfaraj/Auto-Photoshop-StableDiffusion-Plugin
+	- Reddit showcase: https://www.reddit.com/r/StableDiffusion/comments/10n3cqo/major_update_automatic1111_photoshop_stable/
+- Big update for the NKMD GUI from a few weeks ago
+	- Reddit post: https://www.reddit.com/r/StableDiffusion/comments/10kbyro/nmkd_stable_diffusion_gui_190_is_out_now/
+	- Github: https://github.com/n00mkrad/text2image-gui
+	- Itch.io: https://nmkd.itch.io/t2i-gui/devlog/480628/sd-gui-190-now-with-instructpix2pix
+- Oldish: Google announces Dreamix
+	- Generates videos from a prompt and input video
+- Old: RunwayML working on video to prompt to video: https://arxiv.org/abs/2302.03011
+- Super old, but relevant because of video: Layered neural networks for consistency in video: https://layered-neural-atlases.github.io/
 
 >2/2
 - Netflix short animation uses image generation for its backgrounds
@@ -67,6 +92,15 @@ Twitter: https://twitter.com/questianon
 	- Can view from any camera location and angle
 - Text to Live: Image and video editing using text
 	- https://text2live.github.io/
+- AUTOMATIC1111 releases a pixelization extension for his webui: https://github.com/AUTOMATIC1111/stable-diffusion-webui-pixelization
+- Oldish update: You can preview embeds in AUTOMATIC1111's webui
+- Oldish update: Waifu Diffusion 1.4 released
+	- Diffusers: https://huggingface.co/hakurei/waifu-diffusion
+	- Pickle: https://huggingface.co/hakurei/waifu-diffusion-v1-4
+- Old update: Extension that completes depth2img support released
+	- https://github.com/AnonymousCervine/depth-image-io-for-SDWebui
+- Old update that I forgot to include: VoltaML, similar to SDA, increases speeds by up to 10x (from what I've heard)
+	- https://github.com/VoltaML/voltaML-fast-stable-diffusion
 
 >1/28
 - Stable Diffusion Accelerated API (SDA) released by SAIL: https://github.com/chavinlo/sda-node
@@ -152,7 +186,7 @@ Twitter: https://twitter.com/questianon
 		1. Download https://huggingface.co/stabilityai/stable-diffusion-2-depth (model) and place it in models/Stable-diffusion
 		2. Download https://raw.githubusercontent.com/Stability-AI/stablediffusion/main/configs/stable-diffusion/v2-midas-inference.yaml (config) and place it in the same folder as the checkpoint
 		3. Rename the config to 512-depth-ema.yaml
-		4. Start Stable-Diffusion-Webui, select the 512-depth-ema checkpoint and use img2img as you normally would.
+		4. Start Stable-Diffusion-Webui,z select the 512-depth-ema checkpoint and use img2img as you normally would.
 - depthmap2mask extension released that can create 3d depth map masks --> supposedly better img2img
 	- Seems to be an alternative to conditioning image mask weight
 - Dreambooth training based on Shivam's repo extension updated to support SD v2.0 (find it in the extensions tab)
