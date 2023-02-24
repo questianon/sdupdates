@@ -35,7 +35,12 @@ Twitter: https://twitter.com/questianon
 	If AUTOMATIC1111's Github goes down, you can try checking his alt repo: https://gitgud.io/AUTOMATIC1111/stable-diffusion-webui
 		
 >2/23
-- US Copyright Office state that images produced by Midjourney for "Zarya of the Dawn" is not eligible for copyright protection as they did not meet the minimum human authorship requirements, however the story and arrangement of the images in the comic is eligible for copyright protection: https://fingfx.thomsonreuters.com/gfx/legaldocs/klpygnkyrpg/AI%20COPYRIGHT%20decision.pdf 
+- US Copyright Office state that images produced by Midjourney for "Zarya of the Dawn" is not eligible for copyright protection as they did not meet the minimum human authorship requirements, however the story and arrangement of the images in the comic is eligible for copyright protection
+	- In short, copyright of AI images (in the US at least) is still muddy.
+	- Correspondence letter: https://fingfx.thomsonreuters.com/gfx/legaldocs/klpygnkyrpg/AI%20COPYRIGHT%20decision.pdf
+	- Post: https://processmechanics.com/2023/02/22/a-mixed-decision-from-the-us-copyright-office/ 
+	- Reddit post: https://www.reddit.com/r/StableDiffusion/comments/1196wl6/us_copyright_office_affirms_copyright_of/
+	- Extra law information: https://www.reddit.com/r/bigsleep/comments/uevfch/article_ai_authorship_by_a_law_professor_2020/
 
 >2/22
 - Huggingface adds a diffusion model gallery: https://huggingface.co/spaces/huggingface-projects/diffusers-gallery
