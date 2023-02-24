@@ -35,6 +35,17 @@ Twitter: https://twitter.com/questianon
 	If AUTOMATIC1111's Github goes down, you can try checking his alt repo: https://gitgud.io/AUTOMATIC1111/stable-diffusion-webui
 		
 >2/23
+- New open-source CLIP model released by LAION: https://twitter.com/laion_ai/status/1618317487283802113
+	- TLDR: better classification of images --> better generation
+	- Blog: https://laion.ai/blog/giant-openclip/
+	- Huggingface: https://huggingface.co/laion/CLIP-ViT-bigG-14-laion2B-39B-b160k
+- Deepfloyd IF model coming out soon (if it doesn't get delayed)
+	- Open source, can generate text accurately
+	- Example: https://twitter.com/deepfloydai/status/1610805687361179651
+	- Their linktree: https://linktr.ee/deepfloyd
+	- Similar text + imagen models:
+		- Karlo: https://huggingface.co/spaces/kakaobrain/karlo
+		- Muse (by Google): https://muse-model.github.io/
 - US Copyright Office state that images produced by Midjourney for "Zarya of the Dawn" is not eligible for copyright protection as they did not meet the minimum human authorship requirements, however the story and arrangement of the images in the comic is eligible for copyright protection
 	- In short, copyright of AI images (in the US at least) is still muddy.
 	- Correspondence letter: https://fingfx.thomsonreuters.com/gfx/legaldocs/klpygnkyrpg/AI%20COPYRIGHT%20decision.pdf
