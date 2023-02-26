@@ -43,6 +43,8 @@ Twitter: https://twitter.com/questianon
 	- RLHF = humans give feedback on what's good and what's not and the machine adjusts its learning based on that
 		- ChatGPT was built using RLHF, so compare how good it is to other text models
 	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/11bvnig/sd_30_will_come_with_rlhf_finetuning_for_better
+- Pretty cool showcase of using Stable DIffusion and other tools to make an anime episode with proper VFX and stuff (mute the audio if the dialogue isn't to your taste): https://youtu.be/GVT3WUa-48Y
+	- Behind the scenes (only shows an overview of the workflow): https://www.youtube.com/watch?v=_9LX9HSQkWo&t=0s
 
 >2/23 (this and previous news wasn't posted because I forgot the edit code)
 - New open-source CLIP model released by LAION: https://twitter.com/laion_ai/status/1618317487283802113
