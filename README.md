@@ -24,7 +24,7 @@ Twitter: https://twitter.com/questianon
 			b. Command prompt: click the spot in the "url" between the folder and the down arrow and type "command prompt". 
 			c. If you don't know how to do this, open command prompt, type "cd [path to stable-diffusion-webui]" (you can get this by right clicking the folder in the "url" or holding shift + right clicking the stable-diffusion-webui folder)
 		2. ```git pull```
-		3. ```pip install -r requirements_version.txt```
+		3. ```pip install -r requirements_versions.txt```
 	* If on Linux: 
 		1. go to the webui directory
 		2. ```source ./venv/bin/activate```
@@ -33,8 +33,18 @@ Twitter: https://twitter.com/questianon
 		4. ```pip install -r requirements.txt```
 	
 	If AUTOMATIC1111's Github goes down, you can try checking his alt repo: https://gitgud.io/AUTOMATIC1111/stable-diffusion-webui
-		
->2/23
+
+>2/26
+- Composer, a large (5 billion parameters) controllable diffusion model, where the effects of SD and controlnet are combined in the model is wip. AKA manipulating and retaining composition shoul dbe better.
+	- Info: https://damo-vilab.github.io/composer-page/
+	- Github: https://github.com/damo-vilab/composer
+	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/11bbpse/composer_a_large_5_billion_parameters/
+- SD 3.0 should come with RLHF finetuning for better training
+	- RLHF = humans give feedback on what's good and what's not and the machine adjusts its learning based on that
+		- ChatGPT was built using RLHF, so compare how good it is to other text models
+	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/11bvnig/sd_30_will_come_with_rlhf_finetuning_for_better
+
+>2/23 (this and previous news wasn't posted because I forgot the edit code)
 - New open-source CLIP model released by LAION: https://twitter.com/laion_ai/status/1618317487283802113
 	- TLDR: better classification of images --> better generation
 	- Blog: https://laion.ai/blog/giant-openclip/
