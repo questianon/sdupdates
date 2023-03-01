@@ -34,6 +34,35 @@ Twitter: https://twitter.com/questianon
 	
 	If AUTOMATIC1111's Github goes down, you can try checking his alt repo: https://gitgud.io/AUTOMATIC1111/stable-diffusion-webui
 
+>3/1
+- ControlNet updated to provide targeted image fixes (i.e. hands) by having a delayed guidance start time
+	- Github: https://github.com/Mikubill/sd-webui-controlnet/pull/393
+	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/11d7it7/targeted_hand_fix_is_finallly_possible_at/
+- Video loopback extension for A1111's webui released: https://github.com/fishslot/video_loopback_for_webui
+	- Improves the stability of the video through loopback and temporal blurring
+	- Intended for character animations and usually needs to be used with Lora or DreamBooth
+- Multi-controlnet for pose + hands + image demo (fixes a lot of issues with anatomy): https://www.reddit.com/r/StableDiffusion/comments/11c4m4q/one_of_the_best_uses_for_multicontrolnet_from/
+	- Blender rig: https://toyxyz.gumroad.com/l/ciojz
+	- Another demo: https://www.reddit.com/r/StableDiffusion/comments/11e15mw/highly_improved_hand_and_feet_generation_with/
+- 3D-aware Conditional Image Synthesis released: https://github.com/dunbar12138/pix2pix3D
+	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/11cudxv/pix2pix3d_3daware_conditional_image_synthesis/
+- Training CLIP to count: https://arxiv.org/abs/2302.12066
+- SD to VR: https://skybox.blockadelabs.com/
+	- Reddit (has demo and signup for API): https://www.reddit.com/r/StableDiffusion/comments/119l8ra/immersive_diffusion_by_scottie_fox_made_with/
+- Explanation on why SD struggles to make dark or light images (it averages the light levels): https://www.crosslabs.org/blog/diffusion-with-offset-noise
+	- Model: https://civitai.com/models/10391/noise-offset-for-true-darkness-in-sd
+- Isometric game pipeline demo using SD, Houdini, and multi-controlnet: https://www.reddit.com/r/StableDiffusion/comments/11bkjyo/multicontrolnet_is_a_great_tool_for_creating/
+- Making panorama images with less than 6gb VRAM (doesn't work with A1111's webui yet): https://www.reddit.com/r/StableDiffusion/comments/11a6s7h/you_to_can_create_panorama_images_512x10240_not_a/
+- Stable Diffusion to 3D mesh: https://www.reddit.com/r/StableDiffusion/comments/11eiqij/partial_3d_model_from_sd_images_still_in_a_very/
+- Scam yacht party uses AI for promo pictures (lol): https://www.scmp.com/news/people-culture/trending-china/article/3211222/their-fingers-look-fake-deluxe-chinese-yacht-party-promising-vip-maid-service-sunk-after-freaky-sexy
+- Simple tutorials:
+	- Controlnet: 
+		- https://www.reddit.com/r/StableDiffusion/comments/11aks00/onepage_simple_tutorials/
+		- https://i.redd.it/83p0oq8cx7ka1.png
+		- (reupload) https://www.reddit.com/r/StableDiffusion/comments/119o71b/a1111_controlnet_extension_explained_like_youre_5/
+	- LORA:
+		- https://www.reddit.com/r/StableDiffusion/comments/11dqs6w/basic_guide_3_how_to_load_and_use_a_lora/
+
 >2/26
 - Composer, a large (5 billion parameters) controllable diffusion model, where the effects of SD and controlnet are combined in the model is wip. AKA manipulating and retaining composition shoul dbe better.
 	- Info: https://damo-vilab.github.io/composer-page/
