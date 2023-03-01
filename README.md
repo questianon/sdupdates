@@ -46,10 +46,13 @@ Twitter: https://twitter.com/questianon
 	- Another demo: https://www.reddit.com/r/StableDiffusion/comments/11e15mw/highly_improved_hand_and_feet_generation_with/
 - 3D-aware Conditional Image Synthesis released: https://github.com/dunbar12138/pix2pix3D
 	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/11cudxv/pix2pix3d_3daware_conditional_image_synthesis/
+- Isometric RPG game "Tales of Syn" developed with Stable Diffusion, GPT3, and traditional game making software: https://www.reddit.com/r/StableDiffusion/comments/11fb7oq/isometric_rpg_game_tales_of_syn_developed_with/
+	- Blog: https://talesofsyn.com/posts/creating-isometric-rpg-game-backgrounds
+- Offline SD on apple products with ~3-4 it/s (as claimed by dev) and controlnet: https://apps.apple.com/gb/app/draw-things-ai-generation/id6444050820
 - Training CLIP to count: https://arxiv.org/abs/2302.12066
 - SD to VR: https://skybox.blockadelabs.com/
 	- Reddit (has demo and signup for API): https://www.reddit.com/r/StableDiffusion/comments/119l8ra/immersive_diffusion_by_scottie_fox_made_with/
-- Explanation on why SD struggles to make dark or light images (it averages the light levels): https://www.crosslabs.org/blog/diffusion-with-offset-noise
+- Explanation on why SD struggles to make dark or light images (tldr it averages the light levels): https://www.crosslabs.org/blog/diffusion-with-offset-noise
 	- Model: https://civitai.com/models/10391/noise-offset-for-true-darkness-in-sd
 - Isometric game pipeline demo using SD, Houdini, and multi-controlnet: https://www.reddit.com/r/StableDiffusion/comments/11bkjyo/multicontrolnet_is_a_great_tool_for_creating/
 - Making panorama images with less than 6gb VRAM (doesn't work with A1111's webui yet): https://www.reddit.com/r/StableDiffusion/comments/11a6s7h/you_to_can_create_panorama_images_512x10240_not_a/
