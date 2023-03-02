@@ -34,6 +34,12 @@ Twitter: https://twitter.com/questianon
 	
 	If AUTOMATIC1111's Github goes down, you can try checking his alt repo: https://gitgud.io/AUTOMATIC1111/stable-diffusion-webui
 
+>3/2
+- Stability for Blender released: https://platform.stability.ai/docs/integrations/blender
+	- Officially supported, free to use, zero-hassle way to use Stable Diffusion and other upcoming models inside Blender
+	- Only requires an internet connection (no dependencies or GPU) to perform AI post-processing effects with just an internet connection
+	- Discord post: https://discord.com/channels/1002292111942635562/1002292398703001601/1080897334201815150
+
 >3/1
 - ControlNet updated to provide targeted image fixes (i.e. hands) by having a delayed guidance start time
 	- Github: https://github.com/Mikubill/sd-webui-controlnet/pull/393
@@ -49,6 +55,7 @@ Twitter: https://twitter.com/questianon
 - Isometric RPG game "Tales of Syn" developed with Stable Diffusion, GPT3, and traditional game making software: https://www.reddit.com/r/StableDiffusion/comments/11fb7oq/isometric_rpg_game_tales_of_syn_developed_with/
 	- Blog: https://talesofsyn.com/posts/creating-isometric-rpg-game-backgrounds
 - Offline SD on apple products with ~3-4 it/s (as claimed by dev) and controlnet: https://apps.apple.com/gb/app/draw-things-ai-generation/id6444050820
+- ChatGPT releases their API at $0.002 per 1k tokens: https://openai.com/blog/introducing-chatgpt-and-whisper-apis
 - Training CLIP to count: https://arxiv.org/abs/2302.12066
 - SD to VR: https://skybox.blockadelabs.com/
 	- Reddit (has demo and signup for API): https://www.reddit.com/r/StableDiffusion/comments/119l8ra/immersive_diffusion_by_scottie_fox_made_with/
