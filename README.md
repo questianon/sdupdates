@@ -39,6 +39,12 @@ Twitter: https://twitter.com/questianon
 	- Officially supported, free to use, zero-hassle way to use Stable Diffusion and other upcoming models inside Blender
 	- Only requires an internet connection (no dependencies or GPU) to perform AI post-processing effects with just an internet connection
 	- Discord post: https://discord.com/channels/1002292111942635562/1002292398703001601/1080897334201815150
+	- Github download: https://github.com/Stability-AI/stability-blender-addon-public/releases/
+- ControlNet hands library extension releases in 2 weeks: https://github.com/jexom/sd-webui-depth-lib
+- Deflicker that works for SD releases in 2 weeks
+	- Website: https://chenyanglei.github.io/deflicker/
+	- Github: https://github.com/ChenyangLEI/All-In-One-Deflicker
+- Demo of diffusion post process to emulate things like ray tracing (aka low res input to high res output): https://www.reddit.com/r/StableDiffusion/comments/11gikby/what_i_think_is_the_future_of_realism_in_games/
 
 >3/1
 - ControlNet updated to provide targeted image fixes (i.e. hands) by having a delayed guidance start time
