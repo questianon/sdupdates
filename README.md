@@ -34,13 +34,36 @@ Twitter: https://twitter.com/questianon
 	
 	If AUTOMATIC1111's Github goes down, you can try checking his alt repo: https://gitgud.io/AUTOMATIC1111/stable-diffusion-webui
 
+>3/23
+- Open source text to video 1.7 billion parameter diffusion model released
+	- HuggingFace: https://huggingface.co/damo-vilab/modelscope-damo-text-to-video-synthesis/tree/main
+	- HuggingFace Demo: https://huggingface.co/spaces/damo-vilab/modelscope-text-to-video-synthesis
+	- Model: https://modelscope.cn/models/damo/text-to-video-synthesis/summary
+	- Model files: https://modelscope.cn/models/damo/text-to-video-synthesis/files
+	- Twitter: https://twitter.com/_akhaliq/status/1637321077553606657
+	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/11vbyei/first_open_source_text_to_video_17_billion/
+- InstructPix2Pix applied to NeRFs: https://instruct-nerf2nerf.github.io/
+	- Github: https://github.com/nerfstudio-project/nerfstudio
+	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/11z7rrg/instructnerf2nerf/
+- Multidiffusion, a combo of Nvidia eDiffi and SD paint-with-words: https://multidiffusion.github.io/
+	- Github: https://github.com/omerbt/MultiDiffusion
+	- Demo: https://huggingface.co/spaces/weizmannscience/multidiffusion-region-based
+	- There's an extension for it in the webui
+- Erasing SD concepts from diffusion models: https://erasing.baulab.info/
+- Midjourney v5 released
+- Large scale GAN model released: https://mingukkang.github.io/GigaGAN/
+	- Paper: https://arxiv.org/abs/2303.05511
+- Local ChatGPT with 30B parameters for local use released: https://github.com/antimatter15/alpaca.cpp
+- Cool glossary of SD terms: https://sdtools.org/
+	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/11nk957/sdtools_v15/
+
 >3/2
 - Stability for Blender released: https://platform.stability.ai/docs/integrations/blender
 	- Officially supported, free to use, zero-hassle way to use Stable Diffusion and other upcoming models inside Blender
 	- Only requires an internet connection (no dependencies or GPU) to perform AI post-processing effects with just an internet connection
 	- Discord post: https://discord.com/channels/1002292111942635562/1002292398703001601/1080897334201815150
 	- Github download: https://github.com/Stability-AI/stability-blender-addon-public/releases/
-- ControlNet hands library extension releases in 2 weeks: https://github.com/jexom/sd-webui-depth-lib
+- ControlNet hands library extension released: https://github.com/jexom/sd-webui-depth-lib
 - Deflicker that works for SD releases in 2 weeks
 	- Website: https://chenyanglei.github.io/deflicker/
 	- Github: https://github.com/ChenyangLEI/All-In-One-Deflicker
