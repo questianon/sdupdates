@@ -34,6 +34,60 @@ Twitter: https://twitter.com/questianon
 	
 	If AUTOMATIC1111's Github goes down, you can try checking his alt repo: https://gitgud.io/AUTOMATIC1111/stable-diffusion-webui
 
+Note: If I don't update in a month, I probably decided to step away from documenting and keeping up with SD since it takes too much of my time. If that's the case, my final update will be cleaning up some stuff and doing one big final update. To keep up with news, you can use
+
+
+Reddit (recommended since everything is filtered if you sort by top): https://www.reddit.com/r/StableDiffusion/
+4chan (look at the top comments to see if anything big was added, good if you want to be on top of things): https://boards.4channel.org/g/catalog#s=sdg
+SDCompendium (not too sure how good this site is, from a quick skim it seems pretty good and maintained. Has weekly(?) and monthly(?) news as well as a ton of other stuff): https://www.sdcompendium.com/
+
+
+Thank you all for your support for this repo and the general development of SD, I really appreciate everyone who's contributed and hope you'll take SD to new heights.
+
+>4/11
+- If AUTO1111 stops updating his repo forever and you want updates, you can browse this to look for new ones: https://techgaun.github.io/active-forks/index.html#https://github.com/AUTOMATIC1111/stable-diffusion-webui
+	- Recommended ones in comments: https://techgaun.github.io/active-forks/index.html#https://github.com/AUTOMATIC1111/stable-diffusion-webui
+- LAION petitions to democratize AI research: https://www.openpetition.eu/petition/online/securing-our-digital-future-a-cern-for-open-source-large-scale-ai-research-and-its-safety
+	- Reddit post 1: https://www.reddit.com/r/singularity/comments/126j2ok/laion_launches_a_petition_to_democratize_ai/
+	- Reddit 2: https://www.reddit.com/r/StableDiffusion/comments/126rb5p/laion_launches_a_petition_to_democratize_ai/
+- Stable Diffusion v2-1-unCLIP model released: Basically uses input image as a prompt similar to how DALL-E 2 did it
+	- Github: https://github.com/Stability-AI/stablediffusion/blob/main/doc/UNCLIP.MD
+	- Blog: https://stability.ai/blog/stable-diffusion-reimagine
+	- Model: https://huggingface.co/stabilityai/stable-diffusion-2-1-unclip
+	- Demo: https://clipdrop.co/stable-diffusion-reimagine
+	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/1218dxk/stable_diffusion_v21unclip_model_released/
+- Kandinsky 2.1 model: https://github.com/ai-forever/Kandinsky-2
+	- Open source imagen model that's not based on Stable Diffusion. Can do image mixing(?) and merging
+	- Artgen site that's free and fast(?), has Kandinsky: https://dreamlike.art/create
+		- Reddit: https://www.reddit.com/r/StableDiffusion/comments/12c9yos/ive_added_kandinsky_21_to_my_website_its_free_and/
+	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/12bf5k2/kandinsky_21_beats_stable_diffusion_and_allows/
+	- Another reddit showcase: https://www.reddit.com/r/StableDiffusion/comments/12bexho/kandinsky_21_a_new_open_source_texttoimage_model/
+- ControlNet face model released: https://huggingface.co/CrucibleAI/ControlNetMediaPipeFace
+	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/1281iva/new_controlnet_face_model/
+- ChatGPT "jailbreak" to remove restrictions (works well on GPT 4): https://github.com/0xk1h0/ChatGPT_DAN
+- StyleGAN-T by NVIDIA - Faster Text-to-Image Synthesis than Stable Diffusion: https://sites.google.com/view/stylegan-t/
+	- Two Minute Papers: https://www.youtube.com/watch?v=qnHbGXmGJCM&t=84s
+- Text to Video Finetuning: https://github.com/ExponentialML/Text-To-Video-Finetuning
+- RunwayML text to video showcase: https://www.reddit.com/r/StableDiffusion/comments/12gwa4m/movie_scene_generated_with_text2video_by_runwayml/
+	- Website w/ a ton of info + showcases: https://research.runwayml.com/gen2
+- 1.2B Parameter Video Model: https://huggingface.co/VideoCrafter/t2v-version-1-1
+	- Demo: https://huggingface.co/spaces/VideoCrafter/VideoCrafter
+	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/12coe0l/new_12b_parameter_text_to_video_model_is_out/
+- Cool reality to Stable Diffusion video showcases (workflow in comments):
+	- Dog: https://www.reddit.com/r/StableDiffusion/comments/12bdr3p/augmenting_reality_with_stable_diffusion_just/
+	- Girl dancing: https://www.reddit.com/r/StableDiffusion/comments/12i9qr7/i_transform_real_person_dancing_to_animation/
+- The loopback thing that a bunch of tiktokkers are doing (check comments for how to do it): https://www.reddit.com/r/StableDiffusion/comments/129zh69/slide_diffusion_loopback_wave_script/
+- SD image to Blender to rotate to another image that retains the depth: https://www.reddit.com/r/StableDiffusion/comments/12aurpp/i_found_a_way_to_create_different_consistent/
+	- Script creator used: https://github.com/thygate/stable-diffusion-webui-depthmap-script
+	- Similar video: https://www.reddit.com/r/StableDiffusion/comments/127kagv/stepping_into_places_that_do_not_exist_stable/ 
+- Token merging (faster gens)
+	- https://github.com/dbolya/tomesd#installation
+	- https://git.mmaker.moe/mmaker/sd-webui-tome
+	- Reddit: https://www.reddit.com/r/StableDiffusion/comments/1276th7/token_merging_for_fast_stable_diffusion/
+- SD regional prompter script: https://github.com/hako-mikan/sd-webui-regional-prompter
+- Image Mixer - combine concepts, styles, and compositions (like Midjourney): https://huggingface.co/lambdalabs/image-mixer
+- CKPT to safetensors convertor GUI: https://github.com/diStyApps/Safe-and-Stable-Ckpt2Safetensors-Conversion-Tool-GUI
+
 >3/23
 - Open source text to video 1.7 billion parameter diffusion model released
 	- HuggingFace: https://huggingface.co/damo-vilab/modelscope-damo-text-to-video-synthesis/tree/main
